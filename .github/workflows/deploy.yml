@@ -2,7 +2,7 @@ name: Force Deploy
 on:
   push:
     branches:
-      - main  # Make sure this matches your branch name
+      - main
 
 jobs:
   deploy:
@@ -23,7 +23,6 @@ jobs:
       - name: Build with OpenNext
         run: npx @opennextjs/cloudflare build
         env:
-          # Pass all secrets to the OpenNext build step
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
           SANITY_WRITE_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
@@ -38,5 +37,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # --no-bundle is critical to skip the redundant, failing build step
-          command: deploy .open-next/worker.js --name growvalleyventures --compatibility-date=2024-04-03 --no-bundle
+          # --no-config: Tells Wrangler to ignore wrangler.jsonc/package.json
+          # --no-bundle: Tells Wrangler not to run a build
+          command: deploy .open-next/worker.js --name growvalleyventures --compatibility-date=2024-04-03 --no-bundle --no-config
