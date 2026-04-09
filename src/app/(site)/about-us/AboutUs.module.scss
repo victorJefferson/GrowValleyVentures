@@ -53,23 +53,16 @@
     }
 }
 
-.bgNavy {
+.groupPanel {
     background-color: var(--color-primary-navy);
     color: var(--color-white);
     border-radius: var(--border-radius-hero);
-    margin: 2rem auto;
-    width: calc(100% - 2rem);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin: 0 auto;
 
     @media (min-width: 768px) {
-        margin: 3rem auto;
-        width: calc(100% - 3rem);
-    }
-
-    @media (min-width: 1248px) {
-        max-width: var(--max-width-container);
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 5rem 4rem;
     }
 }
 
@@ -133,11 +126,11 @@
 }
 
 .headingWhite {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     color: var(--color-white);
 }
 
@@ -149,11 +142,11 @@
 }
 
 .bodyWhite {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--color-white);
     max-width: 800px;
-    margin: 0 auto 3rem;
-    line-height: 1.6;
+    margin: 0 auto;
+    line-height: 1.7;
     opacity: 0.9;
 }
 
@@ -169,6 +162,10 @@
     
     @media (min-width: 1200px) {
         grid-template-columns: repeat(3, 1fr);
+        
+        > :nth-child(4):last-child {
+            grid-column: 2;
+        }
     }
 }
 

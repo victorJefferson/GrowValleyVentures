@@ -21,37 +21,29 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
     const whatWeDo = [
         {
-            title: "Direct Portfolio Investment",
-            desc: "Governed readiness for curated portfolio positions, which are structured with defined terms and investment frameworks prior to participation."
+            title: "Wealth Management Services",
+            desc: "Harnessing the wealth you have created, to serve your risk-return objectives"
         },
         {
-            title: "Structured Co-Investment",
-            desc: "Equity, hybrid, and co-investment frameworks for institutional partners participating alongside the principal investor."
+            title: "Wealth Structuring & Succession Planning",
+            desc: "Optimizing Wealth Holding Structures and Intergenerational Transfer of Wealth"
         },
         {
-            title: "Investment Structuring",
-            desc: "Capital vehicles and structures designed for institutional-grade participation across the portfolio."
+            title: "Additional Family Office Services",
+            desc: "Facilitating ancillary wealth management needs through best in breed service providers & in-house coordination capabilities"
         },
         {
-            title: "Portfolio Construction",
-            desc: "Active portfolio built across ventures, operating businesses, and structured capital positions."
-        },
-        {
-            title: "Institutional Capital Partnerships",
-            desc: "Long-term capital partnerships with family offices and institutional allocators, which are governance-led and transparently reported."
-        },
-        {
-            title: "Capital Governance",
-            desc: "Investment governance, reporting standards, and portfolio oversight across all active positions."
+            title: "Privé Access To PE, VC And Real Estate Opportunities",
+            desc: "Unfolding opportunities through a dedicated Institutional and Private Deals Desk"
         }
     ];
 
     return (
         <main>
             <Hero
-                eyebrow="About GrowValley"
-                headline="The investment platform of GrowValley Group."
-                subheadline="GrowValley provides structured readiness for direct portfolio investment, co-investment opportunities, and institutional capital partnerships, governed, documented, and built for long-term capital discipline."
+                eyebrow="ABOUT GROWVALLEY"
+                headline="Who is GrowValley"
+                subheadline="GrowValley is a fully integrated wealth management powerhouse."
                 image="/images/home_hero.png"
             />
 
@@ -59,16 +51,16 @@ export default function AboutUsPage() {
                 <div className="container">
                     <div className={styles.positioningGrid}>
                         <div className={styles.pillar}>
-                            <span className={styles.pillarLabel}>Direct Portfolio Investment</span>
+                            <span className={styles.pillarLabel}>Wealth Management Services</span>
                         </div>
                         <div className={styles.pillar}>
-                            <span className={styles.pillarLabel}>Structured<br />Co-Investment</span>
+                            <span className={styles.pillarLabel}>Wealth Structuring &<br />Succession Planning</span>
                         </div>
                         <div className={styles.pillar}>
-                            <span className={styles.pillarLabel}>Institutional Capital Partnerships</span>
+                            <span className={styles.pillarLabel}>Additional Family Office<br />Services</span>
                         </div>
                         <div className={styles.pillar}>
-                            <span className={styles.pillarLabel}>Governance-Led Capital Deployment</span>
+                            <span className={styles.pillarLabel}>Privé Access To PE, VC &<br />Real Estate Opportunities</span>
                         </div>
                     </div>
                 </div>
@@ -79,10 +71,10 @@ export default function AboutUsPage() {
                     <div className={styles.roundedPanel}>
                         <div className={styles.splitIntro}>
                             <div className={styles.introContent}>
-                                <span className={styles.eyebrow}>Who we are</span>
-                                <h2 className={styles.heading}>GrowValley&apos;s investment platform</h2>
+                                <span className={styles.eyebrow}>WHO WE ARE</span>
+                                <h2 className={styles.heading}>Who we are</h2>
                                 <p className={styles.body}>
-                                    GrowValley&apos;s investment platform provides structured readiness for direct portfolio positions, co-investment opportunities, and institutional capital partnerships for family offices, qualified investors, and institutional allocators.
+                                    GrowValley is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base. GrowValley&apos;s unique service model ensures that our Client&apos;s interests come first by removing the inherent conflict of interest typically prevalent in wealth management advice.
                                 </p>
                             </div>
                             <div className={styles.introImage}>
@@ -101,8 +93,8 @@ export default function AboutUsPage() {
 
             <section className="section-padding">
                 <div className="container">
-                    <span className={styles.eyebrow}>What we do</span>
-                    <h2 className={styles.heading}>Core Capabilities</h2>
+                    <span className={styles.eyebrow}>WHAT WE DO</span>
+                    <h2 className={styles.heading}>Our Services</h2>
                     <div className={styles.functionGrid}>
                         {whatWeDo.map((item, idx) => (
                             <Card key={idx} className={styles.functionCard}>
@@ -114,20 +106,17 @@ export default function AboutUsPage() {
                 </div>
             </section>
 
-            <section className={`section-padding ${styles.bgNavy}`}>
-                <div className="container text-center">
-                    <div className={styles.groupContext}>
-                        <span className={styles.eyebrowWhite}>Part of GrowValley Group</span>
+            <section className="section-padding">
+                <div className="container">
+                    <div className={styles.groupPanel}>
+                        <span className={styles.eyebrowWhite}>PART OF GROWVALLEY GROUP</span>
                         <h2 className={styles.headingWhite}>Part of GrowValley Group</h2>
                         <p className={styles.bodyWhite}>
                             GrowValley Group operates across four verticals, including Consulting, Ventures, Works, and Studios. GrowValley&apos;s investment platform is the vehicle through which the Group deploys capital, structures investment readiness, and manages portfolio positions.
                         </p>
                         <div className={styles.ctaGroup}>
-                            <p className={styles.bodyWhite} style={{ marginBottom: '2rem' }}>
-                                It&apos;s a partnership based on rigour, transparency, and a shared commitment to sustainable wealth creation.
-                            </p>
                             <Link href="/contact">
-                                <Button size="lg" variant="secondary">Speak to an Expert</Button>
+                                <Button size="lg" variant="secondary" className="uppercase-button">SPEAK TO AN EXPERT</Button>
                             </Link>
                         </div>
                     </div>
