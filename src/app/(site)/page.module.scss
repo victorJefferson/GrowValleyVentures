@@ -1,0 +1,765 @@
+.positioningStatement {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        color: var(--color-text-muted);
+    }
+}
+
+.positioningPillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style: none;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-primary-navy);
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    li {
+        padding: 1.5rem;
+        background-color: var(--color-surface-tertiary);
+        border-radius: var(--border-radius-card);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .pillarIcon {
+        color: var(--color-primary-navy);
+        opacity: 0.6;
+    }
+}
+
+.bgSecondary {
+    background-color: var(--color-surface-secondary);
+}
+
+.bgTertiary {
+    background-color: var(--color-surface-tertiary);
+}
+
+.splitLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: center;
+        /* Center to prevent stretching and elegantly float image */
+        gap: 6rem;
+    }
+}
+
+.splitImageWrapper {
+    position: relative;
+    border-radius: var(--border-radius-card);
+    /* Consistent pill/rounded corner */
+    overflow: hidden;
+    min-height: 250px;
+
+    @media (min-width: 1024px) {
+        flex: 0 0 35%;
+        height: 700px;
+        /* Explicitly capped height to half the previous text stack */
+    }
+}
+
+.splitImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+.splitContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.splitEyebrow {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    /* Darker gray to match sleek look */
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.splitHeading {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 1.5rem;
+    color: var(--color-text-body);
+    line-height: 1.1;
+    font-weight: 400;
+    /* Apple-style clean headings */
+}
+
+.splitIntro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.learnMore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: gap 0.3s ease;
+
+    &:hover {
+        gap: 0.75rem;
+    }
+}
+
+.splitFeatureCards {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-bottom: 3rem;
+}
+
+.splitFeature {
+    display: flex;
+    flex-direction: column;
+}
+
+.splitFeatureTitle {
+    font-size: 1.25rem;
+    color: var(--color-primary-navy);
+    margin-bottom: 0.25rem;
+}
+
+.splitFeatureSubtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-body);
+}
+
+.splitFeature p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.splitCta {
+    margin-top: 1rem;
+}
+
+.whoWeWorkWithPremium {
+    margin: 2rem auto;
+    width: calc(100% - 2rem);
+    color: var(--color-primary-navy);
+
+    @media (min-width: 768px) {
+        margin: 3rem auto;
+        width: calc(100% - 3rem);
+    }
+
+    @media (min-width: 1248px) {
+        max-width: var(--max-width-container);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.whoWeWorkWithInner {
+    background-color: var(--color-surface-tertiary);
+    border-radius: var(--border-radius-hero);
+    padding: 3rem 1.25rem;
+    /* Reduced from 4rem 2rem for mobile */
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 5rem 3rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 6rem 5rem;
+    }
+}
+
+.partnerCardsBento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    /* Tighter gap for mobile */
+    max-width: 1200px;
+    margin: 0;
+
+    @media (min-width: 768px) {
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        gap: 1.5rem;
+    }
+}
+
+.bentoCard {
+    background: var(--color-surface-tertiary);
+    border: 1.5px solid rgba(26, 63, 167, 0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        border-color: rgba(26, 63, 167, 0.3);
+    }
+
+    .bentoContent {
+        position: relative;
+        z-index: 3;
+        padding: 1.5rem;
+        /* Reduced from 2.5rem for mobile */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        pointer-events: none;
+
+        @media (min-width: 768px) {
+            padding: 2.5rem;
+        }
+    }
+
+    p {
+        font-size: 1.25rem;
+        /* Increased from 1.125rem for mobile impact */
+        color: var(--color-primary-navy);
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        margin: 0;
+
+        @media (min-width: 768px) {
+            font-size: 1.125rem;
+            line-height: 1.4;
+        }
+    }
+}
+
+.cardHero {
+    @media (min-width: 1024px) {
+        grid-column: span 2;
+        grid-row: span 2;
+
+        p {
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+    }
+}
+
+.cardWide {
+    @media (min-width: 1024px) {
+        grid-column: span 2;
+        grid-row: span 2;
+
+        p {
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+    }
+}
+
+.cardSquare {
+    @media (min-width: 1024px) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+}
+
+.cardPanorama {
+    @media (min-width: 1024px) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.bentoNum {
+    font-size: 1rem;
+    color: var(--color-accent-blue);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.sectionEyebrow {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-blue);
+    margin-bottom: 1rem;
+}
+
+.sectionHeading {
+    margin-bottom: 1rem;
+}
+
+.sectionSubhed {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+}
+
+.insightsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.insightCard {
+    p {
+        margin-bottom: 1.5rem;
+        color: var(--color-text-muted);
+        flex-grow: 1;
+        font-size: 0.95rem;
+    }
+
+    h4 {
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+.speakToAnExpertBannerHeading {
+    margin-bottom: 2rem !important;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--color-surface-secondary);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--border-radius-pill);
+    margin-bottom: 1.5rem;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: var(--color-accent-blue);
+    font-weight: 500;
+    margin-top: auto;
+}
+
+.viewAll {
+    text-align: right;
+}
+
+.linkArrow {
+    font-weight: 600;
+    color: var(--color-primary-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.ctaBanner {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: var(--border-radius-hero);
+    margin: 2rem auto;
+    width: calc(100% - 2rem);
+
+    @media (min-width: 768px) {
+        margin: 3rem auto;
+        width: calc(100% - 3rem);
+        padding: 4rem 1.5rem;
+    }
+
+    @media (min-width: 1248px) {
+        max-width: var(--max-width-container);
+        width: 100%;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        /* Tighter headline */
+        font-weight: 400;
+        color: var(--color-white);
+        margin-bottom: 0.75rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 2rem;
+    }
+}
+
+/* WHY Section Styles */
+.whySection {
+    text-align: left;
+    margin: 0;
+}
+
+.whyEyebrow {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-blue);
+    margin-bottom: 2rem;
+}
+
+.whyHeadingMain {
+    font-size: clamp(1.85rem, 5vw, 4.5rem);
+    /* Reduced from 2.5rem to fit iPhone 375px */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--color-primary-navy);
+    font-weight: 400;
+    /* Vistra uses a cleaner, lighter weight for large headers */
+}
+
+.sectionHeading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Reduced for consistent mobile scale */
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: var(--color-primary-navy);
+    font-weight: 400;
+    /* Vistra uses a cleaner, lighter weight for large headers */
+}
+
+.whyBodyMain {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--color-text-body);
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.whyCardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.whyCard {
+    background-color: var(--color-surface-tertiary);
+    padding: 3rem 2.5rem;
+    border-radius: var(--border-radius-card);
+    height: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.whyCardIcon {
+    color: var(--color-primary-navy);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.whyCardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: var(--color-text-body);
+        margin: 0;
+    }
+}
+
+.whyCardLabel {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-primary-navy);
+    line-height: 1.2;
+}
+
+.solutionsWrapper {
+    margin: 2rem auto;
+    width: calc(100% - 2rem);
+    margin-top: 2rem;
+
+    @media (min-width: 768px) {
+        margin: 3rem auto;
+        width: calc(100% - 3rem);
+    }
+
+    @media (min-width: 1248px) {
+        max-width: var(--max-width-container);
+        width: 100%;
+    }
+}
+
+/* Rounded dark panel inside the solutions wrapper */
+.solutionsPanel {
+    background: linear-gradient(rgba(6, 17, 42, 0.96), rgba(6, 17, 42, 0.96)),
+        url('/images/solutions_panoramic.png') no-repeat center center;
+    background-size: cover;
+    color: var(--color-white);
+    border-radius: var(--border-radius-hero);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 6rem 3rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 8rem 5rem;
+    }
+}
+
+.solutionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* Reduced from 4rem for mobile */
+    position: relative;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        gap: 6rem;
+    }
+}
+
+.solutionsNav {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center links vertically relative to card */
+    min-height: auto;
+    /* Reset from 400px for mobile */
+
+    @media (min-width: 1024px) {
+        min-height: 400px;
+    }
+}
+
+.solutionsEyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-blue);
+    margin-bottom: 2rem;
+}
+
+.solutionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Tighter gap for mobile links */
+
+    @media (min-width: 1024px) {
+        gap: 4rem;
+        /* Restored for desktop tabs */
+    }
+}
+
+.solutionsTrigger {
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.25rem;
+    /* Smaller for mobile links */
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    white-space: normal;
+    /* Allow wrapping on small screens */
+
+    @media (min-width: 1024px) {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        line-height: 1.1;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    &.active {
+        color: var(--color-white);
+        font-weight: 500;
+    }
+}
+
+.solutionsContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.solutionsCard {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    /* Reduced for mobile */
+    width: 100%;
+    scroll-margin-top: 100px;
+    /* Offset for sticky header when scrolling to section */
+
+    @media (min-width: 1024px) {
+        padding: 4rem;
+        animation: fadeIn 0.5s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cardHeader {
+    margin-bottom: 2rem;
+
+    h3 {
+        font-size: 1.5rem;
+        /* Smaller for mobile */
+        margin-bottom: 0.5rem;
+        color: var(--color-white);
+        font-weight: 500;
+
+        @media (min-width: 1024px) {
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .subtitle {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--color-accent-blue);
+        letter-spacing: -0.01em;
+    }
+}
+
+.description {
+    font-size: 1rem;
+    /* Slightly smaller for mobile */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0;
+    /* Let container gap handle it */
+    max-width: 600px;
+
+    @media (min-width: 1024px) {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.desktopOnly {
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: block;
+        width: 100%;
+    }
+}
+
+.mobileOnly {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}

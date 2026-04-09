@@ -1,0 +1,56 @@
+# GVV Website Implementation Plan
+
+## Goal Description
+Deploy the institutional website for `gv.ventures` for the first client demo. The project leverages **Next.js (SSG)** for extreme performance and security, **Sanity** for headless CMS, and **HubSpot** for CRM. 
+The design system is cloned from Vistra.com, while the sitemap hierarchy is cloned from TaurusWealth.com and populated with the provided Website Copy document.
+
+## Proposed Changes
+
+### Setup & Infrastructure
+- Initialize Next.js app in the working directory using `npx create-next-app@latest .`
+- Configure global CSS to match Vistra's design tokens (Primary Navy: `#0012B7`, Fonts: `Outfit` / `Montserrat`).
+
+### Core Components
+#### [NEW] `components/Navbar.tsx`
+- Transparent-to-Solid sticky navigation matching the Vistra layout.
+
+#### [NEW] `components/Footer.tsx`
+- Deep navy institutional 3-column footer.
+
+#### [NEW] `components/Hero.tsx`
+- Large container with deep rounded bottom-right corners (40px-60px radius) and large H1 overlay.
+
+#### [NEW] `components/Button.tsx`
+- Fully rounded 50px pill button components.
+
+#### [NEW] `components/Card.tsx`
+- Clean white/grey cards with 20px rounded corners for services and insight feeds.
+
+### Site Pages
+#### [NEW] `app/page.tsx` - Home Page
+#### [NEW] `app/about-us/page.tsx` - About Us
+#### [NEW] `app/our-capabilities/page.tsx` - Our Capabilities (with sticky tab-nav)
+#### [NEW] `app/insights/page.tsx` - Insights Hub
+#### [NEW] `app/platform/page.tsx` - Platform
+#### [NEW] `app/team/page.tsx` - Team
+#### [NEW] `app/careers/page.tsx` - Careers
+#### [NEW] `app/privacy-policy/page.tsx` - Legal: Privacy Policy
+#### [NEW] `app/disclaimer/page.tsx` - Legal: Disclaimer
+
+### Integrations
+- **CMS (Sanity):** Initialize Sanity Studio for the "Insights" data schema. Create `lib/sanity.ts` to fetch Insights for the home page and insights listing page.
+- **CRM (HubSpot):** Create `components/ContactForm.tsx` to handle the standard "Contact Us" interactions and submit data securely using the HubSpot Forms API.
+
+## Verification Plan
+
+### Automated Build Tests
+- Command: `npm run build`
+- Ensure the SSG build succeeds without any missing static dependencies or typing errors.
+
+### Visual Validation
+- Command: `npm run dev`
+- Use the autonomous browser subagent to record a walkthrough of all implemented pages (Checking responsivness, routing, and Vistra design cloning precision).
+
+### Integration Verification
+- **CMS Checklist:** Seed a dummy article in the Sanity Studio and verify it appears on the `/insights` feed.
+- **CRM Checklist:** Submit a test lead through the Contact Form intercept and verify standard HTTP response success.

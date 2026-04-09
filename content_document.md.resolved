@@ -1,0 +1,193 @@
+# GrowValley Ventures: Content & Architecture Specification
+
+**Status:** Updated for Final Implementation (Version 3.0)  
+**Domain:** `gv.ventures`  
+**Entity:** Investment Platform of GrowValley Group
+
+---
+
+## 1. Global Sitemap
+
+| Page Name | Slug (URL) |
+| :--- | :--- |
+| **Home** | `/` |
+| **About Us** | `/about-us/` |
+| **Our Capabilities** | `/our-capabilities/` |
+| **Insights** | `/insights/` |
+| **Platform** | `/platform/` |
+| **Team** | `/team/` |
+| **Careers** | `/careers/` |
+| **Privacy Policy** | `/privacy-policy/` |
+| **Disclaimer** | `/disclaimer/` |
+
+---
+
+## 2. Page Content Specifications
+
+### 2.1 Home Page (`/`)
+
+**[HERO]**
+- **Eyebrow:** Investment Platform
+- **Headline:** Direct investment readiness. Institutional capital discipline.
+- **Subheadline:** GrowValley structures and governs capital readiness for family offices, institutional allocators, and qualified investors, applying the discipline of an established investment platform.
+- **CTA:** Explore Our Platform → `/platform/`
+
+**[WHY GROWVALLEY]**
+- **Heading:** Why GrowValley?
+- **Intro:** Capital decisions require governance, not guesswork. GrowValley brings institutional discipline to every structure, mandate, and opportunity, without passive allocation and without compromising on rigour.
+- **Card 1 Label:** Governance-Led Platform
+- **Card 1 Descriptor:** Every capital position is governed by defined terms, documentation, and reporting standards, all established before participation opens.
+- **Card 2 Label:** Institutional Discipline
+- **Card 2 Descriptor:** GrowValley operates with the rigour of an established capital platform, rather than a discretionary advisor or passive allocator.
+- **Card 3 Label:** Structured Access
+- **Card 3 Descriptor:** Opportunities are curated, structured, and fully documented before being made available to qualifying investors.
+- **Card 4 Label:** Long-Term Orientation
+- **Card 4 Descriptor:** Built for family offices and institutional allocators with patient capital mandates and long-term return objectives.
+
+**[CAPABILITIES BAND]**
+- **Eyebrow:** Our Capabilities
+- **Capital Deployment:** Deploying capital as a principal investor into businesses and ventures, governed by investment thesis, risk framework, and return objective.
+- **Investment Structuring:** Designing investment vehicles and structures for institutional partners, involving equity, hybrid, co-investment frameworks, and governance terms.
+- **Family Office & Institutional:** Partnering with family offices and institutional allocators for structured co-investment readiness, which is governance-led and transparently reported.
+- **Direct Investment Readiness:** Providing qualified investors with governed readiness to GrowValley portfolio opportunities, which are curated, structured, and documented from the outset.
+
+**[WHO WE WORK WITH]**
+- Family offices deploying patient, long-term capital
+- Institutional investors seeking structured co-investment readiness
+- Qualified investors accessing direct portfolio opportunities
+- Private investors meeting defined eligibility criteria
+- Institutional allocators building exposure to governed portfolio positions
+
+**[LATEST INSIGHTS]**
+- **Eyebrow:** Insights
+- **Heading:** Latest from GrowValley
+- **Subheading:** Perspectives on capital, investment, and portfolio construction.
+- **Link:** View all Insights → `/insights/`
+
+**[HOME CTA BANNER]**
+- **Heading:** Serious about capital? Start with the right structure.
+- **CTA:** Contact Us
+
+**[STATS BAND]**
+- **Eyebrow:** At a Glance
+- **Heading:** Capital deployed. Mandates delivered.
+- **Stat 1:** $2B+ / Transactions Guided
+- **Stat 2:** 10+ / Public Sector Projects
+- **Stat 3:** $150M / AUM Across Portfolio
+- **Stat 4:** 50+ / Experts & Operators
+
+---
+
+### 2.2 About Us (`/about-us/`)
+
+- **Hero Eyebrow:** About GrowValley
+- **Hero Headline:** The investment platform of GrowValley Group.
+- **Hero Subheadline:** GrowValley provides structured readiness for direct portfolio investment, co-investment opportunities, and institutional capital partnerships, governed, documented, and built for long-term capital discipline.
+- **Positioning Block:** Direct Portfolio Investment | Structured Co-Investment | Institutional Capital Partnerships | Governance-Led Capital Deployment
+- **Who we are:** GrowValley's investment platform provides structured readiness for direct portfolio positions, co-investment opportunities, and institutional capital partnerships for family offices, qualified investors, and institutional allocators.
+- **What we do Tiles:**
+    - Direct Portfolio Investment, offering governed readiness for curated portfolio positions, structured with defined terms and investment frameworks prior to participation.
+    - Structured Co-Investment, with equity, hybrid, and co-investment frameworks for institutional partners participating alongside the principal investor.
+    - Investment Structuring, involving capital vehicles and structures designed for institutional-grade participation across the portfolio.
+    - Portfolio Construction, representing an active portfolio built across ventures, operating businesses, and structured capital positions.
+    - Institutional Capital Partnerships, consisting of long-term capital partnerships with family offices and institutional allocators, which are governance-led and transparently reported.
+    - Capital Governance, involving investment governance, reporting standards, and portfolio oversight across all active positions.
+- **Part of GrowValley Group:** GrowValley Group operates across four verticals, including Consulting, Ventures, Works, and Studios. GrowValley's investment platform is the vehicle through which the Group deploys capital, structures investment readiness, and manages portfolio positions.
+
+---
+
+### 2.3 Our Capabilities (`/our-capabilities/`)
+
+- **Hero Eyebrow:** Our Capabilities
+- **Hero Headline:** How we deploy and structure capital.
+- **Hero Subheadline:** Four core investment capabilities. Each allocates capital with discipline and structures readiness with precision.
+
+#### 1. Capital Deployment (`#capital-deployment`)
+- **Intro:** GrowValley deploys capital as a principal investor, rather than a passive allocator. Every capital position is governed by a defined investment thesis, risk framework, and return objective.
+- **Numbered Panels:**
+    - /01 Direct Investment, involving direct capital positions in established businesses and growth-stage ventures.
+    - /02 Portfolio Company Funding, which is capital deployed into GrowValley Group companies at every growth stage.
+    - /03 Venture Participation, involving capital into ecosystem ventures at formation and early growth.
+    - /04 Strategic Co-Investment, representing co-investment alongside institutional partners into thesis-aligned opportunities.
+    - /05 Sector Allocation, where capital is allocated across sectors aligned to GrowValley Group strategy.
+    - /06 Thesis-Driven Deployment, in which all deployment is governed by investment thesis, risk framework, and return objective.
+- **Mandate Cards:**
+    - [Principal Investment] GrowValley takes direct equity positions as principal, with defined governance rights, return expectations, and structured exit provisions from inception.
+    - [Co-Investment Access] Institutional partners and qualified investors may participate alongside GrowValley on defined co-investment terms, which are thesis-aligned, documented, and governed.
+- **Outcome:** Capital deployed as a principal investor, rather than a passive allocator.
+
+#### 2. Investment Structuring (`#investment-structuring`)
+- **Intro:** We design the investment vehicles and structures through which institutional partners access GrowValley opportunities. Every structure is built for the specific participation objective, such as equity, hybrid, or co-investment, with governance and exit provisions defined from the outset.
+- **Numbered Panels:**
+    - /01 Equity Structures, including equity investment vehicles across portfolio companies and direct opportunities.
+    - /02 Hybrid Instruments, which are hybrid capital instruments balancing return, risk, and governance.
+    - /03 Co-Investment Frameworks, involving co-investment structures for partners participating alongside GrowValley.
+    - /04 Shareholder Frameworks, which include shareholder agreements, dilution models, and governance terms.
+    - /05 Exit & Liquidity Planning, featuring defined exit pathways and liquidity provisions structured from inception.
+    - /06 Investment Governance, in which governance and reporting standards are maintained across all structured positions.
+- **Mandate Cards:**
+    - [Equity Participation] Structured equity positions across portfolio companies and direct investment opportunities, with defined governance rights, reporting obligations, and exit mechanics.
+    - [Hybrid & Co-Investment Structures] Hybrid capital instruments and co-investment frameworks for institutional partners seeking exposure alongside GrowValley with defined risk-return parameters.
+- **Outcome:** Investment structures built for institutional rigour and long-term capital discipline.
+
+#### 3. Family Office & Institutional Capital (`#family-office-institutional`)
+- **Intro:** GrowValley provides a structured co-investment readiness framework for family offices and institutional allocators, built around long-term capital orientation, portfolio transparency, and governance alignment.
+- **Numbered Panels:**
+    - /01 Family Office Partnerships, involving long-term partnerships with single and multi-family offices deploying patient capital.
+    - /02 Institutional Co-Investment, offering structured co-investment readiness to curated GrowValley portfolio opportunities.
+    - /03 Capital Governance, where all positions are governed by defined documentation, frameworks, and reporting.
+    - /04 Portfolio Transparency, which provides clear visibility over positions, performance, and capital activity.
+    - /05 Aligned Structures, with structures designed to align institutional objectives with portfolio performance.
+    - /06 Long-Term Orientation, featuring capital partnerships built on patient, long-term investment alignment.
+- **Mandate Cards:**
+    - [Family Office Mandate] Long-term capital partnership for single and multi-family offices, providing co-investment readiness across curated GrowValley portfolio positions.
+    - [Institutional Allocator Framework] Structured access for institutional allocators, featuring portfolio transparency, aligned return frameworks, and defined co-investment terms.
+- **Outcome:** Institutional capital partnerships built on governance, transparency, and alignment.
+
+#### 4. Direct Investment Readiness (`#direct-investment-readiness`)
+- **Intro:** GrowValley provides qualified investors with governed readiness to curated portfolio opportunities, which are selected, structured, and fully documented before being made available.
+- **Numbered Panels:**
+    - /01 Curated Opportunities, which are selected and structured before availability.
+    - /02 Full Documentation, with terms and governance frameworks provided.
+    - /03 Qualified Readiness, designed for institutional partners meeting defined criteria.
+    - /04 Defined Terms, where size, governance rights, and return frameworks are clearly structured.
+    - /05 Active Oversight, in which positions are monitored through the investment lifecycle.
+    - /06 Structured Exit, including pathways and liquidity provisions in all opportunities.
+- **Mandate Cards:**
+    - [Privé Portfolio Access] Curated direct investment opportunities made available to qualified investors, which are fully structured, documented, and governed before participation opens.
+    - [Governed Participation Framework] Eligibility criteria, participation terms, and governance rights defined upfront.
+- **Outcome:** Direct investment readiness, curated, structured, and governed.
+
+---
+
+### 2.4 Platform (`/platform/`)
+- **Hero Eyebrow:** Investment Platform
+- **Hero Headline:** The capital infrastructure of GrowValley Group.
+- **Hero Subheadline:** The GrowValley platform connects capital to opportunity, across the portfolio, through co-investment frameworks, and for institutional partners seeking governed readiness.
+- **Overview Heading:** How the platform works
+- **Overview Intro:** GrowValley operates an integrated capital platform, deploying capital into portfolio positions, structuring co-investment readiness, and managing institutional capital partnerships across active opportunities.
+- **Platform Tiles:** Portfolio Investment | Capital Solutions | Institutional Participation | Direct Opportunities | Governance & Reporting | Capital Structuring
+- **Platform Access:** Access is available to eligible institutional partners, family offices, and qualified investors. Participation is subject to eligibility criteria and applicable documentation requirements.
+
+---
+
+### 2.5 Team (`/team/`)
+- **Hero Eyebrow:** Our Team
+- **Hero Headline:** Capital professionals. Investment practitioners.
+- **Hero Subheadline:** Professionals across investment, capital markets, and enterprise, deploying and structuring capital with institutional discipline.
+
+---
+
+### 2.6 Careers (`/careers/`)
+- **Hero Eyebrow:** Careers
+- **Hero Headline:** Join the GrowValley investment platform.
+- **Hero Subheadline:** We build careers for investment professionals who bring rigour, discretion, and long-term orientation to their work.
+- **Who we look for Tiles:** Investment Professionals | Capital Markets | Operations & Governance
+
+---
+
+### 2.7 Disclaimer (`/disclaimer/`)
+- **Important Notice:** Published for general informational purposes only. No offer or solicitation.
+- **No Financial Advice:** Nothing constitutes financial, legal, tax, or investment advice.
+- **Risk Disclosure:** Investments involve substantial risk, including total loss of capital.
+- **Restricted Participation:** Only available to eligible institutional partners and qualified investors.

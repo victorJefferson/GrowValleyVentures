@@ -1,0 +1,130 @@
+.heroWrapper {
+    margin: 100px 1rem 0;
+    
+    @media (min-width: 768px) {
+        margin: 100px 1.5rem 0;
+    }
+
+    @media (min-width: 1248px) {
+        max-width: var(--max-width-container);
+        margin: 120px auto 0;
+    }
+    
+    padding-bottom: 3rem;
+}
+
+.heroOuter {
+    background: linear-gradient(110deg, #06112a 0%, #0e2259 35%, #2437d8 80%, #ffffff 100%);
+    border-radius: var(--border-radius-hero);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.heroContentWrapper {
+    padding: 4rem 0 3rem;
+    /* Reduced top padding as wrapper margin handles gap now */
+    position: relative;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+        padding: 5rem 0 4rem;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 4rem 0 3rem;
+    }
+}
+
+.heroContent {
+    max-width: 800px;
+    position: relative;
+    z-index: 6;
+
+    @media (min-width: 1024px) {
+        max-width: 62%;
+        /* Slightly wider to accommodate reduced scale */
+    }
+}
+
+.heroArtDecoration {
+    position: relative;
+    width: 100%;
+    height: 480px; /* Slightly taller to accommodate face visibility */
+    /* Hard-stop gradient to simulate structural 'slabs' */
+    background: linear-gradient(115deg, transparent 0%, transparent 15%, #b8e9f7 15%, #b8e9f7 50%, #93d9f1 50%, #93d9f1 80%, #ffffff 80%);
+    clip-path: none; /* No slanted line on mobile as requested */
+    z-index: 1;
+    margin-top: 0; /* Reset margin for flat top */
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: 0;
+        /* Align to top of rounded card */
+        right: 0;
+        width: 28%;
+        /* Narrower to match compact feel */
+        height: 100%;
+        background: linear-gradient(115deg, transparent 0%, transparent 15%, #b8e9f7 15%, #b8e9f7 55%, #93d9f1 55%, #93d9f1 85%, #ffffff 85%);
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        margin-top: 0;
+    }
+}
+
+.heroImage {
+    object-fit: cover;
+    object-position: center 25%;
+    /* Ensures the person is seated naturally within the slabs */
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-blue);
+    margin-bottom: 1rem;
+
+    @media (max-width: 767px) {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.headline {
+    color: var(--color-white);
+    margin-bottom: 1.25rem;
+    white-space: pre-line;
+    font-weight: 300 !important;
+    font-size: 4rem !important;
+    line-height: 1.2 !important;
+
+    @media (max-width: 767px) {
+        font-size: 2.15rem !important; /* Forces override of desktop 4rem !important */
+        line-height: 1.1 !important;
+        margin-bottom: 0.75rem;
+        font-weight: 400 !important;
+    }
+}
+
+.subheadline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    white-space: pre-line;
+
+    @media (max-width: 767px) {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.ctaGroup {
+    display: flex;
+    gap: 1rem;
+}
