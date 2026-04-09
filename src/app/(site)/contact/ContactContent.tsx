@@ -160,16 +160,10 @@ export default function ContactContent() {
                         {/* ── Left Dark Panel ── */}
                         <aside className={styles.leftPanel}>
                             <h1 className={styles.leftHeadline}>
-                                Capital starts with a conversation.
+                                Ready to start a conversation?
                             </h1>
                             <p className={styles.leftDescription}>
-                                We&apos;re here to work with serious capital allocators, institutional partners, and qualified investors, operating independently and without conflict.
-                            </p>
-                            <p className={styles.leftDescription}>
-                                Use this form to share a few details. We will match you with the right advisor and respond within one to two working days.
-                            </p>
-                            <p className={styles.leftCta}>
-                                Get in touch today, and let&apos;s structure the right conversation.
+                                Use this form to share a few details. We will match you with the right wealth manager and respond within one to two working days.
                             </p>
 
                             <div className={styles.leftDivider} />
@@ -185,7 +179,7 @@ export default function ContactContent() {
                             <div className={styles.leftContactGroup}>
                                 <p className={styles.leftContactTitle}>Support</p>
                                 <p className={styles.leftContactBody}>
-                                    For general platform questions and support, please email{" "}
+                                    For general enquiries and support, please email{" "}
                                     <a href="mailto:support@gv.ventures">support@gv.ventures</a>.
                                 </p>
                             </div>
@@ -202,7 +196,7 @@ export default function ContactContent() {
                         {/* ── Right Form Panel ── */}
                         <section className={styles.rightPanel}>
                             <p className={styles.formEyebrow}>
-                                For new enquiries and institutional partnership enquiries only.
+                                For new enquiries and wealth management enquiries only.
                             </p>
 
                             <form
