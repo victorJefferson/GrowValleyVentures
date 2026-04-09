@@ -25,10 +25,6 @@ jobs:
 
       - name: Build with OpenNext
         run: npx @opennextjs/cloudflare build
-
-      - name: Check for images module
-        run: grep -r "cloudflare/images" .open-next || echo "No images module found"
-
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
@@ -36,6 +32,23 @@ jobs:
           TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
           NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
           NINJAPIPE_CONTACT_WEBHOOK: ${{ secrets.NINJAPIPE_CONTACT_WEBHOOK }}
+
+      - name: Check for images module
+        run: grep -r "cloudflare/images" .open-next || echo "No images module found"
+
+      - name: Create Cloudflare images stub
+        run: |
+          mkdir -p .open-next/cloudflare
+          cat <<EOF > .open-next/cloudflare/images.js
+          export function handleCdnCgiImageRequest() {
+            return new Response("Image optimization disabled", { status: 404 });
+          }
+
+          export function handleImageRequest() {
+            return new Response("Image optimization disabled", { status: 404 });
+          }
+          EOF
+
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
