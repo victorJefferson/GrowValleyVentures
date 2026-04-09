@@ -3,7 +3,7 @@ import { TrustGuardConfig } from "trust-guard-js";
 export const trustGuardConfig: TrustGuardConfig = {
   active: true, // Toggle the entire system
   branding: {
-    name: "GrowValley Ventures",
+    name: "GrowValley",
     logo: "/gv-logo-blue.png", // Enable if you have a logo file
     colors: {
       primary: "#1A3FA7", // Vistra-grade Navy

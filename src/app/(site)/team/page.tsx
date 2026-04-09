@@ -7,12 +7,12 @@ import styles from './Team.module.scss';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Our Team | GrowValley Ventures"
+        absolute: "Our Team | GrowValley"
     },
-    description: "Meet the GrowValley investment team, professionals across investment, capital markets, and enterprise, deploying and structuring capital with institutional discipline.",
+    description: "Meet the GrowValley investment and advisory team, committed to institutional capital discipline and long-term portfolio growth.",
     openGraph: {
-        title: "Our Team | GrowValley Ventures",
-        description: "Capital professionals and investment practitioners with institutional discipline.",
+        title: "Our Team | GrowValley",
+        description: "GrowValley investment and advisory team.",
         url: "https://gv.ventures/team",
     },
 };

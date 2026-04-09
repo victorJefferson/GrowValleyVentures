@@ -4,12 +4,12 @@ import styles from './Careers.module.scss';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Careers | GrowValley Ventures"
+        absolute: "Careers | GrowValley"
     },
-    description: "Join the GrowValley investment platform. We build careers for investment professionals who bring rigour, discretion, and long-term orientation to their work.",
+    description: "Join the GrowValley team and contribute to institutional-grade wealth management and investment excellence.",
     openGraph: {
-        title: "Careers | GrowValley Ventures",
-        description: "Explore career opportunities at GrowValley, designed for institutional talent with long-term orientation.",
+        title: "Careers | GrowValley",
+        description: "Explore career opportunities at GrowValley.",
         url: "https://gv.ventures/careers",
     },
 };

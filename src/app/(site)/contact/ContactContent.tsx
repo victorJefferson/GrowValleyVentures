@@ -435,13 +435,13 @@ export default function ContactContent() {
                                         onChange={handleChange}
                                     />
                                     <label htmlFor="marketingConsent" className={styles.checkboxLabel}>
-                                        Yes, I agree to receive GrowValley Ventures communications. I can unsubscribe or update my choices at any time.
+                                        Yes, I agree to receive GrowValley communications. I can unsubscribe or update my choices at any time.
                                     </label>
                                 </div>
 
                                 {/* Legal text */}
                                 <p className={styles.legalText}>
-                                    By clicking submit, I agree that GrowValley Ventures may contact me regarding my request and related services featured on this page, and that my personal information will be stored and processed in accordance with GrowValley&apos;s{" "}
+                                    By clicking submit, I agree that GrowValley may contact me regarding my request and related services featured on this page, and that my personal information will be stored and processed in accordance with GrowValley&apos;s{" "}
                                     <Link href="/privacy-policy">Privacy Notice</Link>.
                                 </p>
 
@@ -506,7 +506,7 @@ export default function ContactContent() {
                             <p><strong>Area of Interest:</strong> {formData.areaOfInterest}</p>
                         </div>
                         <p className={styles.successNote}>
-                            Thank you for reaching out. A member of the GrowValley Ventures team will be in contact within one to two working days.
+                            Thank you for reaching out. A member of the GrowValley team will be in contact within one to two working days.
                         </p>
                         <button id="success-close" className={styles.successClose} onClick={closeSuccess}>
                             Close

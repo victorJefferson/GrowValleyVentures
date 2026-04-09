@@ -30,7 +30,7 @@ export function Navbar() {
                             <Link href="/">
                                 <Image
                                     src="/gv-logo-blue.png"
-                                    alt="GrowValley Ventures Logo"
+                                    alt="GrowValley Logo"
                                     width={160}
                                     height={60}
                                     priority

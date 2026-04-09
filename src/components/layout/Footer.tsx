@@ -38,7 +38,7 @@ export function Footer() {
                     <Link href="/" className={styles.logoLink}>
                         <Image
                             src="/gv-logo-blue.png"
-                            alt="GrowValley Ventures Logo"
+                            alt="GrowValley Logo"
                             width={160}
                             height={60}
                             className={styles.logoImage}
@@ -61,19 +61,14 @@ export function Footer() {
                     <div className={styles.linksCol}>
                         <h4>Our Capabilities</h4>
                         <ul>
-                            <li><Link href="/our-capabilities/#capital-deployment">Capital Deployment</Link></li>
-                            <li><Link href="/our-capabilities/#investment-structuring">Investment Structuring</Link></li>
-                            <li><Link href="/our-capabilities/#family-office-institutional">Family & Institutional</Link></li>
-                            <li><Link href="/our-capabilities/#direct-investment-readiness">Direct Investment Readiness</Link></li>
+                            <li><Link href="/our-capabilities/#wealth-management">Wealth Management Services</Link></li>
+                            <li><Link href="/our-capabilities/#wealth-structuring">Wealth Structuring & Succession Planning</Link></li>
+                            <li><Link href="/our-capabilities/#family-office">Additional Family Office Services</Link></li>
+                            <li><Link href="/our-capabilities/#prive-access">Privé Access To PE, VC And Real Estate Opportunities</Link></li>
                         </ul>
                     </div>
 
-                    {/* <div className={styles.linksCol}>
-                        <h4>Platform</h4>
-                        <ul>
-                            <li><Link href="/platform">Investment Platform</Link></li>
-                        </ul>
-                    </div> */}
+
 
                     <div className={styles.linksCol}>
                         <h4>About Us</h4>
@@ -97,7 +92,7 @@ export function Footer() {
             <div className={styles.bottomBar}>
                 <div className={`container ${styles.bottomInner}`}>
                     <div className={styles.copyright}>
-                        © 2026 GrowValley Ventures
+                        © 2026 GrowValley
                     </div>
                     <div className={styles.legalLinks}>
                         <Link href="/disclaimer">Legal notice</Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Hero } from "@/components/ui/Hero";
 import { DataSection } from "@/components/ui/DataSection";
 import {
@@ -14,13 +14,16 @@ import {
   Globe,
   Target,
   Lightbulb,
-  Network
-} from 'lucide-react';
+  Network,
+} from "lucide-react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
-import { InsightsCarousel, InsightItem } from "@/components/ui/InsightsCarousel";
+import {
+  InsightsCarousel,
+  InsightItem,
+} from "@/components/ui/InsightsCarousel";
 import styles from "./page.module.scss";
-import { Button } from '@/components/ui/Button';
+import { Button } from "@/components/ui/Button";
 
 interface HomeContentProps {
   heroData: any;
@@ -31,12 +34,12 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
   const [activeSolution, setActiveSolution] = useState(0);
 
   const defaultHero = {
-    eyebrow: "INVESTMENT PLATFORM",
-    headline: "Direct investment readiness. Institutional capital discipline.",
-    subheadline: "GrowValley structures and governs capital readiness for family offices, institutional allocators, and qualified investors, applying the discipline of an established investment platform.",
-    ctaText: "Get in touch",
+    eyebrow: "GrowValley",
+    headline: "Your Wealth. Our Expertise. This Is GrowValley!",
+    subheadline: "A 360° approach to managing your wealth.",
+    ctaText: "Get in Touch",
     ctaHref: "/contact",
-    image: "/images/hero_model_v3.png"
+    image: "/images/hero_model_v3.png",
   };
 
   const displayHero = heroData || defaultHero;
@@ -54,42 +57,52 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
 
   const solutions = [
     {
-      id: "capital-deployment",
-      title: "Capital Deployment",
-      subtitle: "Deploying capital as a principal investor into businesses and ventures.",
-      description: "Governed by investment thesis, risk framework, and return objective.",
-      href: "/our-capabilities/#capital-deployment"
+      id: "wealth-management-services",
+      title: "Wealth Management Services",
+      subtitle:
+        "Harnessing the wealth you have created, to serve your risk-return objectives.",
+      description: "",
+      href: "/our-capabilities/#wealth-management",
     },
     {
-      id: "investment-structuring",
-      title: "Investment Structuring",
-      subtitle: "Designing investment vehicles and structures for institutional partners.",
-      description: "Equity, hybrid, co-investment frameworks, and governance terms.",
-      href: "/our-capabilities/#investment-structuring"
+      id: "wealth-structuring-succession",
+      title: "Wealth Structuring & Succession Planning",
+      subtitle:
+        "Optimizing Wealth Holding Structures and Intergenerational Transfer of Wealth.",
+      description: "",
+      href: "/our-capabilities/#wealth-structuring",
     },
     {
-      id: "family-office-institutional",
-      title: "Family Office & Institutional",
-      subtitle: "Partnering with family offices and institutional allocators.",
-      description: "Structured co-investment readiness, governance-led and transparently reported.",
-      href: "/our-capabilities/#family-office-institutional"
+      id: "additional-family-office",
+      title: "Additional Family Office Services",
+      subtitle:
+        "Facilitating ancillary wealth management needs through best in breed service providers & in-house coordination capabilities.",
+      description: "",
+      href: "/our-capabilities/#family-office",
     },
     {
-      id: "direct-investment-readiness",
-      title: "Direct Investment Readiness",
-      subtitle: "Providing qualified investors with governed readiness.",
-      description: "Curated, structured, and documented from the outset.",
-      href: "/our-capabilities/#direct-investment-readiness"
-    }
+      id: "prive-access",
+      title: "Privé Access To PE, VC And Real Estate Opportunities",
+      subtitle:
+        "Unfolding opportunities through a dedicated Institutional and Private Deals Desk.",
+      description: "",
+      href: "/our-capabilities/#prive-access",
+    },
   ];
 
   const dynamicInsights: InsightItem[] = insights.map((item: any) => ({
     id: item._id,
     title: item.title,
-    date: item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : "",
+    date: item.publishedAt
+      ? new Date(item.publishedAt).toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })
+      : "",
     tag: item.tag || "Insight",
     image: item.mainImage ? urlFor(item.mainImage).url() : "",
-    slug: item.slug
+    slug: item.slug,
   }));
 
   return (
@@ -108,36 +121,70 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
           <div className={styles.whySection}>
             <h2 className={styles.whyHeadingMain}>Why GrowValley?</h2>
             <p className={styles.whyBodyMain}>
-              Capital decisions require governance, not guesswork. GrowValley brings institutional discipline to every structure, mandate, and opportunity, without passive allocation and without compromising on rigour.
+              GrowValley is a fully integrated wealth management powerhouse. We
+              globally serve our wealth management and institutional client
+              base. GrowValley&apos;s unique service model ensures that our
+              Client&apos;s interests come first by removing the inherent
+              conflict of interest typically prevalent in wealth management
+              advice.
             </p>
 
             <div className={styles.whyCardGrid}>
               <div className={styles.whyCard}>
-                <div className={styles.whyCardIcon}><ShieldCheck size={48} strokeWidth={1} /></div>
+                <div className={styles.whyCardIcon}>
+                  <ShieldCheck size={48} strokeWidth={1} />
+                </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Governance-Led Platform</div>
-                  <p>Every capital position is governed by defined terms, documentation, and reporting standards, all established before participation opens.</p>
+                  <div className={styles.whyCardLabel}>
+                    Wealth Management Services
+                  </div>
+                  <p>
+                    Harnessing the wealth you have created, to serve your
+                    risk-return objectives
+                  </p>
                 </div>
               </div>
               <div className={styles.whyCard}>
-                <div className={styles.whyCardIcon}><Layers size={48} strokeWidth={1} /></div>
+                <div className={styles.whyCardIcon}>
+                  <Layers size={48} strokeWidth={1} />
+                </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Institutional Discipline</div>
-                  <p>GrowValley operates with the rigour of an established capital platform, rather than a discretionary advisor or passive allocator.</p>
+                  <div className={styles.whyCardLabel}>
+                    Wealth Structuring & Succession Planning
+                  </div>
+                  <p>
+                    Optimizing Wealth Holding Structures and Intergenerational
+                    Transfer of Wealth
+                  </p>
                 </div>
               </div>
               <div className={styles.whyCard}>
-                <div className={styles.whyCardIcon}><Target size={48} strokeWidth={1} /></div>
+                <div className={styles.whyCardIcon}>
+                  <Target size={48} strokeWidth={1} />
+                </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Structured Access</div>
-                  <p>Opportunities are curated, structured, and fully documented before being made available to qualifying investors.</p>
+                  <div className={styles.whyCardLabel}>
+                    Additional Family Office Services
+                  </div>
+                  <p>
+                    Facilitating ancillary wealth management needs through best
+                    in breed service providers & in-house coordination
+                    capabilities
+                  </p>
                 </div>
               </div>
               <div className={styles.whyCard}>
-                <div className={styles.whyCardIcon}><Network size={48} strokeWidth={1} /></div>
+                <div className={styles.whyCardIcon}>
+                  <Network size={48} strokeWidth={1} />
+                </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Long-Term Orientation</div>
-                  <p>Built for family offices and institutional allocators with patient capital mandates and long-term return objectives.</p>
+                  <div className={styles.whyCardLabel}>
+                    Privé Access To PE, VC And Real Estate Opportunities
+                  </div>
+                  <p>
+                    Unfolding opportunities through a dedicated Institutional
+                    and Private Deals Desk
+                  </p>
                 </div>
               </div>
             </div>
@@ -154,12 +201,12 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                 {solutions.map((s, idx) => (
                   <button
                     key={s.id}
-                    className={`${styles.solutionsTrigger} ${activeSolution === idx ? styles.active : ''}`}
+                    className={`${styles.solutionsTrigger} ${activeSolution === idx ? styles.active : ""}`}
                     onClick={() => {
                       setActiveSolution(idx);
                       const element = document.getElementById(`mobile-${s.id}`);
                       if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                        element.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
                   >
@@ -174,11 +221,20 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
               <div className={styles.desktopOnly}>
                 <div className={styles.solutionsCard} key={activeSolution}>
                   <div className={styles.cardHeader}>
-                    <h2 className={styles.cardTitleH2}>{solutions[activeSolution].title}</h2>
-                    <p className={styles.subtitle}>{solutions[activeSolution].subtitle}</p>
+                    <h2 className={styles.cardTitleH2}>
+                      {solutions[activeSolution].title}
+                    </h2>
+                    <p className={styles.subtitle}>
+                      {solutions[activeSolution].subtitle}
+                    </p>
                   </div>
-                  <p className={styles.description}>{solutions[activeSolution].description}</p>
-                  <Link href={solutions[activeSolution].href} className={styles.learnMore}>
+                  <p className={styles.description}>
+                    {solutions[activeSolution].description}
+                  </p>
+                  <Link
+                    href={solutions[activeSolution].href}
+                    className={styles.learnMore}
+                  >
                     Learn more <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -187,7 +243,11 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
               {/* Mobile: All cards in a list */}
               <div className={styles.mobileOnly}>
                 {solutions.map((s) => (
-                  <div id={`mobile-${s.id}`} key={s.id} className={styles.solutionsCard}>
+                  <div
+                    id={`mobile-${s.id}`}
+                    key={s.id}
+                    className={styles.solutionsCard}
+                  >
                     <div className={styles.cardHeader}>
                       <h2 className={styles.cardTitleH2}>{s.title}</h2>
                       <p className={styles.subtitle}>{s.subtitle}</p>
@@ -217,7 +277,9 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
 
               <div className={`${styles.bentoCard} ${styles.cardSquare}`}>
                 <div className={styles.bentoContent}>
-                  <p>Qualified investors accessing direct portfolio opportunities</p>
+                  <p>
+                    Qualified investors accessing direct portfolio opportunities
+                  </p>
                 </div>
               </div>
 
@@ -229,13 +291,19 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
 
               <div className={`${styles.bentoCard} ${styles.cardWide}`}>
                 <div className={styles.bentoContent}>
-                  <p>Institutional investors seeking structured co-investment readiness</p>
+                  <p>
+                    Institutional investors seeking structured co-investment
+                    readiness
+                  </p>
                 </div>
               </div>
 
               <div className={`${styles.bentoCard} ${styles.cardPanorama}`}>
                 <div className={styles.bentoContent}>
-                  <p>Institutional allocators building exposure to governed portfolio positions</p>
+                  <p>
+                    Institutional allocators building exposure to governed
+                    portfolio positions
+                  </p>
                 </div>
               </div>
             </div>
@@ -251,9 +319,13 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
 
       <section className={styles.ctaBanner}>
         <div className="container">
-          <h2 className={styles.speakToAnExpertBannerHeading}>Serious about capital? <br /> Start with the right structure.</h2>
+          <h2 className={styles.speakToAnExpertBannerHeading}>
+            Serious about capital? <br /> Start with the right structure.
+          </h2>
           <Link href="/contact">
-            <Button size="lg" variant="secondary">Speak to an Expert</Button>
+            <Button size="lg" variant="secondary">
+              Speak to an Expert
+            </Button>
           </Link>
         </div>
       </section>

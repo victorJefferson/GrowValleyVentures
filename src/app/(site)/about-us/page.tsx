@@ -8,12 +8,12 @@ import styles from './AboutUs.module.scss';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "About Us | GrowValley Ventures",
+        absolute: "About Us | GrowValley",
     },
-    description: "Learn about the GrowValley investment platform, our governance-led approach to capital deployment, and our commitment to institutional discipline.",
+    description: "Learn about GrowValley's 360° approach to wealth management and institutional capital discipline.",
     openGraph: {
-        title: "About Us | GrowValley Ventures",
-        description: "The investment platform of GrowValley Group, governed and built for long-term capital discipline.",
+        title: "About Us | GrowValley",
+        description: "GrowValley investment platform and vertical integration.",
         url: "https://gv.ventures/about-us",
     },
 };
@@ -80,9 +80,9 @@ export default function AboutUsPage() {
                         <div className={styles.splitIntro}>
                             <div className={styles.introContent}>
                                 <span className={styles.eyebrow}>Who we are</span>
-                                <h2 className={styles.heading}>GrowValley's investment platform</h2>
+                                <h2 className={styles.heading}>GrowValley&apos;s investment platform</h2>
                                 <p className={styles.body}>
-                                    GrowValley's investment platform provides structured readiness for direct portfolio positions, co-investment opportunities, and institutional capital partnerships for family offices, qualified investors, and institutional allocators.
+                                    GrowValley&apos;s investment platform provides structured readiness for direct portfolio positions, co-investment opportunities, and institutional capital partnerships for family offices, qualified investors, and institutional allocators.
                                 </p>
                             </div>
                             <div className={styles.introImage}>

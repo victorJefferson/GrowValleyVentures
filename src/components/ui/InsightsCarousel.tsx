@@ -27,9 +27,9 @@ interface InsightsCarouselProps {
 }
 
 export const InsightsCarousel: React.FC<InsightsCarouselProps> = ({
-  title = "Latest from GrowValley Ventures",
-  description = "Perspectives on capital readiness, investment strategy, and advisory practice.",
-  exploreLink = { text: "Explore all insights", href: "/insights" },
+  title = "Latest from GrowValley",
+  description = "Perspectives on capital, investment, and portfolio construction.",
+  exploreLink = { text: "Learn more", href: "/insights" },
   insights
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);

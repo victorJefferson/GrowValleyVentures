@@ -35,7 +35,7 @@ export default function CookiePolicyContent() {
 
                         <h2>Overview</h2>
                         <p>
-                            This Cookie Policy explains how GrowValley Ventures ("we", "us", and "our") uses cookies and similar 
+                            This Cookie Policy explains how GrowValley ("we", "us", and "our") uses cookies and similar 
                             technologies to recognize you when you visit our website. It explains what these technologies are 
                             and why we use them, as well as your rights to control our use of them.
                         </p>

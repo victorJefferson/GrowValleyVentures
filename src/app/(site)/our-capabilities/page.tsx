@@ -3,12 +3,12 @@ import CapabilitiesContent from '@/app/(site)/our-capabilities/CapabilitiesConte
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Our Capabilities | GrowValley Ventures",
+        absolute: "Our Capabilities | GrowValley",
     },
-    description: "Explore the internal investment capabilities of GrowValley, ranging from capital deployment and investment structuring to family office and institutional co-investment readiness.",
+    description: "A 360° approach to managing your wealth through integrated services and institutional discipline.",
     openGraph: {
-        title: "Our Capabilities | GrowValley Ventures",
-        description: "Four core investment capabilities. Allocating capital with discipline and structuring readiness with precision.",
+        title: "Our Capabilities | GrowValley",
+        description: "Explore GrowValley's integrated wealth management and investment capabilities.",
         url: "https://gv.ventures/our-capabilities",
     },
 };

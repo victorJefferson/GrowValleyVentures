@@ -84,7 +84,7 @@ export default function InsightsContent({ featured, editorsPicks, latest, allIns
       <section className={styles.pageHeader}>
         <div className="container">
           <div className={styles.headerGrid}>
-            <h1 className={styles.pageTitle}>Latest from GrowValley Ventures</h1>
+            <h1 className={styles.pageTitle}>Latest from GrowValley</h1>
             <p className={styles.pageDesc}>
               Perspectives on capital readiness, investment strategy, and advisory practice.
             </p>

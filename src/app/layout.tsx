@@ -11,14 +11,14 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://gv.ventures'),
   title: {
-    default: "GrowValley Ventures",
-    template: "%s | GrowValley Ventures"
+    default: "GrowValley",
+    template: "%s | GrowValley"
   },
-  description: "GrowValley Ventures provide structured readiness for direct portfolio investment, co-investment opportunities, and institutional capital partnerships, governed, documented, and built for long-term capital discipline.",
-  keywords: ["Venture Capital", "Capital Structuring", "Direct Portfolio Investment", "Co-investment", "Family Office Investment", "Investment Governance", "GrowValley Ventures"],
-  authors: [{ name: "GrowValley Ventures" }],
-  creator: "GrowValley Ventures",
-  publisher: "GrowValley Ventures",
+  description: "GrowValley provide structured readiness for direct portfolio investment, co-investment opportunities, and institutional capital partnerships, governed, documented, and built for long-term capital discipline.",
+  keywords: ["Venture Capital", "Capital Structuring", "Direct Portfolio Investment", "Co-investment", "Family Office Investment", "Investment Governance", "GrowValley"],
+  authors: [{ name: "GrowValley" }],
+  creator: "GrowValley",
+  publisher: "GrowValley",
   alternates: {
     canonical: "/",
   },
@@ -26,21 +26,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://gv.ventures",
-    siteName: "GrowValley Ventures",
-    title: "GrowValley Ventures",
+    siteName: "GrowValley",
+    title: "GrowValley",
     description: "Institutional-grade investment platform for family offices and qualified investors.",
     images: [
       {
         url: "/images/hero_model_v3.png",
         width: 1200,
         height: 630,
-        alt: "GrowValley Ventures Investment Platform",
+        alt: "GrowValley Investment Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrowValley Ventures",
+    title: "GrowValley",
     description: "GrowValley structures and governs capital readiness with institutional discipline.",
     images: ["/images/hero_model_v3.png"],
   },

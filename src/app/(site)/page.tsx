@@ -5,19 +5,19 @@ import HomeContent from "./HomeContent";
 
 export const metadata: Metadata = {
     title: {
-        absolute: "GrowValley Ventures",
+        absolute: "GrowValley",
     },
-    description: "GrowValley structures and governs capital readiness for family offices, institutional allocators, and qualified investors, applying the discipline of an established investment platform.",
+    description: "A 360° approach to managing your wealth.",
     openGraph: {
-        title: "GrowValley Ventures",
-        description: "Direct investment readiness. Institutional capital discipline.",
+        title: "GrowValley",
+        description: "Your Wealth. Our Expertise. This Is GrowValley!",
         url: "https://gv.ventures",
         images: [
             {
                 url: "/images/hero_model_v3.png",
                 width: 1200,
                 height: 630,
-                alt: "GrowValley Ventures",
+                alt: "GrowValley",
             },
         ],
     },

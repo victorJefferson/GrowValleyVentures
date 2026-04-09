@@ -10,12 +10,12 @@ import InsightsContent from "./InsightsContent";
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Insights | GrowValley Ventures"
+        absolute: "Insights | GrowValley"
     },
-    description: "Perspectives on capital readiness, investment strategy, and portfolio construction from the GrowValley team.",
+    description: "Perspectives on capital, investment strategy, and portfolio construction from the GrowValley team.",
     openGraph: {
-        title: "Insights | GrowValley Ventures",
-        description: "Institutional-grade perspectives on investment and capital strategy.",
+        title: "Insights | GrowValley",
+        description: "Perspectives on capital, investment, and portfolio construction.",
         url: "https://gv.ventures/insights",
         images: [
             {
