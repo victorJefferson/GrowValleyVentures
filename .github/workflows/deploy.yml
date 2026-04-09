@@ -29,14 +29,12 @@ jobs:
           TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
           NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
           NINJAPIPE_CONTACT_WEBHOOK: ${{ secrets.NINJAPIPE_CONTACT_WEBHOOK }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # --no-config: Tells Wrangler to ignore wrangler.jsonc/package.json
-          # --no-bundle: Tells Wrangler not to run a build
-          command: deploy .open-next/worker.js --name growvalleyventures --compatibility-date=2024-04-03 --no-bundle --no-config
+          # REMOVED --no-config (it caused the endsWith error)
+          # ADDED --no-bundle (to skip that second failing build)
+          command: deploy .open-next/worker.js --name growvalleyventures --compatibility-date 2024-04-03 --no-bundle
