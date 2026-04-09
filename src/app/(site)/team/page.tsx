@@ -55,8 +55,8 @@ export default function TeamPage() {
   return (
     <main>
       <Hero
-        eyebrow="Our Team"
-        headline="Capital professionals. Investment practitioners."
+        eyebrow="GrowValley"
+        headline="Wealth Management, delivered by people who know it."
         subheadline="Professionals across investment, capital markets, and enterprise, deploying and structuring capital with institutional discipline."
         image="/images/team_hero.png"
       />
