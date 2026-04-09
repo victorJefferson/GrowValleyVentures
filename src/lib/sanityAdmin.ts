@@ -8,10 +8,12 @@ if (!token) {
   console.warn("TrustGuard: SANITY_WRITE_TOKEN is not defined in .env.local. Audit logging will be disabled.");
 }
 
-export const adminClient = createClient({
-  projectId,
-  dataset,
-  apiVersion: "2024-03-01",
-  useCdn: false,
-  token, // Write token
-});
+export const adminClient = projectId 
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion: "2024-03-01",
+      useCdn: false,
+      token, // Write token
+    })
+  : null;

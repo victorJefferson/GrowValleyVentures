@@ -20,14 +20,14 @@ export async function POST(request: Request) {
       anonymizedIp = parts.slice(0, Math.max(1, parts.length - 1)).join(":") + ":xxxx";
     }
 
-    // Only skip if no token is configured
-    if (!process.env.SANITY_WRITE_TOKEN) {
-      console.log("TrustGuard [STUB]: Audit log recorded (no token):", {
+    // Only skip if no token is configured or client is missing
+    if (!process.env.SANITY_WRITE_TOKEN || !adminClient) {
+      console.log(`TrustGuard [STUB]: Audit log recorded (${!adminClient ? "no client" : "no token"}):`, {
         timestamp,
         anonymizedIp,
         consent,
       });
-      return NextResponse.json({ status: "recorded_stub" });
+      return NextResponse.json({ status: !adminClient ? "recorded_no_config" : "recorded_stub" });
     }
 
     await adminClient.create({

@@ -10,10 +10,6 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "build": {
-    "command": "npm run build",
-    "cwd": "./"
-  },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
