@@ -92,7 +92,7 @@ export function Footer() {
             <div className={styles.bottomBar}>
                 <div className={`container ${styles.bottomInner}`}>
                     <div className={styles.copyright}>
-                        © 2026 GrowValley
+                        © 2026 GrowValley. All rights reserved.
                     </div>
                     <div className={styles.legalLinks}>
                         <Link href="/disclaimer">Legal notice</Link>

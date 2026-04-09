@@ -16,28 +16,25 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
     const roles = [
-        { title: "Investment Professionals", desc: "Portfolio management, capital allocation, and investment analysis." },
-        { title: "Capital Markets", desc: "Structuring, transaction, and institutional markets experience." },
-        { title: "Operations & Governance", desc: "Fund administration, investment operations, and governance." }
+        { title: "Wealth Management Professionals", desc: "Portfolio management, client advisory, and wealth planning." },
+        { title: "Capital Markets", desc: "Structuring, transaction, and wealth markets experience." },
+        { title: "Operations & Governance", desc: "Fund administration, compliance, and client relationship management." }
     ];
 
     return (
         <main>
             <Hero
-                eyebrow="Careers"
-                headline="Join the GrowValley investment platform."
-                subheadline="We build careers for investment professionals who bring rigour, discretion, and long-term orientation to their work."
+                eyebrow="CAREERS"
+                headline="Join GrowValley."
+                subheadline="We are always looking for wealth management professionals who bring rigour, discretion, and a client-first approach to their work."
                 image="/images/careers_hero.png"
             />
 
             <section className="section-padding">
                 <div className="container">
                     <div className={styles.intro}>
-                        <span className={styles.eyebrow}>Who we look for</span>
-                        <h2 className={styles.heading}>Institutional talent. Long-term orientation.</h2>
-                        <p className={styles.body}>
-                            GrowValley seeks professionals who understand the discipline of principal investment and the complexity of institutional capital structuring.
-                        </p>
+                        <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
+                        <h2 className={styles.heading}>Who we look for</h2>
                     </div>
 
                     <div className={styles.roleGrid}>
@@ -57,9 +54,8 @@ export default function CareersPage() {
                         <div className={styles.openings}>
                             <h2 className={styles.heading}>Current Openings</h2>
                             <div className={styles.openingCard}>
-                                <div className={styles.statusPill}>ACTIVE</div>
                                 <h3 className={styles.subtext}>No current openings.</h3>
-                                <p>We are always open to hearing from exceptional investment talent. Speculative applications are welcome.</p>
+                                <p>We are always open to hearing from exceptional talent. Speculative applications are welcome.</p>
                                 <a href="mailto:careers@gv.ventures" className={styles.email}>careers@gv.ventures</a>
                             </div>
                         </div>
