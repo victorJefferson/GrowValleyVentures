@@ -2,16 +2,15 @@ name: Force Deploy
 on:
   push:
     branches:
-      - main  # Make sure this matches your branch name (main or master)
+      - main 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
@@ -21,6 +20,19 @@ jobs:
 
       - name: Build with OpenNext
         run: npx @opennextjs/cloudflare build
+        env:
+          # Sanity
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          SANITY_WRITE_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
+          # Turnstile
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          # Webhooks
+          NINJAPIPE_CONTACT_WEBHOOK: ${{ secrets.NINJAPIPE_CONTACT_WEBHOOK }}
+          # Cloudflare
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Direct Deploy to Cloudflare
         run: npx @opennextjs/cloudflare deploy --project-name growvalleyventures
