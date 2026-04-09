@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { ArrowRight } from 'lucide-react';
 import { urlFor } from '@/lib/sanity';
 import styles from './page.module.scss';
@@ -31,7 +31,7 @@ function InsightCard({ insight }: { insight: Insight }) {
   return (
     <Link href={`/insights/${insight.slug}`} className={styles.card}>
       <div className={styles.cardImage}>
-        <Image src={imgSrc} alt={insight.title} fill className={styles.cardImg} />
+        <img src={imgSrc} alt={insight.title} className={styles.cardImg} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
       <div className={styles.cardBody}>
         <h3 className={styles.cardTitle}>{insight.title}</h3>
@@ -121,7 +121,7 @@ export default function InsightsContent({ featured, editorsPicks, latest, allIns
               {featured ? (
                 <Link href={`/insights/${featured.slug}`} className={styles.featuredCard}>
                   <div className={styles.featuredImage}>
-                    <Image src={featuredImgSrc} alt={featured.title} fill className={styles.featuredImg} />
+                    <img src={featuredImgSrc} alt={featured.title} className={styles.featuredImg} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className={styles.featuredMeta}>
                     <span className={styles.featuredTag}>{featured.tag}</span>
@@ -145,11 +145,11 @@ export default function InsightsContent({ featured, editorsPicks, latest, allIns
                     <Link href={`/insights/${item.slug}`} className={styles.pickLink}>
                       {item.mainImage && (
                         <div className={styles.pickThumb}>
-                          <Image
+                          <img
                             src={(urlFor(item.mainImage) as any).width(120).url()}
                             alt={item.title}
-                            fill
                             className={styles.pickThumbImg}
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
                       )}

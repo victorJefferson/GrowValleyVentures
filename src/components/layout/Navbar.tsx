@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import styles from './Navbar.module.scss';
 import { Button } from '../ui/Button';
 import { Menu, X, Mail } from 'lucide-react';
@@ -28,12 +28,11 @@ export function Navbar() {
                     <div className={`container ${styles.navContainer}`}>
                         <div className={styles.logo}>
                             <Link href="/">
-                                <Image
+                                <img
                                     src="/gv-logo-blue.png"
                                     alt="GrowValley Logo"
-                                    width={160}
-                                    height={60}
-                                    priority
+                                    width="160"
+                                    height="60"
                                     className={styles.logoImage}
                                 />
                             </Link>

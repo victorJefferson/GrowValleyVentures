@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Hero } from '@/components/ui/Hero';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import styles from './AboutUs.module.scss';
 
@@ -78,11 +78,11 @@ export default function AboutUsPage() {
                                 </p>
                             </div>
                             <div className={styles.introImage}>
-                                <Image
+                                <img
                                     src="/images/leadership_collaboration.png"
                                     alt="Leadership Collaboration"
-                                    width={600}
-                                    height={400}
+                                    width="600"
+                                    height="400"
                                     className={styles.borderCard}
                                 />
                             </div>

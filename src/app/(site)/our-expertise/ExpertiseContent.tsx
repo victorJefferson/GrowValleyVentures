@@ -5,7 +5,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Button } from "@/components/ui/Button";
 import { ChevronDown, Network } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
 import styles from "./Expertise.module.scss";
 
 const MandateCard = ({
@@ -135,11 +135,11 @@ export default function ExpertiseContent() {
             <div className={styles.headerLeft}>
               <div className={styles.headerIcon}>
                 <div className={`${styles.iconCircle} ${styles.noBg}`}>
-                  <Image
+                  <img
                     src="/images/taurus-hand-icon.png"
                     alt="Wealth Management"
-                    width={120}
-                    height={120}
+                    width="120"
+                    height="120"
                     style={{ objectFit: "contain" }}
                   />
                 </div>

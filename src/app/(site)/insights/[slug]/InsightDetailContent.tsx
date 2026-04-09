@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { urlFor } from "@/lib/sanity";
 import { PortableText } from "next-sanity";
 import { InsightsCarousel, InsightItem } from "@/components/ui/InsightsCarousel";
-import Image from "next/image";
+
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -96,13 +96,12 @@ export default function InsightDetailContent({ insight, relatedInsights }: Insig
       {insight.mainImage && (
         <div className="container">
           <div className={styles.mainImageWrapper}>
-            <Image 
+            <img 
               src={urlFor(insight.mainImage).url()} 
               alt={insight.title}
-              width={1200}
-              height={600}
+              width="1200"
+              height="600"
               className={styles.heroImage}
-              priority
             />
           </div>
         </div>

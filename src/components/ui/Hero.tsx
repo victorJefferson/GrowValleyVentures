@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Hero.module.scss';
 import { Button } from './Button';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { urlFor } from '@/lib/sanity';
 
 interface HeroProps {
@@ -43,13 +43,11 @@ export function Hero({ eyebrow, headline, subheadline, ctaText, ctaHref, image }
                     </div>
                 </div>
                 <div className={styles.heroArtDecoration}>
-                    <Image
+                    <img
                         src={heroImageSrc}
                         alt="Hero Model"
-                        fill
-                        priority
                         className={styles.heroImage}
-                        sizes="(max-width: 1024px) 100vw, 35vw"
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                 </div>
             </div>

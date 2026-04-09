@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { ArrowRight } from 'lucide-react';
 import styles from './Footer.module.scss';
 
@@ -36,11 +36,11 @@ export function Footer() {
                 {/* Branding & Contact Column */}
                 <div className={styles.brandCol}>
                     <Link href="/" className={styles.logoLink}>
-                        <Image
+                        <img
                             src="/gv-logo-blue.png"
                             alt="GrowValley Logo"
-                            width={160}
-                            height={60}
+                            width="160"
+                            height="60"
                             className={styles.logoImage}
                         />
                     </Link>

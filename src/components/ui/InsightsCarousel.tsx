@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import styles from './InsightsCarousel.module.scss';
 
@@ -109,11 +109,11 @@ export const InsightsCarousel: React.FC<InsightsCarouselProps> = ({
                   >
                     <div className={styles.cardCover}>
                       {insight.image ? (
-                        <Image
+                        <img
                           src={insight.image}
                           alt={insight.title}
-                          fill
                           className={styles.coverImg}
+                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                       ) : (
                         <div className={styles.coverPlaceholder} />
