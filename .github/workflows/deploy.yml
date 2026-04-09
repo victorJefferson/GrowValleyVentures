@@ -35,9 +35,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # REMOVED --no-config (it caused the endsWith error)
-          # ADDED --no-bundle (to skip that second failing build)
-          command: deploy .open-next/worker.js --name growvalleyventures --compatibility-date 2025-01-01 --no-bundle
+          # Path to the OpenNext worker bundle
+          command: deploy .open-next/worker.js --name growvalleyventures --no-bundle
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
