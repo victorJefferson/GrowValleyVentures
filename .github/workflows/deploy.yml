@@ -20,8 +20,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Clean build artifacts
+        run: rm -rf .open-next .next
+
       - name: Build with OpenNext
         run: npx @opennextjs/cloudflare build
+
+      - name: Check for images module
+        run: grep -r "cloudflare/images" .open-next || echo "No images module found"
+
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
