@@ -17,7 +17,7 @@ interface FormData {
     areaOfInterest: string;
     enquiry: string;
     marketingConsent: boolean;
-    captchaConfirmed: boolean;
+    captchaConfirmed: string;
 }
 
 const locations = [
@@ -47,7 +47,7 @@ export default function ContactContent() {
         areaOfInterest: "",
         enquiry: "",
         marketingConsent: false,
-        captchaConfirmed: false,
+        captchaConfirmed: "",
     });
 
     const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -138,7 +138,7 @@ export default function ContactContent() {
         setFormData({
             businessEmail: "", phoneNumber: "", firstName: "", lastName: "",
             location: "", jobTitle: "", companyName: "", companyHQ: "",
-            areaOfInterest: "", enquiry: "", marketingConsent: false, captchaConfirmed: false,
+            areaOfInterest: "", enquiry: "", marketingConsent: false, captchaConfirmed: "",
         });
         setErrors({});
     };
@@ -453,7 +453,7 @@ export default function ContactContent() {
                                         onVerify={(token) => {
                                             setFormData((prev) => ({
                                                 ...prev,
-                                                captchaConfirmed: token as any,
+                                                captchaConfirmed: token,
                                             }));
                                             if (errors.captchaConfirmed) {
                                                 setErrors((prev) => ({ ...prev, captchaConfirmed: undefined }));

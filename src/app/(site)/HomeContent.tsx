@@ -58,35 +58,35 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
   const solutions = [
     {
       id: "wealth-management-services",
-      title: "Wealth Management Services",
+      title: "Wealth Management",
       subtitle:
-        "Harnessing the wealth you have created, to serve your risk-return objectives.",
+        "Harnessing the wealth you have created to serve your risk-return objectives.",
       description: "",
-      href: "/our-capabilities/#wealth-management",
+      href: "/our-expertise/#wealth-management",
     },
     {
       id: "wealth-structuring-succession",
-      title: "Wealth Structuring & Succession Planning",
+      title: "Wealth Structuring",
       subtitle:
-        "Optimizing Wealth Holding Structures and Intergenerational Transfer of Wealth.",
+        "Optimizing wealth holding structures and the intergenerational transfer of wealth.",
       description: "",
-      href: "/our-capabilities/#wealth-structuring",
+      href: "/our-expertise/#wealth-structuring",
     },
     {
       id: "additional-family-office",
-      title: "Additional Family Office Services",
+      title: "Family Office Services",
       subtitle:
-        "Facilitating ancillary wealth management needs through best in breed service providers & in-house coordination capabilities.",
+        "Facilitating ancillary wealth needs through curated partners and in-house coordination.",
       description: "",
-      href: "/our-capabilities/#family-office",
+      href: "/our-expertise/#family-office",
     },
     {
       id: "prive-access",
-      title: "Privé Access To PE, VC And Real Estate Opportunities",
+      title: "Privé Access",
       subtitle:
-        "Unfolding opportunities through a dedicated Institutional and Private Deals Desk.",
+        "Unfolding institutional-grade opportunities through a dedicated Private Deals Desk.",
       description: "",
-      href: "/our-capabilities/#prive-access",
+      href: "/our-expertise/#prive-access",
     },
   ];
 
@@ -136,10 +136,10 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                 </div>
                 <div className={styles.whyCardContent}>
                   <div className={styles.whyCardLabel}>
-                    Wealth Management Services
+                    Wealth Management
                   </div>
                   <p>
-                    Harnessing the wealth you have created, to serve your
+                    Harnessing the wealth you have created to serve your
                     risk-return objectives
                   </p>
                 </div>
@@ -150,11 +150,11 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                 </div>
                 <div className={styles.whyCardContent}>
                   <div className={styles.whyCardLabel}>
-                    Wealth Structuring & Succession Planning
+                    Wealth Structuring
                   </div>
                   <p>
-                    Optimizing Wealth Holding Structures and Intergenerational
-                    Transfer of Wealth
+                    Optimizing wealth holding structures and intergenerational
+                    transfer of wealth
                   </p>
                 </div>
               </div>
@@ -164,12 +164,11 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                 </div>
                 <div className={styles.whyCardContent}>
                   <div className={styles.whyCardLabel}>
-                    Additional Family Office Services
+                    Family Office Services
                   </div>
                   <p>
-                    Facilitating ancillary wealth management needs through best
-                    in breed service providers & in-house coordination
-                    capabilities
+                    Facilitating ancillary wealth needs through curated partners
+                    and in-house coordination
                   </p>
                 </div>
               </div>
@@ -179,11 +178,11 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                 </div>
                 <div className={styles.whyCardContent}>
                   <div className={styles.whyCardLabel}>
-                    Privé Access To PE, VC And Real Estate Opportunities
+                    Privé Access
                   </div>
                   <p>
-                    Unfolding opportunities through a dedicated Institutional
-                    and Private Deals Desk
+                    Unfolding institutional-grade opportunities through a
+                    dedicated Private Deals Desk
                   </p>
                 </div>
               </div>

@@ -35,7 +35,7 @@ export default function CookiePolicyContent() {
 
                         <h2>Overview</h2>
                         <p>
-                            This Cookie Policy explains how GrowValley ("we", "us", and "our") uses cookies and similar 
+                            This Cookie Policy explains how GrowValley (&quot;we&quot;, &quot;us&quot;, and &quot;our&quot;) uses cookies and similar 
                             technologies to recognize you when you visit our website. It explains what these technologies are 
                             and why we use them, as well as your rights to control our use of them.
                         </p>
@@ -50,7 +50,7 @@ export default function CookiePolicyContent() {
                         <h2>How we use cookies</h2>
                         <p>
                             We use first-party and third-party cookies for several reasons. Some cookies are required for technical 
-                            reasons in order for our website to operate, and we refer to these as "essential" or "strictly necessary" 
+                            reasons in order for our website to operate, and we refer to these as &quot;essential&quot; or &quot;strictly necessary&quot; 
                             cookies. Other cookies also enable us to track and target the interests of our users to enhance the 
                             experience on our online properties.
                         </p>

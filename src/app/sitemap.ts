@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact',
     '/insights',
     '/team',
-    '/our-capabilities',
+    '/our-expertise',
     '/platform',
     '/privacy-policy',
     '/cookie-policy',
@@ -26,10 +26,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 2. Dynamic Insight Pages from Sanity
-  let insightRoutes: any[] = [];
+  interface InsightSitemapResult {
+    slug: string;
+    _updatedAt: string;
+  }
+
+  let insightRoutes: MetadataRoute.Sitemap = [];
   try {
-    const insights = await client.fetch(groq`*[_type == "insight" && defined(slug.current)]{ "slug": slug.current, _updatedAt }`);
-    insightRoutes = insights.map((insight: any) => ({
+    const insights = await client.fetch<InsightSitemapResult[]>(
+      groq`*[_type == "insight" && defined(slug.current)]{ "slug": slug.current, _updatedAt }`
+    );
+    insightRoutes = insights.map((insight) => ({
       url: `${baseUrl}/insights/${insight.slug}`,
       lastModified: new Date(insight._updatedAt),
       changeFrequency: 'monthly' as const,

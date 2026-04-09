@@ -120,9 +120,12 @@ export default function AboutUsPage() {
                         <span className={styles.eyebrowWhite}>Part of GrowValley Group</span>
                         <h2 className={styles.headingWhite}>Part of GrowValley Group</h2>
                         <p className={styles.bodyWhite}>
-                            GrowValley Group operates across four verticals, including Consulting, Ventures, Works, and Studios. GrowValley's investment platform is the vehicle through which the Group deploys capital, structures investment readiness, and manages portfolio positions.
+                            GrowValley Group operates across four verticals, including Consulting, Ventures, Works, and Studios. GrowValley&apos;s investment platform is the vehicle through which the Group deploys capital, structures investment readiness, and manages portfolio positions.
                         </p>
                         <div className={styles.ctaGroup}>
+                            <p className={styles.bodyWhite} style={{ marginBottom: '2rem' }}>
+                                It&apos;s a partnership based on rigour, transparency, and a shared commitment to sustainable wealth creation.
+                            </p>
                             <Link href="/contact">
                                 <Button size="lg" variant="secondary">Speak to an Expert</Button>
                             </Link>

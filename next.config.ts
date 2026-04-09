@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
     ],
   },
   transpilePackages: ["trust-guard-js"],
+  async redirects() {
+    return [
+      {
+        source: '/our-capabilities',
+        destination: '/our-expertise',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
