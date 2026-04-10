@@ -11,6 +11,19 @@ export const heroQuery = groq`
   }
 `;
 
+export const dataSectionQuery = groq`
+  *[_type == "dataSection"] | order(_updatedAt desc)[0] {
+    headline,
+    description,
+    stats[] {
+      prefix,
+      number,
+      suffix,
+      label
+    }
+  }
+`;
+
 export const insightsQuery = groq`
   *[_type == "insight"] | order(publishedAt desc)[0...3] {
     _id,

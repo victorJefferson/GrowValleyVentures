@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { client } from "@/lib/sanity";
-import { heroQuery, insightsQuery } from "@/lib/queries";
+import { heroQuery, insightsQuery, dataSectionQuery } from "@/lib/queries";
 import HomeContent from "./HomeContent";
 
 export const metadata: Metadata = {
@@ -27,10 +27,13 @@ export default async function Home() {
     let heroData = null;
     let insights = [];
 
+    let dataSectionData = null;
+
     try {
-        [heroData, insights] = await Promise.all([
+        [heroData, insights, dataSectionData] = await Promise.all([
             client.fetch(heroQuery),
-            client.fetch(insightsQuery)
+            client.fetch(insightsQuery),
+            client.fetch(dataSectionQuery)
         ]);
     } catch (error) {
         console.error("Error fetching CMS data on Server:", error);
@@ -40,6 +43,7 @@ export default async function Home() {
         <HomeContent
             heroData={heroData}
             insights={insights}
+            dataSectionData={dataSectionData}
         />
     );
 }

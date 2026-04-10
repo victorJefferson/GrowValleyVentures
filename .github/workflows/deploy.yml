@@ -57,6 +57,10 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # Let Wrangler read from wrangler.jsonc directly
           command: deploy
+          secrets: |
+            SANITY_WRITE_TOKEN
+            TURNSTILE_SECRET_KEY
+            NINJAPIPE_CONTACT_WEBHOOK
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}

@@ -28,9 +28,14 @@ import { Button } from "@/components/ui/Button";
 interface HomeContentProps {
   heroData: any;
   insights: any[];
+  dataSectionData: any;
 }
 
-export default function HomeContent({ heroData, insights }: HomeContentProps) {
+export default function HomeContent({
+  heroData,
+  insights,
+  dataSectionData,
+}: HomeContentProps) {
   const [activeSolution, setActiveSolution] = useState(0);
 
   const defaultHero = {
@@ -42,7 +47,20 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
     image: "/images/hero_model_v3.png",
   };
 
+  const defaultDataSection = {
+    headline: "Wealth managed. Clients served.",
+    description:
+      "GrowValley is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
+    stats: [
+      { prefix: "$", number: 2, suffix: "B+", label: "Assets under Advice" },
+      { number: 50, suffix: "+", label: "Wealth Management Specialists" },
+      { prefix: "$", number: 150, suffix: "M", label: "AUM Across Portfolio" },
+      { number: 60, suffix: "+", label: "Connected Professionals" },
+    ],
+  };
+
   const displayHero = heroData || defaultHero;
+  const displayDataSection = dataSectionData || defaultDataSection;
 
   const getHeroImage = () => {
     if (heroData?.image) {
@@ -135,9 +153,7 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                   <ShieldCheck size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>
-                    Wealth Management
-                  </div>
+                  <div className={styles.whyCardLabel}>Wealth Management</div>
                   <p>
                     Harnessing the wealth you have created to serve your
                     risk-return objectives
@@ -149,9 +165,7 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                   <Layers size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>
-                    Wealth Structuring
-                  </div>
+                  <div className={styles.whyCardLabel}>Wealth Structuring</div>
                   <p>
                     Optimizing wealth holding structures and intergenerational
                     transfer of wealth
@@ -177,9 +191,7 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
                   <Network size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>
-                    Privé Access
-                  </div>
+                  <div className={styles.whyCardLabel}>Privé Access</div>
                   <p>
                     Unfolding institutional-grade opportunities through a
                     dedicated Private Deals Desk
@@ -319,17 +331,21 @@ export default function HomeContent({ heroData, insights }: HomeContentProps) {
       <section className={styles.ctaBanner}>
         <div className="container">
           <h2 className={styles.speakToAnExpertBannerHeading}>
-            Serious about capital? <br /> Start with the right structure.
+            Ready to start a conversation?
           </h2>
           <Link href="/contact">
             <Button size="lg" variant="secondary">
-              Speak to an Expert
+              Speak with an Expert
             </Button>
           </Link>
         </div>
       </section>
 
-      <DataSection />
+      <DataSection
+        headline={displayDataSection.headline}
+        description={displayDataSection.description}
+        stats={displayDataSection.stats}
+      />
     </main>
   );
 }
