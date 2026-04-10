@@ -7,17 +7,22 @@ export async function POST(request: Request) {
     const { timestamp, consent, userAgent, url } = body;
 
     // Redact IP for privacy compliance (supports IPv4 and IPv6)
-    const ip = request.headers.get("x-forwarded-for") || "unknown";
+    const forwarded = request.headers.get("x-forwarded-for");
+    const ip = request.headers.get("cf-connecting-ip") || 
+               request.headers.get("x-real-ip") || 
+               (forwarded ? forwarded.split(",")[0].trim() : "unknown");
+
     let anonymizedIp = "unknown";
     
     if (ip.includes(".")) {
       // IPv4: 192.168.1.1 -> 192.168.1.xxx
       anonymizedIp = ip.split(".").slice(0, 3).join(".") + ".xxx";
     } else if (ip.includes(":")) {
-      // IPv6: ::1 or a full address
-      // For localhost ::1, just keep it as is + .xxx or redact it
+      // IPv6: 2001:db8:85a3:8d3:1319:8a2e:370:7348 -> 2001:db8:85a3:8d3:1319:8a2e:370:xxxx
       const parts = ip.split(":");
       anonymizedIp = parts.slice(0, Math.max(1, parts.length - 1)).join(":") + ":xxxx";
+    } else if (ip === "::1" || ip === "127.0.0.1") {
+      anonymizedIp = "localhost";
     }
 
     // Only skip if no token is configured or client is missing
