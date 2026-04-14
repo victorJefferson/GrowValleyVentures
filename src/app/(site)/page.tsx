@@ -31,7 +31,7 @@ export default async function Home() {
 
     try {
         [heroData, insights, dataSectionData] = await Promise.all([
-            client.fetch(heroQuery),
+            client.fetch(heroQuery, { pageSlug: "home" }),
             client.fetch(insightsQuery),
             client.fetch(dataSectionQuery)
         ]);

@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 export const heroQuery = groq`
-  *[_type == "hero" && defined(headline)] | order(_updatedAt desc)[0] {
+  *[_type == "hero" && pageSlug == $pageSlug][0] {
     eyebrow,
     headline,
     subheadline,
@@ -110,5 +110,18 @@ export const allInsightsForIndexQuery = groq`
     excerpt,
     mainImage,
     publishedAt
+  }
+`;
+
+export const leadershipQuery = groq`
+  *[_type == "leadership"] | order(_updatedAt desc)[0] {
+    eyebrow,
+    name,
+    title,
+    bio,
+    stats[] {
+      value,
+      label
+    }
   }
 `;

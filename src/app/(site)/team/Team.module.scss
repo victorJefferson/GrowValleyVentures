@@ -60,7 +60,7 @@
         border-color: var(--color-accent-blue);
     }
     
-    border: 1px solid rgba(26, 63, 167, 0.15);
+    border: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
     
     p {
         font-size: 0.95rem;

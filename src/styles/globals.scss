@@ -1,16 +1,38 @@
 /* Vistra Design Tokens */
 :root {
-  --color-primary-navy: #1A3FA7;
-  --color-hero-gradient-start: #0E2259;
-  --color-hero-gradient-end: #1A3FA7;
-  --color-surface-secondary: #EDF2F6;
-  --color-surface-tertiary: #F4F7F9;
-  --color-accent-blue: #99D9EA;
-  --color-white: #FFFFFF;
-  --color-text-body: #111827;
-  --color-text-muted: #4B5563;
-  --color-footer-bg: #0E2259;
+  /* Theme Base: #163224 (hsl(150, 39%, 14%)) */
+  --primary-h: 150;
+  --primary-s: 39%;
+  --primary-l: 14%;
 
+  /* Component Colors */
+  --color-primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --color-primary-light: hsl(var(--primary-h), var(--primary-s), 24%);
+  --color-primary-dark: hsl(var(--primary-h), var(--primary-s), 8%);
+  
+  --color-accent: #E0BA4C;
+  --color-accent-vibrant: hsl(var(--primary-h), 50%, 45%);
+  
+  --color-surface-1: hsl(var(--primary-h), 15%, 97%);
+  --color-surface-2: hsl(var(--primary-h), 15%, 93%);
+  --color-surface-3: hsl(var(--primary-h), 10%, 88%);
+
+  /* Legacy variable mappings for backward compatibility */
+  --color-primary-navy: var(--color-primary);
+  --color-hero-gradient-start: var(--color-primary-dark);
+  --color-hero-gradient-end: var(--color-primary);
+  --color-surface-secondary: var(--color-surface-2);
+  --color-surface-tertiary: var(--color-surface-3);
+  --color-accent-blue: var(--color-accent);
+  --color-white: #FFFFFF;
+  --color-text-body: hsl(var(--primary-h), 40%, 8%);
+  --color-text-muted: hsl(var(--primary-h), 10%, 40%);
+  --color-footer-bg: var(--color-primary-dark);
+
+  /* Brand Gradient (Left-to-Right Flow) */
+  --color-banner-gradient: linear-gradient(110deg, hsl(var(--primary-h), 40%, 6%) 0%, var(--color-primary-dark) 25%, var(--color-primary) 60%, hsl(var(--primary-h), 35%, 18%) 100%);
+
+  /* Typography & Layout */
   --font-family-sans: var(--font-sans), sans-serif;
   --font-size-base: 18px;
   --line-height-base: 1.6;

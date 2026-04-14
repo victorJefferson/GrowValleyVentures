@@ -4,6 +4,9 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import styles from "./Team.module.scss";
+import { client } from "@/lib/sanity";
+import { heroQuery } from "@/lib/queries";
+import { urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +21,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TeamPage() {
+export default async function TeamPage() {
+  let heroData = null;
+  try {
+    heroData = await client.fetch(heroQuery, { pageSlug: "team" });
+  } catch (err) {
+    console.error("Team Hero Fetch Error:", err);
+  }
+
+  const defaultHero = {
+    eyebrow: "GrowValley",
+    headline: "Our Team",
+    subheadline: "Wealth Management, delivered by people who know it.",
+    image: "/images/team_hero.png",
+  };
+
+  const displayHero = heroData || defaultHero;
+  const heroImage = heroData?.image ? urlFor(heroData.image).url() : displayHero.image;
+
   const team = [
     {
       name: "Executive Leadership",
@@ -55,10 +75,10 @@ export default function TeamPage() {
   return (
     <main>
       <Hero
-        eyebrow="GrowValley"
-        headline="Our Team"
-        subheadline="Wealth Management, delivered by people who know it."
-        image="/images/team_hero.png"
+        eyebrow={displayHero.eyebrow}
+        headline={displayHero.headline}
+        subheadline={displayHero.subheadline}
+        image={heroImage}
       />
 
       <section className="section-padding">

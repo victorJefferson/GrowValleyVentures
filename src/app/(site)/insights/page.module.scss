@@ -64,7 +64,7 @@
 .heroCol {
   display: flex;
   flex-direction: column;
-  background-color: #f7f9fb;
+  background-color: var(--color-surface-1);
   /* Subtle grey background */
   padding: 1.25rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -157,7 +157,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-color: #eee;
+  background-color: var(--color-surface-2);
 }
 
 .featuredImg {
@@ -382,7 +382,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: #e9ecef;
+  background: var(--color-surface-2);
   overflow: hidden;
 }
 

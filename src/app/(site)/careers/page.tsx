@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/ui/Hero";
 import styles from "./Careers.module.scss";
+import { client } from "@/lib/sanity";
+import { heroQuery } from "@/lib/queries";
+import { urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +18,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  let heroData = null;
+  try {
+    heroData = await client.fetch(heroQuery, { pageSlug: "careers" });
+  } catch (err) {
+    console.error("Careers Hero Fetch Error:", err);
+  }
+
+  const defaultHero = {
+    eyebrow: "CAREERS",
+    headline: "Join GrowValley.",
+    subheadline: "We are always looking for wealth management professionals who bring rigour, discretion, and a client-first approach to their work.",
+    image: "/images/careers_hero.png",
+  };
+
+  const displayHero = heroData || defaultHero;
+  const heroImage = heroData?.image ? urlFor(heroData.image).url() : displayHero.image;
+
   const roles = [
     {
       title: "Wealth Management Professionals",
@@ -34,10 +54,10 @@ export default function CareersPage() {
   return (
     <main>
       <Hero
-        eyebrow="CAREERS"
-        headline="Join GrowValley."
-        subheadline="We are always looking for wealth management professionals who bring rigour, discretion, and a client-first approach to their work."
-        image="/images/careers_hero.png"
+        eyebrow={displayHero.eyebrow}
+        headline={displayHero.headline}
+        subheadline={displayHero.subheadline}
+        image={heroImage}
       />
 
       <section className="section-padding">

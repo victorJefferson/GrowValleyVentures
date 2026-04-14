@@ -131,7 +131,7 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(26, 63, 167, 0.2);
+    box-shadow: 0 4px 12px hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.2);
 
     &:hover {
         background-color: var(--color-hero-gradient-start);

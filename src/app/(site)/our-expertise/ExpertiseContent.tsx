@@ -1,62 +1,56 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Hero } from "@/components/ui/Hero";
 import { Button } from "@/components/ui/Button";
-import { ChevronDown, Network } from "lucide-react";
+import { Network } from "lucide-react";
 import Link from "next/link";
-
+import { urlFor } from "@/lib/sanity";
 import styles from "./Expertise.module.scss";
 
-const MandateCard = ({
-  title,
-  content,
-}: {
-  title: string;
-  content: string;
-}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  return (
-    <div
-      className={`${styles.mandateCard} ${isExpanded ? styles.expanded : ""}`}
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
-      <div className={styles.cardHeader}>
-        <h3>{title}</h3>
-        <div className={styles.icon}>
-          <ChevronDown size={20} />
-        </div>
-      </div>
-      {isExpanded && (
-        <div className={styles.cardContent}>
-          <p>{content}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default function ExpertiseContent() {
+export default function ExpertiseContent({ heroData }: { heroData?: any }) {
   const [activeSection, setActiveSection] = useState("wealth-management");
+
+  const defaultHero = {
+    eyebrow: "GROWVALLEY",
+    headline: "Our Expertise",
+    subheadline: "Four disciplines. One strategy. Total accountability",
+    image: "/images/capabilities_hero.png",
+  };
+
+  const displayHero = heroData || defaultHero;
+  const heroImage = heroData?.image
+    ? urlFor(heroData.image).url()
+    : displayHero.image;
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
         "wealth-management",
-        "prive-access",
-        "wealth-structuring",
+        "family-office",
+        "private-access",
+        "succession-planning",
       ];
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 250; // Adjusted offset for better detection
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (
-          element &&
-          element.offsetTop <= scrollPosition &&
-          element.offsetTop + element.offsetHeight > scrollPosition
-        ) {
-          setActiveSection(section);
+        if (element) {
+          const top = element.offsetTop;
+          const bottom = top + element.offsetHeight;
+
+          if (scrollPosition >= top && scrollPosition < bottom) {
+            setActiveSection(section);
+          }
         }
+      }
+
+      // Handle the bottom of the page specifically for the last section
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+      ) {
+        setActiveSection("succession-planning");
       }
     };
 
@@ -67,8 +61,9 @@ export default function ExpertiseContent() {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
+      setActiveSection(id); // Set active immediately on click
       window.scrollTo({
-        top: element.offsetTop - 120,
+        top: element.offsetTop - 120, // Keep in sync with sticky nav height
         behavior: "smooth",
       });
     }
@@ -77,10 +72,10 @@ export default function ExpertiseContent() {
   return (
     <main>
       <Hero
-        eyebrow="GROWVALLEY"
-        headline="Our Expertise"
-        subheadline="A full suite of wealth management capabilities, built around you."
-        image="/images/capabilities_hero.png"
+        eyebrow={displayHero.eyebrow}
+        headline={displayHero.headline}
+        subheadline={displayHero.subheadline}
+        image={heroImage}
       />
 
       {/* Sticky Navigation */}
@@ -96,18 +91,26 @@ export default function ExpertiseContent() {
               Wealth Management
             </li>
             <li
-              className={activeSection === "prive-access" ? styles.active : ""}
-              onClick={() => scrollTo("prive-access")}
+              className={activeSection === "family-office" ? styles.active : ""}
+              onClick={() => scrollTo("family-office")}
             >
-              Privé Access
+              Family Office Services
             </li>
             <li
               className={
-                activeSection === "wealth-structuring" ? styles.active : ""
+                activeSection === "private-access" ? styles.active : ""
               }
-              onClick={() => scrollTo("wealth-structuring")}
+              onClick={() => scrollTo("private-access")}
             >
-              Wealth Structuring
+              Private Access to Opportunities
+            </li>
+            <li
+              className={
+                activeSection === "succession-planning" ? styles.active : ""
+              }
+              onClick={() => scrollTo("succession-planning")}
+            >
+              Succession Planning Services
             </li>
           </ul>
         </div>
@@ -119,10 +122,10 @@ export default function ExpertiseContent() {
           <div className={styles.introContent}>
             <h2 className={styles.introHeading}>Our Services</h2>
             <p className={styles.introParagraph}>
-              GrowValley provides a 360° holistic coverage of your wealth needs
-              through a comprehensive suite of Capabilities by serving as a
-              Confidante in Managing Clients&apos; needs and avoiding conflicts
-              of interest prevalent in traditional wealth management.
+              Most firms specialise in a product. We specialise in you. Across
+              every dimension of wealth management, from strategy to execution
+              to review, our practice operates as one integrated unit. No
+              conflicts. Outcome-focused.
             </p>
           </div>
         </div>
@@ -154,11 +157,11 @@ export default function ExpertiseContent() {
             </div>
             <div className={styles.headerRight}>
               <p className={styles.descriptorText}>
-                Engagement framework is entirely Client-centric with FAs/RMs,
-                supported by ICs, bringing deep insights and expertise in
-                managing Clients&apos; risk-return objectives by leveraging a
-                unique and bespoke framework for ideation while always keeping
-                risk management centric to our approach.
+                Every mandate begins with your goals, your risk profile, and
+                your time horizon. Your Relationship Manager, supported by our
+                Investment Committee, constructs a strategy built for you
+                specifically. No defaults. No templates. Disciplined execution
+                from day one.
               </p>
             </div>
           </div>
@@ -172,25 +175,77 @@ export default function ExpertiseContent() {
               <li>Adjust</li>
             </ol>
           </div>
+        </div>
+      </section>
 
-          <div className={styles.subContentSection}>
-            <h3 className={styles.subHeading}>Wealth Management</h3>
-            <p className={styles.subParagraph}>
-              GrowValley operates either under the terms of a discretionary or
-              an advisory management mandate. After reviewing your needs, we
-              fully customize a strategy matching your profile, investment
-              objectives and specific risk tolerance.
-            </p>
+      {/* Section 4: Family Office Services */}
+      <section
+        id="family-office"
+        className={`${styles.section} ${styles.bgLight}`}
+      >
+        <div className="container">
+          <div className={styles.twoColumnHeader}>
+            <div className={styles.headerLeft}>
+              <div className={styles.headerIcon}>
+                <div
+                  className={`${styles.iconCircle} ${styles.circularColoured}`}
+                >
+                  <Network size={40} strokeWidth={1.5} />
+                </div>
+              </div>
+              <h2 className={styles.mainTitle}>Family Office Services</h2>
+            </div>
+            <div className={styles.headerRight}>
+              <p className={styles.descriptorText}>
+                Investment management is one dimension of wealth. Most families
+                need more. We coordinate the full range of services that complex
+                wealth demands, working with best-in-class specialists and
+                managing every engagement on your behalf.
+              </p>
+            </div>
+          </div>
 
-            <div className={styles.mandateGrid}>
-              <MandateCard
-                title="Discretionary Mandate"
-                content="Entrusting the management of your portfolio to our specialist investment professionals while our back office manages trade execution and necessary reconciliations. Assuring you of dynamic adaptation to markets in order to minimise losses during volatile phases."
-              />
-              <MandateCard
-                title="Advisory Mandate"
-                content="Active and dynamic advice on asset allocation, single securities and investment vehicles. A consolidated and holistic approach to deciphering the 'noise' and guiding you to tailor your investments in keeping with your needs."
-              />
+          <div className={styles.serviceGrid}>
+            <div className={styles.serviceCard}>
+              <h4>Single Family Office Setup</h4>
+              <p>
+                Structuring and establishing a dedicated family office for
+                clients ready to formalise their wealth governance.
+              </p>
+            </div>
+            <div className={styles.serviceCard}>
+              <h4>Wealth Consolidation and Reporting</h4>
+              <p>
+                Unified reporting across all assets and entities. Full
+                visibility. No blind spots.
+              </p>
+            </div>
+            <div className={styles.serviceCard}>
+              <h4>Philanthropy</h4>
+              <p>
+                Structured giving, aligned to your values and your tax position.
+              </p>
+            </div>
+            <div className={styles.serviceCard}>
+              <h4>M&A and IPO</h4>
+              <p>
+                Advisory coordination for clients navigating corporate
+                transactions alongside their personal wealth.
+              </p>
+            </div>
+            <div className={styles.serviceCard}>
+              <h4>Social Impact Investing</h4>
+              <p>
+                Capital deployed with intention. Returns measured in more than
+                one currency.
+              </p>
+            </div>
+            <div className={styles.serviceCard}>
+              <h4>Collectibles and Art</h4>
+              <p>
+                Specialist access to valuation, acquisition, and estate planning
+                for alternative assets.
+              </p>
             </div>
           </div>
         </div>
@@ -198,7 +253,7 @@ export default function ExpertiseContent() {
 
       {/* Section 4: Privé Access */}
       <section
-        id="prive-access"
+        id="private-access"
         className={`${styles.section} ${styles.bgLight}`}
       >
         <div className="container">
@@ -212,14 +267,15 @@ export default function ExpertiseContent() {
                 </div>
               </div>
               <h2 className={styles.mainTitle}>
-                Privé Access to Private Equity, Venture Capital and Real Estate
-                Opportunities
+                Private Access to Opportunities
               </h2>
             </div>
             <div className={styles.headerRight}>
               <p className={styles.descriptorText}>
-                Unfolding opportunities through a dedicated Institutional and
-                Private Deals Desk.
+                The most valuable opportunities are distributed before the
+                market opens. GrowValley&apos;s Deals Desk gives clients access
+                to PE, VC, and real estate transactions that are sourced through
+                relationships, not listings.
               </p>
             </div>
           </div>
@@ -231,33 +287,29 @@ export default function ExpertiseContent() {
                 GrowValley&apos;s Institutional desk
               </h4>
               <p>
-                GrowValley&apos;s Institutional Desk is sourcing, structuring,
-                developing and introducing global market opportunities in:
+                We originate, structure, and place capital-market opportunities
+                across three areas: pre-IPO investment, real estate structuring
+                and distribution, and capital raises spanning venture, private
+                equity, and corporate mandates
               </p>
-              <ul>
-                <li>Pre IPO-Investment Opportunities</li>
-                <li>Real Estate Investment structuring and distribution</li>
-                <li>
-                  Capital Raise (Venture Capital, Private Equity and Corporate)
-                </li>
-              </ul>
             </div>
             <div className={styles.pillarCard}>
               <span className={styles.pillarNum}>2</span>
-              <h4>Highly qualified industry experts</h4>
+              <h4>Proven Practitioners</h4>
               <p>
-                Leverages the skillset of highly qualified industry experts with
-                a strong track record in deal origination and placement
+                Our team has originated, structured, and placed transactions.
+                Not merely advised on them. Clients benefit from people who have
+                sat on both sides of a deal.
               </p>
             </div>
             <div className={styles.pillarCard}>
               <span className={styles.pillarNum}>3</span>
               <h4>Capital sustainability</h4>
               <p>
-                The overriding focus of the Institutional Desk is on
-                &quot;capital sustainability&quot;, with the view to introducing
-                opportunities with potentially attractive exit multiples through
-                specialized access
+                Volume is not the objective. Every opportunity is evaluated
+                against capital durability, exit visibility, and risk-adjusted
+                return. We present fewer deals. The ones we present are worth
+                looking at.
               </p>
             </div>
           </div>
@@ -272,9 +324,9 @@ export default function ExpertiseContent() {
                 <div>
                   <strong>Cultivation</strong>
                   <p>
-                    Cultivation of a network of specialist access partners with
-                    a commendable track record in real estate investment across
-                    Western Europe, Middle East and Asia
+                    Our real estate network was built over years, not assembled
+                    overnight. It spans Western Europe, the Middle East, and
+                    Asia. Every relationship in it was earned.
                   </p>
                 </div>
               </div>
@@ -283,9 +335,8 @@ export default function ExpertiseContent() {
                 <div>
                   <strong>Identifying</strong>
                   <p>
-                    Identifying and sourcing undervalued Grade-A assets with a
-                    deep understanding of local markets based on investor
-                    interest
+                    Grade-A assets in markets others overlook. We source against
+                    client mandates, not against inventory we need to move.
                   </p>
                 </div>
               </div>
@@ -294,8 +345,9 @@ export default function ExpertiseContent() {
                 <div>
                   <strong>Returns</strong>
                   <p>
-                    Superior returns from realizing value through bespoke
-                    structures and corporate guarantees
+                    No standardised structures. Every deal is built to maximise
+                    value for the investor, with corporate guarantees applied
+                    where they are available and warranted.
                   </p>
                 </div>
               </div>
@@ -304,8 +356,8 @@ export default function ExpertiseContent() {
                 <div>
                   <strong>Arrangements</strong>
                   <p>
-                    Arrangements with select developers also for direct access
-                    to marquee projects
+                    Direct developer access. Clients secure positions in marquee
+                    projects before they reach general market release.
                   </p>
                 </div>
               </div>
@@ -315,15 +367,12 @@ export default function ExpertiseContent() {
       </section>
 
       {/* Section 5: Wealth Structuring & Succession Planning */}
-      <section id="wealth-structuring" className={styles.section}>
+      <section id="succession-planning" className={styles.section}>
         <div className="container">
           <div className={styles.sectionHeaderSimple}>
-            <h2 className={styles.mainTitle}>
-              Wealth Structuring & Succession Planning
-            </h2>
+            <h2 className={styles.mainTitle}>Succession Planning Services</h2>
             <p className={styles.introSubText}>
-              Optimizing Wealth Holding Structures and Intergenerational
-              Transfer of Wealth
+              How you hold wealth determines how much of it endures.
             </p>
           </div>
 
@@ -331,22 +380,28 @@ export default function ExpertiseContent() {
             <div className={styles.structuringItem}>
               <h4>Wealth Structuring</h4>
               <p>
-                Optimize and restructure holding of assets to deliver cost
-                efficient solutions
+                The structure surrounding your assets is as important as the
+                assets themselves. We redesign holding arrangements to improve
+                efficiency, reduce unnecessary cost, and strengthen the overall
+                integrity of your wealth position.
               </p>
             </div>
             <div className={styles.structuringItem}>
               <h4>Succession Planning</h4>
               <p>
-                Leverage strong network of professionals to guide and facilitate
-                your Succession plan
+                Wealth transfers poorly without a plan. We engage the right
+                legal and fiduciary professionals to construct a succession
+                framework that protects your family, reflects your intentions,
+                and holds across generations.
               </p>
             </div>
             <div className={styles.structuringItem}>
               <h4>Citizenship & Residency Services</h4>
               <p>
-                Access to firms that can assist obtaining various residency
-                status and passports (e.g., EB5 and Portugal Golden Visa)
+                Jurisdictional flexibility is a legitimate dimension of wealth
+                planning. We connect clients with specialist firms that navigate
+                residency and citizenship programmes, including EB-5 and
+                Portugal Golden Visa, with precision and discretion.
               </p>
             </div>
           </div>

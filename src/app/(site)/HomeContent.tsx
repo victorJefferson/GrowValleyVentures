@@ -1,21 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Hero } from "@/components/ui/Hero";
 import { DataSection } from "@/components/ui/DataSection";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-  PieChart,
-  Layers,
-  Landmark,
-  ShieldCheck,
-  Globe,
-  Target,
-  Lightbulb,
-  Network,
-} from "lucide-react";
+import { ArrowRight, Layers, ShieldCheck, Target, Network } from "lucide-react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
 import {
@@ -39,11 +27,12 @@ export default function HomeContent({
   const [activeSolution, setActiveSolution] = useState(0);
 
   const defaultHero = {
-    eyebrow: "GrowValley",
-    headline: "Your Wealth. Our Expertise. This Is GrowValley!",
-    subheadline: "A 360° approach to managing your wealth.",
-    ctaText: "Get in Touch",
-    ctaHref: "/contact",
+    eyebrow: "GROWVALLEY",
+    headline: "The only call you need to make.",
+    subheadline:
+      "We bring every dimension of your wealth under one team, one strategy, and one point of accountability.",
+    ctaText: "See How We Work",
+    ctaHref: "/our-expertise",
     image: "/images/hero_model_v3.png",
   };
 
@@ -76,35 +65,31 @@ export default function HomeContent({
   const solutions = [
     {
       id: "wealth-management-services",
-      title: "Wealth Management",
+      title: "Wealth Management Services",
       subtitle:
-        "Harnessing the wealth you have created to serve your risk-return objectives.",
-      description: "",
+        "Your goals. Your risk tolerance. Your timeline. We build the strategy and execute it with full discipline.",
       href: "/our-expertise/#wealth-management",
     },
     {
-      id: "wealth-structuring-succession",
-      title: "Wealth Structuring",
-      subtitle:
-        "Optimizing wealth holding structures and the intergenerational transfer of wealth.",
-      description: "",
-      href: "/our-expertise/#wealth-structuring",
-    },
-    {
-      id: "additional-family-office",
+      id: "family-office-services",
       title: "Family Office Services",
       subtitle:
-        "Facilitating ancillary wealth needs through curated partners and in-house coordination.",
-      description: "",
-      href: "/our-expertise/#family-office",
+        "Beyond investment. We coordinate the full complexity of your financial life, from philanthropy to M&A, through one accountable team.",
+      href: "/our-expertise/#family-office-services",
     },
     {
-      id: "prive-access",
-      title: "Privé Access",
+      id: "private-access-to-opportunities",
+      title: "Private Access to Opportunities",
       subtitle:
-        "Unfolding institutional-grade opportunities through a dedicated Private Deals Desk.",
-      description: "",
-      href: "/our-expertise/#prive-access",
+        "Institutional-grade PE, VC, and real estate opportunities. Sourced, structured, and presented through our dedicated Deals Desk.",
+      href: "/our-expertise/#private-access-to-opportunities",
+    },
+    {
+      id: "succession-planning-services",
+      title: "Succession Planning Services",
+      subtitle:
+        "How you hold wealth matters as much as how it grows. We design structures built for efficiency, succession, and longevity.",
+      href: "/our-expertise/#succession-planning-services",
     },
   ];
 
@@ -139,12 +124,12 @@ export default function HomeContent({
           <div className={styles.whySection}>
             <h2 className={styles.whyHeadingMain}>Why GrowValley?</h2>
             <p className={styles.whyBodyMain}>
-              GrowValley is a fully integrated wealth management powerhouse. We
-              globally serve our wealth management and institutional client
-              base. GrowValley&apos;s unique service model ensures that our
-              Client&apos;s interests come first by removing the inherent
-              conflict of interest typically prevalent in wealth management
-              advice.
+              Most wealthy individuals are not underserved by the financial
+              industry. They are over-advised by too many parts of it. Anadvisor
+              here. A banker there. A lawyer who has never spokento either.
+              Nobody responsible for how it all fits together. GrowValley was
+              built to solve that. One team. Everydimension of your wealth. One
+              relationship. Total accountability.
             </p>
 
             <div className={styles.whyCardGrid}>
@@ -153,10 +138,12 @@ export default function HomeContent({
                   <ShieldCheck size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Wealth Management</div>
+                  <div className={styles.whyCardLabel}>
+                    Wealth Management Services
+                  </div>
                   <p>
-                    Harnessing the wealth you have created to serve your
-                    risk-return objectives
+                    A strategy built around your goals. Executed with full
+                    discipline. Reviewed continuously.
                   </p>
                 </div>
               </div>
@@ -165,10 +152,12 @@ export default function HomeContent({
                   <Layers size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Wealth Structuring</div>
+                  <div className={styles.whyCardLabel}>
+                    Family Office Services
+                  </div>
                   <p>
-                    Optimizing wealth holding structures and intergenerational
-                    transfer of wealth
+                    One team coordinating every dimension of your wealth, from
+                    philanthropy to M&A.
                   </p>
                 </div>
               </div>
@@ -178,11 +167,11 @@ export default function HomeContent({
                 </div>
                 <div className={styles.whyCardContent}>
                   <div className={styles.whyCardLabel}>
-                    Family Office Services
+                    Private Access to Opportunities
                   </div>
                   <p>
-                    Facilitating ancillary wealth needs through curated partners
-                    and in-house coordination
+                    PE, VC, and real estate deals sourced before they reach the
+                    open market.
                   </p>
                 </div>
               </div>
@@ -191,15 +180,30 @@ export default function HomeContent({
                   <Network size={48} strokeWidth={1} />
                 </div>
                 <div className={styles.whyCardContent}>
-                  <div className={styles.whyCardLabel}>Privé Access</div>
+                  <div className={styles.whyCardLabel}>
+                    Succession Planning Services
+                  </div>
                   <p>
-                    Unfolding institutional-grade opportunities through a
-                    dedicated Private Deals Desk
+                    Structures designed to protect your wealth and transfer it
+                    cleanly across generations.
                   </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.miniCta}>
+        <div className={styles.miniCtaInner}>
+          <div className={styles.miniCtaText}>
+            <h3>Partner with the best</h3>
+          </div>
+          <Link href="/contact">
+            <Button variant="secondary" size="lg">
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -239,9 +243,6 @@ export default function HomeContent({
                       {solutions[activeSolution].subtitle}
                     </p>
                   </div>
-                  <p className={styles.description}>
-                    {solutions[activeSolution].description}
-                  </p>
                   <Link
                     href={solutions[activeSolution].href}
                     className={styles.learnMore}
@@ -263,7 +264,6 @@ export default function HomeContent({
                       <h2 className={styles.cardTitleH2}>{s.title}</h2>
                       <p className={styles.subtitle}>{s.subtitle}</p>
                     </div>
-                    <p className={styles.description}>{s.description}</p>
                     <Link href={s.href} className={styles.learnMore}>
                       Learn more <ArrowRight size={16} />
                     </Link>
