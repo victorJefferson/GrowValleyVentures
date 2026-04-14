@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { AboutUsSolutions } from "./AboutUsSolutions";
 import { Hero } from "@/components/ui/Hero";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { CaseStudiesCarousel } from "@/components/ui/CaseStudiesCarousel";
 import Link from "next/link";
 import styles from "./AboutUs.module.scss";
 import { client } from "@/lib/sanity";
-import { heroQuery, leadershipQuery } from "@/lib/queries";
+import { heroQuery, leadershipQuery, caseStudiesQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
@@ -24,11 +26,13 @@ export const metadata: Metadata = {
 export default async function AboutUsPage() {
   let heroData = null;
   let leadershipData = null;
+  let caseStudiesData: any[] = [];
 
   try {
-    [heroData, leadershipData] = await Promise.all([
+    [heroData, leadershipData, caseStudiesData] = await Promise.all([
       client.fetch(heroQuery, { pageSlug: "about" }),
       client.fetch(leadershipQuery),
+      client.fetch(caseStudiesQuery),
     ]);
   } catch (err) {
     console.error("About Us Data Fetch Error:", err);
@@ -66,25 +70,6 @@ export default async function AboutUsPage() {
 
   const displayLeadership = leadershipData || defaultLeadership;
 
-  const whatWeDo = [
-    {
-      title: "Wealth Management Services",
-      desc: "For clients who want their wealth managed with the same rigour applied to institutional capital. Strategy, execution, and ongoing oversight, delivered by one accountable team.",
-    },
-    {
-      title: "Family Office Services",
-      desc: "For clients whose needs extend beyond investment. We bring in the right specialists, across legal, philanthropy, M&A, and reporting, and coordinate every engagement on your behalf",
-    },
-    {
-      title: "Private Access to Opportunities",
-      desc: "For qualified investors who expect more than the open market offers. Our DealsDesk sources and structures opportunities before they reach general circulation.",
-    },
-    {
-      title: "Succession Planning Services",
-      desc: "For clients who want their wealth to outlast them. We design holding structures that protect assets, minimise unnecessary cost, and transfer wealth across generations with precision.",
-    },
-  ];
-
   return (
     <main>
       <Hero
@@ -96,24 +81,39 @@ export default async function AboutUsPage() {
 
       <section className="section-padding">
         <div className="container">
-          <div className={styles.positioningGrid}>
-            <div className={styles.pillar}>
-              <span className={styles.pillarLabel}>
-                Wealth Management Services
+          <div className={styles.positioningPanel}>
+            {/* Left: Pillars */}
+            <div className={styles.positioningContent}>
+              <span className={styles.positioningEyebrow}>
+                Our Core Disciplines
               </span>
+              <div className={styles.pillarList}>
+                {[
+                  "Wealth Management Services",
+                  "Family Office Services",
+                  "Private Access to Opportunities",
+                  "Succession Planning Services",
+                ].map((label, i) => (
+                  <div className={styles.pillarRow} key={i}>
+                    <span className={styles.pillarIndex}>
+                      0{i + 1}
+                    </span>
+                    <span className={styles.pillarLabel}>{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className={styles.pillar}>
-              <span className={styles.pillarLabel}>Family Office Services</span>
-            </div>
-            <div className={styles.pillar}>
-              <span className={styles.pillarLabel}>
-                Private Access to Opportunities
-              </span>
-            </div>
-            <div className={styles.pillar}>
-              <span className={styles.pillarLabel}>
-                Succession Planning Services
-              </span>
+
+            {/* Divider */}
+            <div className={styles.positioningDivider} aria-hidden="true" />
+
+            {/* Right: G Logo — structural anchor */}
+            <div className={styles.positioningLogoPane}>
+              <img
+                src="/g-logo-green.png"
+                alt="GrowValley"
+                className={styles.positioningLogoImg}
+              />
             </div>
           </div>
         </div>
@@ -151,20 +151,17 @@ export default async function AboutUsPage() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
-          <span className={styles.eyebrow}>WHAT WE DO</span>
-          <h2 className={styles.heading}>Our Services</h2>
-          <div className={styles.functionGrid}>
-            {whatWeDo.map((item, idx) => (
-              <Card key={idx} className={styles.functionCard}>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </Card>
-            ))}
+      {/* Vistra Inspired Solutions Section */}
+      <AboutUsSolutions />
+
+      {/* Case Studies Carousel */}
+      {caseStudiesData && caseStudiesData.length > 0 && (
+        <section className="section-padding">
+          <div className="container">
+            <CaseStudiesCarousel caseStudies={caseStudiesData} />
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="section-padding">
         <div className="container">
@@ -186,6 +183,7 @@ export default async function AboutUsPage() {
           </div>
         </div>
       </section>
+
       <section className="section-padding">
         <div className="container">
           <div className={styles.roundedPanel}>
@@ -194,9 +192,7 @@ export default async function AboutUsPage() {
                 <span className={styles.founderEyebrow}>
                   {displayLeadership.eyebrow}
                 </span>
-                <h2 className={styles.founderName}>
-                  {displayLeadership.name}
-                </h2>
+                <h2 className={styles.founderName}>{displayLeadership.name}</h2>
                 <span className={styles.founderTitle}>
                   {displayLeadership.title}
                 </span>

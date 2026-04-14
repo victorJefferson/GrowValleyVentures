@@ -450,7 +450,7 @@
 
 /* WHY Section Styles */
 .whySection {
-    text-align: left;
+    text-align: center !important;
     margin: 0;
 }
 
@@ -465,7 +465,7 @@
 }
 
 .whyHeadingMain {
-    font-size: clamp(1.85rem, 5vw, 4.5rem);
+    font-size: clamp(1.85rem, 5vw, 3.5rem);
     /* Reduced from 2.5rem to fit iPhone 375px */
     line-height: 1.1;
     margin-bottom: 2rem;
@@ -488,7 +488,7 @@
     font-size: 1.125rem;
     line-height: 1.5;
     color: var(--color-text-body);
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem;
     max-width: 800px;
 }
 

@@ -125,3 +125,13 @@ export const leadershipQuery = groq`
     }
   }
 `;
+
+export const caseStudiesQuery = groq`
+  *[_type == "caseStudy"] | order(order asc, _createdAt desc) {
+    _id,
+    title,
+    coverImage,
+    "pdfUrl": pdfFile.asset->url
+  }
+`;
+

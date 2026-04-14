@@ -77,7 +77,7 @@
 // Section 2: Intro
 .introSection {
     padding: 5rem 0 3rem 0;
-    text-align: left;
+    text-align: center;
 
     @media (min-width: 1024px) {
         padding: 8rem 0 4rem 0;
@@ -86,6 +86,7 @@
 
 .introContent {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .sectionEyebrow {
@@ -601,4 +602,4 @@
         line-height: 1.65;
         margin: 0;
     }
-}
+}
