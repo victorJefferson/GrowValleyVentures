@@ -32,6 +32,7 @@ jobs:
           TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
           NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
           NINJAPIPE_CONTACT_WEBHOOK: ${{ secrets.NINJAPIPE_CONTACT_WEBHOOK }}
+          NEXT_PUBLIC_MAINTENANCE_MODE: ${{ secrets.NEXT_PUBLIC_MAINTENANCE_MODE }}
 
       - name: Check for images module
         run: grep -r "cloudflare/images" .open-next || echo "No images module found"
@@ -68,3 +69,4 @@ jobs:
           TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
           NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
           NINJAPIPE_CONTACT_WEBHOOK: ${{ secrets.NINJAPIPE_CONTACT_WEBHOOK }}
+          NEXT_PUBLIC_MAINTENANCE_MODE: ${{ secrets.NEXT_PUBLIC_MAINTENANCE_MODE }}
