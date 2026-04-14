@@ -17,10 +17,7 @@ const builder = createImageUrlBuilder(client);
  * Helper to generate Sanity image URLs with precise sizing
  * @param source Sanity image document or asset reference
  */
-export function urlFor(source: Parameters<typeof builder.image>[0]) {
-    if (!isConfigured || !source) {
-        return { url: () => "" };
-    }
+export function urlFor(source: any) {
     return builder.image(source);
 }
 
