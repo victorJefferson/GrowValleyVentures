@@ -4,7 +4,7 @@ export const trustGuardConfig: TrustGuardConfig = {
   active: true, // Toggle the entire system
   branding: {
     name: "GrowValley",
-    logo: "/gv-logo-black.png", // Using neutral black logo to match green theme
+    logo: "/gv-logo-green.png", // Using neutral black logo to match green theme
     colors: {
       primary: "#163224", // Institutional Green
       text: "#111827",

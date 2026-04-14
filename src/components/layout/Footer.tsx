@@ -37,7 +37,7 @@ export function Footer() {
         <div className={styles.brandCol}>
           <Link href="/" className={styles.logoLink}>
             <img
-              src="/gv-logo-blue.png"
+              src="/gv-logo-green.png"
               alt="GrowValley Logo"
               width="160"
               height="60"
