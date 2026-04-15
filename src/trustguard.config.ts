@@ -15,7 +15,7 @@ export const trustGuardConfig: TrustGuardConfig = {
     necessary: {
       id: "necessary",
       title: "Necessary",
-      description: "Required for the site to function properly. They ensure basic functionalities and security features of the website, anonymously.",
+      description: "Required for the site to function properly. These cookies ensure basic functionality and security features of the website, anonymously.",
       isAlwaysEnabled: true,
     },
   },

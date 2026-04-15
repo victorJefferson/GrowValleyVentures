@@ -40,7 +40,7 @@ export default function CookiePolicyContent() {
             <p>
               This Cookie Policy explains how GrowValley (&quot;we&quot;,
               &quot;us&quot;, and &quot;our&quot;) uses cookies and similar
-              technologies to recognize you when you visit our website. It
+              technologies to recognise you when you visit our website. It
               explains what these technologies are and why we use them, as well
               as your rights to control our use of them.
             </p>
@@ -111,7 +111,7 @@ export default function CookiePolicyContent() {
               We may update this Cookie Policy from time to time in order to
               reflect, for example, changes to the cookies we use or for other
               operational, legal, or regulatory reasons. Please therefore
-              re-visit this Cookie Policy regularly to stay informed about our
+              revisit this Cookie Policy regularly to stay informed about our
               use of cookies and related technologies.
             </p>
           </div>

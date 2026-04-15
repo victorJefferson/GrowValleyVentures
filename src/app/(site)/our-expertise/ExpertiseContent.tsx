@@ -14,7 +14,7 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
   const defaultHero = {
     eyebrow: "GROWVALLEY",
     headline: "Our Expertise",
-    subheadline: "Four disciplines. One strategy. Total accountability",
+    subheadline: "Four disciplines. One strategy. Total accountability.",
     image: "/images/capabilities_hero.png",
   };
 
@@ -251,7 +251,7 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
         </div>
       </section>
 
-      {/* Section 4: Privé Access */}
+      {/* Section 4: Private access */}
       <section
         id="private-access"
         className={`${styles.section} ${styles.bgLight}`}
@@ -290,7 +290,7 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
                 We originate, structure, and place capital-market opportunities
                 across three areas: pre-IPO investment, real estate structuring
                 and distribution, and capital raises spanning venture, private
-                equity, and corporate mandates
+                equity, and corporate mandates.
               </p>
             </div>
             <div className={styles.pillarCard}>

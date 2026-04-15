@@ -134,7 +134,7 @@ export default async function AboutUsPage() {
                   picture, coordinates every dimension of their wealth, and is
                   accountable for how it all fits together. That is what we do.
                   Not one part of your wealth. All of it. One team. One
-                  strategy. One point of accountability
+                  strategy. One point of accountability.
                 </p>
               </div>
               <div className={styles.introImage}>

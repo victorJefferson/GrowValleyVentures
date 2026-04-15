@@ -125,10 +125,10 @@ export default function HomeContent({
             <h2 className={styles.whyHeadingMain}>Why GrowValley?</h2>
             <p className={styles.whyBodyMain}>
               Most wealthy individuals are not underserved by the financial
-              industry. They are over-advised by too many parts of it. Anadvisor
-              here. A banker there. A lawyer who has never spokento either.
+              industry. They are over-advised by too many parts of it. An advisor
+              here. A banker there. A lawyer who has never spoken to either.
               Nobody responsible for how it all fits together. GrowValley was
-              built to solve that. One team. Everydimension of your wealth. One
+              built to solve that. One team. Every dimension of your wealth. One
               relationship. Total accountability.
             </p>
 
