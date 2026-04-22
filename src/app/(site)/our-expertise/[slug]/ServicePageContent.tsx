@@ -376,10 +376,10 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
           {/* Breadcrumb — same pattern as Contact page */}
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
-            <span>/</span>
+            <ChevronRight className={styles.separator} size={14} />
             <Link href="/our-expertise">Our Expertise</Link>
-            <span>/</span>
-            <span>{service.title}</span>
+            <ChevronRight className={styles.separator} size={14} />
+            <span className={styles.current}>{service.title}</span>
           </nav>
 
           {/* 50/50 Hero Split */}

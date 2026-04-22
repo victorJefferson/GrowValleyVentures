@@ -18,19 +18,66 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  line-height: 1.5; // Ensure good vertical space if it wraps
+
+  @media (max-width: 600px) {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.8rem;
+    gap: 0.35rem 0.6rem; // Slightly more horizontal gap, less vertical
+  }
+
+  a, span {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
 
   a {
     color: var(--color-primary-navy);
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s ease;
 
     &:hover {
+      color: var(--color-accent);
       text-decoration: underline;
     }
   }
 
   span {
     color: var(--color-text-muted);
+
+    &.separator {
+      opacity: 0.35;
+      margin: 0 0.1rem;
+      flex-shrink: 0;
+
+      @media (max-width: 480px) {
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+
+    &.current {
+      color: var(--color-primary-navy);
+      font-weight: 500;
+      opacity: 0.8;
+      
+      @media (max-width: 600px) {
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  a:first-child {
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 }
 

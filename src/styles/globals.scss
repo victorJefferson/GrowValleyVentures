@@ -79,6 +79,8 @@ body {
   line-height: var(--line-height-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Root layout resets */
@@ -175,6 +177,11 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+.siteWrapper {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .sr-only {
