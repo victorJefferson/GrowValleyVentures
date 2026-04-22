@@ -3,55 +3,59 @@
 import React, { useState } from "react";
 import styles from "./AboutUs.module.scss";
 
-const solutionsData = [
-  {
-    category: "Wealth Management",
-    headline: "Wealth Management Services",
-    intro: "For clients who want their wealth managed with the same rigour applied to institutional capital.",
-    solutions: [
-      { title: "Strategy", desc: "Institutional-grade strategy design based on your unique goals." },
-      { title: "Execution", desc: "Disciplined implementation from day one with total accountability." },
-      { title: "Ongoing Oversight", desc: "Continuous monitoring and review of your entire wealth position." },
-      { title: "One Accountable Team", desc: "Every dimension of wealth delivered by a single integrated unit." },
-    ],
-  },
-  {
-    category: "Family Office",
-    headline: "Family Office Services",
-    intro: "For clients whose needs extend beyond investment. We coordinate every engagement on your behalf.",
-    solutions: [
-      { title: "Legal & Fiduciary", desc: "Coordinating specialist legal advice for complex wealth demands." },
-      { title: "Philanthropy", desc: "Structured giving aligned to your legacy and values." },
-      { title: "M&A", desc: "Advisory coordination for corporate transactions and liquidity events." },
-      { title: "Reporting", desc: "Unified reporting across all assets, entities, and jurisdictions." },
-    ],
-  },
-  {
-    category: "Private Access",
-    headline: "Private Access to Opportunities",
-    intro: "For qualified investors who expect more than the open market offers.",
-    solutions: [
-      { title: "PE Transactions", desc: "Access to private equity deals sourced through deep relationships." },
-      { title: "VC Transactions", desc: "Venture deals structured and placed by proven practitioners." },
-      { title: "Real Estate Access", desc: "Off-market real estate transactions spanning global jurisdictions." },
-      { title: "Relationship Based", desc: "Opportunities sourced through networks, not public listings." },
-    ],
-  },
-  {
-    category: "Succession Planning",
-    headline: "Succession Planning Services",
-    intro: "For clients who want their wealth to outlast them across generations.",
-    solutions: [
-      { title: "Protect Assets", desc: "Holding structures designed to safeguard wealth integrity." },
-      { title: "Minimise Cost", desc: "Redesigning arrangements to reduce unnecessary operational costs." },
-      { title: "Wealth Transfer", desc: "Constructing succession frameworks that hold for generations." },
-      { title: "Robust Planning", desc: "Precision planning that reflects your intentions and protects family." },
-    ],
-  },
+// Fallback structured exactly like the CMS data we'd receive
+const fallbackCategories = [
+  { _id: 'cat1', title: 'Wealth Management', description: 'For clients who want their wealth managed with the same rigour applied to institutional capital.', sectionId: 'wealth-management' },
+  { _id: 'cat2', title: 'Family Office Services', description: 'For clients whose needs extend beyond investment. We coordinate every engagement on your behalf.', sectionId: 'family-office' },
+  { _id: 'cat3', title: 'Private Access to Opportunities', description: 'For qualified investors who expect more than the open market offers.', sectionId: 'private-access' },
+  { _id: 'cat4', title: 'Succession Planning Services', description: 'For clients who want their wealth to outlast them across generations.', sectionId: 'succession-planning' }
 ];
 
-export function AboutUsSolutions() {
+// Fallback services manually mapping to those categories if no CMS data exists
+const fallbackServices = [
+  // Wealth Management (virtual services just to populate the 4 points)
+  { category: { title: "Wealth Management" }, title: "Strategy", description: "Institutional-grade strategy design based on your unique goals." },
+  { category: { title: "Wealth Management" }, title: "Execution", description: "Disciplined implementation from day one with total accountability." },
+  { category: { title: "Wealth Management" }, title: "Ongoing Oversight", description: "Continuous monitoring and review of your entire wealth position." },
+  { category: { title: "Wealth Management" }, title: "One Accountable Team", description: "Every dimension of wealth delivered by a single integrated unit." },
+
+  // Family Office
+  { category: { title: "Family Office Services" }, title: "Legal & Fiduciary", description: "Coordinating specialist legal advice for complex wealth demands." },
+  { category: { title: "Family Office Services" }, title: "Philanthropy", description: "Structured giving aligned to your legacy and values." },
+  { category: { title: "Family Office Services" }, title: "M&A", description: "Advisory coordination for corporate transactions and liquidity events." },
+  { category: { title: "Family Office Services" }, title: "Reporting", description: "Unified reporting across all assets, entities, and jurisdictions." },
+
+  // Private Access
+  { category: { title: "Private Access to Opportunities" }, title: "PE Transactions", description: "Access to private equity deals sourced through deep relationships." },
+  { category: { title: "Private Access to Opportunities" }, title: "VC Transactions", description: "Venture deals structured and placed by proven practitioners." },
+  { category: { title: "Private Access to Opportunities" }, title: "Real Estate Access", description: "Off-market real estate transactions spanning global jurisdictions." },
+  { category: { title: "Private Access to Opportunities" }, title: "Relationship Based", description: "Opportunities sourced through networks, not public listings." },
+
+  // Succession
+  { category: { title: "Succession Planning Services" }, title: "Protect Assets", description: "Holding structures designed to safeguard wealth integrity." },
+  { category: { title: "Succession Planning Services" }, title: "Minimise Cost", description: "Redesigning arrangements to reduce unnecessary operational costs." },
+  { category: { title: "Succession Planning Services" }, title: "Wealth Transfer", description: "Constructing succession frameworks that hold for generations." },
+  { category: { title: "Succession Planning Services" }, title: "Robust Planning", description: "Precision planning that reflects your intentions and protects family." }
+];
+
+export function AboutUsSolutions({ 
+  initialCategories = [], 
+  initialServices = [] 
+}: { 
+  initialCategories?: any[]; 
+  initialServices?: any[]; 
+}) {
   const [activeTab, setActiveTab] = useState(0);
+
+  const categories = initialCategories.length > 0 ? initialCategories : fallbackCategories;
+  const services = initialServices.length > 0 ? initialServices : fallbackServices;
+
+  // The currently selected category
+  const currentCategory = categories[activeTab];
+  if (!currentCategory) return null;
+
+  // Find all services linked to this category
+  const currentServices = services.filter(s => s.category?.title === currentCategory.title);
 
   return (
     <section className={styles.solutionsSection}>
@@ -59,30 +63,36 @@ export function AboutUsSolutions() {
         <div className={styles.solutionsSplit}>
           <div className={styles.solutionsInfo}>
             <span className={styles.eyebrow}>Our solutions</span>
-            <h2 className={styles.heading}>{solutionsData[activeTab].headline}</h2>
+            <h2 className={styles.heading}>{currentCategory.title}</h2>
             <p className={styles.body}>
-              {solutionsData[activeTab].intro}
+              {currentCategory.description || "Integrated advisory and alignment."}
             </p>
 
             <div className={styles.solutionsTabs}>
-              {solutionsData.map((tab, idx) => (
-                <button
-                  key={idx}
-                  className={`${styles.tabTrigger} ${
-                    activeTab === idx ? styles.active : ""
-                  }`}
-                  onClick={() => setActiveTab(idx)}
-                >
-                  {tab.category}
-                </button>
-              ))}
+              {categories.map((cat, idx) => {
+                // Keep the tab name short if possible (e.g. "Wealth Management" instead of "Wealth Management Services")
+                const shortTitle = cat.title.replace(" Services", "");
+                
+                return (
+                  <button
+                    key={cat._id || idx}
+                    className={`${styles.tabTrigger} ${
+                      activeTab === idx ? styles.active : ""
+                    }`}
+                    onClick={() => setActiveTab(idx)}
+                  >
+                    {shortTitle}
+                  </button>
+                )
+              })}
             </div>
 
             <div className={styles.serviceGridSub}>
-              {solutionsData[activeTab].solutions.map((item, idx) => (
+              {/* Display up to 4 services as bullet points here */}
+              {currentServices.slice(0, 4).map((item, idx) => (
                 <div key={idx} className={styles.serviceItemCard}>
                   <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
+                  <p>{item.description}</p>
                 </div>
               ))}
             </div>

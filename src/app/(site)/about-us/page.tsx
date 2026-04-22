@@ -5,9 +5,10 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { CaseStudiesCarousel } from "@/components/ui/CaseStudiesCarousel";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import styles from "./AboutUs.module.scss";
 import { client } from "@/lib/sanity";
-import { heroQuery, leadershipQuery, caseStudiesQuery } from "@/lib/queries";
+import { heroQuery, leadershipQuery, caseStudiesQuery, serviceCategoriesQuery, allServicesQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
@@ -27,12 +28,16 @@ export default async function AboutUsPage() {
   let heroData = null;
   let leadershipData = null;
   let caseStudiesData: any[] = [];
+  let categories: any[] = [];
+  let services: any[] = [];
 
   try {
-    [heroData, leadershipData, caseStudiesData] = await Promise.all([
+    [heroData, leadershipData, caseStudiesData, categories, services] = await Promise.all([
       client.fetch(heroQuery, { pageSlug: "about" }),
       client.fetch(leadershipQuery),
       client.fetch(caseStudiesQuery),
+      client.fetch(serviceCategoriesQuery),
+      client.fetch(allServicesQuery)
     ]);
   } catch (err) {
     console.error("About Us Data Fetch Error:", err);
@@ -109,48 +114,57 @@ export default async function AboutUsPage() {
           </div>
         </div>
       </section>
-      <section className="section-padding">
+      <section className={styles.coreDisciplinesSection}>
         <div className="container">
-          <div className={styles.positioningPanel}>
-            {/* Left: Pillars */}
-            <div className={styles.positioningContent}>
-              <span className={styles.positioningEyebrow}>
-                Our Core Disciplines
-              </span>
-              <div className={styles.pillarList}>
-                {[
-                  "Wealth Management Services",
-                  "Family Office Services",
-                  "Private Access to Opportunities",
-                  "Succession Planning Services",
-                ].map((label, i) => (
-                  <div className={styles.pillarRow} key={i}>
-                    <span className={styles.pillarIndex}>
-                      0{i + 1}
-                    </span>
-                    <span className={styles.pillarLabel}>{label}</span>
+          <div className={styles.coreDisciplinesHeader}>
+            <span className={styles.coreDisciplinesEyebrow}>
+              Our Core Disciplines
+            </span>
+          </div>
+
+          <div className={styles.coreDisciplinesGrid}>
+            {(categories.length > 0
+              ? categories
+              : [
+                { title: "Wealth Management", sectionId: "wealth-management" },
+                { title: "Family Office Services", sectionId: "family-office" },
+                { title: "Private Access to Opportunities", sectionId: "private-access" },
+                { title: "Succession Planning Services", sectionId: "succession-planning" },
+              ]
+            ).map((cat, i) => {
+              // A robust fallback resolution when CMS 'sectionId' field is blank
+              let targetHash = cat.sectionId;
+              if (!targetHash) {
+                const titleLower = (cat.title || "").toLowerCase();
+                if (titleLower.includes("wealth")) targetHash = "wealth-management";
+                else if (titleLower.includes("family")) targetHash = "family-office";
+                else if (titleLower.includes("private")) targetHash = "private-access";
+                else if (titleLower.includes("succession")) targetHash = "succession-planning";
+                else targetHash = cat.slug || "";
+              }
+
+              return (
+                <Link
+                  href={`/our-expertise/#${targetHash}`}
+                  className={styles.disciplineTile}
+                  key={i}
+                >
+                  <span className={styles.tileIndex}>0{i + 1}</span>
+                  <div className={styles.tileBottom}>
+                    <h3 className={styles.tileTitle}>{cat.title}</h3>
+                    <div className={styles.tileArrow}>
+                      <ArrowRight />
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className={styles.positioningDivider} aria-hidden="true" />
-
-            {/* Right: G Logo — structural anchor */}
-            <div className={styles.positioningLogoPane}>
-              <img
-                src="/g-logo-green.png"
-                alt="GrowValley"
-                className={styles.positioningLogoImg}
-              />
-            </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Vistra Inspired Solutions Section */}
-      <AboutUsSolutions />
+      <AboutUsSolutions initialCategories={categories} initialServices={services} />
 
       {/* Case Studies Carousel */}
       {caseStudiesData && caseStudiesData.length > 0 && (

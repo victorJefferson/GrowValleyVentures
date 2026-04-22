@@ -135,3 +135,27 @@ export const caseStudiesQuery = groq`
   }
 `;
 
+export const serviceCategoriesQuery = groq`
+  *[_type == "serviceCategory"] | order(order asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    sectionId,
+    description
+  }
+`;
+
+export const allServicesQuery = groq`
+  *[_type == "service"] | order(order asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "category": category->{
+      title,
+      "slug": slug.current
+    },
+    iconName,
+    description
+  }
+`;
+
