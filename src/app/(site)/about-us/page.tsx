@@ -78,7 +78,37 @@ export default async function AboutUsPage() {
         subheadline={displayHero.subheadline}
         image={heroImage}
       />
-
+      <section className="section-padding">
+        <div className="container">
+          <div className={styles.roundedPanel}>
+            <div className={styles.splitIntro}>
+              <div className={styles.introContent}>
+                <h2 className={styles.heading}>Who we are</h2>
+                <p className={styles.body}>
+                  Most advisory practices are built around products. Ours is
+                  built around you. GrowValley was founded on a simple
+                  observation. Wealthy individuals, family offices, and
+                  institutional allocators rarely lack access to financial
+                  products. What they lack is one team that sees the full
+                  picture, coordinates every dimension of their wealth, and is
+                  accountable for how it all fits together. That is what we do.
+                  Not one part of your wealth. All of it. One team. One
+                  strategy. One point of accountability.
+                </p>
+              </div>
+              <div className={styles.introImage}>
+                <img
+                  src="/images/leadership_collaboration.png"
+                  alt="Leadership Collaboration"
+                  width="600"
+                  height="400"
+                  className={styles.borderCard}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="section-padding">
         <div className="container">
           <div className={styles.positioningPanel}>
@@ -114,38 +144,6 @@ export default async function AboutUsPage() {
                 alt="GrowValley"
                 className={styles.positioningLogoImg}
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container">
-          <div className={styles.roundedPanel}>
-            <div className={styles.splitIntro}>
-              <div className={styles.introContent}>
-                <h2 className={styles.heading}>Who we are</h2>
-                <p className={styles.body}>
-                  Most advisory practices are built around products. Ours is
-                  built around you. GrowValley was founded on a simple
-                  observation. Wealthy individuals, family offices, and
-                  institutional allocators rarely lack access to financial
-                  products. What they lack is one team that sees the full
-                  picture, coordinates every dimension of their wealth, and is
-                  accountable for how it all fits together. That is what we do.
-                  Not one part of your wealth. All of it. One team. One
-                  strategy. One point of accountability.
-                </p>
-              </div>
-              <div className={styles.introImage}>
-                <img
-                  src="/images/leadership_collaboration.png"
-                  alt="Leadership Collaboration"
-                  width="600"
-                  height="400"
-                  className={styles.borderCard}
-                />
-              </div>
             </div>
           </div>
         </div>

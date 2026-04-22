@@ -3,26 +3,15 @@
 .contactPage {
     background-color: var(--color-surface-2);
     min-height: 100vh;
-    padding: 3rem 0 4rem;
-    /* Reduced for narrow screens */
-
-    @media (min-width: 480px) {
-        padding: 4rem 0 5rem;
-    }
-
-    @media (min-width: 768px) {
-        padding: 6rem 0 6rem;
-    }
-
-    @media (min-width: 1024px) {
-        padding: 8rem 0 7rem;
-    }
+    /* top: extra offset clears the sticky navbar above the section gap */
+    padding: calc(var(--section-gap) + 2rem) 0 var(--section-gap);
 }
 
 /* Breadcrumb */
 .breadcrumb {
     font-size: 0.85rem;
     color: var(--color-text-muted);
+    margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -440,12 +429,14 @@
 
 .captchaWrapper {
     margin: 0.5rem 0;
-    min-height: 65px; /* Height for normal Turnstile */
+    min-height: 65px;
+    /* Height for normal Turnstile */
     display: flex;
     justify-content: flex-start;
     overflow: visible;
 
     @media (max-width: 380px) {
-        min-height: 140px; /* Height for compact Turnstile roughly 120px + margin */
+        min-height: 140px;
+        /* Height for compact Turnstile roughly 120px + margin */
     }
 }

@@ -1,13 +1,9 @@
 @use "sass:color";
 
 .insightsOverhaul {
-  padding: 6rem 0;
+  padding: var(--section-gap) 0;
   background-color: var(--color-white);
   overflow: hidden;
-
-  @media (max-width: 1024px) {
-    padding: 3rem 0;
-  }
 }
 
 .insightsContainerCard {

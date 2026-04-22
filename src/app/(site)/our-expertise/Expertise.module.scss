@@ -58,16 +58,8 @@
 }
 
 .section {
-    padding: 3.5rem 0;
+    padding: var(--section-gap) 0;
     min-height: auto;
-
-    @media (min-width: 768px) {
-        padding: 5rem 0;
-    }
-
-    @media (min-width: 1024px) {
-        padding: 7rem 0;
-    }
 }
 
 .bgLight {
@@ -76,12 +68,8 @@
 
 // Section 2: Intro
 .introSection {
-    padding: 5rem 0 3rem 0;
+    padding: var(--section-gap) 0 calc(var(--section-gap) * 0.6);
     text-align: center;
-
-    @media (min-width: 1024px) {
-        padding: 8rem 0 4rem 0;
-    }
 }
 
 .introContent {
@@ -185,7 +173,7 @@
         line-height: 1.05;
         margin: 0;
         padding: 0;
-        
+
         span {
             display: block;
         }
@@ -360,73 +348,7 @@
     padding-top: 2rem;
 }
 
-// Pillar Grid (Sourcing)
-.pillarGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 4rem 0 6rem 0;
 
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.pillarCard {
-    background-color: var(--color-white);
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(26, 63, 167, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    .pillarNum {
-        font-size: 3rem;
-        font-weight: 700;
-        color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.1);
-        line-height: 1;
-    }
-
-    h4 {
-        font-size: 1.35rem;
-        color: var(--color-primary-navy);
-        font-weight: 600;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: var(--color-text-muted);
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
-        li {
-            font-size: 0.95rem;
-            color: var(--color-text-muted);
-            padding-left: 1.5rem;
-            position: relative;
-
-            &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 10px;
-                width: 6px;
-                height: 6px;
-                background-color: var(--color-accent-blue);
-                border-radius: 50%;
-            }
-        }
-    }
-}
 
 // Real Estate Access Grid
 .realEstateSection {
@@ -466,7 +388,7 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background-color: var(--color-accent-vibrant); 
+        background-color: var(--color-accent-vibrant);
         flex-shrink: 0;
         margin-top: 6px;
     }
@@ -497,50 +419,22 @@
     }
 }
 
-.structuringGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
 
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.structuringItem {
-    padding: 2.5rem;
-    background-color: var(--color-surface-secondary);
-    border-radius: 12px;
-    border: 1px solid rgba(26, 63, 167, 0.05);
-
-    h4 {
-        font-size: 1.25rem;
-        color: var(--color-primary-navy);
-        margin-bottom: 1rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: var(--color-text-muted);
-        margin: 0;
-    }
-}
 
 // CTA Panel
 .ctaBannerPanel {
     background: var(--color-banner-gradient);
     border-radius: var(--border-radius-hero);
-    padding: 4rem 2rem;
+    padding: var(--section-gap) 2rem;
     text-align: center;
     overflow: hidden;
 
     @media (min-width: 768px) {
-        padding: 5rem 3rem;
+        padding: var(--section-gap) 3rem;
     }
 
     @media (min-width: 1024px) {
-        padding: 6rem 5rem;
+        padding: var(--section-gap) 5rem;
     }
 
     h2 {
@@ -556,7 +450,7 @@
 }
 
 .ctaBanner {
-    padding-bottom: 4rem;
+    padding-bottom: var(--section-gap);
 }
 
 // Service Grid (Family Office)
@@ -565,6 +459,7 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 
     @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
@@ -572,34 +467,5 @@
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.serviceCard {
-    background-color: var(--color-surface-secondary);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.05);
-    transition: all 0.3s ease;
-
-    &:hover {
-        background-color: var(--color-white);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        border-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
-    }
-
-    h4 {
-        font-size: 1.15rem;
-        color: var(--color-primary-navy);
-        margin-bottom: 0.75rem;
-        font-weight: 600;
-        line-height: 1.3;
-    }
-
-    p {
-        font-size: 0.95rem;
-        color: var(--color-text-muted);
-        line-height: 1.65;
-        margin: 0;
     }
 }

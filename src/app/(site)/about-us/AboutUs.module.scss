@@ -132,15 +132,15 @@
 .roundedPanel {
     background-color: var(--color-surface-tertiary);
     border-radius: var(--border-radius-hero);
-    padding: 3rem 2rem;
+    padding: var(--section-gap) 2rem;
     overflow: hidden;
 
     @media (min-width: 768px) {
-        padding: 4rem 3rem;
+        padding: var(--section-gap) 3rem;
     }
 
     @media (min-width: 1024px) {
-        padding: 5rem 4rem;
+        padding: var(--section-gap) 4rem;
     }
 }
 
@@ -148,12 +148,12 @@
     background: var(--color-banner-gradient);
     color: var(--color-white);
     border-radius: var(--border-radius-hero);
-    padding: 3rem 1.25rem; // Reduced for mobile
+    padding: var(--section-gap) 1.25rem;
     text-align: center;
     margin: 0 auto;
 
     @media (min-width: 768px) {
-        padding: 5rem 4rem;
+        padding: var(--section-gap) 4rem;
     }
 }
 
@@ -295,7 +295,7 @@
 
 /* Founder Section */
 .founderSection {
-    margin: 5rem 0 8rem;
+    margin: var(--section-gap) 0;
 }
 
 .founderFlex {

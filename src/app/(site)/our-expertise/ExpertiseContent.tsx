@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { Network } from "lucide-react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
+import { services } from "@/config/services";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 import styles from "./Expertise.module.scss";
 
 export default function ExpertiseContent({ heroData }: { heroData?: any }) {
@@ -206,47 +208,17 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
           </div>
 
           <div className={styles.serviceGrid}>
-            <div className={styles.serviceCard}>
-              <h4>Single Family Office Setup</h4>
-              <p>
-                Structuring and establishing a dedicated family office for
-                clients ready to formalise their wealth governance.
-              </p>
-            </div>
-            <div className={styles.serviceCard}>
-              <h4>Wealth Consolidation and Reporting</h4>
-              <p>
-                Unified reporting across all assets and entities. Full
-                visibility. No blind spots.
-              </p>
-            </div>
-            <div className={styles.serviceCard}>
-              <h4>Philanthropy</h4>
-              <p>
-                Structured giving, aligned to your values and your tax position.
-              </p>
-            </div>
-            <div className={styles.serviceCard}>
-              <h4>M&A and IPO</h4>
-              <p>
-                Advisory coordination for clients navigating corporate
-                transactions alongside their personal wealth.
-              </p>
-            </div>
-            <div className={styles.serviceCard}>
-              <h4>Social Impact Investing</h4>
-              <p>
-                Capital deployed with intention. Returns measured in more than
-                one currency.
-              </p>
-            </div>
-            <div className={styles.serviceCard}>
-              <h4>Collectibles and Art</h4>
-              <p>
-                Specialist access to valuation, acquisition, and estate planning
-                for alternative assets.
-              </p>
-            </div>
+            {services
+              .filter((s) => s.category === "Family Office Services")
+              .map((service) => (
+                <ServiceCard
+                  key={service.slug}
+                  title={service.title}
+                  description={service.description}
+                  slug={service.slug}
+                  iconName={service.iconName}
+                />
+              ))}
           </div>
         </div>
       </section>
@@ -280,38 +252,18 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
             </div>
           </div>
 
-          <div className={styles.pillarGrid}>
-            <div className={styles.pillarCard}>
-              <span className={styles.pillarNum}>1</span>
-              <h4 className={styles.pillarTitle}>
-                GrowValley&apos;s Institutional desk
-              </h4>
-              <p>
-                We originate, structure, and place capital-market opportunities
-                across three areas: pre-IPO investment, real estate structuring
-                and distribution, and capital raises spanning venture, private
-                equity, and corporate mandates.
-              </p>
-            </div>
-            <div className={styles.pillarCard}>
-              <span className={styles.pillarNum}>2</span>
-              <h4>Proven Practitioners</h4>
-              <p>
-                Our team has originated, structured, and placed transactions.
-                Not merely advised on them. Clients benefit from people who have
-                sat on both sides of a deal.
-              </p>
-            </div>
-            <div className={styles.pillarCard}>
-              <span className={styles.pillarNum}>3</span>
-              <h4>Capital sustainability</h4>
-              <p>
-                Volume is not the objective. Every opportunity is evaluated
-                against capital durability, exit visibility, and risk-adjusted
-                return. We present fewer deals. The ones we present are worth
-                looking at.
-              </p>
-            </div>
+          <div className={styles.serviceGrid}>
+            {services
+              .filter((s) => s.category === "Private Access to Opportunities")
+              .map((service) => (
+                <ServiceCard
+                  key={service.slug}
+                  title={service.title}
+                  description={service.description}
+                  slug={service.slug}
+                  iconName={service.iconName}
+                />
+              ))}
           </div>
 
           <div className={styles.realEstateSection}>
@@ -376,34 +328,18 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
             </p>
           </div>
 
-          <div className={styles.structuringGrid}>
-            <div className={styles.structuringItem}>
-              <h4>Wealth Structuring</h4>
-              <p>
-                The structure surrounding your assets is as important as the
-                assets themselves. We redesign holding arrangements to improve
-                efficiency, reduce unnecessary cost, and strengthen the overall
-                integrity of your wealth position.
-              </p>
-            </div>
-            <div className={styles.structuringItem}>
-              <h4>Succession Planning</h4>
-              <p>
-                Wealth transfers poorly without a plan. We engage the right
-                legal and fiduciary professionals to construct a succession
-                framework that protects your family, reflects your intentions,
-                and holds across generations.
-              </p>
-            </div>
-            <div className={styles.structuringItem}>
-              <h4>Citizenship & Residency Services</h4>
-              <p>
-                Jurisdictional flexibility is a legitimate dimension of wealth
-                planning. We connect clients with specialist firms that navigate
-                residency and citizenship programmes, including EB-5 and
-                Portugal Golden Visa, with precision and discretion.
-              </p>
-            </div>
+          <div className={styles.serviceGrid}>
+            {services
+              .filter((s) => s.category === "Succession Planning Services")
+              .map((service) => (
+                <ServiceCard
+                  key={service.slug}
+                  title={service.title}
+                  description={service.description}
+                  slug={service.slug}
+                  iconName={service.iconName}
+                />
+              ))}
           </div>
         </div>
       </section>

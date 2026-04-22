@@ -9,10 +9,10 @@
   --color-primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
   --color-primary-light: hsl(var(--primary-h), var(--primary-s), 24%);
   --color-primary-dark: hsl(var(--primary-h), var(--primary-s), 8%);
-  
+
   --color-accent: #E0BA4C;
   --color-accent-vibrant: hsl(var(--primary-h), 50%, 45%);
-  
+
   --color-surface-1: hsl(var(--primary-h), 15%, 97%);
   --color-surface-2: hsl(var(--primary-h), 15%, 93%);
   --color-surface-3: hsl(var(--primary-h), 10%, 88%);
@@ -42,6 +42,17 @@
   --border-radius-hero: 40px;
 
   --max-width-container: 1200px;
+
+  /* ── Section spacing scale (single source of truth) ──
+     Adjust these three values to control all between-section
+     vertical space across the entire site. */
+  --section-gap-sm: 3rem;
+  /* mobile            */
+  --section-gap-md: 3rem;
+  /* tablet  ≥ 768px   */
+  --section-gap-lg: 3rem;
+  /* desktop ≥ 1024px  */
+  --section-gap: var(--section-gap-sm);
 }
 
 /* Base Resets */
@@ -116,15 +127,22 @@ a {
   }
 }
 
-.section-padding {
-  padding: 3.5rem 0;
-  /* Mobile: tight but breathable */
+/* Promote --section-gap alias at each breakpoint */
+@media (min-width: 768px) {
+  :root {
+    --section-gap: var(--section-gap-md);
+  }
 }
 
-@media (min-width: 768px) {
-  .section-padding {
-    padding: 4rem 0;
+@media (min-width: 1024px) {
+  :root {
+    --section-gap: var(--section-gap-lg);
   }
+}
+
+.section-padding {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 /* Canonical section title, use on all page h2 headings */
