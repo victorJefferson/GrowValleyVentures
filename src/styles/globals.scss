@@ -79,7 +79,7 @@ body {
   line-height: var(--line-height-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -180,7 +180,7 @@ a {
 }
 
 .siteWrapper {
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 

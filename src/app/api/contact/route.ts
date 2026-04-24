@@ -5,7 +5,7 @@ export async function POST(request: Request) {
         const formData = await request.json();
 
         // 1. Validate the data (optional but recommended)
-        if (!formData.businessEmail || !formData.firstName) {
+        if (!formData.emailAddress || !formData.fullName) {
             return NextResponse.json(
                 { error: "Missing required fields" },
                 { status: 400 }
