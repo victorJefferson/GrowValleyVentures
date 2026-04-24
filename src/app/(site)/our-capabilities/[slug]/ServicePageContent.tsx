@@ -344,6 +344,110 @@ const servicePageContent: Record<string, {
       { num: "Discreet", desc: "Complete confidentiality at every stage" }
     ],
     whatsIncludedItems: ["Programme assessment", "Tax pre-modelling", "EB-5 coordination", "Golden Visa guidance", "Legal firm referral", "Application support", "Compliance monitoring", "Post-establishment review"]
+  },
+  "wealth-management-strategy": {
+    valuePropHeadline: "Strategy, built for you —",
+    valuePropAccent: "not a template.",
+    valuePropBody: "Institutional-grade strategy design based on your unique goals. We construct a bespoke investment framework that aligns with your specific risk profile and time horizon.",
+    problemHighlight: "Generic advice?",
+    problemHeadline: "One size fits none in wealth management.",
+    problemBody: "Most wealth management is built on rigid templates. We start with a blank sheet of paper and your specific requirements.",
+    problemBullets: ["Template-driven portfolios", "Lack of alignment with family goals", "Opaque fee structures"],
+    howWeHelpSubtitle: "The smart way to build your strategy",
+    helpCards: [
+      { iconName: "Target", title: "Goal-Based Planning", desc: "Your life goals determine your asset allocation, not a model portfolio." },
+      { iconName: "BarChart3", title: "Risk Profiling", desc: "Rigorous assessment of your risk capacity and tolerance across multiple scenarios." },
+      { iconName: "Layers", title: "Asset Allocation", desc: "Strategic and tactical allocation across all traditional and alternative asset classes." }
+    ],
+    featureEyebrow: "One plan. One vision.",
+    featureHeadline: "Define. Design. Deliver.",
+    featureBody: "Our strategy process is comprehensive, covering every dimension of your wealth position to ensure absolute alignment.",
+    featureBullets: ["Bespoke investment policy statements", "Cash flow modeling", "Tax-efficient structure integration", "Multi-generational planning", "Benchmark selection", "Quarterly strategy reviews"],
+    stats: [
+      { num: "100%", desc: "Bespoke strategy design" },
+      { num: "Expert", desc: "Investment committee oversight" },
+      { num: "Full", desc: "Transparency on all assumptions" },
+      { num: "Direct", desc: "Access to lead strategists" }
+    ],
+    whatsIncludedItems: ["Goal discovery sessions", "Risk assessment report", "Investment Policy Statement", "Asset allocation design", "Tax efficiency review", "Benchmark design", "Ongoing review framework", "Implementation roadmap"]
+  },
+  "wealth-management-execution": {
+    valuePropHeadline: "Disciplined execution —",
+    valuePropAccent: "from day one.",
+    valuePropBody: "Every trade, every allocation, and every adjustment is executed with institutional rigour. We manage the complexity of implementation so you don't have to.",
+    problemHighlight: "Execution gaps?",
+    problemHeadline: "Good strategy fails without great execution.",
+    problemBody: "Market friction, poor timing, and lack of oversight erode returns. We provide the discipline required to turn strategy into performance.",
+    problemBullets: ["Inefficient trade execution", "Portfolio drift from target allocation", "High transaction costs"],
+    howWeHelpSubtitle: "The smart way to execute your mandate",
+    helpCards: [
+      { iconName: "Zap", title: "Direct Execution", desc: "Access to institutional liquidity and global markets with total transparency." },
+      { iconName: "ShieldCheck", title: "Cost Management", desc: "Minimising market impact and transaction costs across every asset class." },
+      { iconName: "Layers", title: "Rebalancing", desc: "Systematic portfolio rebalancing to maintain alignment with your risk profile." }
+    ],
+    featureEyebrow: "One team. Total accountability.",
+    featureHeadline: "Execute. Monitor. Refine.",
+    featureBody: "We handle the entire execution lifecycle, from initial implementation to ongoing portfolio maintenance and cash management.",
+    featureBullets: ["Global trade execution", "Liquidity management", "Corporate action handling", "Systematic rebalancing", "Security lending oversight", "Ongoing cost audit"],
+    stats: [
+      { num: "Total", desc: "Execution accountability" },
+      { num: "Global", desc: "Market access" },
+      { num: "Direct", desc: "Relationship with custodians" },
+      { num: "Daily", desc: "Execution monitoring" }
+    ],
+    whatsIncludedItems: ["Trade implementation", "Liquidity sourcing", "Transaction cost analysis", "Rebalancing schedule", "Corporate action management", "Cash management", "Security selection support", "Daily oversight"]
+  },
+  "wealth-management-oversight": {
+    valuePropHeadline: "Continuous oversight —",
+    valuePropAccent: "no blind spots.",
+    valuePropBody: "We monitor your entire wealth position in real-time, providing the oversight required to protect your assets and identify new opportunities.",
+    problemHighlight: "Lack of visibility?",
+    problemHeadline: "What you can't see, you can't manage.",
+    problemBody: "Fragmented reporting and infrequent reviews lead to missed risks and lost opportunities. We provide a single source of truth for your wealth.",
+    problemBullets: ["Opaque risk concentrations", "Infrequent performance reviews", "No unified view of net worth"],
+    howWeHelpSubtitle: "The smart way to monitor your wealth",
+    helpCards: [
+      { iconName: "ShieldCheck", title: "Risk Monitoring", desc: "Real-time alerts on concentration, liquidity, and market exposure." },
+      { iconName: "BarChart3", title: "Performance Attribution", desc: "Understanding exactly what is driving your returns across the portfolio." },
+      { iconName: "Target", title: "Compliance Review", desc: "Ensuring every investment remains within the boundaries of your mandate." }
+    ],
+    featureEyebrow: "One dashboard. Complete clarity.",
+    featureHeadline: "Monitor. Report. Protect.",
+    featureBody: "Our oversight framework is designed to give you total confidence in your wealth position at any moment.",
+    featureBullets: ["Real-time risk monitoring", "Consolidated performance reporting", "Benchmark comparison", "ESG and impact reporting", "Compliance oversight", "Quarterly steward reports"],
+    stats: [
+      { num: "Daily", desc: "Data reconciliation" },
+      { num: "Real-time", desc: "Risk alerts" },
+      { num: "100%", desc: "Transparency on performance" },
+      { num: "Total", desc: "Compliance monitoring" }
+    ],
+    whatsIncludedItems: ["Consolidated reporting", "Risk heat maps", "Performance attribution", "Benchmark reporting", "Compliance audit", "Tax reporting support", "Quarterly review meetings", "Secure client portal"]
+  },
+  "wealth-management-team": {
+    valuePropHeadline: "One integrated team —",
+    valuePropAccent: "one point of contact.",
+    valuePropBody: "We deliver every dimension of wealth through a single, integrated unit. No silos, no hand-offs, just total accountability for your outcomes.",
+    problemHighlight: "Advisor silos?",
+    problemHeadline: "Complexity demands integration.",
+    problemBody: "Managing multiple advisors is a full-time job. We act as your single point of accountability, coordinating every aspect of your wealth plan.",
+    problemBullets: ["Fragmented advice from different teams", "No single point of accountability", "Conflicting advisor incentives"],
+    howWeHelpSubtitle: "The smart way to manage your relationships",
+    helpCards: [
+      { iconName: "Users", title: "Relationship Lead", desc: "A single, senior professional dedicated to your family's mandate." },
+      { iconName: "Building2", title: "Advisor Coordination", desc: "We manage your existing lawyers, accountants, and bankers on your behalf." },
+      { iconName: "ShieldCheck", title: "Total Accountability", desc: "One team responsible for the overall success of your wealth strategy." }
+    ],
+    featureEyebrow: "One mandate. One team.",
+    featureHeadline: "Coordinate. Align. Succeed.",
+    featureBody: "Our team structure is built for families who value their time as much as their wealth. We handle the coordination so you don't have to.",
+    featureBullets: ["Dedicated relationship manager", "Investment committee access", "External advisor management", "Multi-generational engagement", "Family office integration", "24/7 priority access"],
+    stats: [
+      { num: "Single", desc: "Point of accountability" },
+      { num: "Senior", desc: "Relationship leads only" },
+      { num: "100%", desc: "Alignment of interests" },
+      { num: "Long", desc: "Term relationship focus" }
+    ],
+    whatsIncludedItems: ["Relationship management", "Advisor coordination", "Investment committee access", "Family governance support", "Next-gen education", "Concierge services", "Quarterly reviews", "Direct access to specialists"]
   }
 };
 
@@ -377,7 +481,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <ChevronRight className={styles.separator} size={14} />
-            <Link href="/our-expertise">Our Expertise</Link>
+            <Link href="/our-capabilities">Our Capabilities</Link>
             <ChevronRight className={styles.separator} size={14} />
             <span className={styles.current}>{service.title}</span>
           </nav>

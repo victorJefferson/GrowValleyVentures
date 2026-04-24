@@ -29,7 +29,16 @@ export function Navbar() {
         { name: "Leadership", href: "/about-us/leadership", description: "Guided by experience. Driven by innovation." },
       ]
     },
-    { name: "Our Expertise", href: "/our-expertise" },
+    {
+      name: "Expertise",
+      href: "/our-capabilities",
+      children: [
+        { name: "Wealth Management", href: "/our-capabilities/wealth-management", description: "Disciplined execution from day one." },
+        { name: "Family Office Services", href: "/our-capabilities/family-office-services", description: "Coordinating the full range of services complex wealth demands." },
+        { name: "Private Access to Opportunities", href: "/our-capabilities/private-access-to-opportunities", description: "Access to transactions sourced through relationships, not listings." },
+        { name: "Succession Planning Services", href: "/our-capabilities/succession-planning-services", description: "Constructing frameworks that protect your family and reflect your intentions." },
+      ]
+    },
     { name: "Insights", href: "/insights" },
     { name: "Careers", href: "/careers" },
   ];
@@ -73,35 +82,63 @@ export function Navbar() {
 
                           <PopoverPanel transition className={styles.megaMenu}>
                             <div className={`container ${styles.megaMenuContent}`}>
-
-                              <div className={styles.megaMenuGrid}>
-                                {link.children.map((child) => (
-                                  <Link
-                                    key={child.name}
-                                    href={child.href}
-                                    className={styles.megaMenuItem}
-                                    onClick={() => close()}
-                                  >
-                                    <div className={styles.megaMenuItemLabel}>{child.name}</div>
-                                    <div className={styles.megaMenuItemDesc}>{child.description}</div>
-                                  </Link>
-                                ))}
-                              </div>
-                              <div className={styles.megaMenuFeatured}>
-                                <div className={styles.featuredTag}>Featured Content</div>
-                                <div className={styles.featuredCard}>
-                                  <img src="/images/leadership_collaboration.png" alt="Featured" />
-                                  <div className={styles.featuredInfo}>
-                                    <Link
-                                      href="/insights"
-                                      className={styles.featuredLink}
-                                      onClick={() => close()}
-                                    >
-                                      Click here to read our latest Insights<ArrowRight size={12} />
-                                    </Link>
+                              {link.name === "Expertise" ? (
+                                <>
+                                  <div className={styles.megaMenuLeft}>
+                                    <div className={styles.megaMenuHeader}>
+                                      <h3>Our Capabilities</h3>
+                                      <p>Expertise that actually matters. Every service we offer exists for one reason, to make sure your money is working as hard as you did to earn it.</p>
+                                      <Link href="/our-capabilities" className={styles.overviewLink} onClick={() => close()}>
+                                        View Overview <ArrowRight size={16} />
+                                      </Link>
+                                    </div>
                                   </div>
-                                </div>
-                              </div>
+                                  <div className={styles.megaMenuGrid}>
+                                    {link.children.map((child) => (
+                                      <Link
+                                        key={child.name}
+                                        href={child.href}
+                                        className={styles.megaMenuItem}
+                                        onClick={() => close()}
+                                      >
+                                        <div className={styles.megaMenuItemLabel}>{child.name}</div>
+                                        <div className={styles.megaMenuItemDesc}>{child.description}</div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </>
+                              ) : (
+                                <>
+                                  <div className={styles.megaMenuGrid}>
+                                    {link.children.map((child) => (
+                                      <Link
+                                        key={child.name}
+                                        href={child.href}
+                                        className={styles.megaMenuItem}
+                                        onClick={() => close()}
+                                      >
+                                        <div className={styles.megaMenuItemLabel}>{child.name}</div>
+                                        <div className={styles.megaMenuItemDesc}>{child.description}</div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                  <div className={styles.megaMenuFeatured}>
+                                    <div className={styles.featuredTag}>Featured Content</div>
+                                    <div className={styles.featuredCard}>
+                                      <img src="/images/leadership_collaboration.png" alt="Featured" />
+                                      <div className={styles.featuredInfo}>
+                                        <Link
+                                          href="/insights"
+                                          className={styles.featuredLink}
+                                          onClick={() => close()}
+                                        >
+                                          Click here to read our latest Insights<ArrowRight size={12} />
+                                        </Link>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </>
+                              )}
                             </div>
                           </PopoverPanel>
                         </>
@@ -178,9 +215,9 @@ export function Navbar() {
                                 </DisclosureButton>
                               </Link>
                             ))}
-                            <Link href="/about-us" onClick={() => close()}>
+                            <Link href={link.href} onClick={() => close()}>
                               <DisclosureButton as="span" className={styles.mobileOverviewLink}>
-                                About us Overview <ArrowRight size={16} />
+                                {link.name} Overview <ArrowRight size={16} />
                               </DisclosureButton>
                             </Link>
                           </DisclosurePanel>

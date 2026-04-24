@@ -11,28 +11,28 @@ const solutions = [
     title: "Wealth Management Services",
     subtitle:
       "We start by understanding what you have, what you need, and what risk means to you personally. Then we build a strategy around that, not a template, not a default portfolio. Discretionary Mandate: you hand us the wheel within agreed boundaries, we make the calls and report back clearly. Advisory Mandate: we bring the thinking, you make the final call, we execute.",
-    href: "/our-expertise/#wealth-management",
+    href: "/our-capabilities/wealth-management",
   },
   {
     id: "family-office-services",
     title: "Family Office Services",
     subtitle:
       "Some clients need more than investment management. They need someone who sees the whole picture across structures, reporting, philanthropy, and situations that don't fit neatly into a category. Whether we do it directly or bring in the right specialist, nothing gets left unmanaged.",
-    href: "/our-expertise/#family-office-services",
+    href: "/our-capabilities/family-office-services",
   },
   {
     id: "private-access-to-opportunities",
     title: "Private Access to Opportunities",
     subtitle:
       "Through GrowValley's deals desk, select clients access private market opportunities that never reach the public. We don't just pass these deals along, we've operated, built, and invested in businesses ourselves. We source the deals, vet them through people who've actually built businesses, and focus on your exit.",
-    href: "/our-expertise/#private-access-to-opportunities",
+    href: "/our-capabilities/private-access-to-opportunities",
   },
   {
     id: "succession-planning-services",
     title: "Succession Planning Services",
     subtitle:
       "How your wealth is held matters as much as how it's invested. We help you set up structures that protect your assets and make it straightforward to pass wealth to the next generation. We restructure where it makes sense, for protection, efficiency, and cost.",
-    href: "/our-expertise/#succession-planning-services",
+    href: "/our-capabilities/succession-planning-services",
   },
 ];
 

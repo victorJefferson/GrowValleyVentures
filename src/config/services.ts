@@ -10,6 +10,47 @@ export interface ServiceDetail {
 }
 
 export const services: ServiceDetail[] = [
+  // Wealth Management
+  {
+    slug: "wealth-management-strategy",
+    title: "Strategy",
+    description: "Institutional-grade strategy design based on your unique goals.",
+    category: "Wealth Management",
+    iconName: "Target",
+    content: "Institutional-grade strategy design based on your unique goals.",
+    features: ["Goal-based planning", "Risk profiling", "Strategic asset allocation"],
+    stats: [{ label: "Approach", value: "Institutional" }]
+  },
+  {
+    slug: "wealth-management-execution",
+    title: "Execution",
+    description: "Disciplined implementation from day one with total accountability.",
+    category: "Wealth Management",
+    iconName: "Zap",
+    content: "Disciplined implementation from day one with total accountability.",
+    features: ["Trade execution", "Portfolio rebalancing", "Cost management"],
+    stats: [{ label: "Focus", value: "Accountability" }]
+  },
+  {
+    slug: "wealth-management-oversight",
+    title: "Ongoing Oversight",
+    description: "Continuous monitoring and review of your entire wealth position.",
+    category: "Wealth Management",
+    iconName: "ShieldCheck",
+    content: "Continuous monitoring and review of your entire wealth position.",
+    features: ["Real-time monitoring", "Quarterly reviews", "Risk management"],
+    stats: [{ label: "Monitoring", value: "Continuous" }]
+  },
+  {
+    slug: "wealth-management-team",
+    title: "One Accountable Team",
+    description: "Every dimension of wealth delivered by a single integrated unit.",
+    category: "Wealth Management",
+    iconName: "Users",
+    content: "Every dimension of wealth delivered by a single integrated unit.",
+    features: ["Integrated service", "Single contact point", "Unified reporting"],
+    stats: [{ label: "Team", value: "Integrated" }]
+  },
   // Family Office Services
   {
     slug: "single-family-office-setup",

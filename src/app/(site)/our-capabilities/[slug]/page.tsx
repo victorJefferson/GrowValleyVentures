@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!service) return { title: "Service Not Found" };
 
   return {
-    title: `${service.title} | Our Expertise | GrowValley Ventures`,
+    title: `${service.title} | Capabilities | GrowValley Ventures`,
     description: service.description,
   };
 }

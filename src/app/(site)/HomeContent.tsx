@@ -32,7 +32,7 @@ export default function HomeContent({
     subheadline:
       "We bring every dimension of your wealth under one team, one strategy, and one point of accountability.",
     ctaText: "See How We Work",
-    ctaHref: "/our-expertise",
+    ctaHref: "/our-capabilities",
     image: "/images/hero_model_v3.png",
   };
 

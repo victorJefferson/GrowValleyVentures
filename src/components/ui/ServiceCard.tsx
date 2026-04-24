@@ -44,7 +44,7 @@ export function ServiceCard({ title, description, slug, iconName }: ServiceCardP
   const Icon = iconMap[iconName] || Briefcase;
 
   return (
-    <Link href={`/our-expertise/${slug}`} className={styles.serviceCard}>
+    <Link href={`/our-capabilities/${slug}`} className={styles.serviceCard}>
       <div className={styles.iconWrapper}>
         <Icon size={32} strokeWidth={1.5} />
       </div>

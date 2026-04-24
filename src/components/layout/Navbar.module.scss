@@ -205,14 +205,15 @@
         font-weight: 400;
         color: var(--color-primary-navy);
         text-decoration: none;
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        border-left: 3px solid transparent;
+        margin-left: -1rem;
+        transition: all 0.2s ease;
 
         &.active {
             color: var(--color-primary-navy);
             font-weight: 600;
-            border-left: 3px solid var(--color-accent-blue);
-            padding-left: 1rem;
-            margin-left: -1rem;
+            border-left-color: var(--color-accent-blue);
         }
     }
 }
@@ -438,15 +439,16 @@
     font-size: 1.125rem;
     font-weight: 400;
     color: var(--color-primary-navy);
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid transparent;
+    margin-left: -1rem;
     text-align: left;
     cursor: pointer;
+    transition: all 0.2s ease;
 
     &.active {
         font-weight: 600;
-        border-left: 3px solid var(--color-accent-blue);
-        padding-left: 1rem;
-        margin-left: -1rem;
+        border-left-color: var(--color-accent-blue);
     }
 
     .rotate {

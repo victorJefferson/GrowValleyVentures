@@ -59,25 +59,25 @@ export function Footer() {
         {/* Navigation Columns */}
         <div className={styles.navGrid}>
           <div className={styles.linksCol}>
-            <h4>Our Expertise</h4>
+            <h4>Our Capabilities</h4>
             <ul>
               <li>
-                <Link href="/our-expertise/#wealth-management">
+                <Link href="/our-capabilities/wealth-management">
                   Wealth Management
                 </Link>
               </li>
               <li>
-                <Link href="/our-expertise/#family-office">
+                <Link href="/our-capabilities/family-office-services">
                   Family Office Services
                 </Link>
               </li>
               <li>
-                <Link href="/our-expertise/#private-access">
+                <Link href="/our-capabilities/private-access-to-opportunities">
                   Private Access To Opportunities
                 </Link>
               </li>
               <li>
-                <Link href="/our-expertise/#succession-planning">
+                <Link href="/our-capabilities/succession-planning-services">
                   Succession Planning Services
                 </Link>
               </li>

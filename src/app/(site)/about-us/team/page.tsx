@@ -52,7 +52,7 @@ export default function TeamPage() {
       <section className="section-padding">
         <div className="container">
           <div className={`${styles.sectionHeader} text-center`}>
-            <h2 className={styles.heading}>Our Advisory Team.</h2>
+            <h2 className={styles.heading}>Our Advisory Team</h2>
           </div>
 
           <div className={styles.teamGrid}>

@@ -11,7 +11,7 @@ export default defineType({
         headline: "The only call you need to make.",
         subheadline: "We bring every dimension of your wealth under one team, one strategy, and one point of accountability.",
         ctaText: "See How We Work",
-        ctaHref: "/our-expertise"
+        ctaHref: "/our-capabilities"
     },
     fields: [
         defineField({

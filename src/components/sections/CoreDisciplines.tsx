@@ -22,9 +22,9 @@ export const CoreDisciplines = ({ categories = [] }: CoreDisciplinesProps) => {
             ? categories
             : [
               { title: "Wealth Management", sectionId: "wealth-management" },
-              { title: "Family Office Services", sectionId: "family-office" },
-              { title: "Private Access to Opportunities", sectionId: "private-access" },
-              { title: "Succession Planning Services", sectionId: "succession-planning" },
+              { title: "Family Office Services", sectionId: "family-office-services" },
+              { title: "Private Access to Opportunities", sectionId: "private-access-to-opportunities" },
+              { title: "Succession Planning Services", sectionId: "succession-planning-services" },
             ]
           ).map((cat, i) => {
             // A robust fallback resolution when CMS 'sectionId' field is blank
@@ -32,15 +32,15 @@ export const CoreDisciplines = ({ categories = [] }: CoreDisciplinesProps) => {
             if (!targetHash) {
               const titleLower = (cat.title || "").toLowerCase();
               if (titleLower.includes("wealth")) targetHash = "wealth-management";
-              else if (titleLower.includes("family")) targetHash = "family-office";
-              else if (titleLower.includes("private")) targetHash = "private-access";
-              else if (titleLower.includes("succession")) targetHash = "succession-planning";
+              else if (titleLower.includes("family")) targetHash = "family-office-services";
+              else if (titleLower.includes("private")) targetHash = "private-access-to-opportunities";
+              else if (titleLower.includes("succession")) targetHash = "succession-planning-services";
               else targetHash = cat.slug || "";
             }
 
             return (
               <Link
-                href={`/our-expertise/#${targetHash}`}
+                href={`/our-capabilities/${targetHash}`}
                 className={styles.disciplineTile}
                 key={i}
               >
