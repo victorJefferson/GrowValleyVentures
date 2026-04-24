@@ -204,6 +204,11 @@ export default function HomeContent({
         insights={dynamicInsights}
       />
 
+      <DataSection
+        headline={displayDataSection.headline}
+        description={displayDataSection.description}
+        stats={displayDataSection.stats}
+      />
       <section className={styles.ctaBanner}>
         <div className="container">
           <h2 className={styles.speakToAnExpertBannerHeading}>
@@ -217,11 +222,6 @@ export default function HomeContent({
         </div>
       </section>
 
-      <DataSection
-        headline={displayDataSection.headline}
-        description={displayDataSection.description}
-        stats={displayDataSection.stats}
-      />
     </main>
   );
 }

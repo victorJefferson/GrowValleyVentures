@@ -94,11 +94,6 @@ export default async function AboutUsPage() {
           </div>
         </div>
       </section>
-      <DataSection
-        headline={dataSectionData.headline}
-        description={dataSectionData.description}
-        stats={dataSectionData.stats}
-      />
       {/* Vistra Inspired Solutions Section */}
       <AboutUsSolutions initialCategories={categories} initialServices={services} />
 
@@ -110,7 +105,11 @@ export default async function AboutUsPage() {
           </div>
         </section>
       )}
-
+      <DataSection
+        headline={dataSectionData.headline}
+        description={dataSectionData.description}
+        stats={dataSectionData.stats}
+      />
       <section className="section-padding">
         <div className="container">
           <div className={styles.groupPanel}>
