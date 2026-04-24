@@ -27,10 +27,10 @@ export default defineConfig({
           pageSlug: 'home',
           hasCTA: true,
           eyebrow: 'GROWVALLEY',
-          headline: 'The only call you need to make.',
-          subheadline: 'We bring every dimension of your wealth under one team, one strategy, and one point of accountability.',
-          ctaText: 'See How We Work',
-          ctaHref: '/our-expertise',
+          headline: "Wealth managed by people who've actually built it.",
+          subheadline: 'Operated. Invested. Built. Now managing your capital the same way.',
+          ctaText: 'Talk to an Advisor',
+          ctaHref: '/contact',
         },
       },
       {
@@ -79,6 +79,6 @@ export default defineConfig({
       },
     ],
   },
-  
-  basePath: '/studio', 
+
+  basePath: '/studio',
 });
