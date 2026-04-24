@@ -15,25 +15,25 @@
 
 .heroOuter {
     background: var(--color-banner-gradient);
-    border-radius: var(--border-radius-hero);
+    border-radius: 48px;
     color: var(--color-white);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 767px) {
+        border-radius: 32px;
+    }
 }
 
 .heroContentWrapper {
-    padding: 3rem 0;
+    padding: 4rem 0;
     position: relative;
     z-index: 5;
 
     @media (min-width: 1024px) {
-        padding: 2rem 0;
-    }
-
-    @media (max-width: 1024px) {
-        padding: 3rem 0;
+        padding: 5rem 0;
     }
 }
 
@@ -43,7 +43,7 @@
     z-index: 6;
 
     @media (min-width: 1024px) {
-        max-width: 50%;
+        max-width: 55%;
     }
 }
 
@@ -52,22 +52,19 @@
     width: calc(100% - 2rem);
     margin: 0 1rem 1.5rem;
     height: 350px;
-    border-radius: 20px;
+    border-radius: 32px;
     overflow: hidden;
     z-index: 1;
 
     @media (min-width: 1024px) {
         position: absolute;
-        top: 2.5rem;
-        right: 5rem;
-        bottom: 2.5rem;
-        width: 30%;
-        height: 80%;
-        border-radius: 32px;
-        box-shadow: 0 20px 50px hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.3);
-    }
-    @media (max-width: 1024px) {
-        padding: 5px;
+        top: 3.5rem;
+        right: 4rem;
+        bottom: 3.5rem;
+        width: 35%;
+        height: auto;
+        border-radius: 48px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     }
 }
 

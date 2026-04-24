@@ -11,10 +11,11 @@ interface HeroProps {
     subheadline?: React.ReactNode;
     ctaText?: string;
     ctaHref?: string;
+    hasCTA?: boolean;
     image?: any;
 }
 
-export function Hero({ eyebrow, headline, subheadline, ctaText, ctaHref, image }: HeroProps) {
+export function Hero({ eyebrow, headline, subheadline, ctaText, ctaHref, hasCTA = true, image }: HeroProps) {
     const heroImageSrc = typeof image === 'string' ? image : (image?.asset ? urlFor(image).url() : "/images/home_hero.png");
 
     return (
@@ -32,7 +33,7 @@ export function Hero({ eyebrow, headline, subheadline, ctaText, ctaHref, image }
                                     {subheadline}
                                 </p>
                             )}
-                            {ctaText && ctaHref && (
+                            {hasCTA && ctaText && ctaHref && (
                                 <div className={styles.ctaGroup}>
                                     <Link href={ctaHref}>
                                         <Button className='text-bold' variant="secondary" size="lg">{ctaText}</Button>

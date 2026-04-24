@@ -85,6 +85,7 @@ export default function HomeContent({
         subheadline={displayHero.subheadline}
         ctaText={displayHero.ctaText}
         ctaHref={displayHero.ctaHref}
+        hasCTA={displayHero.hasCTA}
         image={getHeroImage()}
       />
 

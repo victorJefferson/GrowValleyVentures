@@ -77,6 +77,9 @@ export default function ExpertiseContent({ heroData }: { heroData?: any }) {
         eyebrow={displayHero.eyebrow}
         headline={displayHero.headline}
         subheadline={displayHero.subheadline}
+        ctaText={displayHero.ctaText}
+        ctaHref={displayHero.ctaHref}
+        hasCTA={displayHero.hasCTA}
         image={heroImage}
       />
 

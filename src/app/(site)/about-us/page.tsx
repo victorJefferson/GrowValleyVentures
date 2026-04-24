@@ -8,8 +8,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./AboutUs.module.scss";
 import { client } from "@/lib/sanity";
-import { heroQuery, leadershipQuery, caseStudiesQuery, serviceCategoriesQuery, allServicesQuery } from "@/lib/queries";
+import { heroQuery, leadershipQuery, caseStudiesQuery, serviceCategoriesQuery, allServicesQuery, dataSectionQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
+import { DataSection } from "@/components/ui/DataSection";
 
 export const metadata: Metadata = {
   title: {
@@ -30,14 +31,16 @@ export default async function AboutUsPage() {
   let caseStudiesData: any[] = [];
   let categories: any[] = [];
   let services: any[] = [];
+  let dataSectionData = null;
 
   try {
-    [heroData, leadershipData, caseStudiesData, categories, services] = await Promise.all([
+    [heroData, leadershipData, caseStudiesData, categories, services, dataSectionData] = await Promise.all([
       client.fetch(heroQuery, { pageSlug: "about" }),
       client.fetch(leadershipQuery),
       client.fetch(caseStudiesQuery),
       client.fetch(serviceCategoriesQuery),
-      client.fetch(allServicesQuery)
+      client.fetch(allServicesQuery),
+      client.fetch(dataSectionQuery)
     ]);
   } catch (err) {
     console.error("About Us Data Fetch Error:", err);
@@ -50,30 +53,10 @@ export default async function AboutUsPage() {
     image: "/images/home_hero.png",
   };
 
-  const defaultLeadership = {
-    eyebrow: "LEADERSHIP",
-    name: "Jazeer Jamal",
-    title: "FOUNDER & CEO, GROWVALLEY GROUP",
-    bio: [
-      "Jazeer Jamal founded GrowValley Group to manage what most firms only advise on: the structural, operational, and financial foundations that allow businesses to form, function, and grow across jurisdictions.",
-      "Over two decades, his work has spanned transactions exceeding $2 billion, assets under management of $350 million, and over $100 million in capital raised. His mandates have covered growth capital, restructuring, and direct investment across private families, institutional allocators, and government entities in the Middle East, South Asia, and beyond.",
-      "He has built and scaled more than fifty ventures, worked directly with over five hundred startups, and operates today with active companies across the GrowValley portfolio. He is based in Sharjah, UAE.",
-    ],
-    stats: [
-      { value: "$2B+", label: "Transactions across mandates" },
-      { value: "$350M", label: "Assets under management" },
-      { value: "$100M+", label: "Capital raised" },
-      { value: "50+", label: "Ventures built and scaled" },
-      { value: "500+", label: "Startups engaged directly" },
-    ],
-  };
-
   const displayHero = heroData || defaultHero;
   const heroImage = heroData?.image
     ? urlFor(heroData.image).url()
     : displayHero.image;
-
-  const displayLeadership = leadershipData || defaultLeadership;
 
   return (
     <main>
@@ -81,6 +64,9 @@ export default async function AboutUsPage() {
         eyebrow={displayHero.eyebrow}
         headline={displayHero.headline}
         subheadline={displayHero.subheadline}
+        ctaText={displayHero.ctaText}
+        ctaHref={displayHero.ctaHref}
+        hasCTA={displayHero.hasCTA}
         image={heroImage}
       />
       <section className="section-padding">
@@ -88,17 +74,11 @@ export default async function AboutUsPage() {
           <div className={styles.roundedPanel}>
             <div className={styles.splitIntro}>
               <div className={styles.introContent}>
-                <h2 className={styles.heading}>Who we are</h2>
+                <span className={styles.eyebrow}>OUR EDGE</span>
+                <h2 className={styles.heading}>Most wealth managers study markets. We&apos;ve operated inside them.</h2>
                 <p className={styles.body}>
-                  Most advisory practices are built around products. Ours is
-                  built around you. GrowValley was founded on a simple
-                  observation. Wealthy individuals, family offices, and
-                  institutional allocators rarely lack access to financial
-                  products. What they lack is one team that sees the full
-                  picture, coordinates every dimension of their wealth, and is
-                  accountable for how it all fits together. That is what we do.
-                  Not one part of your wealth. All of it. One team. One
-                  strategy. One point of accountability.
+                  We&apos;ve worked directly with founders, builders, operators and leaders,
+                  helping scale revenues, raise capital, and launch new businesses from the ground up.
                 </p>
               </div>
               <div className={styles.introImage}>
@@ -114,55 +94,11 @@ export default async function AboutUsPage() {
           </div>
         </div>
       </section>
-      <section className={styles.coreDisciplinesSection}>
-        <div className="container">
-          <div className={styles.coreDisciplinesHeader}>
-            <span className={styles.coreDisciplinesEyebrow}>
-              Our Core Disciplines
-            </span>
-          </div>
-
-          <div className={styles.coreDisciplinesGrid}>
-            {(categories.length > 0
-              ? categories
-              : [
-                { title: "Wealth Management", sectionId: "wealth-management" },
-                { title: "Family Office Services", sectionId: "family-office" },
-                { title: "Private Access to Opportunities", sectionId: "private-access" },
-                { title: "Succession Planning Services", sectionId: "succession-planning" },
-              ]
-            ).map((cat, i) => {
-              // A robust fallback resolution when CMS 'sectionId' field is blank
-              let targetHash = cat.sectionId;
-              if (!targetHash) {
-                const titleLower = (cat.title || "").toLowerCase();
-                if (titleLower.includes("wealth")) targetHash = "wealth-management";
-                else if (titleLower.includes("family")) targetHash = "family-office";
-                else if (titleLower.includes("private")) targetHash = "private-access";
-                else if (titleLower.includes("succession")) targetHash = "succession-planning";
-                else targetHash = cat.slug || "";
-              }
-
-              return (
-                <Link
-                  href={`/our-expertise/#${targetHash}`}
-                  className={styles.disciplineTile}
-                  key={i}
-                >
-                  <span className={styles.tileIndex}>0{i + 1}</span>
-                  <div className={styles.tileBottom}>
-                    <h3 className={styles.tileTitle}>{cat.title}</h3>
-                    <div className={styles.tileArrow}>
-                      <ArrowRight />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
+      <DataSection
+        headline={dataSectionData.headline}
+        description={dataSectionData.description}
+        stats={dataSectionData.stats}
+      />
       {/* Vistra Inspired Solutions Section */}
       <AboutUsSolutions initialCategories={categories} initialServices={services} />
 
@@ -179,7 +115,7 @@ export default async function AboutUsPage() {
         <div className="container">
           <div className={styles.groupPanel}>
             <h2 className={styles.headingWhite}>
-              Speak to a team you can trust
+              You've worked hard to build what you have. Let's make sure it's in the right hands.
             </h2>
             <div className={styles.ctaGroup}>
               <Link href="/contact">
@@ -188,42 +124,9 @@ export default async function AboutUsPage() {
                   variant="secondary"
                   className="uppercase-button"
                 >
-                  Start a conversation
+                  Talk to an Advisor
                 </Button>
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container">
-          <div className={styles.roundedPanel}>
-            <div className={styles.founderFlex}>
-              <div className={styles.founderBio}>
-                <span className={styles.founderEyebrow}>
-                  {displayLeadership.eyebrow}
-                </span>
-                <h2 className={styles.founderName}>{displayLeadership.name}</h2>
-                <span className={styles.founderTitle}>
-                  {displayLeadership.title}
-                </span>
-
-                <div className={styles.bioText}>
-                  {displayLeadership.bio.map((para: string, idx: number) => (
-                    <p key={idx}>{para}</p>
-                  ))}
-                </div>
-              </div>
-
-              <div className={styles.founderStats}>
-                {displayLeadership.stats.map((stat: any, idx: number) => (
-                  <div className={styles.statRow} key={idx}>
-                    <span className={styles.statValue}>{stat.value}</span>
-                    <span className={styles.statLabel}>{stat.label}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

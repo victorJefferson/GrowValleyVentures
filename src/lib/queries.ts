@@ -7,6 +7,7 @@ export const heroQuery = groq`
     subheadline,
     ctaText,
     ctaHref,
+    hasCTA,
     image
   }
 `;

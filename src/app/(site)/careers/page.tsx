@@ -57,6 +57,9 @@ export default async function CareersPage() {
         eyebrow={displayHero.eyebrow}
         headline={displayHero.headline}
         subheadline={displayHero.subheadline}
+        ctaText={displayHero.ctaText}
+        ctaHref={displayHero.ctaHref}
+        hasCTA={displayHero.hasCTA}
         image={heroImage}
       />
 
