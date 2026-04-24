@@ -15,6 +15,7 @@ interface HeroProps {
     secondaryCtaText?: string;
     secondaryCtaHref?: string;
     image?: any;
+    isShort?: boolean;
 }
 
 export function Hero({
@@ -27,6 +28,7 @@ export function Hero({
     secondaryCtaText,
     secondaryCtaHref,
     image,
+    isShort = false,
 }: HeroProps) {
     const heroImageSrc =
         typeof image === 'string'
@@ -36,7 +38,7 @@ export function Hero({
                 : '/images/home_hero.png';
 
     return (
-        <section className={styles.heroSection}>
+        <section className={`${styles.heroSection} ${isShort ? styles.isShort : ''}`}>
             {/* Full-bleed background image */}
             <img
                 src={heroImageSrc}

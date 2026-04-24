@@ -26,6 +26,29 @@
 
     /* Dark base so text is readable even before the image loads */
     background-color: hsl(150, 40%, 5%);
+
+    &.isShort {
+        height: 50vh; /* Increased from 40vh to give more breathing room */
+        min-height: 450px; /* Increased from 350px to prevent clipping */
+        
+        @media (max-width: 767px) {
+            height: 60vh;
+            min-height: 400px;
+        }
+
+        .heroInner {
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        .headline {
+            font-size: 3.5rem; /* Slightly smaller than full hero (4.25rem) */
+            
+            @media (max-width: 767px) {
+                font-size: 2.25rem;
+            }
+        }
+    }
 }
 
 /* ── Full-bleed background image ── */
@@ -99,7 +122,7 @@
 
 /* ── Content width constraint (left half) ── */
 .heroContent {
-    max-width: 680px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 0; /* controlled by individual child margins */

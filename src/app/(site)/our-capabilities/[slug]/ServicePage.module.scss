@@ -351,9 +351,15 @@
   }
 
   .hwGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
+
+    & > * {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
   }
 
   .hwCard {
@@ -361,6 +367,10 @@
     border-radius: 16px;
     padding: 2.5rem 2.25rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &:hover {
       transform: translateY(-4px);
@@ -513,12 +523,20 @@
   }
 
   .statsGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.25rem;
 
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(4, 1fr);
+    & > * {
+      flex: 1 1 260px;
+      max-width: 320px;
+    }
+
+    @media (max-width: 600px) {
+      & > * {
+        flex: 1 1 calc(50% - 1.25rem);
+      }
     }
   }
 
@@ -527,6 +545,10 @@
     border-radius: 16px;
     padding: 2.5rem 2rem;
     transition: box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &:hover {
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -588,16 +610,21 @@
       margin-bottom: 2rem;
     }
 
+    .wiGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+
+      @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      columns: 1;
-
-      @media (min-width: 600px) {
-        columns: 2;
-        column-gap: 2rem;
-      }
 
       li {
         font-size: 1rem;
@@ -607,7 +634,6 @@
         border-bottom: 1px solid var(--color-surface-2);
         position: relative;
         padding-left: 1.25rem;
-        break-inside: avoid;
 
         &:before {
           content: '';

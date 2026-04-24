@@ -73,7 +73,7 @@
 }
 
 .introContent {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .introHeading {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -202,7 +202,7 @@
     counter-reset: process-step;
 
     @media (min-width: 1024px) {
-        gap: 0;
+        gap: 3rem;
         justify-content: space-between;
         margin: 5rem 0 7rem 0;
     }
@@ -214,18 +214,18 @@
         background-color: transparent;
         border: none;
         font-weight: 600;
-        font-size: 1rem;
-        letter-spacing: 0.12em;
+        font-size: 1.25rem;
+        letter-spacing: 0.05em;
         color: var(--color-primary-navy);
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
         position: relative;
 
         @media (min-width: 1024px) {
             flex: 1;
-            padding: 2.5rem 0;
+            padding: 2.5rem 1rem;
             text-align: center;
 
             &:not(:last-child):after {
@@ -233,7 +233,7 @@
                 position: absolute;
                 top: 60px; // Centers with the 40px circle (padding-top 40px + 20px)
                 left: calc(50% + 20px);
-                width: calc(100% - 40px);
+                width: calc(100% - 40px + 3rem);
                 height: 2px;
                 background-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.25);
                 z-index: 0;
@@ -467,5 +467,11 @@
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.centerBottomCard {
+    @media (min-width: 1024px) {
+        grid-column: 2 / span 1;
     }
 }

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { 
   Building2, BarChart3, Heart, Briefcase, Globe, Palette, 
-  Zap, Users, ShieldCheck, Layers, ScrollText, Plane 
+  Zap, Users, ShieldCheck, Layers, ScrollText, Plane,
+  LineChart, Network, Target, Route, RefreshCw
 } from "lucide-react";
 import { ServiceDetail } from "@/config/services";
 import { Button } from "@/components/ui/Button";
@@ -12,7 +13,8 @@ import styles from "./ServicePage.module.scss";
 
 const iconMap: Record<string, any> = {
   Building2, BarChart3, Heart, Briefcase, Globe, Palette,
-  Zap, Users, ShieldCheck, Layers, ScrollText, Plane
+  Zap, Users, ShieldCheck, Layers, ScrollText, Plane,
+  LineChart, Network, Target, Route, RefreshCw
 };
 
 // Per-service content blocks
@@ -24,6 +26,7 @@ const servicePageContent: Record<string, {
   problemHeadline: string;
   problemBody: string;
   problemBullets: string[];
+  problemImageText?: string;
   howWeHelpSubtitle: string;
   helpCards: { iconName: string; title: string; desc: string }[];
   featureEyebrow: string;
@@ -31,439 +34,190 @@ const servicePageContent: Record<string, {
   featureBody: string;
   featureBullets: string[];
   stats: { num: string; desc: string }[];
-  whatsIncludedItems: string[];
+  whatsIncluded: {
+    column1: string[];
+    column2: string[];
+  };
+  ctaHeadline?: string;
+  ctaBody?: string;
+  ctaButtonLabel?: string;
+  heroCtaLabel?: string;
+  problemCtaLabel?: string;
+  featureCtaLabel?: string;
+  bottomCtaLabel?: string;
+  overlayLabel?: string;
 }> = {
-  "single-family-office-setup": {
-    valuePropHeadline: "One structure. One vision. Yours,",
-    valuePropAccent: "built to endure.",
-    valuePropBody: "Establishing a family office is a statement of permanence. It signals that your family intends to govern its wealth with the same discipline applied to building it. We design the governance architecture, select the service providers, and stand up the entire operation — so you can focus on what matters.",
-    problemHighlight: "Fragmented wealth governance?",
-    problemHeadline: "Complexity is the enemy of wealth preservation.",
-    problemBody: "When advisors, accountants, and investment managers operate in silos, gaps emerge. Oversight fails. Costs compound. A properly constituted family office eliminates that fragmentation.",
-    problemBullets: ["Disjointed reporting across advisors", "No single accountability point", "Governance gaps compound over time"],
-    howWeHelpSubtitle: "The smart way to govern complex wealth",
+  "discretionary-mandate": {
+    valuePropHeadline: "By the time you've approved it,",
+    valuePropAccent: "the opportunity is already gone.",
+    valuePropBody: "Waiting for approvals is a structural disadvantage built into most advisory relationships. Markets move fast. Opportunity doesn't wait for your sign-off.",
+    problemHighlight: "Still approving every trade?",
+    problemHeadline: "Advisory mandates cost you more than just time.",
+    problemBody: "Every decision that requires your sign-off is a decision that could be late. Markets move fast. Waiting for approvals is a structural disadvantage built into most advisory relationships, and most clients don't realise it until something slips.\n\nA discretionary mandate changes the model. You agree the parameters once. We execute within them, continuously. Nothing gets delayed. Nothing gets missed.",
+    problemBullets: [
+      "Parameters set upfront, in writing, by you",
+      "No approval cycles on day-to-day decisions",
+      "Full accountability for execution sits with us"
+    ],
+    problemImageText: "Still approving every trade?",
+    howWeHelpSubtitle: "Built for people who want results, not involvement in every move.",
     helpCards: [
-      { iconName: "Building2", title: "Governance Architecture", desc: "Custom frameworks built around your family's values, legacy goals, and risk posture." },
-      { iconName: "Users", title: "Service Provider Selection", desc: "We curate the right accountants, lawyers, and investment teams — and manage them on your behalf." },
-      { iconName: "ShieldCheck", title: "Operational Excellence", desc: "Policies, processes, and controls that protect your assets and your family's privacy." }
+      { iconName: "Briefcase", title: "Parameters You Control", desc: "Before we manage a single position, we document your risk profile, goals, and boundaries. The mandate is yours. We operate within it." },
+      { iconName: "BarChart3", title: "Decisions Made in Time", desc: "We monitor your portfolio continuously and act when conditions require it. No delays, no approval cycles, no missed windows." },
+      { iconName: "Layers", title: "Reporting You Can Read", desc: "Quarterly reports that show you exactly what happened, what changed, and why. No jargon. No padding." }
     ],
-    featureEyebrow: "One framework to give you complete control",
-    featureHeadline: "Structure. Govern. Protect.",
-    featureBody: "GrowValley's family office setup process is built on decades of experience across jurisdictions. We handle the complexity so your family doesn't have to.",
-    featureBullets: ["Custom investment policy statements", "Board and committee governance design", "Consolidated reporting infrastructure", "Staff hiring and oversight", "Technology stack selection", "Annual governance reviews"],
+    featureEyebrow: "BUILT. MANAGED. REPORTED.",
+    featureHeadline: "Agreed once. Executed continuously. Reviewed quarterly.",
+    featureBody: "We've been on both sides of capital decisions. That operating experience is what we bring to every portfolio we manage on your behalf.",
+    featureBullets: [
+      "Mandate framework built around your situation, not a template",
+      "No product commissions, no incentive to overtrade",
+      "Senior-led management throughout, not delegated down",
+      "Cross-asset view informed by real deployment experience",
+      "Reports that show performance, allocation, and activity clearly",
+      "Formal review every quarter, or sooner if your situation changes"
+    ],
     stats: [
-      { num: "30+", desc: "Family offices established across jurisdictions" },
-      { num: "100%", desc: "Custom-built for each family mandate" },
-      { num: "3–6", desc: "Months from brief to operational" },
-      { num: "1", desc: "Dedicated GrowValley relationship lead throughout" }
+      { num: "$150M+", desc: "Assets under management" },
+      { num: "Senior", desc: "Every mandate is managed at partner level" },
+      { num: "100%", desc: "Fee-only. No commissions, ever" },
+      { num: "Direct", desc: "One advisor. No handoffs." }
     ],
-    whatsIncludedItems: ["Legal structure review", "Governance framework design", "Service provider selection", "Staff recruiting support", "Consolidated reporting setup", "Technology platform selection", "Annual review process", "Fiduciary oversight"]
+    whatsIncluded: {
+      column1: [
+        "Initial financial assessment",
+        "Risk profiling session",
+        "Mandate agreement documentation",
+        "Portfolio construction and implementation"
+      ],
+      column2: [
+        "Ongoing active portfolio management",
+        "Quarterly performance and allocation reports",
+        "Annual mandate review",
+        "Direct senior advisor access throughout"
+      ]
+    },
+    ctaHeadline: "Ready to start a conversation?",
+    ctaBody: "Tell us about your situation. We'll tell you honestly whether a discretionary mandate is the right structure for you.",
+    ctaButtonLabel: "SPEAK TO AN EXPERT"
   },
-  "wealth-consolidation-reporting": {
-    valuePropHeadline: "Everything, everywhere, at once —",
-    valuePropAccent: "with no blind spots.",
-    valuePropBody: "Wealth spread across banks, brokers, real estate, and private holdings is difficult to see clearly. We aggregate, reconcile, and present a single picture of your net worth — updated, accurate, and actionable.",
-    problemHighlight: "Scattered assets?",
-    problemHeadline: "What you can't see, you can't protect.",
-    problemBody: "When assets are held across multiple institutions and jurisdictions, reporting lags. Risk concentrations go undetected. Tax exposure builds silently. We eliminate the blind spots.",
-    problemBullets: ["No unified view of net worth", "Multiple custodian statements to reconcile", "Undetected concentration risk"],
-    howWeHelpSubtitle: "The smart way to see your wealth clearly",
+  "advisory-mandate": {
+    valuePropHeadline: "Your wealth. Your call.",
+    valuePropAccent: "Our expertise behind every move.",
+    valuePropBody: "GrowValley's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC.",
+    problemHighlight: "Who's actually advising you?",
+    problemHeadline: "Most advisors have never built what you're protecting.",
+    problemBody: "The problem isn't access to financial advice — it's the quality of the thinking behind it. Generic recommendations, product-driven incentives, and advisors who've never operated a business at any real scale add up to counsel that sounds professional but costs you in ways that don't show up on a statement.\n\nGrowValley's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC. When we sit alongside you, we're not reading from a playbook — we're drawing from a career of doing exactly what you're navigating.",
+    problemBullets: [
+      "Advice from operators who've run businesses, not just analysed them",
+      "No product mandates. No quotas. No hidden incentives.",
+      "Full decision authority stays with you at every stage"
+    ],
+    problemImageText: "Who's actually advising you?",
+    howWeHelpSubtitle: "A thinking partner with a track record — not a relationship manager with a script.",
     helpCards: [
-      { iconName: "BarChart3", title: "Multi-Asset Aggregation", desc: "Equities, fixed income, private equity, property, and alternatives — one consolidated view." },
-      { iconName: "ShieldCheck", title: "Risk Monitoring", desc: "Real-time alerts on concentration, liquidity gaps, and currency exposure across your portfolio." },
-      { iconName: "Layers", title: "Tax Transparency", desc: "Reporting structured to support your advisors and reduce year-end surprises." }
+      { iconName: "LineChart", title: "Portfolio Review Grounded in Real Context", desc: "We review your holdings, allocation, and performance against what you're actually trying to achieve — not a generic benchmark. You leave every review knowing exactly where you stand and why." },
+      { iconName: "ShieldCheck", title: "Risk Caught Before It Moves Against You", desc: "We identify concentration risk, liquidity gaps, and structural exposure early — before the market makes the decision for you. This is built into the mandate from the start, not flagged after the fact." },
+      { iconName: "Network", title: "Opportunities From a Network Most Can't Access", desc: "GrowValley's leadership is embedded across GCC founder networks, institutional investment circles, and sovereign-level relationships. Relevant opportunities reach you before they reach the market." }
     ],
-    featureEyebrow: "One platform to give you complete visibility",
-    featureHeadline: "Consolidate. Clarify. Control.",
-    featureBody: "Our reporting infrastructure connects to your custodians, advisors, and direct holdings — delivering a single source of truth you can share with your team.",
-    featureBullets: ["Daily portfolio valuation", "Asset class breakdown and allocation drift", "Currency and geography exposure mapping", "Tax lot tracking across jurisdictions", "Benchmarking and performance attribution", "Secure family portal access"],
+    featureEyebrow: "ADVISE. ASSESS. ALIGN.",
+    featureHeadline: "Counsel built around your convictions.",
+    featureBody: "GrowValley's co-founders bring over 50 years of combined experience across institutional investment, venture building, and sovereign advisory. This isn't a firm that learned wealth management from a textbook — it was built by people who've sat in the rooms where capital decisions actually get made.",
+    featureBullets: [
+      "Independent advice with zero product distribution conflicts",
+      "Leadership with active board seats across GCC investment portfolios",
+      "Direct access to a network spanning sovereign funds, family offices, and founder ecosystems",
+      "Full documentation of every recommendation and the rationale behind it",
+      "Macro and sector intelligence filtered to what's relevant to your specific position",
+      "Advisory structure tailored to your goals — not a packaged tier"
+    ],
     stats: [
-      { num: "100%", desc: "Visibility across all asset classes" },
-      { num: "Daily", desc: "Portfolio valuation and reconciliation" },
-      { num: "40+", desc: "Custodian data feeds supported" },
-      { num: "0", desc: "Blind spots" }
+      { num: "50+", desc: "Years of combined leadership experience across the founding team" },
+      { num: "Independent", desc: "No proprietary products. No distribution targets. Advice that answers to you only." },
+      { num: "Regional Depth", desc: "Active relationships across sovereign funds, family offices, and institutional investors in the GCC" },
+      { num: "Written", desc: "Every recommendation comes with documented rationale — not just a phone call" }
     ],
-    whatsIncludedItems: ["Custodian data aggregation", "Daily reconciliation", "Net worth dashboard", "Risk heat maps", "Currency exposure reporting", "Performance attribution", "Tax lot reporting", "Family portal access"]
+    whatsIncluded: {
+      column1: [
+        "Dedicated relationship manager, single point of contact",
+        "Regular portfolio reviews with written outcome summaries",
+        "Risk and concentration analysis updated each review cycle",
+        "Macro and sector briefings filtered to your actual holdings"
+      ],
+      column2: [
+        "On-demand advisory access between scheduled sessions",
+        "Opportunity alerts drawn from GrowValley's active network",
+        "Full documentation of every recommendation and rationale given",
+        "Annual mandate review against your original objectives"
+      ]
+    },
+    ctaHeadline: "Ready to start a conversation?",
+    ctaBody: "An advisory mandate starts with one conversation — your current position, where you want to go, and whether GrowValley is the right fit. No pitch decks. No obligations. Just a direct discussion with someone who's been in the room before.",
+    ctaButtonLabel: "TALK TO AN ADVISOR"
   },
-  "philanthropy": {
-    valuePropHeadline: "Giving, structured to reflect your values —",
-    valuePropAccent: "and honour your taxes.",
-    valuePropBody: "Meaningful giving requires more than generosity. It requires structure. We design philanthropic vehicles that maximise your impact, minimise your tax exposure, and endure across generations.",
-    problemHighlight: "Unstructured giving?",
-    problemHeadline: "Generosity without structure is just cost.",
-    problemBody: "Ad-hoc donations leave value on the table. Without the right structures, families give more to the taxman than to the causes they care about. We change that.",
-    problemBullets: ["Donation tax benefits not optimised", "No legacy or succession dimension to giving", "Impact is unmeasured and unaccountable"],
-    howWeHelpSubtitle: "The thoughtful approach to structured giving",
+  "financial-planning": {
+    valuePropHeadline: "Most wealth is built without a plan.",
+    valuePropAccent: "Most wealth is lost the same way.",
+    valuePropBody: "The real cost of poor financial planning is not a single bad investment. It is a decade of decisions that never connected: retirement that arrives underfunded, a business exit with no structure ready, wealth that dissolves in the next generation because no one drew a map.",
+    problemHighlight: "No plan. No direction.",
+    problemHeadline: "Money without direction works against itself.",
+    problemBody: "The real cost of poor financial planning is not a single bad investment. It is a decade of decisions that never connected: retirement that arrives underfunded, a business exit with no structure ready, wealth that dissolves in the next generation because no one drew a map.\n\nWe build that map. Your goals, your timeline, your actual financial position. Then we connect every decision to a specific outcome so nothing is left to chance or good intentions.",
+    problemBullets: [
+      "Retirement, education, and succession goals tied to real numbers and timelines",
+      "Strategies aligned to your goals, not to what is easiest to sell",
+      "One team coordinating every piece of the picture"
+    ],
+    problemImageText: "No plan. No direction.",
+    howWeHelpSubtitle: "Every client gets a plan built around their situation, not a standard template.",
     helpCards: [
-      { iconName: "Heart", title: "Philanthropic Vehicles", desc: "Donor-advised funds, charitable trusts, and foundations designed for your goals and jurisdiction." },
-      { iconName: "Globe", title: "Impact Measurement", desc: "Define, track, and report on the real-world outcomes of your giving." },
-      { iconName: "ShieldCheck", title: "Tax Optimisation", desc: "Coordinate your giving with your tax position to maximise efficiency across years." }
+      { iconName: "Target", title: "Goals defined with precision", desc: "We start by getting specific. Retirement age, education costs, succession timing, liquidity needs. Vague goals produce strategies that drift. Precise ones produce decisions that compound." },
+      { iconName: "Route", title: "Strategy built backwards from the outcome", desc: "Once your goals are defined, we build the investment strategy around them. Every allocation connects back to a specific milestone and a specific timeline, not to what performed well last quarter." },
+      { iconName: "RefreshCw", title: "A plan that updates as your life does", desc: "Goals shift. Markets move. Circumstances change. We review and adjust your plan as your situation evolves so the strategy stays accurate throughout, not just at the start." }
     ],
-    featureEyebrow: "One framework to give with purpose and precision",
-    featureHeadline: "Give. Measure. Endure.",
-    featureBody: "GrowValley designs philanthropic programmes that are as sophisticated as your investment portfolio — structured to deliver impact and build legacy.",
-    featureBullets: ["Philanthropic vehicle selection and setup", "Grant-making governance frameworks", "Impact reporting and beneficiary assessment", "Integration with estate and succession planning", "Multi-generational giving programmes", "Tax efficiency optimisation"],
+    featureEyebrow: "MAP. BUILD. PROTECT.",
+    featureHeadline: "A plan built around your life, not a template.",
+    featureBody: "GrowValley's financial planning practice is built by people who have deployed capital across real businesses and real markets. That operating background changes how we think about timelines, risk, and what a plan that actually holds up looks like.",
+    featureBullets: [
+      "Goal-based planning across retirement, education, succession, and liquidity events",
+      "Full financial position intake covering assets, liabilities, income, and future obligations",
+      "No product commissions and no incentivised recommendations, ever",
+      "Investment strategies selected for fit, not for margin",
+      "Regular plan reviews tied to life milestones and market conditions",
+      "Coordination with structuring, estate planning, and investment teams where needed"
+    ],
     stats: [
-      { num: "100%", desc: "Giving aligned with your tax position" },
-      { num: "3", desc: "Philanthropic vehicle types available" },
-      { num: "Global", desc: "Beneficiary reach and impact" },
-      { num: "1", desc: "Integrated philanthropy and wealth plan" }
+      { num: "$150M+", desc: "Assets under management across client portfolios" },
+      { num: "$3B+", desc: "In revenue generated through the GrowValley network" },
+      { num: "500+", desc: "Projects deployed across real businesses and capital structures" }
     ],
-    whatsIncludedItems: ["Philanthropic vehicle design", "Foundation setup", "Grant governance", "Beneficiary due diligence", "Impact reporting", "Tax efficiency review", "Estate integration", "Next-gen engagement"]
-  },
-  "ma-and-ipo": {
-    valuePropHeadline: "Corporate transactions demand coordination —",
-    valuePropAccent: "we provide it.",
-    valuePropBody: "An M&A event or IPO is not just a corporate milestone. It changes your personal wealth picture overnight. We sit alongside your legal and banking advisors to ensure your personal wealth strategy evolves in step with your corporate one.",
-    problemHighlight: "M&A wealth risk?",
-    problemHeadline: "Corporate events create personal wealth complexity.",
-    problemBody: "Liquidity events, lock-up periods, tax crystallisation, and estate implications all converge at the moment of a corporate transaction. Without personal advisory coordination, value is left on the table.",
-    problemBullets: ["Lock-up periods misaligned with personal liquidity needs", "Tax crystallisation not pre-planned", "Estate implications of new share structures unaddressed"],
-    howWeHelpSubtitle: "Coordinating your personal and corporate wealth through every transaction",
-    helpCards: [
-      { iconName: "Briefcase", title: "Transaction Coordination", desc: "We interface with your M&A advisors, lawyers, and bankers to keep your personal wealth strategy aligned throughout." },
-      { iconName: "Layers", title: "Tax Pre-Planning", desc: "Structures designed before the event to reduce the tax drag on your liquidity event." },
-      { iconName: "ShieldCheck", title: "Post-Transaction Wealth Design", desc: "Once the deal closes, we restructure your portfolio around the new reality." }
-    ],
-    featureEyebrow: "One team alongside you through every stage",
-    featureHeadline: "Advise. Coordinate. Execute.",
-    featureBody: "GrowValley provides personal wealth advisory at every stage of a corporate transaction — so you arrive at the closing table with a plan, not questions.",
-    featureBullets: ["Pre-transaction wealth review", "Tax structure design", "Lock-up period planning", "Investment strategy for liquidity proceeds", "Estate and philanthropy integration", "Post-transaction reporting framework"],
-    stats: [
-      { num: "Full", desc: "Transaction-to-portfolio advisory coverage" },
-      { num: "Pre", desc: "Tax planning initiated before close" },
-      { num: "Both", desc: "Corporate and personal advisors coordinated" },
-      { num: "Post", desc: "Wealth restructure delivered at close" }
-    ],
-    whatsIncludedItems: ["Pre-transaction wealth review", "Tax structure design", "Proceeds investment plan", "Lock-up management", "Estate integration", "Philanthropy coordination", "Post-close reporting", "Ongoing wealth advisory"]
-  },
-  "social-impact-investing": {
-    valuePropHeadline: "Capital with a conscience —",
-    valuePropAccent: "and a return to match.",
-    valuePropBody: "Impact investing is not charity. It is disciplined capital allocation to investments where financial return and societal benefit are not in competition. We build ESG-integrated portfolios that perform on both dimensions.",
-    problemHighlight: "Impact vs return?",
-    problemHeadline: "You shouldn't have to choose between returns and impact.",
-    problemBody: "Most investors believe they must sacrifice financial performance for purpose. The evidence says otherwise. We construct portfolios where both objectives are explicit and measured.",
-    problemBullets: ["No clear impact mandate defined", "ESG claims not independently verified", "Returns not benchmarked against risk-adjusted peers"],
-    howWeHelpSubtitle: "Capital deployed where it matters most",
-    helpCards: [
-      { iconName: "Globe", title: "ESG Portfolio Construction", desc: "Frameworks that integrate environmental, social, and governance metrics into every investment decision." },
-      { iconName: "BarChart3", title: "Impact Measurement", desc: "Dual-return reporting: financial and impact outcomes, presented with the same rigour." },
-      { iconName: "ShieldCheck", title: "Verified Standards", desc: "We apply recognised international frameworks across all impact mandates." }
-    ],
-    featureEyebrow: "One portfolio. Two performance dimensions.",
-    featureHeadline: "Return. Responsibility. Rigour.",
-    featureBody: "GrowValley's social impact framework applies the same investment rigour to impact selection as to any other asset class — because your values deserve a sound investment process.",
-    featureBullets: ["Impact thesis and mandate definition", "ESG-screened public equity portfolios", "Private impact fund access", "Dual-return performance reporting", "UN SDG alignment mapping", "Annual impact audit and verification"],
-    stats: [
-      { num: "Dual", desc: "Financial and impact returns — both measured" },
-      { num: "100%", desc: "Transparent ESG screening process" },
-      { num: "Global", desc: "Impact across multiple geographies" },
-      { num: "0", desc: "Compromise between return and responsibility" }
-    ],
-    whatsIncludedItems: ["Impact mandate definition", "ESG screening framework", "Public equity portfolios", "Private impact funds", "Dual-return reporting", "SDG alignment mapping", "Annual impact audit", "Stakeholder reporting"]
-  },
-  "collectibles-and-art": {
-    valuePropHeadline: "Alternative assets deserve the same rigour —",
-    valuePropAccent: "as any other class.",
-    valuePropBody: "Art, wine, classic cars, and rare collectibles are increasingly significant components of ultra-high-net-worth portfolios. We provide specialist access to valuation, acquisition advisory, and estate integration for every alternative asset you hold.",
-    problemHighlight: "Unmanaged alternatives?",
-    problemHeadline: "Passion assets become estate complications.",
-    problemBody: "Without proper valuation, insurance, and succession documentation, passion assets become liabilities rather than legacies. We bring institutional rigour to personal collections.",
-    problemBullets: ["No current independent valuations on file", "Collections not integrated into estate plans", "Insurance coverage based on outdated appraisals"],
-    howWeHelpSubtitle: "The specialist approach to alternative assets",
-    helpCards: [
-      { iconName: "Palette", title: "Valuation & Appraisal", desc: "Independent, market-credible valuations for insurance, estate, and transaction purposes." },
-      { iconName: "Briefcase", title: "Acquisition Advisory", desc: "Access to private sales, gallery relationships, and auction preview intelligence." },
-      { iconName: "ScrollText", title: "Estate Integration", desc: "Collectibles documented, valued, and integrated into your broader succession framework." }
-    ],
-    featureEyebrow: "One framework to govern all you collect",
-    featureHeadline: "Acquire. Protect. Bequeath.",
-    featureBody: "GrowValley's collectibles and art service gives clients institutional-quality advisory for assets that are deeply personal. Because passion and precision are not mutually exclusive.",
-    featureBullets: ["Independent valuation and appraisal", "Private sale and auction access", "Insurance documentation support", "Provenance and title verification", "Estate planning integration", "Secure storage and logistics coordination"],
-    stats: [
-      { num: "Expert", desc: "Independent appraisers across multiple categories" },
-      { num: "Private", desc: "Pre-auction and private sale access" },
-      { num: "Full", desc: "Estate integration for all collectible classes" },
-      { num: "Secure", desc: "Storage and custody coordination" }
-    ],
-    whatsIncludedItems: ["Independent valuation", "Provenance verification", "Insurance documentation", "Private sale access", "Auction advisory", "Secure storage", "Estate integration", "Annual collection review"]
-  },
-  "institutional-desk": {
-    valuePropHeadline: "The best deals never reach the public market —",
-    valuePropAccent: "but they reach our clients.",
-    valuePropBody: "GrowValley's institutional desk originates, structures, and distributes capital-market opportunities that are not accessible through conventional channels. We sit on the origination side — not the distribution side.",
-    problemHighlight: "Missing the real deals?",
-    problemHeadline: "The most valuable transactions are never advertised.",
-    problemBody: "Pre-IPO allocations, private real estate placements, and venture raises are distributed through relationships — not listings. Clients without institutional access miss the vintage years.",
-    problemBullets: ["No relationship-based deal access", "Dependent on public market timing", "Only seeing deals that others have already passed on"],
-    howWeHelpSubtitle: "Institutional-grade deal access, delivered to private clients",
-    helpCards: [
-      { iconName: "Zap", title: "Pre-IPO Investment", desc: "Allocations in companies approaching public markets — at pre-listing valuations." },
-      { iconName: "Building2", title: "Real Estate Structuring", desc: "Developer-direct access to marquee assets across Western Europe, Middle East, and Asia." },
-      { iconName: "Globe", title: "Capital Raises", desc: "Venture, private equity, and corporate mandates originated through our deal network." }
-    ],
-    featureEyebrow: "One desk. Three access points.",
-    featureHeadline: "Originate. Structure. Place.",
-    featureBody: "We do not aggregate or re-package third-party deals. Every opportunity placed with GrowValley clients has been originated or co-structured by our team — aligned with our own capital at risk.",
-    featureBullets: ["Pre-IPO equity allocations", "Developer-direct real estate access", "Venture and growth equity", "Private credit mandates", "Corporate capital raises", "Co-investment structures"],
-    stats: [
-      { num: "3", desc: "Core access channels: pre-IPO, real estate, capital raises" },
-      { num: "Both", desc: "Sides of every deal represented by our team" },
-      { num: "Fewer", desc: "Deals presented — each rigorously evaluated" },
-      { num: "Aligned", desc: "GrowValley capital participates alongside clients" }
-    ],
-    whatsIncludedItems: ["Pre-IPO allocations", "Real estate placements", "VC and PE access", "Corporate mandates", "Co-investment structures", "Private credit", "Deal documentation", "Post-investment monitoring"]
-  },
-  "proven-practitioners": {
-    valuePropHeadline: "Advice from people who have done it —",
-    valuePropAccent: "not just studied it.",
-    valuePropBody: "Our team has sat on both sides of a deal. They have originated, structured, and executed transactions — not merely advised on them. Your outcomes benefit from that experience directly.",
-    problemHighlight: "Advisory without execution?",
-    problemHeadline: "Experience at the table changes the outcome.",
-    problemBody: "Most advisory relationships involve people who have studied transactions. Our relationships involve people who have executed them. That distinction is material when capital is at risk.",
-    problemBullets: ["Advisors who have never executed a deal", "No accountability for outcomes", "Pattern-matching from theory, not practice"],
-    howWeHelpSubtitle: "Practitioners, not theorists",
-    helpCards: [
-      { iconName: "Users", title: "Deal Experience", desc: "Team members who have originated, structured, and placed transactions across multiple cycles." },
-      { iconName: "Briefcase", title: "Both Sides of the Table", desc: "We have been operators, investors, and advisors. We understand the dynamics of each." },
-      { iconName: "ShieldCheck", title: "Outcome Accountability", desc: "We invest alongside our clients. Our incentives are aligned with your returns." }
-    ],
-    featureEyebrow: "One team. Every perspective.",
-    featureHeadline: "Originated. Structured. Placed.",
-    featureBody: "The GrowValley team's track record spans corporate advisory, institutional investment, and direct deal execution. We bring the full range of that experience to every client engagement.",
-    featureBullets: ["Transaction origination expertise", "Deal structuring and documentation", "Institutional distribution networks", "Cross-border execution experience", "Post-investment portfolio management", "Exit and liquidity strategy"],
-    stats: [
-      { num: "Both", desc: "Origination and execution experience" },
-      { num: "Multi", desc: "Market cycles navigated by the team" },
-      { num: "Skin", desc: "In the game — capital aligned with clients" },
-      { num: "Full", desc: "Lifecycle support from deal to exit" }
-    ],
-    whatsIncludedItems: ["Deal sourcing", "Structuring expertise", "Due diligence support", "Legal coordination", "Distribution capability", "Post-close monitoring", "Exit advisory", "Co-investment access"]
-  },
-  "capital-sustainability": {
-    valuePropHeadline: "We present fewer deals —",
-    valuePropAccent: "the ones we present are worth looking at.",
-    valuePropBody: "Volume is not the objective at GrowValley. Every opportunity that reaches a client has been evaluated against capital durability, exit visibility, and risk-adjusted return. We apply institutional-grade diligence to every deal.",
-    problemHighlight: "Too many deals?",
-    problemHeadline: "Deal flow is not the problem. Quality is.",
-    problemBody: "The private markets are full of opportunities. Most of them are not worth considering. Our discipline is in the selection — ensuring every deal placed meets a rigorous set of agreed criteria.",
-    problemBullets: ["No framework for evaluating deal quality", "Exit timelines unclear at point of entry", "Risk-adjusted return not formally assessed"],
-    howWeHelpSubtitle: "Capital durability as the primary lens",
-    helpCards: [
-      { iconName: "ShieldCheck", title: "Durability Analysis", desc: "Every opportunity evaluated against stress scenarios, capital structure, and downside protection." },
-      { iconName: "BarChart3", title: "Exit Visibility", desc: "We only place deals where the liquidity path is credible and clearly defined at entry." },
-      { iconName: "Zap", title: "Risk-Adjusted Return", desc: "Return targets set against a formally assessed risk profile — not optimistic projections." }
-    ],
-    featureEyebrow: "Discipline before opportunity",
-    featureHeadline: "Evaluate. Protect. Return.",
-    featureBody: "GrowValley's capital sustainability framework applies a consistent, documented process to every deal evaluated — ensuring that client capital is only deployed where the risk/return is genuinely compelling.",
-    featureBullets: ["Formal capital durability assessment", "Stress-tested return projections", "Liquidity path documentation", "Downside protection analysis", "Portfolio concentration limits", "Ongoing monitoring and reporting"],
-    stats: [
-      { num: "Fewer", desc: "Deals presented — quality over volume" },
-      { num: "100%", desc: "Of deals formally assessed before client presentation" },
-      { num: "Clear", desc: "Exit path required at point of entry" },
-      { num: "Risk", desc: "Adjusted returns — not gross projections" }
-    ],
-    whatsIncludedItems: ["Capital durability analysis", "Exit path assessment", "Risk framework application", "Return stress testing", "Portfolio limits", "Concentration review", "Ongoing monitoring", "Quarterly reporting"]
-  },
-  "wealth-structuring": {
-    valuePropHeadline: "The structure around your assets —",
-    valuePropAccent: "matters as much as the assets.",
-    valuePropBody: "Holding structures that made sense when wealth was smaller often become inefficient, costly, and vulnerable as wealth grows. We redesign holding arrangements to improve efficiency, reduce unnecessary cost, and strengthen the overall integrity of your wealth position.",
-    problemHighlight: "Inefficient structures?",
-    problemHeadline: "Poor structure is a slow erosion of wealth.",
-    problemBody: "Tax drag, unnecessary duplication, and fragile holding arrangements compound silently over time. By the time the problem is visible, significant value has already been lost.",
-    problemBullets: ["Multiple entities with no clear purpose", "Tax drag from suboptimal holding structures", "No visibility on cost of current arrangements"],
-    howWeHelpSubtitle: "Structural clarity for complex wealth",
-    helpCards: [
-      { iconName: "Layers", title: "Holding Structure Review", desc: "Comprehensive analysis of all legal entities, trusts, and holding vehicles — with clear recommendations." },
-      { iconName: "ShieldCheck", title: "Efficiency Improvement", desc: "Restructure designed to reduce operational cost, tax exposure, and administrative burden." },
-      { iconName: "BarChart3", title: "Integrity Assessment", desc: "Ensure your structure performs as intended under stress — legally, operationally, and financially." }
-    ],
-    featureEyebrow: "One review. Structural transformation.",
-    featureHeadline: "Simplify. Strengthen. Sustain.",
-    featureBody: "GrowValley's wealth structuring review is a complete audit of your holding arrangements — delivered with a prioritised roadmap for improvement and implementation.",
-    featureBullets: ["Legal entity mapping and assessment", "Cost of structure analysis", "Tax efficiency review", "Jurisdictional holding optimisation", "Implementation roadmap", "Annual structural health review"],
-    stats: [
-      { num: "Full", desc: "Entity-by-entity structural review" },
-      { num: "Cost", desc: "Reduction identified in first engagement" },
-      { num: "Clear", desc: "Implementation roadmap delivered" },
-      { num: "Annual", desc: "Ongoing structural health monitoring" }
-    ],
-    whatsIncludedItems: ["Entity mapping", "Cost analysis", "Tax efficiency review", "Jurisdiction optimisation", "Trust structure review", "Asset protection review", "Implementation plan", "Annual review"]
-  },
-  "succession-planning": {
-    valuePropHeadline: "Wealth transfers poorly without a plan —",
-    valuePropAccent: "we build the plan.",
-    valuePropBody: "Succession is not an event. It is a process. One that begins years before any transfer of wealth occurs. We engage the right legal and fiduciary professionals to construct a framework that protects your family and holds across generations.",
-    problemHighlight: "No succession plan?",
-    problemHeadline: "Generational wealth requires generational planning.",
-    problemBody: "Without a documented succession framework, families face unnecessary tax, avoidable family conflict, and structures that fail under pressure. The time to plan is well before the plan is needed.",
-    problemBullets: ["No written succession framework in place", "Legal documents not updated to reflect current wishes", "Next generation not prepared for wealth stewardship"],
-    howWeHelpSubtitle: "A succession framework built to endure",
-    helpCards: [
-      { iconName: "ScrollText", title: "Legal Framework", desc: "Wills, trusts, and shareholder agreements designed to reflect your intentions and withstand challenge." },
-      { iconName: "Users", title: "Family Governance", desc: "Family charters, council structures, and next-generation education programmes." },
-      { iconName: "ShieldCheck", title: "Fiduciary Selection", desc: "We identify and engage the right trustees, executors, and guardians for your specific requirements." }
-    ],
-    featureEyebrow: "One framework. Your legacy, protected.",
-    featureHeadline: "Plan. Protect. Transfer.",
-    featureBody: "GrowValley's succession planning process is collaborative, thorough, and designed to produce documentation that holds — legally, practically, and across generations.",
-    featureBullets: ["Succession strategy design", "Will and trust documentation", "Family governance charter", "Fiduciary provider selection", "Next-generation wealth education", "Regular review and update process"],
-    stats: [
-      { num: "Full", desc: "Legal and fiduciary coverage" },
-      { num: "Next", desc: "Generation prepared for wealth stewardship" },
-      { num: "Annual", desc: "Review to reflect life changes" },
-      { num: "Zero", desc: "Gaps in your succession framework" }
-    ],
-    whatsIncludedItems: ["Succession strategy", "Will preparation coordination", "Trust structuring", "Family charter", "Governance council", "Next-gen education", "Fiduciary selection", "Annual review"]
-  },
-  "citizenship-residency-services": {
-    valuePropHeadline: "Jurisdictional flexibility —",
-    valuePropAccent: "is a legitimate dimension of wealth planning.",
-    valuePropBody: "Residency and citizenship decisions carry profound implications for tax, estate planning, and personal mobility. We connect clients with the specialist firms best placed to navigate these programmes — with precision and discretion.",
-    problemHighlight: "Jurisdictional complexity?",
-    problemHeadline: "The wrong residency decision is expensive to undo.",
-    problemBody: "EB-5, Golden Visa, and other citizenship-by-investment programmes involve significant capital commitments, legal complexity, and personal disclosure. Expert navigation is not optional.",
-    problemBullets: ["Programme requirements change frequently", "Tax implications of residency change not pre-modelled", "Personal information exposure without proper legal guidance"],
-    howWeHelpSubtitle: "The right programme. The right firm. The right outcome.",
-    helpCards: [
-      { iconName: "Plane", title: "Programme Selection", desc: "We match your objectives — tax, mobility, lifestyle — to the most appropriate programme available." },
-      { iconName: "ShieldCheck", title: "Specialist Firm Access", desc: "We connect clients with pre-vetted legal and immigration specialists who navigate these programmes daily." },
-      { iconName: "Globe", title: "Tax Pre-Modelling", desc: "Residency change implications modelled before any commitment is made." }
-    ],
-    featureEyebrow: "Precision navigation for complex decisions",
-    featureHeadline: "Select. Navigate. Establish.",
-    featureBody: "GrowValley coordinates the residency and citizenship planning process — from programme selection through to completion — in partnership with specialists across the relevant jurisdictions.",
-    featureBullets: ["EB-5 investor visa navigation", "Portugal Golden Visa programme", "Other EU residency programmes", "Tax pre-modelling before commitment", "Legal and immigration specialist coordination", "Ongoing compliance support post-establishment"],
-    stats: [
-      { num: "Global", desc: "Programme access across multiple jurisdictions" },
-      { num: "Pre", desc: "Tax modelling before any capital commitment" },
-      { num: "Vetted", desc: "Legal and immigration specialists only" },
-      { num: "Discreet", desc: "Complete confidentiality at every stage" }
-    ],
-    whatsIncludedItems: ["Programme assessment", "Tax pre-modelling", "EB-5 coordination", "Golden Visa guidance", "Legal firm referral", "Application support", "Compliance monitoring", "Post-establishment review"]
-  },
-  "wealth-management-strategy": {
-    valuePropHeadline: "Strategy, built for you —",
-    valuePropAccent: "not a template.",
-    valuePropBody: "Institutional-grade strategy design based on your unique goals. We construct a bespoke investment framework that aligns with your specific risk profile and time horizon.",
-    problemHighlight: "Generic advice?",
-    problemHeadline: "One size fits none in wealth management.",
-    problemBody: "Most wealth management is built on rigid templates. We start with a blank sheet of paper and your specific requirements.",
-    problemBullets: ["Template-driven portfolios", "Lack of alignment with family goals", "Opaque fee structures"],
-    howWeHelpSubtitle: "The smart way to build your strategy",
-    helpCards: [
-      { iconName: "Target", title: "Goal-Based Planning", desc: "Your life goals determine your asset allocation, not a model portfolio." },
-      { iconName: "BarChart3", title: "Risk Profiling", desc: "Rigorous assessment of your risk capacity and tolerance across multiple scenarios." },
-      { iconName: "Layers", title: "Asset Allocation", desc: "Strategic and tactical allocation across all traditional and alternative asset classes." }
-    ],
-    featureEyebrow: "One plan. One vision.",
-    featureHeadline: "Define. Design. Deliver.",
-    featureBody: "Our strategy process is comprehensive, covering every dimension of your wealth position to ensure absolute alignment.",
-    featureBullets: ["Bespoke investment policy statements", "Cash flow modeling", "Tax-efficient structure integration", "Multi-generational planning", "Benchmark selection", "Quarterly strategy reviews"],
-    stats: [
-      { num: "100%", desc: "Bespoke strategy design" },
-      { num: "Expert", desc: "Investment committee oversight" },
-      { num: "Full", desc: "Transparency on all assumptions" },
-      { num: "Direct", desc: "Access to lead strategists" }
-    ],
-    whatsIncludedItems: ["Goal discovery sessions", "Risk assessment report", "Investment Policy Statement", "Asset allocation design", "Tax efficiency review", "Benchmark design", "Ongoing review framework", "Implementation roadmap"]
-  },
-  "wealth-management-execution": {
-    valuePropHeadline: "Disciplined execution —",
-    valuePropAccent: "from day one.",
-    valuePropBody: "Every trade, every allocation, and every adjustment is executed with institutional rigour. We manage the complexity of implementation so you don't have to.",
-    problemHighlight: "Execution gaps?",
-    problemHeadline: "Good strategy fails without great execution.",
-    problemBody: "Market friction, poor timing, and lack of oversight erode returns. We provide the discipline required to turn strategy into performance.",
-    problemBullets: ["Inefficient trade execution", "Portfolio drift from target allocation", "High transaction costs"],
-    howWeHelpSubtitle: "The smart way to execute your mandate",
-    helpCards: [
-      { iconName: "Zap", title: "Direct Execution", desc: "Access to institutional liquidity and global markets with total transparency." },
-      { iconName: "ShieldCheck", title: "Cost Management", desc: "Minimising market impact and transaction costs across every asset class." },
-      { iconName: "Layers", title: "Rebalancing", desc: "Systematic portfolio rebalancing to maintain alignment with your risk profile." }
-    ],
-    featureEyebrow: "One team. Total accountability.",
-    featureHeadline: "Execute. Monitor. Refine.",
-    featureBody: "We handle the entire execution lifecycle, from initial implementation to ongoing portfolio maintenance and cash management.",
-    featureBullets: ["Global trade execution", "Liquidity management", "Corporate action handling", "Systematic rebalancing", "Security lending oversight", "Ongoing cost audit"],
-    stats: [
-      { num: "Total", desc: "Execution accountability" },
-      { num: "Global", desc: "Market access" },
-      { num: "Direct", desc: "Relationship with custodians" },
-      { num: "Daily", desc: "Execution monitoring" }
-    ],
-    whatsIncludedItems: ["Trade implementation", "Liquidity sourcing", "Transaction cost analysis", "Rebalancing schedule", "Corporate action management", "Cash management", "Security selection support", "Daily oversight"]
-  },
-  "wealth-management-oversight": {
-    valuePropHeadline: "Continuous oversight —",
-    valuePropAccent: "no blind spots.",
-    valuePropBody: "We monitor your entire wealth position in real-time, providing the oversight required to protect your assets and identify new opportunities.",
-    problemHighlight: "Lack of visibility?",
-    problemHeadline: "What you can't see, you can't manage.",
-    problemBody: "Fragmented reporting and infrequent reviews lead to missed risks and lost opportunities. We provide a single source of truth for your wealth.",
-    problemBullets: ["Opaque risk concentrations", "Infrequent performance reviews", "No unified view of net worth"],
-    howWeHelpSubtitle: "The smart way to monitor your wealth",
-    helpCards: [
-      { iconName: "ShieldCheck", title: "Risk Monitoring", desc: "Real-time alerts on concentration, liquidity, and market exposure." },
-      { iconName: "BarChart3", title: "Performance Attribution", desc: "Understanding exactly what is driving your returns across the portfolio." },
-      { iconName: "Target", title: "Compliance Review", desc: "Ensuring every investment remains within the boundaries of your mandate." }
-    ],
-    featureEyebrow: "One dashboard. Complete clarity.",
-    featureHeadline: "Monitor. Report. Protect.",
-    featureBody: "Our oversight framework is designed to give you total confidence in your wealth position at any moment.",
-    featureBullets: ["Real-time risk monitoring", "Consolidated performance reporting", "Benchmark comparison", "ESG and impact reporting", "Compliance oversight", "Quarterly steward reports"],
-    stats: [
-      { num: "Daily", desc: "Data reconciliation" },
-      { num: "Real-time", desc: "Risk alerts" },
-      { num: "100%", desc: "Transparency on performance" },
-      { num: "Total", desc: "Compliance monitoring" }
-    ],
-    whatsIncludedItems: ["Consolidated reporting", "Risk heat maps", "Performance attribution", "Benchmark reporting", "Compliance audit", "Tax reporting support", "Quarterly review meetings", "Secure client portal"]
-  },
-  "wealth-management-team": {
-    valuePropHeadline: "One integrated team —",
-    valuePropAccent: "one point of contact.",
-    valuePropBody: "We deliver every dimension of wealth through a single, integrated unit. No silos, no hand-offs, just total accountability for your outcomes.",
-    problemHighlight: "Advisor silos?",
-    problemHeadline: "Complexity demands integration.",
-    problemBody: "Managing multiple advisors is a full-time job. We act as your single point of accountability, coordinating every aspect of your wealth plan.",
-    problemBullets: ["Fragmented advice from different teams", "No single point of accountability", "Conflicting advisor incentives"],
-    howWeHelpSubtitle: "The smart way to manage your relationships",
-    helpCards: [
-      { iconName: "Users", title: "Relationship Lead", desc: "A single, senior professional dedicated to your family's mandate." },
-      { iconName: "Building2", title: "Advisor Coordination", desc: "We manage your existing lawyers, accountants, and bankers on your behalf." },
-      { iconName: "ShieldCheck", title: "Total Accountability", desc: "One team responsible for the overall success of your wealth strategy." }
-    ],
-    featureEyebrow: "One mandate. One team.",
-    featureHeadline: "Coordinate. Align. Succeed.",
-    featureBody: "Our team structure is built for families who value their time as much as their wealth. We handle the coordination so you don't have to.",
-    featureBullets: ["Dedicated relationship manager", "Investment committee access", "External advisor management", "Multi-generational engagement", "Family office integration", "24/7 priority access"],
-    stats: [
-      { num: "Single", desc: "Point of accountability" },
-      { num: "Senior", desc: "Relationship leads only" },
-      { num: "100%", desc: "Alignment of interests" },
-      { num: "Long", desc: "Term relationship focus" }
-    ],
-    whatsIncludedItems: ["Relationship management", "Advisor coordination", "Investment committee access", "Family governance support", "Next-gen education", "Concierge services", "Quarterly reviews", "Direct access to specialists"]
+    whatsIncluded: {
+      column1: [
+        "Full financial position review covering assets, liabilities, income, and obligations",
+        "Goal mapping with specific milestones, amounts, and timelines",
+        "Investment strategy aligned to each goal's horizon and risk tolerance",
+        "Retirement planning with income modelling and drawdown structure"
+      ],
+      column2: [
+        "Education and succession funding analysis",
+        "Coordination with wealth structuring and estate planning where relevant",
+        "Ongoing plan reviews as your situation evolves",
+        "Clear documentation of every decision and the reasoning behind it"
+      ]
+    },
+    ctaHeadline: "Ready to start a conversation?",
+    ctaBody: "Financial planning works best before the pressure arrives. Reach out and we will begin with a direct conversation about where you are, where you want to be, and what it will take to bridge the gap.",
+    heroCtaLabel: "SPEAK TO AN EXPERT",
+    problemCtaLabel: "LET'S TALK",
+    featureCtaLabel: "ENQUIRE ABOUT THIS SERVICE",
+    bottomCtaLabel: "CONTACT US",
+    overlayLabel: "OUR EXPERTISE"
   }
 };
 
 const UNSPLASH_IMAGES: Record<string, string> = {
-  "single-family-office-setup": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1400&auto=format&fit=crop",
-  "wealth-consolidation-reporting": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop",
-  "philanthropy": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1400&auto=format&fit=crop",
-  "ma-and-ipo": "https://images.unsplash.com/photo-1444653389962-8149286c578a?q=80&w=1400&auto=format&fit=crop",
-  "social-impact-investing": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1400&auto=format&fit=crop",
-  "collectibles-and-art": "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?q=80&w=1400&auto=format&fit=crop",
-  "institutional-desk": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400&auto=format&fit=crop",
-  "proven-practitioners": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1400&auto=format&fit=crop",
-  "capital-sustainability": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1400&auto=format&fit=crop",
-  "wealth-structuring": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop",
-  "succession-planning": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400&auto=format&fit=crop",
-  "citizenship-residency-services": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1400&auto=format&fit=crop",
+  "discretionary-mandate": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1400&auto=format&fit=crop",
+  "advisory-mandate": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1400&auto=format&fit=crop",
+  "financial-planning": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop",
 };
 
 export default function ServicePageContent({ service }: { service: ServiceDetail }) {
@@ -483,6 +237,8 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
             <ChevronRight className={styles.separator} size={14} />
             <Link href="/our-capabilities">Our Capabilities</Link>
             <ChevronRight className={styles.separator} size={14} />
+            <Link href={`/our-capabilities/${service.category.toLowerCase().replace(/\s+/g, '-')}`}>{service.category}</Link>
+            <ChevronRight className={styles.separator} size={14} />
             <span className={styles.current}>{service.title}</span>
           </nav>
 
@@ -492,14 +248,14 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
               <h1>{service.title}</h1>
               <p>{service.description}</p>
               <Link href="/contact">
-                <Button size="lg">Speak to an expert</Button>
+                <Button size="lg">{content.heroCtaLabel || content.ctaButtonLabel || "SPEAK TO AN EXPERT"}</Button>
               </Link>
             </div>
             <div className={styles.heroRight}>
               <img src={img} alt={service.title} />
               <div className={styles.heroRightOverlay} />
               <div className={styles.heroCaption}>
-                <span>{service.category}</span>
+                <span>{(content.overlayLabel || service.category)} / {service.title}</span>
                 <p>{service.title}</p>
               </div>
             </div>
@@ -531,7 +287,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
             <div className={styles.problemImageCol}>
               <img src={img} alt={service.title} />
               <div className={styles.problemHighlight}>
-                <strong>{content.problemHighlight}</strong>
+                <strong>{content.problemImageText || content.problemHighlight}</strong>
                 <span className={styles.underlineAccent} />
               </div>
             </div>
@@ -542,7 +298,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
                 {content.problemBullets.map((b, i) => <li key={i}>{b}</li>)}
               </ul>
               <Link href="/contact">
-                <Button variant="outline">Let&apos;s fix this</Button>
+                <Button variant="outline">{content.problemCtaLabel || content.ctaButtonLabel || "LET'S TALK"}</Button>
               </Link>
             </div>
           </div>
@@ -589,7 +345,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
                 {content.featureBullets.map((b, i) => <li key={i}>{b}</li>)}
               </ul>
               <Link href="/contact">
-                <Button variant="outline">Enquire about this service</Button>
+                <Button variant="outline">{content.featureCtaLabel || content.ctaButtonLabel || "Enquire about this service"}</Button>
               </Link>
             </div>
           </div>
@@ -618,13 +374,20 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
         <div className="container">
           <div className={styles.wiCard}>
             <div className={styles.wiContent}>
-              <h3>What&apos;s included with GrowValley&apos;s {service.title} service</h3>
-              <p className={styles.wiSubtext}>Everything you need, delivered as one integrated mandate.</p>
-              <ul>
-                {content.whatsIncludedItems.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+              <h3>What&apos;s included with GrowValley&apos;s {service.title}</h3>
+              <p className={styles.wiSubtext}>Everything required to manage your portfolio properly, from day one.</p>
+              <div className={styles.wiGrid}>
+                <ul>
+                  {content.whatsIncluded.column1.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+                <ul>
+                  {content.whatsIncluded.column2.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className={styles.wiImage}>
               <img src={img} alt={service.title} />
@@ -638,12 +401,12 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
       <section className={styles.ctaBanner}>
         <div className="container">
           <div className={styles.ctaInner}>
-            <h2>Ready to start a conversation?</h2>
+            <h2>{content.ctaHeadline || "Ready to start a conversation?"}</h2>
             <p>
-              Our advisors are ready to discuss your specific requirements with discretion and depth.
+              {content.ctaBody || "Our advisors are ready to discuss your specific requirements with discretion and depth."}
             </p>
             <Link href="/contact">
-              <Button size="lg" variant="secondary">Contact Us</Button>
+              <Button size="lg" variant="secondary">{content.bottomCtaLabel || content.ctaButtonLabel || "CONTACT US"}</Button>
             </Link>
           </div>
         </div>

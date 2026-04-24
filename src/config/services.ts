@@ -12,44 +12,34 @@ export interface ServiceDetail {
 export const services: ServiceDetail[] = [
   // Wealth Management
   {
-    slug: "wealth-management-strategy",
-    title: "Strategy",
-    description: "Institutional-grade strategy design based on your unique goals.",
-    category: "Wealth Management",
-    iconName: "Target",
-    content: "Institutional-grade strategy design based on your unique goals.",
-    features: ["Goal-based planning", "Risk profiling", "Strategic asset allocation"],
-    stats: [{ label: "Approach", value: "Institutional" }]
-  },
-  {
-    slug: "wealth-management-execution",
-    title: "Execution",
-    description: "Disciplined implementation from day one with total accountability.",
-    category: "Wealth Management",
-    iconName: "Zap",
-    content: "Disciplined implementation from day one with total accountability.",
-    features: ["Trade execution", "Portfolio rebalancing", "Cost management"],
-    stats: [{ label: "Focus", value: "Accountability" }]
-  },
-  {
-    slug: "wealth-management-oversight",
-    title: "Ongoing Oversight",
-    description: "Continuous monitoring and review of your entire wealth position.",
+    slug: "discretionary-mandate",
+    title: "Discretionary Mandate",
+    description: "You set the boundaries. We manage within them. Every decision, every day, without pulling you in for approval.",
     category: "Wealth Management",
     iconName: "ShieldCheck",
-    content: "Continuous monitoring and review of your entire wealth position.",
-    features: ["Real-time monitoring", "Quarterly reviews", "Risk management"],
-    stats: [{ label: "Monitoring", value: "Continuous" }]
+    content: "You set the boundaries. We manage within them. Every decision, every day, without pulling you in for approval.",
+    features: ["Parameters set upfront", "No approval cycles", "Full accountability"],
+    stats: [{ label: "AUM", value: "$150M+" }]
   },
   {
-    slug: "wealth-management-team",
-    title: "One Accountable Team",
-    description: "Every dimension of wealth delivered by a single integrated unit.",
+    slug: "advisory-mandate",
+    title: "Advisory Mandate",
+    description: "You make every decision. We make sure they're the right ones. GrowValley's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
     category: "Wealth Management",
-    iconName: "Users",
-    content: "Every dimension of wealth delivered by a single integrated unit.",
-    features: ["Integrated service", "Single contact point", "Unified reporting"],
-    stats: [{ label: "Team", value: "Integrated" }]
+    iconName: "BarChart3",
+    content: "You make every decision. We make sure they're the right ones. GrowValley's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
+    features: ["Advice from operators", "No product mandates", "Full decision authority"],
+    stats: [{ label: "Experience", value: "50+ Years" }]
+  },
+  {
+    slug: "financial-planning",
+    title: "Financial Planning",
+    description: "Most people manage money without a clear destination. We start with where you want to end up, build a strategy backwards from there, and stay close enough to adjust when things change.",
+    category: "Wealth Management",
+    iconName: "Target",
+    content: "Most people manage money without a clear destination. We start with where you want to end up, build a strategy backwards from there, and stay close enough to adjust when things change.",
+    features: ["Goals defined with precision", "Strategy built backwards", "Ongoing adjustment"],
+    stats: [{ label: "AUM", value: "$150M+" }]
   },
   // Family Office Services
   {
