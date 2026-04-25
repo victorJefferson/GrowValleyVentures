@@ -112,6 +112,11 @@
     color: var(--color-primary-navy);
     letter-spacing: -0.03em;
     margin-bottom: 1.25rem;
+
+    &.longHeadline {
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      line-height: 1.15;
+    }
   }
 
   p {
@@ -151,22 +156,36 @@
     backdrop-filter: blur(8px);
     padding: 1.5rem 2.25rem;
 
+    .overlayBreadcrumb {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+
+      .categoryPart {
+        color: var(--color-accent);
+      }
+
+      .separatorPart {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .titlePart {
+        color: var(--color-white);
+      }
+    }
+
     p {
       font-size: 1.1rem;
       font-weight: 600;
       color: var(--color-white);
       line-height: 1.35;
       margin: 0;
-    }
-
-    span {
-      font-size: 0.8rem;
-      color: var(--color-accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.35rem;
     }
   }
 }
@@ -180,7 +199,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    align-items: start;
+    align-items: center;
 
     @media (min-width: 768px) {
       grid-template-columns: 0.9fr 1fr;
@@ -400,6 +419,72 @@
       font-size: 0.975rem;
       color: var(--color-text-muted);
       line-height: 1.65;
+      margin: 0;
+    }
+  }
+}
+
+/* ── Process Workflow Pattern ── */
+.processGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+
+  & > * {
+    flex: 1 1 300px;
+    max-width: 380px;
+
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.processStep {
+  display: flex;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: var(--color-surface-1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: var(--color-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: rgba(26, 63, 167, 0.05);
+  }
+
+  .stepNumber {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--color-primary-navy);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .stepContent {
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-primary-navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
       margin: 0;
     }
   }

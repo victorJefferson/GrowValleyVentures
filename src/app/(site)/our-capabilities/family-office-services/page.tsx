@@ -5,7 +5,7 @@ import { Hero } from '@/components/ui/Hero';
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { CapabilitiesLeader } from "@/components/ui/CapabilitiesLeader";
 import { Button } from "@/components/ui/Button";
-import { ShieldCheck, Layers, BarChart3, Heart, Briefcase, Building2 } from "lucide-react";
+import { Building2, BarChart3, Heart, Briefcase, Globe, Palette } from "lucide-react";
 import styles from "../Capabilities.module.scss";
 
 export const metadata: Metadata = {
@@ -19,101 +19,94 @@ export default function FamilyOfficePage() {
       <Hero
         isShort
         eyebrow="Expertise — Family Office"
-        headline={<>Managing complexity so<br />you don&apos;t have to.</>}
-        subheadline="Here&apos;s exactly what we take off your plate."
+        headline="Family Office Services"
+        subheadline="Coordinating the full picture for families whose financial affairs have outgrown a single relationship."
         image="/images/corporate_headquarters.png"
         hasCTA={false}
       />
 
-      {/* SECTION 2 — THE FULL PICTURE */}
-      <section className={`${styles.introSection} ${styles.bgLight}`}>
+      {/* SECTION 2 — OPENING */}
+      <section className={`${styles.section} ${styles.bgLight}`}>
         <div className="container">
-          <div className={styles.introContent}>
-            <span className={styles.sectionEyebrow}>Our Philosophy</span>
-            <h2 className={styles.introHeading}>
-              We take responsibility for the full picture.<br />
-              Across every structure and decision.
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center' }}>
+          <div className={styles.splitIntro}>
+            <div>
+              <span className={styles.sectionEyebrow}>Our Philosophy</span>
+              <h2 className={styles.introHeading}>
+                When your wealth is too complex for one conversation, we coordinate all of it.
+              </h2>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <p className={styles.introParagraph}>
-                We don&apos;t manage the parts that are convenient to manage. We take responsibility for the full picture, across every structure, relationship, and decision that touches your family&apos;s wealth.
+                Some clients arrive with a single question. Others arrive with a structure that spans four jurisdictions, three advisors, a holding company, and a portfolio that no one has seen in full.
               </p>
               <p className={styles.introParagraph}>
-                We don&apos;t take commissions. We don&apos;t receive referral fees from third-party managers. We have no product shelf to clear. Our fee is transparent, agreed upfront, and tied entirely to the quality of work we do for you.
+                That is a family office problem. And it requires a different kind of firm.
+              </p>
+              <p className={styles.introParagraph}>
+                GrowValley acts as the central coordination layer for families whose financial affairs have outgrown a single relationship. We manage the full picture: structures, reporting, advisors, transactions, and the situations that do not fit a standard mandate.
+              </p>
+              <p className={styles.introParagraph}>
+                We work directly where we have the expertise. We bring in the right specialist where they are better placed. And we make sure nothing slips through the gaps.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3 — SIX AREAS */}
+      {/* SECTION 3 — WHAT WE COVER */}
       <section className={styles.section} style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <div className="container">
           <div className={styles.sectionHeaderSimple} style={{ textAlign: 'center' }}>
             <h2 className="section-title">
-              We cover six areas. All of them.<br />
-              Nothing left unmanaged.
+              Three areas. One point of accountability.
             </h2>
           </div>
 
           <div className={styles.serviceGrid}>
             <ServiceCard
-              key="investment-oversight"
-              title="Investment Oversight"
-              description="Your portfolio is built around your family's objectives, timeline, and risk position. Not a product menu, not a template. Discretionary or advisory, the mandate answers only to you, and we monitor it continuously."
-              slug=""
-              iconName="ShieldCheck"
+              key="family-office-setup"
+              title="Family Office Setup & Incubation"
+              description="For families ready to formalise their wealth management structure. We design, build, and incubate a Single Family Office from the ground up: governance, reporting framework, staffing model, and operating mandate. We stay close through the first operating cycle, then hand over with full documentation."
+              slug="family-office-setup-and-incubation"
+              iconName="Building2"
             />
             <ServiceCard
-              key="wealth-structuring"
-              title="Wealth Structuring and Succession"
-              description="How your assets are held is as important as what they're invested in. We review your existing structures, holding companies, trusts, and foundations, and rebuild where it makes sense, across borders and across generations."
-              slug=""
-              iconName="Layers"
-            />
-            <ServiceCard
-              key="consolidated-reporting"
-              title="Consolidated Reporting and Advisor Coordination"
-              description="You shouldn't need three logins and two spreadsheets to understand your own net worth. We aggregate everything into one clean view. And where you already have a lawyer, an accountant, or a banker, we manage those relationships on your behalf."
-              slug=""
+              key="wealth-consolidation"
+              title="Wealth Consolidation & Reporting"
+              description="A full view of your wealth in one place. We consolidate holdings across asset classes, custodians, and geographies into a single reporting framework. Most families with complex wealth have never seen everything in one document. This changes that."
+              slug="wealth-consolidation-reporting"
               iconName="BarChart3"
             />
             <ServiceCard
-              key="philanthropy"
-              title="Philanthropy"
-              description="Structured giving, aligned to your values and your tax position. We help you create a lasting legacy through strategic philanthropic initiatives and impact measurement."
-              slug=""
-              iconName="Heart"
-            />
-            <ServiceCard
-              key="ma-and-ipo"
-              title="M&A and IPO"
-              description="Advisory coordination for clients navigating corporate transactions alongside their personal wealth. We ensure your business transitions align with your family's long-term objectives."
-              slug=""
+              key="ma-ipo"
+              title="M&A & IPO Advisory"
+              description="For families with operating assets considering a transaction. We provide advisory support through acquisitions, business sales, and public listings, sitting alongside your legal and banking advisors with the operating perspective they do not have."
+              slug="ma-and-ipo-advisory"
               iconName="Briefcase"
-            />
-            <ServiceCard
-              key="family-office-setup"
-              title="Single Family Office Setup"
-              description="Structuring and establishing a dedicated family office for clients ready to formalise their wealth governance. We provide the blueprint for operational excellence and talent acquisition."
-              slug=""
-              iconName="Building2"
             />
           </div>
         </div>
       </section>
 
-      {/* SECTION 4 — PULL QUOTE */}
+      {/* SECTION 4 — HOW WE WORK */}
       <section className={`${styles.bgLight}`} style={{ padding: '8rem 0' }}>
         <div className="container">
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <span style={{ fontSize: '5rem', color: 'var(--color-accent-blue)', opacity: 0.2, lineHeight: 0, display: 'block', marginBottom: '2rem', fontFamily: 'serif' }}>&ldquo;</span>
-            <blockquote style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: 'var(--color-primary-navy)', lineHeight: 1.4, fontWeight: 500, fontStyle: 'italic', margin: 0 }}>
-              Most family office firms come from banking. We came from building and operating businesses. Over 500 projects. $3B+ in revenue generated. $1B+ in capital deployed. That history is in the room every time we advise on your wealth.
-            </blockquote>
-            <cite style={{ display: 'block', marginTop: '2.5rem', fontSize: '1.1rem', fontWeight: 600, color: 'var(--color-accent-blue)', textTransform: 'uppercase', letterSpacing: '0.1em', fontStyle: 'normal' }}>
-              GrowValley Ventures
-            </cite>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <span className={styles.sectionEyebrow}>How We Work</span>
+            <h2 className={styles.introHeading} style={{ marginBottom: '2rem' }}>
+              One mandate. Complete coverage.
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center' }}>
+              <p className={styles.introParagraph}>
+                Every family office engagement starts with a full picture review. We map what you have, who manages it, how it is structured, and what is missing.
+              </p>
+              <p className={styles.introParagraph}>
+                From there, we build a coordination model that puts everything under one point of accountability without removing the specialists who are already doing good work.
+              </p>
+              <p className={styles.introParagraph} style={{ fontWeight: 600, color: 'var(--color-primary-navy)' }}>
+                We do not replace. We coordinate.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -134,7 +127,7 @@ export default function FamilyOfficePage() {
           <div className={styles.ctaBannerPanel} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '3rem', textAlign: 'left' }}>
             <div style={{ flex: '1 1 500px' }}>
               <h2 style={{ color: 'var(--color-white)', marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, lineHeight: 1.15 }}>
-                Legacy is complex. Managing it shouldn&apos;t have to be.
+                Your wealth deserves more than fragmented management.
               </h2>
               <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.25rem', margin: 0, lineHeight: 1.6 }}>
                 The first conversation is to understand your goals and how we can best support your family&apos;s wealth journey.
@@ -143,7 +136,7 @@ export default function FamilyOfficePage() {
             <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'flex-start' }}>
               <Link href="/contact" style={{ display: 'inline-block' }}>
                 <Button size="lg" variant="secondary" style={{ padding: '1.25rem 3rem', fontSize: '1.1rem', borderRadius: '3rem' }}>
-                  Talk to an Advisor
+                  Let&apos;s Talk About Your Family Office
                 </Button>
               </Link>
             </div>

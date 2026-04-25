@@ -9,7 +9,7 @@ import styles from "../Capabilities.module.scss";
 import { CapabilitiesLeader } from '@/components/ui/CapabilitiesLeader';
 
 export const metadata: Metadata = {
-  title: "Private Access to Opportunities | GrowValley",
+  title: "Private Market Access | GrowValley",
   description: "Through the GrowValley network, select clients access private market opportunities that never circulate publicly.",
 };
 
@@ -18,7 +18,7 @@ export default function PrivateAccessPage() {
     <main>
       <Hero
         isShort
-        eyebrow="Expertise — Private Access"
+        eyebrow="Expertise — Private Market Access"
         headline={<>The best deals don&apos;t advertise.<br />We find them anyway.</>}
         subheadline="Through the GrowValley network, select clients access private market opportunities that never circulate publicly. We don't just pass deals along. We've been inside them."
         image="/images/private_access_hero.png"
@@ -31,18 +31,21 @@ export default function PrivateAccessPage() {
           <div className={styles.introContent}>
             <span className={styles.sectionEyebrow}>Why This Is Different</span>
             <h2 className={styles.introHeading}>
-              Most firms show you a Brochure.<br />
-              We show you what we&apos;ve already done.
+              Most firms show you a brochure.<br />
+              We show you what we&apos;ve actually done.
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'center' }}>
               <p className={styles.introParagraph}>
-                Private markets require judgment, not just access. Anyone can forward a deal memo. Fewer people can tell you whether the exit actually makes sense, whether the operator can deliver, or whether the structure protects you when things get complicated.
+                Private markets require judgment, not just access. Anyone can forward a deal memo.
               </p>
               <p className={styles.introParagraph}>
-                We've built businesses, deployed capital, and sat across the table from founders and boards across more than 500 projects. That history is what we bring to every deal we source for clients.
+                Fewer people can tell you whether the exit makes sense. Whether the operator can deliver. Whether the structure holds when things get complicated.
               </p>
               <p className={styles.introParagraph}>
-                <strong>We don't bring you volume. We bring you deals we'd put our own capital into.</strong>
+                We&apos;ve built businesses, deployed capital, and sat across the table from founders and boards across more than 500 projects. That history shows up in every deal we bring to clients.
+              </p>
+              <p className={styles.introParagraph}>
+                <strong>No volume for the sake of it. No recycled deal flow. No passing along opportunities we wouldn&apos;t back ourselves.</strong>
               </p>
             </div>
           </div>
@@ -54,8 +57,8 @@ export default function PrivateAccessPage() {
         <div className="container">
           <div className={styles.sectionHeaderSimple} style={{ textAlign: 'center' }}>
             <h2 className="section-title">
-              Four Areas. One Standard.<br />
-              The numbers have to make sense on the way out.
+              Three areas. One standard.<br />
+              The exit has to make sense.
             </h2>
           </div>
 
@@ -63,33 +66,24 @@ export default function PrivateAccessPage() {
             <ServiceCard
               key="private-equity"
               title="Private Equity"
-              description="Access to established businesses raising growth or buyout capital. We focus on opportunities with clear operational fundamentals, defensible market positions, and realistic exit timelines."
-              slug=""
+              description="Access to established businesses raising growth or buyout capital. We focus on fundamentals. Cash flow. Positioning. Realistic exit timelines."
+              slug="private-equity"
               iconName="Briefcase"
             />
             <ServiceCard
               key="venture-capital"
               title="Venture Capital"
-              description="High-growth private companies from early stage through to pre-IPO. We evaluate the team, the market, and the cap table, not just the pitch."
-              slug=""
+              description="High-growth private companies from early stage through to pre-IPO. We evaluate the team, the market, and the cap table. Not just the pitch."
+              slug="venture-capital"
               iconName="Zap"
             />
             <ServiceCard
-              key="real-estate"
+              key="real-estate-access"
               title="Real Estate"
-              description="Direct and structured access to real estate assets across the Middle East, Western Europe, and Asia. We work with specialists who have a genuine track record in their markets, not just presence."
-              slug=""
+              description="Direct and structured access to assets across the Middle East, Western Europe, and Asia. We work with operators who have a track record in their markets. Not just presence."
+              slug="real-estate-access"
               iconName="Building2"
             />
-            <div className={styles.centerBottomCard}>
-              <ServiceCard
-                key="corporate-capital-raises"
-                title="Corporate Capital Raises"
-                description="Private placements and structured corporate capital opportunities sourced through the GrowValley network. Often not available through conventional wealth channels."
-                slug=""
-                iconName="Layers"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -119,7 +113,7 @@ export default function PrivateAccessPage() {
                   Source with context
                 </h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', lineHeight: '1.75', margin: 0 }}>
-                  We find and structure opportunities globally. Pre-IPO, real estate, venture capital, private equity, and corporate raises. The sourcing comes from relationships built through years of active deal work, not a subscriptions database.
+                  We source globally across private equity, venture, real estate, and corporate raises. Not from a database. From relationships built through years of active deal work.
                 </p>
               </div>
 
@@ -129,7 +123,7 @@ export default function PrivateAccessPage() {
                   Vet with operator judgment
                 </h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', lineHeight: '1.75', margin: 0 }}>
-                  Every deal goes through people who have actually built and run businesses. Not just analysts reading a deck. We know what a good deal looks like, and what a well-structured bad one looks like too.
+                  Every deal goes through people who have actually built and run businesses. We know what a good deal looks like. And what a well-structured bad one looks like.
                 </p>
               </div>
 
@@ -139,7 +133,7 @@ export default function PrivateAccessPage() {
                   Focus on your exit
                 </h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', lineHeight: '1.75', margin: 0 }}>
-                  We only bring deals where the return logic holds from the start. If the exit scenario doesn't make sense on paper before we enter, we don't enter.
+                  We start with the exit logic. Not the entry story. If the return doesn&apos;t hold on the way out, we don&apos;t go in.
                 </p>
               </div>
 
@@ -162,13 +156,13 @@ export default function PrivateAccessPage() {
             {/* Left Column: Body Text (Wraps to bottom on mobile) */}
             <div style={{ flex: '1 1 500px' }}>
               <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', lineHeight: '1.75', marginBottom: '1.5rem', opacity: 0.9 }}>
-                Private market access at GrowValley is available to qualified clients who meet minimum investment thresholds and are looking to allocate meaningfully, not speculatively.
+                Private market access is not about browsing opportunities. It&apos;s about making decisions with real capital behind them.
               </p>
               <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', lineHeight: '1.75', marginBottom: '1.5rem', opacity: 0.9 }}>
-                If you are a business owner, operator, or investor looking to move beyond public markets and access opportunities that require real conviction to evaluate, this is where that conversation starts.
+                We work with clients allocating meaningfully, not speculatively. Business owners, operators, and investors moving beyond public markets into situations that require conviction.
               </p>
               <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', lineHeight: '1.75', margin: 0, opacity: 0.9 }}>
-                Minimum ticket sizes and deal availability vary by opportunity. All deals are presented with full documentation and our own assessment of risk, structure, and exit logic.
+                Every opportunity is presented with full documentation and our own view on risk, structure, and exit logic.
               </p>
             </div>
           </div>
