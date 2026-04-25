@@ -94,6 +94,7 @@
     padding: 0.25rem;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    outline: none;
     position: relative;
     z-index: 10001;
 
@@ -237,6 +238,7 @@
     cursor: pointer;
     padding: 0;
     transition: opacity 0.2s;
+    outline: none;
 
     &:hover {
         opacity: 0.8;
@@ -322,6 +324,7 @@
     padding: 0.5rem;
     border-radius: 8px;
     transition: background-color 0.2s;
+    outline: none;
 
     &:hover {
         background-color: hsla(150, 20%, 98%, 1);
@@ -445,6 +448,7 @@
     text-align: left;
     cursor: pointer;
     transition: all 0.2s ease;
+    outline: none;
 
     &.active {
         font-weight: 600;

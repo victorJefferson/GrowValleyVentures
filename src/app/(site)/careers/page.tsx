@@ -4,13 +4,16 @@ import styles from "./Careers.module.scss";
 import { client } from "@/lib/sanity";
 import { heroQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Careers | GrowValley",
   },
   description:
-    "Join the GrowValley team and contribute to institutional-grade wealth management and investment excellence.",
+    "We don't hire for roles. We hire for impact. Join the GrowValley team.",
   openGraph: {
     title: "Careers | GrowValley",
     description: "Explore career opportunities at GrowValley.",
@@ -28,28 +31,13 @@ export default async function CareersPage() {
 
   const defaultHero = {
     eyebrow: "CAREERS",
-    headline: "Join GrowValley.",
-    subheadline: "We are always looking for wealth management professionals who bring rigour, discretion, and a client-first approach to their work.",
+    headline: "We don't hire for roles. We hire for impact.",
+    subheadline: "GrowValley sits at a rare intersection, wealth management, venture building, and active capital deployment. That means the people who thrive here aren't looking for a quiet corner of finance. They're looking for a place where their thinking actually changes outcomes.",
     image: "/images/careers_hero.png",
   };
 
   const displayHero = heroData || defaultHero;
   const heroImage = heroData?.image ? urlFor(heroData.image).url() : displayHero.image;
-
-  const roles = [
-    {
-      title: "Wealth Management Professionals",
-      desc: "Portfolio management, client advisory, and wealth planning.",
-    },
-    {
-      title: "Capital Markets",
-      desc: "Structuring, transaction, and wealth markets experience.",
-    },
-    {
-      title: "Operations & Governance",
-      desc: "Fund administration, compliance, and client relationship management.",
-    },
-  ];
 
   return (
     <main>
@@ -63,37 +51,66 @@ export default async function CareersPage() {
         image={heroImage}
       />
 
+      {/* SECTION 2 INTRODUCTION */}
       <section className="section-padding">
         <div className="container">
-          <div className={styles.intro}>
-            <h2 className={styles.heading}>Who we look for</h2>
-          </div>
-
-          <div className={styles.roleGrid}>
-            {roles.map((role, idx) => (
-              <div key={idx} className={styles.roleTile}>
-                <h3>{role.title}</h3>
-                <p>{role.desc}</p>
-              </div>
-            ))}
+          <div className={styles.pullQuote}>
+            <div className={styles.pullQuoteAccent} />
+            <p className={styles.pullQuoteText}>
+              We&apos;re a small, senior team. There&apos;s no hiding behind process here. 
+              If you join GrowValley, what you do will be felt by the clients we serve and 
+              the businesses we build.
+            </p>
           </div>
         </div>
       </section>
 
+      {/* SECTION 3 WHO WE LOOK FOR */}
+      <section className={`section-padding ${styles.bgTertiary}`}>
+        <div className="container">
+          <div className={styles.whoWeLookFor}>
+            <div className={styles.leftCol}>
+              <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
+              <h2 className={styles.heading}>
+                The people who do well here share one thing, they&apos;re serious about the work.
+              </h2>
+            </div>
+            <div className={styles.body}>
+              <p>
+                You have strong opinions you can defend. You don&apos;t wait to be told what 
+                needs doing, you see it, you own it, you follow through.
+              </p>
+              <p>
+                We don&apos;t care where you&apos;re based. We care what you bring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 OPEN ROLES */}
       <section className="section-padding">
         <div className="container">
           <div className={styles.roundedPanel}>
             <div className={styles.openings}>
-              <h2 className={styles.heading}>Current Openings</h2>
+              <div className={styles.sectionIcon} style={{ margin: '0 auto 1.5rem' }}>
+                <Mail />
+              </div>
+              <span className={styles.eyebrow}>OPEN ROLES</span>
+              <h2 className={styles.heading}>
+                No open roles right now but we&apos;re always listening.
+              </h2>
               <div className={styles.openingCard}>
-                <h3 className={styles.subtext}>No current openings.</h3>
                 <p>
-                  We are always open to hearing from exceptional talent.
-                  Speculative applications are welcome.
+                  We don&apos;t hire on a fixed schedule. When we find the right person, 
+                  we find a way to bring them in. If you think GrowValley is where 
+                  you should be, tell us why. The right message gets a response.
                 </p>
-                <a href="mailto:careers@gv.ventures" className={styles.email}>
-                  careers@gv.ventures
-                </a>
+                <Link href="mailto:careers@gv.ventures">
+                  <Button variant="primary" size="lg">
+                    Send Us Your CV
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

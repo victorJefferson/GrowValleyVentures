@@ -1,6 +1,72 @@
-.intro {
-    margin-bottom: 4rem;
+.pullQuote {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.pullQuoteAccent {
+    width: 3rem;
+    height: 3px;
+    background-color: var(--color-accent-blue);
+    border-radius: 2px;
+}
+
+.pullQuoteText {
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    color: var(--color-primary-navy);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.whoWeLookFor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+    }
+
+    .leftCol {
+        .eyebrow {
+            margin-bottom: 1.5rem;
+        }
+        .heading {
+            margin-bottom: 0;
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            color: var(--color-primary-navy);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        padding-top: 0.5rem;
+
+        p {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            line-height: 1.75;
+            font-weight: 400;
+        }
+    }
+}
+
+.bgTertiary {
+    background-color: var(--color-surface-tertiary);
 }
 
 .eyebrow {
@@ -20,13 +86,6 @@
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--color-primary-navy);
-}
-
-.body {
-    font-size: 1.25rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
 }
 
 .roleGrid {
@@ -64,10 +123,6 @@
         color: var(--color-text-muted);
         line-height: 1.6;
     }
-}
-
-.bgTertiary {
-    background-color: var(--color-surface-tertiary);
 }
 
 .roundedPanel {
@@ -116,9 +171,10 @@
     }
     
     p {
-        font-size: 1.125rem;
-        color: var(--color-text-muted);
+        font-size: 1.25rem;
+        color: var(--color-primary-navy);
         line-height: 1.6;
+        margin-bottom: 1rem;
     }
 }
 

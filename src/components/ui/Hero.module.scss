@@ -153,7 +153,7 @@
 /* ── Headline ── */
 .headline {
     font-size: 4.25rem;        /* Default Desktop Size */
-    font-weight: 300;
+    font-weight: 600;          /* Increased from 300 to be bolder */
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--color-white);
@@ -164,6 +164,7 @@
     @media (max-width: 767px) {
         font-size: 2.75rem;    /* Reduced size for mobile to prevent clipping */
         line-height: 1.15;
+        font-weight: 300;      /* Keep mobile lighter if preferred, or remove this to make mobile bold too */
     }
 
     strong {
@@ -172,22 +173,49 @@
     }
 }
 
-/* ── Subheadline (with left accent bar, matching reference) ── */
+/* ── Subheadline (with animated left accent bar) ── */
 .subheadline {
-    font-size: 1.05rem;        /* Default Size */
-    line-height: 1.65;
+    font-size: 2.1rem;         /* Doubled from 1.05rem */
+    line-height: 1.4;
     color: rgba(255, 255, 255, 0.82);
     margin: 0 0 2.25rem 0;
-    padding-left: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.35);
-    max-width: 500px;
+    padding-left: 2rem;
+    position: relative;
+    max-width: 800px;          /* Increased from 500px to accommodate larger text */
     white-space: pre-line;
 
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.35);
+        transform-origin: top;
+        animation: animateLine 1.5s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
     @media (max-width: 767px) {
-        font-size: 0.95rem;    /* Slightly smaller for mobile */
+        font-size: 0.95rem;    /* Kept original mobile size */
         max-width: 100%;       /* Allow full width on mobile */
         margin-bottom: 2rem;
+        padding-left: 1rem;
+        
+        &::before {
+            animation: none;   /* Disable animation on mobile if not desired */
+            height: 100%;
+            transform: scaleY(1);
+        }
+        
+        /* Fallback for mobile if pseudo-element is tricky */
+        border-left: 2px solid rgba(255, 255, 255, 0.35);
     }
+}
+
+@keyframes animateLine {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
 }
 
 /* ── CTA group ── */
