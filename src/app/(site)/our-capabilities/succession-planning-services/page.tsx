@@ -34,10 +34,10 @@ export default function SuccessionPlanningPage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <p className={styles.introParagraph}>
-                Most families don’t lose wealth to bad markets. They lose it to poor structuring, unclear succession, and decisions left too late.
+                Most families don't lose wealth to bad markets. They lose it to poor structuring, unclear succession, and decisions left too late.
               </p>
               <p className={styles.introParagraph}>
-                Succession planning is not a document. It’s a system.
+                Succession planning is not a document. It's a system.
               </p>
               <p className={styles.introParagraph}>
                 One that defines how your wealth is held, how it transfers, and what happens when decisions need to be made without you.
@@ -80,7 +80,7 @@ export default function SuccessionPlanningPage() {
             <ServiceCard
               key="family-governance"
               title="Family Governance"
-              description="Structures don’t hold without clarity. We define roles, decision rights, and how disagreements are handled. Before they become expensive."
+              description="Structures don't hold without clarity. We define roles, decision rights, and how disagreements are handled. Before they become expensive."
               slug="family-governance"
               iconName="Users"
             />

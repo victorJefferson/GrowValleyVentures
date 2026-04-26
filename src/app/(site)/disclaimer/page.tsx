@@ -40,7 +40,7 @@ export default function DisclaimerPage() {
                             GrowValley reserves the right to amend the content of this website at any time without notice.
                         </p>
 
-                        <h2>5. Modification</h2>
+                        <h2>2. Modification</h2>
                         <p>
                             GrowValley reserves the right to amend the content of this website at any time without notice.
                         </p>

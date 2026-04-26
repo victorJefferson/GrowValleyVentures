@@ -288,6 +288,9 @@
 .megaMenuLeft {
     flex: 1;
     max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .megaMenuHeader {
@@ -352,7 +355,15 @@
     flex: 1.2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1.5rem;
+}
+
+.megaMenuDivider {
+    width: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 -2rem;
+    flex-shrink: 0;
 }
 
 .featuredTag {
@@ -421,6 +432,7 @@
     font-weight: 600;
     color: var(--color-accent-blue);
     text-decoration: none;
+    margin-top: 1rem;
 
     &:hover {
         text-decoration: underline;
@@ -493,10 +505,14 @@
     display: flex !important;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
     color: var(--color-accent-blue) !important;
-    margin-top: 1rem;
-    padding: 0.5rem 0 !important;
-    border: none !important;
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
 }

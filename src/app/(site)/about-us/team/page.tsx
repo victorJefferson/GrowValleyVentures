@@ -80,7 +80,7 @@ export default function TeamPage() {
               rigour, discretion, and a client-first approach to their work.
             </p>
             <div className={styles.ctaGroup}>
-              <Link href="/careers">
+              <Link href="/join-us/jobs">
                 <Button variant="secondary" size="lg">
                   VIEW CAREERS
                 </Button>

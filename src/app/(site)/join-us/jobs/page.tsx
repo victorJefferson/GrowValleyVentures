@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/ui/Hero";
-import styles from "./Careers.module.scss";
+import styles from "../JoinUs.module.scss";
 import { client } from "@/lib/sanity";
 import { heroQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
@@ -10,29 +10,29 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Careers | GrowValley",
+    absolute: "Jobs | GrowValley",
   },
   description:
     "We don't hire for roles. We hire for impact. Join the GrowValley team.",
   openGraph: {
-    title: "Careers | GrowValley",
+    title: "Jobs | GrowValley",
     description: "Explore career opportunities at GrowValley.",
-    url: "https://gv.ventures/careers",
+    url: "https://gv.ventures/join-us/jobs",
   },
 };
 
-export default async function CareersPage() {
+export default async function JobsPage() {
   let heroData = null;
   try {
     heroData = await client.fetch(heroQuery, { pageSlug: "careers" });
   } catch (err) {
-    console.error("Careers Hero Fetch Error:", err);
+    console.error("Jobs Hero Fetch Error:", err);
   }
 
   const defaultHero = {
-    eyebrow: "CAREERS",
+    eyebrow: "JOBS",
     headline: "We don't hire for roles. We hire for impact.",
-    subheadline: "GrowValley sits at a rare intersection, wealth management, venture building, and active capital deployment. That means the people who thrive here aren't looking for a quiet corner of finance. They're looking for a place where their thinking actually changes outcomes.",
+    subheadline: "GrowValley sits at a rare intersection: wealth management, venture building, and active capital deployment. That means the people who thrive here aren't looking for a quiet corner of finance. They're looking for a place where their thinking actually changes outcomes.",
     image: "/images/careers_hero.png",
   };
 
@@ -42,7 +42,7 @@ export default async function CareersPage() {
   return (
     <main>
       <Hero
-        eyebrow={displayHero.eyebrow}
+        eyebrow="JOBS"
         headline={displayHero.headline}
         subheadline={displayHero.subheadline}
         ctaText={displayHero.ctaText}
@@ -57,8 +57,8 @@ export default async function CareersPage() {
           <div className={styles.pullQuote}>
             <div className={styles.pullQuoteAccent} />
             <p className={styles.pullQuoteText}>
-              We&apos;re a small, senior team. There&apos;s no hiding behind process here. 
-              If you join GrowValley, what you do will be felt by the clients we serve and 
+              We&apos;re a small, senior team. There&apos;s no hiding behind process here.
+              If you join GrowValley, what you do will be felt by the clients we serve and
               the businesses we build.
             </p>
           </div>
@@ -72,12 +72,12 @@ export default async function CareersPage() {
             <div className={styles.leftCol}>
               <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
               <h2 className={styles.heading}>
-                The people who do well here share one thing, they&apos;re serious about the work.
+                The people who do well here share one thing: they&apos;re serious about the work.
               </h2>
             </div>
             <div className={styles.body}>
               <p>
-                You have strong opinions you can defend. You don&apos;t wait to be told what 
+                You have strong opinions you can defend. You don&apos;t wait to be told what
                 needs doing, you see it, you own it, you follow through.
               </p>
               <p>
@@ -102,8 +102,8 @@ export default async function CareersPage() {
               </h2>
               <div className={styles.openingCard}>
                 <p>
-                  We don&apos;t hire on a fixed schedule. When we find the right person, 
-                  we find a way to bring them in. If you think GrowValley is where 
+                  We don&apos;t hire on a fixed schedule. When we find the right person,
+                  we find a way to bring them in. If you think GrowValley is where
                   you should be, tell us why. The right message gets a response.
                 </p>
                 <Link href="mailto:careers@gv.ventures">

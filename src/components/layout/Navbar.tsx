@@ -40,7 +40,16 @@ export function Navbar() {
       ]
     },
     { name: "Insights", href: "/insights" },
-    { name: "Careers", href: "/careers" },
+    {
+      name: "Join Us",
+      href: "/join-us/jobs",
+      children: [
+        { name: "Jobs", href: "/join-us/jobs", description: "Build the future of wealth management and venture building." },
+        { name: "Partners", href: "/join-us/partners", description: "Strategic collaborations for shared success." },
+        { name: "Investors", href: "/join-us/investors", description: "Direct access to high-conviction private opportunities." },
+        { name: "Experts", href: "/join-us/experts", description: "A collective of specialists dedicated to excellence." },
+      ]
+    },
   ];
   const pathname = usePathname();
 
@@ -93,6 +102,7 @@ export function Navbar() {
                                       </Link>
                                     </div>
                                   </div>
+                                  <div className={styles.megaMenuDivider}></div>
                                   <div className={styles.megaMenuGrid}>
                                     {link.children.map((child) => (
                                       <Link
@@ -122,6 +132,7 @@ export function Navbar() {
                                       </Link>
                                     ))}
                                   </div>
+                                  <div className={styles.megaMenuDivider}></div>
                                   <div className={styles.megaMenuFeatured}>
                                     <div className={styles.featuredTag}>Featured Content</div>
                                     <div className={styles.featuredCard}>

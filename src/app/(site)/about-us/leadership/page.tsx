@@ -52,7 +52,7 @@ export default function LeadershipPage() {
     },
   ];
 
-  const placeholderImg = "/images/placeHolderPerson.jpg";
+  const placeholderImg = "/images/placeholderPerson.jpg";
 
   return (
     <main>
@@ -117,7 +117,7 @@ export default function LeadershipPage() {
               rigour, discretion, and a client-first approach to their work.
             </p>
             <div className={styles.ctaGroup}>
-              <Link href="/careers">
+              <Link href="/join-us/jobs">
                 <Button variant="secondary" size="lg">
                   VIEW CAREERS
                 </Button>

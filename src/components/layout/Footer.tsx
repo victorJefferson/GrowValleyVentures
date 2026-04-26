@@ -91,10 +91,10 @@ export function Footer() {
                 <Link href="/about-us">About GrowValley</Link>
               </li>
               <li>
-                <Link href="/insights">Insights</Link>
+                <Link href="/about-us/leadership">Leadership</Link>
               </li>
               <li>
-                <Link href="/team">Team</Link>
+                <Link href="/about-us/team">Team</Link>
               </li>
             </ul>
           </div>
@@ -103,7 +103,16 @@ export function Footer() {
             <h4>Join Us</h4>
             <ul>
               <li>
-                <Link href="/careers">Careers</Link>
+                <Link href="/join-us/jobs">Jobs</Link>
+              </li>
+              <li>
+                <Link href="/join-us/partners">Partners</Link>
+              </li>
+              <li>
+                <Link href="/join-us/investors">Investors</Link>
+              </li>
+              <li>
+                <Link href="/join-us/experts">Experts</Link>
               </li>
             </ul>
           </div>
@@ -114,11 +123,12 @@ export function Footer() {
       <div className={styles.bottomBar}>
         <div className={`container ${styles.bottomInner}`}>
           <div className={styles.copyright}>
-            © 2026 GrowValley. All rights reserved.
+            GrowValley Ventures — Dubai. Built by operators. Run for outcome
           </div>
           <div className={styles.legalLinks}>
-            <Link href="/disclaimer">Legal notice</Link>
-            <Link href="/privacy-policy">Privacy policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="#">Terms of Use</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>
