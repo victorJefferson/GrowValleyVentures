@@ -37,7 +37,7 @@ export default function TeamPage() {
     },
   ];
 
-  const placeholderImg = "../../images/placeHolderPerson.jpg";
+  const placeholderImg = "../../images/placeholderPerson.jpg";
 
   return (
     <main>
