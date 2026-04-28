@@ -670,17 +670,97 @@ const servicePageContent: Record<string, {
   }
 };
 
-const UNSPLASH_IMAGES: Record<string, string> = {
-  "discretionary-mandate": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1400&auto=format&fit=crop",
-  "advisory-mandate": "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1400&auto=format&fit=crop",
-  "financial-planning": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop",
+const SERVICE_SECTION_IMAGES: Record<string, {
+  hero: string;
+  problem: string;
+  feature?: string;
+  included?: string;
+}> = {
+  "wealth-transfer-architecture": {
+    hero: "/images/services/wealth-transfer-hero.png",
+    problem: "/images/services/wealth-transfer-problem.png",
+    feature: "/images/services/wealth-transfer-feature.png",
+    included: "/images/services/wealth-transfer-included.png"
+  },
+  "shariah-compliant-succession": {
+    hero: "/images/services/shariah-hero.png",
+    problem: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop",
+    feature: "/images/services/shariah-feature.png",
+    included: "/images/services/shariah-included.png"
+  },
+  "family-governance": {
+    hero: "/images/services/governance-hero.png",
+    problem: "/images/services/governance-problem.png",
+    feature: "/images/services/governance-feature.png",
+    included: "/images/services/governance-included.png"
+  },
+  "discretionary-mandate": {
+    hero: "/images/services/discretionary-hero.png",
+    problem: "/images/services/discretionary-problem.png",
+    feature: "/images/services/discretionary-feature.png",
+    included: "/images/services/discretionary-included.png"
+  },
+  "advisory-mandate": {
+    hero: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400"
+  },
+  "financial-planning": {
+    hero: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1400"
+  },
+  "private-equity": {
+    hero: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1444653303775-c8521475aea4?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&q=80&w=1400"
+  },
+  "venture-capital": {
+    hero: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1553484771-047a44eee27b?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1400"
+  },
+  "real-estate-access": {
+    hero: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1400"
+  },
+  "family-office-setup-and-incubation": {
+    hero: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1444653303775-c8521475aea4?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&q=80&w=1400"
+  },
+  "wealth-consolidation-reporting": {
+    hero: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1543288191-2dc2d1e0d367?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1400"
+  },
+  "ma-and-ipo-advisory": {
+    hero: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1400",
+    problem: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1400",
+    feature: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1400",
+    included: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400"
+  }
 };
 
 export default function ServicePageContent({ service }: { service: ServiceDetail }) {
   if (!service) return null;
 
   const content = servicePageContent[service.slug];
-  const img = UNSPLASH_IMAGES[service.slug] ?? "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400&auto=format&fit=crop";
+  const sectionImgs = SERVICE_SECTION_IMAGES[service.slug];
+  const defaultImg = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400&auto=format&fit=crop";
+
+  const heroImg = sectionImgs?.hero ?? defaultImg;
+  const problemImg = sectionImgs?.problem ?? heroImg;
+  const featureImg = sectionImgs?.feature ?? heroImg;
+  const includedImg = sectionImgs?.included ?? heroImg;
 
   return (
     <main>
@@ -712,7 +792,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
               </Link>
             </div>
             <div className={styles.heroRight}>
-              <img src={img} alt={service.title} />
+              <img src={heroImg} alt={service.title} />
               <div className={styles.heroRightOverlay} />
               <div className={styles.heroCaption}>
                 <div className={styles.overlayBreadcrumb}>
@@ -771,7 +851,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
         <div className="container">
           <div className={styles.problemCard}>
             <div className={styles.problemImageCol}>
-              <img src={img} alt={service.title} />
+              <img src={problemImg} alt={service.title} />
               <div className={styles.problemHighlight}>
                 <strong>{content.problemImageText || content.problemHighlight}</strong>
                 <span className={styles.underlineAccent} />
@@ -790,6 +870,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
           </div>
         </div>
       </section>
+
 
       {/* ── 5. How We Help (Hidden if Workflow exists) ── */}
       {!content.workflow && (
@@ -823,7 +904,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
           <div className="container">
             <div className={styles.fsGrid}>
               <div className={styles.fsVisual}>
-                <img src={img} alt={service.title} />
+                <img src={featureImg} alt={service.title} />
                 <div className={styles.fsVisualPattern} />
               </div>
               <div className={styles.fsContent}>
@@ -883,7 +964,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
                 </div>
               </div>
               <div className={styles.wiImage}>
-                <img src={img} alt={service.title} />
+                <img src={includedImg} alt={service.title} />
                 <div className={styles.wiImageOverlay} />
               </div>
             </div>

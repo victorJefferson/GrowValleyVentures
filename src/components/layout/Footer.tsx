@@ -127,7 +127,7 @@ export function Footer() {
           </div>
           <div className={styles.legalLinks}>
             <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="#">Terms of Use</Link>
+            <Link href="/terms-of-use">Terms of Use</Link>
             <Link href="/contact">Contact</Link>
           </div>
         </div>
