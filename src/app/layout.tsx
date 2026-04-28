@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Institutional-grade investment platform for family offices and qualified investors.",
     images: [
       {
-        url: "/images/hero_model_v3.png",
+        url: "/images/growValleyVentures.png",
         width: 1200,
         height: 630,
         alt: "GrowValley Investment Platform",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GrowValley",
     description: "GrowValley structures and governs capital readiness with institutional discipline.",
-    images: ["/images/hero_model_v3.png"],
+    images: ["/images/growValleyVentures.png"],
   },
   robots: {
     index: true,
