@@ -558,9 +558,11 @@
 
 .memberImage {
     aspect-ratio: 1/1;
-    border-radius: 40px;
+    border-radius: 50%;
     overflow: hidden;
     background-color: var(--color-surface-tertiary);
+    max-width: 320px;
+    margin: 0 auto;
 
     img {
         width: 100%;

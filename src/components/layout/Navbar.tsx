@@ -17,6 +17,8 @@ import {
 } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
 
+import { features } from "@/config/features";
+
 export function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
@@ -39,7 +41,7 @@ export function Navbar() {
         { name: "Succession Planning Services", href: "/our-capabilities/succession-planning-services", description: "Constructing frameworks that protect your family and reflect your intentions." },
       ]
     },
-    { name: "Insights", href: "/insights" },
+    ...(features.insights ? [{ name: "Insights", href: "/insights" }] : []),
     {
       name: "Join Us",
       href: "/join-us/jobs",
@@ -119,7 +121,7 @@ export function Navbar() {
                                 </>
                               ) : (
                                 <>
-                                  <div className={styles.megaMenuGrid}>
+                                  <div className={`${styles.megaMenuGrid} ${!features.insights ? styles.fullWidth : ""}`}>
                                     {link.children.map((child) => (
                                       <Link
                                         key={child.name}
@@ -132,22 +134,26 @@ export function Navbar() {
                                       </Link>
                                     ))}
                                   </div>
-                                  <div className={styles.megaMenuDivider}></div>
-                                  <div className={styles.megaMenuFeatured}>
-                                    <div className={styles.featuredTag}>Featured Content</div>
-                                    <div className={styles.featuredCard}>
-                                      <img src="/images/leadership_collaboration.png" alt="Featured" />
-                                      <div className={styles.featuredInfo}>
-                                        <Link
-                                          href="/insights"
-                                          className={styles.featuredLink}
-                                          onClick={() => close()}
-                                        >
-                                          Click here to read our latest Insights<ArrowRight size={12} />
-                                        </Link>
+                                  {features.insights && (
+                                    <>
+                                      <div className={styles.megaMenuDivider}></div>
+                                      <div className={styles.megaMenuFeatured}>
+                                        <div className={styles.featuredTag}>Featured Content</div>
+                                        <div className={styles.featuredCard}>
+                                          <img src="/images/leadership_collaboration.png" alt="Featured" />
+                                          <div className={styles.featuredInfo}>
+                                            <Link
+                                              href="/insights"
+                                              className={styles.featuredLink}
+                                              onClick={() => close()}
+                                            >
+                                              Click here to read our latest Insights<ArrowRight size={12} />
+                                            </Link>
+                                          </div>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </div>
+                                    </>
+                                  )}
                                 </>
                               )}
                             </div>

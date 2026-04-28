@@ -14,14 +14,17 @@ export default function LeadershipPage() {
     {
       name: "Jazeer Jamal",
       role: "Group Chairman and CEO, GrowValley Group",
+      image: "/images/people/jazeer_jamal.jpg",
     },
     {
       name: "William J. Daly",
       role: "Co-Founder and CXO, GrowValley Group",
+      image: "/images/people/william.jpg",
     },
     {
       name: "Suhail Ismail",
       role: "Group COO, GrowValley",
+      image: "/images/people/suhail.jpg",
     },
   ];
 
@@ -29,26 +32,32 @@ export default function LeadershipPage() {
     {
       name: "Sofia Alvarez",
       role: "Capital Strategy and Investment Readiness Advisor",
+      image: "/images/people/sofia_alvarez.png",
     },
     {
       name: "Aarav Malhotra",
       role: "Senior Growth and Transformation Advisor",
+      image: "/images/people/aarav_malhotra.bmp",
     },
     {
       name: "Nadia El-Sayed",
       role: "Investment Readiness Advisor",
+      image: "/images/people/nadia.bmp",
     },
     {
       name: "Priya Menon",
       role: "Capital Structuring Advisor",
+      image: "/images/people/priya_menon.bmp",
     },
     {
       name: "Lucas Moreau",
       role: "Transaction Readiness Advisor",
+      image: "/images/people/lucas_moreau.png",
     },
     {
       name: "Daniel Fischer",
       role: "Capital Strategy Advisor",
+      image: "/images/people/daniel_fischer.bmp",
     },
   ];
 
@@ -74,7 +83,7 @@ export default function LeadershipPage() {
             {leadershipTeam.map((member, idx) => (
               <div key={idx} className={styles.teamMemberCard}>
                 <div className={styles.memberImage}>
-                  <img src={placeholderImg} alt={member.name} />
+                  <img src={member.image || placeholderImg} alt={member.name} />
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>
@@ -96,7 +105,7 @@ export default function LeadershipPage() {
             {advisoryTeam.map((member, idx) => (
               <div key={idx} className={styles.teamMemberCard}>
                 <div className={styles.memberImage}>
-                  <img src={placeholderImg} alt={member.name} />
+                  <img src={member.image || placeholderImg} alt={member.name} />
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>

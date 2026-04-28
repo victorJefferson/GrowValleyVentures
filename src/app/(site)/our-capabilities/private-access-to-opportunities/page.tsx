@@ -171,11 +171,11 @@ export default function PrivateAccessPage() {
       {/* SECTION 5 — LEADER */}
       <CapabilitiesLeader
         eyebrow="The Leadership"
-        title={<>Experience rooted in<br />building businesses.</>}
-        description="Our wealth management team brings years of market experience to every mandate. We provide the same rigour to your capital that we apply to our own operating businesses."
-        image="/images/placeholderPerson.jpg"
-        name="John Doe"
-        designation="Designation"
+        title={<>Expertise rooted in<br />deal execution.</>}
+        description="Our private market access team is led by practitioners who have built, scaled, and exited businesses. We bring the same rigour to your capital that we apply to our own operating mandates."
+        image="/images/people/lucas_moreau.png"
+        name="Lucas Moreau"
+        designation="Transaction Readiness Advisor"
       />
       {/* SECTION 6 — CTA */}
       <section className={styles.ctaBanner} style={{ paddingBottom: 'var(--section-gap)' }}>

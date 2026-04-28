@@ -42,13 +42,12 @@ export default async function ExpertsPage() {
   return (
     <main>
       <Hero
+        isShort
         eyebrow="EXPERTS"
-        headline={defaultHero.headline}
-        subheadline={defaultHero.subheadline}
-        ctaText={displayHero.ctaText}
-        ctaHref={displayHero.ctaHref}
-        hasCTA={displayHero.hasCTA}
+        headline="We don't build an expert network for appearances. We build it for use."
+        subheadline="GrowValley's advisory network sits at the centre of what we do for clients. When we bring in an expert, it's because there's a gap only that person can fill."
         image={heroImage}
+        hasCTA={false}
       />
 
       {/* SECTION 2 INTRODUCTION */}
@@ -56,9 +55,14 @@ export default async function ExpertsPage() {
         <div className="container">
           <div className={styles.pullQuote}>
             <div className={styles.pullQuoteAccent} />
-            <p className={styles.pullQuoteText}>
-              We don&apos;t just consult; we build. Our experts are active participants in the creation of value across our portfolio companies and services.
-            </p>
+            <div className={styles.body} style={{ textAlign: 'center', maxWidth: '900px' }}>
+              <p className={styles.pullQuoteText} style={{ marginBottom: '2rem' }}>
+                GrowValley&apos;s advisory network sits at the centre of what we do for clients. When we bring in an expert, it&apos;s because there&apos;s a gap only that person can fill: a market they know better than anyone, a transaction type they&apos;ve navigated from the inside, a jurisdiction they&apos;ve spent decades working across.
+              </p>
+              <p className={styles.pullQuoteText} style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)' }}>
+                Client situations don&apos;t wait for the right credential to show up. We build the bench before we need it.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -68,18 +72,17 @@ export default async function ExpertsPage() {
         <div className="container">
           <div className={styles.whoWeLookFor}>
             <div className={styles.leftCol}>
-              <span className={styles.eyebrow}>THE EXPERT NETWORK</span>
+              <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
               <h2 className={styles.heading}>
-                We look for deep domain expertise and a practical, outcome-driven mindset.
+                The experts who fit here have scars, not just credentials.
               </h2>
             </div>
             <div className={styles.body}>
               <p>
-                Whether your expertise is in finance, technology, operations, or a specific industry vertical,
-                we provide a platform where your insights can have a tangible impact.
+                You&apos;ve worked inside deals, not around them. You&apos;ve advised, structured, invested, or exited at a level where you know what goes wrong and what holds. Your judgment comes from decisions you&apos;ve lived through, not from a title you&apos;ve held.
               </p>
               <p>
-                We value independence and the ability to cut through noise to find signal.
+                We don&apos;t care about geography or firm size. We care about depth and the ability to be straight with a client when the situation calls for it.
               </p>
             </div>
           </div>
@@ -94,18 +97,17 @@ export default async function ExpertsPage() {
               <div className={styles.sectionIcon} style={{ margin: '0 auto 1.5rem' }}>
                 <Mail />
               </div>
-              <span className={styles.eyebrow}>JOIN THE NETWORK</span>
+              <span className={styles.eyebrow}>GET ON THE RADAR</span>
               <h2 className={styles.heading}>
-                Interested in joining our expert network?
+                No open mandates right now, but we&apos;re always building the bench.
               </h2>
               <div className={styles.openingCard}>
                 <p>
-                  We are always looking to expand our collective of specialists.
-                  Tell us about your expertise and how you think you can contribute to the GrowValley ecosystem.
+                  We don&apos;t bring experts in on a fixed cycle. When a client situation calls for something specific, we go to the people we already know. If you want to be one of those people when the moment comes, tell us about your work. The right message gets a response.
                 </p>
                 <Link href="mailto:experts@gv.ventures">
                   <Button variant="primary" size="lg">
-                    Submit Your Profile
+                    Tell Us About Your Work
                   </Button>
                 </Link>
               </div>

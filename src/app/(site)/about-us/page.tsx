@@ -11,6 +11,7 @@ import { client } from "@/lib/sanity";
 import { heroQuery, leadershipQuery, caseStudiesQuery, serviceCategoriesQuery, allServicesQuery, dataSectionQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity";
 import { DataSection } from "@/components/ui/DataSection";
+import { features } from "@/config/features";
 
 export const metadata: Metadata = {
   title: {
@@ -98,7 +99,7 @@ export default async function AboutUsPage() {
       <AboutUsSolutions initialCategories={categories} initialServices={services} />
 
       {/* Case Studies Carousel */}
-      {caseStudiesData && caseStudiesData.length > 0 && (
+      {features.caseStudies && caseStudiesData && caseStudiesData.length > 0 && (
         <section className="section-padding">
           <div className="container">
             <CaseStudiesCarousel caseStudies={caseStudiesData} />

@@ -116,9 +116,9 @@ export default function FamilyOfficePage() {
         eyebrow="The Leadership"
         title={<>Expertise rooted in<br />operational success.</>}
         description="Our family office services are led by practitioners who have managed both corporate and personal wealth at scale. We bring the same rigour to your family's assets that we apply to our own operating businesses."
-        image="/images/placeholderPerson.jpg"
-        name="John Doe"
-        designation="Designation"
+        image="/images/people/priya_shah.png"
+        name="Priya Shah"
+        designation="Family Office Advisor"
       />
 
       {/* SECTION 6 — CTA */}

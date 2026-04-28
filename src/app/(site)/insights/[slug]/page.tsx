@@ -1,4 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
+import { redirect } from "next/navigation";
+import { features } from "@/config/features";
 import { client, urlFor } from "@/lib/sanity";
 import { insightBySlugQuery, insightsQuery } from "@/lib/queries";
 import InsightDetailContent from "./InsightDetailContent";
@@ -39,6 +41,9 @@ export async function generateMetadata(
 }
 
 export default async function InsightPage({ params }: Props) {
+    if (!features.insights) {
+        redirect("/");
+    }
     const { slug } = await params;
     
     let insight = null;

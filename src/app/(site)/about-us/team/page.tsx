@@ -14,30 +14,36 @@ export default function TeamPage() {
     {
       name: "Sofia Alvarez",
       role: "Capital Strategy and Investment Readiness Advisor",
+      image: "/images/people/sofia_alvarez.png",
     },
     {
       name: "Aarav Malhotra",
       role: "Senior Growth and Transformation Advisor",
+      image: "/images/people/aarav_malhotra.bmp",
     },
     {
       name: "Nadia El-Sayed",
       role: "Investment Readiness Advisor",
+      image: "/images/people/nadia.bmp",
     },
     {
       name: "Priya Menon",
       role: "Capital Structuring Advisor",
+      image: "/images/people/priya_menon.bmp",
     },
     {
       name: "Lucas Moreau",
       role: "Transaction Readiness Advisor",
+      image: "/images/people/lucas_moreau.png",
     },
     {
       name: "Daniel Fischer",
       role: "Capital Strategy Advisor",
+      image: "/images/people/daniel_fischer.bmp",
     },
   ];
 
-  const placeholderImg = "../../images/placeholderPerson.jpg";
+  const placeholderImg = "/images/placeholderPerson.jpg";
 
   return (
     <main>
@@ -59,7 +65,7 @@ export default function TeamPage() {
             {advisoryTeam.map((member, idx) => (
               <div key={idx} className={styles.teamMemberCard}>
                 <div className={styles.memberImage}>
-                  <img src={placeholderImg} alt={member.name} />
+                  <img src={member.image || placeholderImg} alt={member.name} />
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>

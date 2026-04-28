@@ -124,9 +124,9 @@ export default function SuccessionPlanningPage() {
         eyebrow="The Leadership"
         title={<>Expertise rooted in<br />continuity.</>}
         description="Our succession services are led by practitioners who understand the delicate balance between technical structuring and family dynamics. We ensure your legacy is protected through frameworks that work across generations."
-        image="/images/placeholderPerson.jpg"
-        name="John Doe"
-        designation="Designation"
+        image="/images/people/amelia_brooks.jpg"
+        name="Amelia Brooks"
+        designation="Leadership & Governance Advisor"
       />
 
       {/* SECTION 6 — CTA */}

@@ -42,13 +42,12 @@ export default async function PartnersPage() {
   return (
     <main>
       <Hero
+        isShort
         eyebrow="PARTNERS"
-        headline={defaultHero.headline}
-        subheadline={defaultHero.subheadline}
-        ctaText={displayHero.ctaText}
-        ctaHref={displayHero.ctaHref}
-        hasCTA={displayHero.hasCTA}
+        headline="We don't take on partners for coverage. We take them on for contribution."
+        subheadline="GrowValley sits at the intersection of wealth management, venture building, and active capital deployment."
         image={heroImage}
+        hasCTA={false}
       />
 
       {/* SECTION 2 INTRODUCTION */}
@@ -56,10 +55,14 @@ export default async function PartnersPage() {
         <div className="container">
           <div className={styles.pullQuote}>
             <div className={styles.pullQuoteAccent} />
-            <p className={styles.pullQuoteText}>
-              We&apos;re a small, senior team. There&apos;s no hiding behind process here.
-              Our partnerships are built on mutual trust and shared objectives.
-            </p>
+            <div className={styles.body} style={{ textAlign: 'center', maxWidth: '900px' }}>
+              <p className={styles.pullQuoteText} style={{ marginBottom: '2rem' }}>
+                GrowValley sits at the intersection of wealth management, venture building, and active capital deployment. The firms we partner with aren&apos;t filling a gap on a service list. They&apos;re specialists who bring something we don&apos;t already have, and whose clients benefit from what we bring.
+              </p>
+              <p className={styles.pullQuoteText} style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)' }}>
+                If your firm works alongside HNW individuals, family offices, founders, or institutional allocators, and you want to work with a team that operates rather than just advises, there&apos;s a conversation worth having.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -69,18 +72,17 @@ export default async function PartnersPage() {
         <div className="container">
           <div className={styles.whoWeLookFor}>
             <div className={styles.leftCol}>
-              <span className={styles.eyebrow}>WHO WE PARTNER WITH</span>
+              <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
               <h2 className={styles.heading}>
-                We seek partners who are serious about the work and the outcomes.
+                The right partner already understands what GrowValley does.
               </h2>
             </div>
             <div className={styles.body}>
               <p>
-                Whether you are an institution, a specialist firm, or an individual expert,
-                we look for alignment in values and a commitment to excellence.
+                You work with clients who make serious decisions with serious capital. You&apos;re not looking for a referral arrangement or a co-branding opportunity. You&apos;re looking for a firm you can put your name behind when you introduce them.
               </p>
               <p>
-                We value independence, transparency, and the drive to change outcomes.
+                We run a clean operation. No product commissions, no conflicting mandates, no reason not to be completely transparent. That&apos;s what we bring, and it&apos;s what we expect in return.
               </p>
             </div>
           </div>
@@ -95,18 +97,17 @@ export default async function PartnersPage() {
               <div className={styles.sectionIcon} style={{ margin: '0 auto 1.5rem' }}>
                 <Mail />
               </div>
-              <span className={styles.eyebrow}>GET IN TOUCH</span>
+              <span className={styles.eyebrow}>START THE CONVERSATION</span>
               <h2 className={styles.heading}>
-                Interested in partnering with us?
+                Partnership starts with a conversation, not a form.
               </h2>
               <div className={styles.openingCard}>
                 <p>
-                  We are always open to discussing strategic opportunities.
-                  If you believe there is a synergy between your work and ours, let&apos;s start a conversation.
+                  We don&apos;t take on partners on a fixed schedule. When the right firm gets in touch, we make time. If you think there&apos;s a fit, tell us who you are, what you do, and who you work with. We&apos;ll take it from there. No pitch decks required.
                 </p>
                 <Link href="mailto:partners@gv.ventures">
                   <Button variant="primary" size="lg">
-                    Contact Our Partnership Team
+                    Get in Touch
                   </Button>
                 </Link>
               </div>

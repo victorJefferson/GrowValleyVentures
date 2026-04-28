@@ -14,6 +14,7 @@ import { Solutions } from "@/components/sections/Solutions/Solutions";
 import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith/WhoWeWorkWith";
 import styles from "./page.module.scss";
 import { Button } from "@/components/ui/Button";
+import { features } from "@/config/features";
 
 interface HomeContentProps {
   heroData: any;
@@ -198,11 +199,13 @@ export default function HomeContent({
       </section>
       <Solutions />
       <WhoWeWorkWith />
-      <InsightsCarousel
-        title="Latest from GrowValley"
-        description="Perspectives on capital, investment and business performance."
-        insights={dynamicInsights}
-      />
+      {features.insights && (
+        <InsightsCarousel
+          title="Latest from GrowValley"
+          description="Perspectives on capital, investment and business performance."
+          insights={dynamicInsights}
+        />
+      )}
 
       <DataSection
         headline={displayDataSection.headline}

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { features } from "@/config/features";
 import { client } from "@/lib/sanity";
 import {
     featuredInsightQuery,
@@ -29,6 +31,9 @@ export const metadata: Metadata = {
 };
 
 export default async function InsightsPage() {
+    if (!features.insights) {
+        redirect("/");
+    }
     let featured = null;
     let editorsPicks = [];
     let latest = [];
