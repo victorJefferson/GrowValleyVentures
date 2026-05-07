@@ -1,19 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-  ArrowRight, 
-  Building2, 
-  BarChart3, 
-  Heart, 
-  Briefcase, 
-  Globe, 
-  Palette, 
-  Zap, 
-  Users, 
-  ShieldCheck, 
-  Layers, 
-  ScrollText, 
-  Plane 
+import {
+  ArrowRight,
+  Building2,
+  BarChart3,
+  Heart,
+  Briefcase,
+  Globe,
+  Palette,
+  Zap,
+  Users,
+  ShieldCheck,
+  Layers,
+  ScrollText,
+  Plane
 } from 'lucide-react';
 import styles from './ServiceCard.module.scss';
 
@@ -48,10 +48,10 @@ export function ServiceCard({ title, description, slug, iconName }: ServiceCardP
       <div className={styles.iconWrapper}>
         <Icon size={32} strokeWidth={1.5} />
       </div>
-      
+
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
-      
+
       <div className={styles.footer}>
         <ArrowRight className={styles.arrow} size={24} />
       </div>

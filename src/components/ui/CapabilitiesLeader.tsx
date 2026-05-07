@@ -30,6 +30,10 @@ export function CapabilitiesLeader({
                 className={styles.leaderImage}
               />
             </div>
+            <div className={`${styles.profileInfo} ${styles.mobileOnly}`}>
+              <h3 className={styles.name}>{name}</h3>
+              <p className={styles.designation}>{designation}</p>
+            </div>
           </div>
           <div className={styles.contentColumn}>
             {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
@@ -37,7 +41,7 @@ export function CapabilitiesLeader({
             <p className={styles.description}>
               {description}
             </p>
-            <div className={styles.profileInfo}>
+            <div className={`${styles.profileInfo} ${styles.desktopOnly}`}>
               <h3 className={styles.name}>{name}</h3>
               <p className={styles.designation}>{designation}</p>
             </div>
