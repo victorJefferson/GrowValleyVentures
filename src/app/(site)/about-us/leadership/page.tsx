@@ -13,51 +13,18 @@ export default function LeadershipPage() {
   const leadershipTeam = [
     {
       name: "Jazeer Jamal",
-      role: "Group Chairman and CEO, GrowValley Group",
+      role: "Group Chairman and CEO",
       image: "/images/people/jazeer_jamal.jpg",
     },
     {
       name: "William J. Daly",
-      role: "Co-Founder and CXO, GrowValley Group",
+      role: "Co-Founder and CXO",
       image: "/images/people/william.jpg",
     },
     {
       name: "Suhail Ismail",
-      role: "Group COO, GrowValley",
+      role: "Group COO",
       image: "/images/people/suhail.jpg",
-    },
-  ];
-
-  const advisoryTeam = [
-    {
-      name: "Sofia Alvarez",
-      role: "Capital Strategy and Investment Readiness Advisor",
-      image: "/images/people/sofia_alvarez.png",
-    },
-    {
-      name: "Aarav Malhotra",
-      role: "Senior Growth and Transformation Advisor",
-      image: "/images/people/aarav_malhotra.bmp",
-    },
-    {
-      name: "Nadia El-Sayed",
-      role: "Investment Readiness Advisor",
-      image: "/images/people/nadia.bmp",
-    },
-    {
-      name: "Priya Menon",
-      role: "Capital Structuring Advisor",
-      image: "/images/people/priya_menon.bmp",
-    },
-    {
-      name: "Lucas Moreau",
-      role: "Transaction Readiness Advisor",
-      image: "/images/people/lucas_moreau.png",
-    },
-    {
-      name: "Daniel Fischer",
-      role: "Capital Strategy Advisor",
-      image: "/images/people/daniel_fischer.bmp",
     },
   ];
 
@@ -81,28 +48,6 @@ export default function LeadershipPage() {
 
           <div className={styles.teamGrid}>
             {leadershipTeam.map((member, idx) => (
-              <div key={idx} className={styles.teamMemberCard}>
-                <div className={styles.memberImage}>
-                  <img src={member.image || placeholderImg} alt={member.name} />
-                </div>
-                <div className={styles.memberInfo}>
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding" style={{ borderTop: '1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.1)' }}>
-        <div className="container">
-          <div className={`${styles.sectionHeader} text-center`}>
-            <h2 className={styles.heading}>Our Advisory Team</h2>
-          </div>
-
-          <div className={styles.teamGrid}>
-            {advisoryTeam.map((member, idx) => (
               <div key={idx} className={styles.teamMemberCard}>
                 <div className={styles.memberImage}>
                   <img src={member.image || placeholderImg} alt={member.name} />
