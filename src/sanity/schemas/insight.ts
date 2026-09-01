@@ -26,6 +26,32 @@ export default defineType({
             description: "e.g., CAPITAL, ADVISORY, INVESTMENT",
         }),
         defineField({
+            name: "category",
+            title: "Category",
+            type: "string",
+            options: {
+                list: [
+                    { title: "Articles", value: "articles" },
+                    { title: "Market Outlook", value: "market-outlook" },
+                    { title: "Management Views", value: "management-views" },
+                    { title: "Press Releases", value: "press-releases" },
+                    { title: "Knowledge Hub", value: "knowledge-hub" },
+                    { title: "Webinars & Events", value: "webinars-events" },
+                ],
+            },
+            initialValue: "articles",
+        }),
+        defineField({
+            name: "author",
+            title: "Author",
+            type: "string",
+        }),
+        defineField({
+            name: "readTimeMinutes",
+            title: "Read Time (minutes)",
+            type: "number",
+        }),
+        defineField({
             name: "excerpt",
             title: "Excerpt",
             type: "text",

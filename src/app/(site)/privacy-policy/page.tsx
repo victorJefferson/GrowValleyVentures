@@ -4,12 +4,12 @@ import styles from './Legal.module.scss';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Privacy Policy | GrowValley"
+        absolute: "Privacy Policy | AFAQ Partners"
     },
-    description: "GrowValley is committed to protecting the privacy and security of your personal data. Read our investment platform's privacy policy.",
+    description: "AFAQ Partners is committed to protecting the privacy and security of your personal data. Read our investment platform's privacy policy.",
     openGraph: {
-        title: "Privacy Policy | GrowValley",
-        description: "GrowValley's commitment to data privacy and security.",
+        title: "Privacy Policy | AFAQ Partners",
+        description: "AFAQ Partners's commitment to data privacy and security.",
         url: "https://gv.ventures/privacy-policy",
     },
 };
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
                 <div className="container">
                     <div className={styles.legalContent}>
                         <h2>1. Introduction</h2>
-                        <p>GrowValley is committed to protecting the privacy and security of your personal data. This policy outlines how we collect, use, and safeguard information provided by visitors to our investment platform.</p>
+                        <p>AFAQ Partners is committed to protecting the privacy and security of your personal data. This policy outlines how we collect, use, and safeguard information provided by visitors to our investment platform.</p>
 
                         <h2>2. Data Collection</h2>
                         <p>We collect information that you provide directly to us through the contact form, including your name and email address. We also collect anonymised usage data via cookies to improve site performance.</p>

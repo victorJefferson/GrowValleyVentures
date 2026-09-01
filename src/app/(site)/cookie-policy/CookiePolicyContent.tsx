@@ -38,7 +38,7 @@ export default function CookiePolicyContent() {
 
             <h2>Overview</h2>
             <p>
-              This Cookie Policy explains how GrowValley (&quot;we&quot;,
+              This Cookie Policy explains how AFAQ Partners (&quot;we&quot;,
               &quot;us&quot;, and &quot;our&quot;) uses cookies and similar
               technologies to recognise you when you visit our website. It
               explains what these technologies are and why we use them, as well

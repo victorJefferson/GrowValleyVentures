@@ -38,7 +38,7 @@ export function Footer() {
           <Link href="/" className={styles.logoLink}>
             <img
               src="/gv-logo-green.png"
-              alt="GrowValley Logo"
+              alt="AFAQ Partners Logo"
               width="160"
               height="60"
               className={styles.logoImage}
@@ -88,7 +88,7 @@ export function Footer() {
             <h4>About Us</h4>
             <ul>
               <li>
-                <Link href="/about-us">About GrowValley</Link>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
                 <Link href="/about-us/leadership">Leadership</Link>
@@ -123,11 +123,12 @@ export function Footer() {
       <div className={styles.bottomBar}>
         <div className={`container ${styles.bottomInner}`}>
           <div className={styles.copyright}>
-            GrowValley Ventures — Dubai. Built by operators. Run for outcome
+            AFAQ Partners — Dubai. Built by operators. Run for outcomes.
           </div>
           <div className={styles.legalLinks}>
             <Link href="/privacy-policy">Privacy Policy</Link>
             <Link href="/terms-of-use">Terms of Use</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
             <Link href="/contact">Contact</Link>
           </div>
         </div>

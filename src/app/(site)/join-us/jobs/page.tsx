@@ -10,13 +10,13 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Jobs | GrowValley",
+    absolute: "Jobs | AFAQ Partners",
   },
   description:
-    "We don't hire for roles. We hire for impact. Join the GrowValley team.",
+    "We don't hire for roles. We hire for impact. Join the AFAQ Partners team.",
   openGraph: {
-    title: "Jobs | GrowValley",
-    description: "Explore career opportunities at GrowValley.",
+    title: "Jobs | AFAQ Partners",
+    description: "Explore career opportunities at AFAQ Partners.",
     url: "https://gv.ventures/join-us/jobs",
   },
 };
@@ -32,7 +32,7 @@ export default async function JobsPage() {
   const defaultHero = {
     eyebrow: "JOBS",
     headline: "We don't hire for roles. We hire for impact.",
-    subheadline: "GrowValley sits at a rare intersection: wealth management, venture building, and active capital deployment. That means the people who thrive here aren't looking for a quiet corner of finance. They're looking for a place where their thinking actually changes outcomes.",
+    subheadline: "AFAQ Partners sits at a rare intersection: wealth management, venture building, and active capital deployment. That means the people who thrive here aren't looking for a quiet corner of finance. They're looking for a place where their thinking actually changes outcomes.",
     image: "/images/careers_hero.png",
   };
 
@@ -58,7 +58,7 @@ export default async function JobsPage() {
             <div className={styles.pullQuoteAccent} />
             <p className={styles.pullQuoteText}>
               We&apos;re a small, senior team. There&apos;s no hiding behind process here.
-              If you join GrowValley, what you do will be felt by the clients we serve and
+              If you join AFAQ Partners, what you do will be felt by the clients we serve and
               the businesses we build.
             </p>
           </div>
@@ -103,7 +103,7 @@ export default async function JobsPage() {
               <div className={styles.openingCard}>
                 <p>
                   We don&apos;t hire on a fixed schedule. When we find the right person,
-                  we find a way to bring them in. If you think GrowValley is where
+                  we find a way to bring them in. If you think AFAQ Partners is where
                   you should be, tell us why. The right message gets a response.
                 </p>
                 <Link href="mailto:careers@gv.ventures">

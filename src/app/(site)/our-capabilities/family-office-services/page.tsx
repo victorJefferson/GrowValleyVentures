@@ -9,7 +9,7 @@ import { Building2, BarChart3, Heart, Briefcase, Globe, Palette } from "lucide-r
 import styles from "../Capabilities.module.scss";
 
 export const metadata: Metadata = {
-  title: "Family Office Services | GrowValley",
+  title: "Family Office Services | AFAQ Partners",
   description: "Taking responsibility for the full picture, across every structure, relationship, and decision that touches your family's wealth.",
 };
 
@@ -43,7 +43,7 @@ export default function FamilyOfficePage() {
                 That is a family office problem. And it requires a different kind of firm.
               </p>
               <p className={styles.introParagraph}>
-                GrowValley acts as the central coordination layer for families whose financial affairs have outgrown a single relationship. We manage the full picture: structures, reporting, advisors, transactions, and the situations that do not fit a standard mandate.
+                AFAQ Partners acts as the central coordination layer for families whose financial affairs have outgrown a single relationship. We manage the full picture: structures, reporting, advisors, transactions, and the situations that do not fit a standard mandate.
               </p>
               <p className={styles.introParagraph}>
                 We work directly where we have the expertise. We bring in the right specialist where they are better placed. And we make sure nothing slips through the gaps.

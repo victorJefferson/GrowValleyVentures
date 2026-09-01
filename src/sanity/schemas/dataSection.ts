@@ -6,7 +6,7 @@ export default defineType({
     type: "document",
     initialValue: {
         headline: "Wealth managed. Clients served.",
-        description: "GrowValley is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
+        description: "AFAQ Partners is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
         stats: [
             { prefix: "$", number: 2, suffix: "B+", label: "Assets under Advice" },
             { number: 50, suffix: "+", label: "Wealth Management Specialists" },

@@ -12,11 +12,11 @@ import InsightsContent from "./InsightsContent";
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Insights | GrowValley"
+        absolute: "Insights | AFAQ Partners"
     },
-    description: "Perspectives on capital, investment strategy, and portfolio construction from the GrowValley team.",
+    description: "Perspectives on capital, investment strategy, and portfolio construction from the AFAQ Partners team.",
     openGraph: {
-        title: "Insights | GrowValley",
+        title: "Insights | AFAQ Partners",
         description: "Perspectives on capital, investment, and portfolio construction.",
         url: "https://gv.ventures/insights",
         images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
                 url: "/images/growValleyVentures.png",
                 width: 1200,
                 height: 630,
-                alt: "GrowValley Insights",
+                alt: "AFAQ Partners Insights",
             },
         ],
     },

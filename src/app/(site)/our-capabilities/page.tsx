@@ -6,12 +6,12 @@ import { heroQuery } from '@/lib/queries';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Our Capabilities | GrowValley",
+        absolute: "Our Capabilities | AFAQ Partners",
     },
     description: "Expertise that actually matters. Every service we offer exists for one reason, to make sure your money is working as hard as you did to earn it.",
     openGraph: {
-        title: "Our Capabilities | GrowValley",
-        description: "Explore GrowValley's integrated wealth management and investment capabilities.",
+        title: "Our Capabilities | AFAQ Partners",
+        description: "Explore AFAQ Partners's integrated wealth management and investment capabilities.",
         url: "https://gv.ventures/our-capabilities",
     },
 };

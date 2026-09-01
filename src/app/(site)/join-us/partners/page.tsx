@@ -10,13 +10,13 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Partners | GrowValley",
+    absolute: "Partners | AFAQ Partners",
   },
   description:
-    "Explore partnership opportunities with GrowValley.",
+    "Explore partnership opportunities with AFAQ Partners.",
   openGraph: {
-    title: "Partners | GrowValley",
-    description: "Explore partnership opportunities with GrowValley.",
+    title: "Partners | AFAQ Partners",
+    description: "Explore partnership opportunities with AFAQ Partners.",
     url: "https://gv.ventures/join-us/partners",
   },
 };
@@ -32,7 +32,7 @@ export default async function PartnersPage() {
   const defaultHero = {
     eyebrow: "PARTNERS",
     headline: "Strategic Partnerships for Lasting Impact.",
-    subheadline: "GrowValley sits at a rare intersection: wealth management, venture building, and active capital deployment. We look for partners who share our vision for long-term value creation and disciplined execution.",
+    subheadline: "AFAQ Partners sits at a rare intersection: wealth management, venture building, and active capital deployment. We look for partners who share our vision for long-term value creation and disciplined execution.",
     image: "/images/careers_hero.png",
   };
 
@@ -45,7 +45,7 @@ export default async function PartnersPage() {
         isShort
         eyebrow="PARTNERS"
         headline="We don't take on partners for coverage. We take them on for contribution."
-        subheadline="GrowValley sits at the intersection of wealth management, venture building, and active capital deployment."
+        subheadline="AFAQ Partners sits at the intersection of wealth management, venture building, and active capital deployment."
         image={heroImage}
         hasCTA={false}
       />
@@ -57,7 +57,7 @@ export default async function PartnersPage() {
             <div className={styles.pullQuoteAccent} />
             <div className={styles.body} style={{ textAlign: 'center', maxWidth: '900px' }}>
               <p className={styles.pullQuoteText} style={{ marginBottom: '2rem' }}>
-                GrowValley sits at the intersection of wealth management, venture building, and active capital deployment. The firms we partner with aren&apos;t filling a gap on a service list. They&apos;re specialists who bring something we don&apos;t already have, and whose clients benefit from what we bring.
+                AFAQ Partners sits at the intersection of wealth management, venture building, and active capital deployment. The firms we partner with aren&apos;t filling a gap on a service list. They&apos;re specialists who bring something we don&apos;t already have, and whose clients benefit from what we bring.
               </p>
               <p className={styles.pullQuoteText} style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)' }}>
                 If your firm works alongside HNW individuals, family offices, founders, or institutional allocators, and you want to work with a team that operates rather than just advises, there&apos;s a conversation worth having.
@@ -74,7 +74,7 @@ export default async function PartnersPage() {
             <div className={styles.leftCol}>
               <span className={styles.eyebrow}>WHO WE LOOK FOR</span>
               <h2 className={styles.heading}>
-                The right partner already understands what GrowValley does.
+                The right partner already understands what AFAQ Partners does.
               </h2>
             </div>
             <div className={styles.body}>

@@ -26,7 +26,7 @@ export function Navbar() {
       name: "About Us",
       href: "/about-us",
       children: [
-        { name: "About GrowValley", href: "/about-us", description: "Built on independence. Measured by outcomes." },
+        { name: "About AFAQ Partners", href: "/about-us", description: "Built by operators. Run for outcomes." },
         { name: "Team", href: "/about-us/team", description: "A collective of specialists dedicated to excellence." },
         { name: "Leadership", href: "/about-us/leadership", description: "Guided by experience. Driven by innovation." },
       ]
@@ -64,7 +64,7 @@ export function Navbar() {
               <Link href="/">
                 <img
                   src="/gv-logo-green.png"
-                  alt="GrowValley Logo"
+                  alt="AFAQ Partners Logo"
                   width="160"
                   height="60"
                   className={styles.logoImage}
@@ -178,7 +178,7 @@ export function Navbar() {
 
             <div className={styles.desktopCta}>
               <Link href="/contact">
-                <Button size="sm">Contact Us</Button>
+                <Button size="sm">Talk to an Advisor</Button>
               </Link>
             </div>
 

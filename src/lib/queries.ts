@@ -5,10 +5,15 @@ export const heroQuery = groq`
     eyebrow,
     headline,
     subheadline,
+    body,
     ctaText,
     ctaHref,
     hasCTA,
-    image
+    image,
+    heroStats[] {
+      value,
+      label
+    }
   }
 `;
 
@@ -157,6 +162,88 @@ export const allServicesQuery = groq`
     },
     iconName,
     description
+  }
+`;
+
+export const siteSettingsQuery = groq`
+  *[_type == "siteSettings"][0] {
+    siteName,
+    tagline,
+    navCtaText,
+    navCtaHref,
+    contactEmail
+  }
+`;
+
+export const footerStatsQuery = groq`
+  *[_type == "footerStats"][0] {
+    stats[] { value, label },
+    supportingCopy,
+    disclaimer
+  }
+`;
+
+export const pageSectionQuery = groq`
+  *[_type == "pageSection" && pageSlug == $pageSlug && sectionKey == $sectionKey][0] {
+    heading,
+    subheading,
+    body,
+    items[] { title, body, label },
+    stats[] { prefix, number, suffix, label, value }
+  }
+`;
+
+export const pageSectionsByPageQuery = groq`
+  *[_type == "pageSection" && pageSlug == $pageSlug] {
+    sectionKey,
+    heading,
+    subheading,
+    body,
+    items[] { title, body, label },
+    stats[] { prefix, number, suffix, label, value }
+  }
+`;
+
+export const teamMembersQuery = groq`
+  *[_type == "teamMember" && memberType == $memberType] | order(order asc) {
+    name,
+    role,
+    bio,
+    image,
+    imagePath,
+    serviceSlug
+  }
+`;
+
+export const officeLocationsQuery = groq`
+  *[_type == "officeLocation"] | order(order asc) {
+    name,
+    label,
+    addressLines,
+    email
+  }
+`;
+
+export const servicePageBySlugQuery = groq`
+  *[_type == "servicePage" && slug == $slug][0]
+`;
+
+export const legalPageBySlugQuery = groq`
+  *[_type == "legalPage" && slug == $slug][0] {
+    slug,
+    headline,
+    sections[] { headline, body }
+  }
+`;
+
+export const pressReleasesQuery = groq`
+  *[_type == "pressRelease"] | order(publishedAt desc) {
+    _id,
+    title,
+    publishedAt,
+    summary,
+    year,
+    "pdfUrl": pdfFile.asset->url
   }
 `;
 

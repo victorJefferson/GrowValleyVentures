@@ -101,7 +101,7 @@ export function AboutUsSolutions({
           <div className={styles.solutionsImageWrapper}>
             <img
               src="/images/modern_boardroom.png"
-              alt="GrowValley Solutions"
+              alt="AFAQ Partners Solutions"
             />
           </div>
         </div>

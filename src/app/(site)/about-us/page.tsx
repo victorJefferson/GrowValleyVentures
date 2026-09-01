@@ -15,13 +15,13 @@ import { features } from "@/config/features";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About Us | GrowValley",
+    absolute: "About Us | AFAQ Partners",
   },
   description:
-    "Learn about GrowValley's 360° approach to wealth management and institutional capital discipline.",
+    "Learn about AFAQ Partners's 360° approach to wealth management and institutional capital discipline.",
   openGraph: {
-    title: "About Us | GrowValley",
-    description: "GrowValley investment platform and vertical integration.",
+    title: "About Us | AFAQ Partners",
+    description: "AFAQ Partners investment platform and vertical integration.",
     url: "https://gv.ventures/about-us",
   },
 };
@@ -48,13 +48,31 @@ export default async function AboutUsPage() {
   }
 
   const defaultHero = {
-    eyebrow: "ABOUT GROWVALLEY",
-    headline: "Who is GrowValley",
-    subheadline: "Built on independence. Measured by outcomes.",
+    eyebrow: "ABOUT US",
+    headline:
+      "Wealth is more than banking. AFAQ Partners brings experience building, managing, and scaling and we know what it takes to grow the assets we now manage.",
+    subheadline:
+      "We help our clients and partners build the relationships, market access, and investment ecosystems required to deploy and grow capital over the long term with our unfair advantage.",
+    hasCTA: true,
+    ctaText: "Talk to an Advisor",
+    ctaHref: "/contact",
     image: "/images/home_hero.png",
   };
 
+  const defaultDataSection = {
+    headline: "That's the operating history we bring to every conversation.",
+    description:
+      "AFAQ Partners is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
+    stats: [
+      { prefix: "$", number: 5, suffix: "B+", label: "Transactions" },
+      { prefix: "$", number: 2, suffix: "B+", label: "Capital" },
+      { prefix: "$", number: 350, suffix: "M", label: "Assets Under Management" },
+      { number: 500, suffix: "+", label: "Projects Delivered" },
+    ],
+  };
+
   const displayHero = heroData || defaultHero;
+  const displayDataSection = dataSectionData || defaultDataSection;
   const heroImage = heroData?.image
     ? urlFor(heroData.image).url()
     : displayHero.image;
@@ -107,9 +125,9 @@ export default async function AboutUsPage() {
         </section>
       )}
       <DataSection
-        headline={dataSectionData.headline}
-        description={dataSectionData.description}
-        stats={dataSectionData.stats}
+        headline={displayDataSection.headline}
+        description={displayDataSection.description}
+        stats={displayDataSection.stats}
       />
       <section className="section-padding">
         <div className="container">

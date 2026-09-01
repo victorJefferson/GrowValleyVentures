@@ -24,6 +24,26 @@ const nextConfig: NextConfig = {
         destination: '/our-capabilities/:slug*',
         permanent: true,
       },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/contact-us/:path*',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/platform',
+        destination: '/digital',
+        permanent: true,
+      },
+      {
+        source: '/careers',
+        destination: '/join-us/jobs',
+        permanent: true,
+      },
     ]
   },
 };

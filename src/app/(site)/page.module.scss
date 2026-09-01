@@ -567,3 +567,60 @@
         display: none;
     }
 }
+
+.heroStats {
+    background: var(--color-primary-navy);
+    padding: 2rem 0;
+}
+
+.heroStatsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--color-white);
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.heroStatValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.heroStatLabel {
+    font-size: 0.875rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+}
+
+.footerStatsSection {
+    padding: 3rem 0;
+    background: var(--color-surface-tertiary);
+    text-align: center;
+}
+
+.footerStatsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+    font-size: 0.95rem;
+}
+
+.footerStatsCopy {
+    margin-top: 1.5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.footerStatsTagline {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary-navy);
+}

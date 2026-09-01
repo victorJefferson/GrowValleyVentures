@@ -9,8 +9,8 @@ import styles from "../Capabilities.module.scss";
 import { CapabilitiesLeader } from '@/components/ui/CapabilitiesLeader';
 
 export const metadata: Metadata = {
-  title: "Private Market Access | GrowValley",
-  description: "Through the GrowValley network, select clients access private market opportunities that never circulate publicly.",
+  title: "Private Market Access | AFAQ Partners",
+  description: "Through the AFAQ Partners network, select clients access private market opportunities that never circulate publicly.",
 };
 
 export default function PrivateAccessPage() {
@@ -20,7 +20,7 @@ export default function PrivateAccessPage() {
         isShort
         eyebrow="Expertise — Private Market Access"
         headline={<>The best deals don&apos;t advertise.<br />We find them anyway.</>}
-        subheadline="Through the GrowValley network, select clients access private market opportunities that never circulate publicly. We don't just pass deals along. We've been inside them."
+        subheadline="Through the AFAQ Partners network, select clients access private market opportunities that never circulate publicly. We don't just pass deals along. We've been inside them."
         image="/images/private_access_hero.png"
         hasCTA={false}
       />

@@ -9,9 +9,9 @@ export default defineType({
         name: "Jazeer Jamal",
         title: "FOUNDER & CEO, GROWVALLEY GROUP",
         bio: [
-            "Jazeer Jamal founded GrowValley Group to manage what most firms only advise on: the structural, operational, and financial foundations that allow businesses to form, function, and grow across jurisdictions.",
+            "Jazeer Jamal founded AFAQ Group to manage what most firms only advise on: the structural, operational, and financial foundations that allow businesses to form, function, and grow across jurisdictions.",
             "Over two decades, his work has spanned transactions exceeding $2 billion, assets under management of $350 million, and over $100 million in capital raised. His mandates have covered growth capital, restructuring, and direct investment across private families, institutional allocators, and government entities in the Middle East, South Asia, and beyond.",
-            "He has built and scaled more than fifty ventures, worked directly with over five hundred startups, and operates today with active companies across the GrowValley portfolio. He is based in Sharjah, UAE."
+            "He has built and scaled more than fifty ventures, worked directly with over five hundred startups, and operates today with active companies across the AFAQ Partners portfolio. He is based in Sharjah, UAE."
         ],
         stats: [
             { value: "$2B+", label: "Transactions across mandates" },

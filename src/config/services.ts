@@ -24,10 +24,10 @@ export const services: ServiceDetail[] = [
   {
     slug: "advisory-mandate",
     title: "Advisory Mandate",
-    description: "You make every decision. We make sure they're the right ones. GrowValley's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
+    description: "You make every decision. We make sure they're the right ones. AFAQ Partners's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
     category: "Wealth Management",
     iconName: "BarChart3",
-    content: "You make every decision. We make sure they're the right ones. GrowValley's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
+    content: "You make every decision. We make sure they're the right ones. AFAQ Partners's advisory mandate gives you a dedicated expert who's sat on both sides of the table — as operators, founders, and institutional executives — not just advisors.",
     features: ["Advice from operators", "No product mandates", "Full decision authority"],
     stats: [{ label: "Experience", value: "50+ Years" }]
   },
