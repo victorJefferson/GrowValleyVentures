@@ -287,10 +287,10 @@ const servicePageContent: Record<string, {
   "advisory-mandate": {
     valuePropHeadline: "Your wealth. Your call.",
     valuePropAccent: "Our expertise behind every move.",
-    valuePropBody: "AFAQ Partners's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC.",
+    valuePropBody: "AFAQ Partners' advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC.",
     problemHighlight: "Who's actually advising you?",
     problemHeadline: "Most advisors have never built what you're protecting.",
-    problemBody: "The problem isn't access to financial advice — it's the quality of the thinking behind it. Generic recommendations, product-driven incentives, and advisors who've never operated a business at any real scale add up to counsel that sounds professional but costs you in ways that don't show up on a statement.\n\nAFAQ Partners's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC. When we sit alongside you, we're not reading from a playbook — we're drawing from a career of doing exactly what you're navigating.",
+    problemBody: "The problem isn't access to financial advice — it's the quality of the thinking behind it. Generic recommendations, product-driven incentives, and advisors who've never operated a business at any real scale add up to counsel that sounds professional but costs you in ways that don't show up on a statement.\n\nAFAQ Partners' advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC. When we sit alongside you, we're not reading from a playbook — we're drawing from a career of doing exactly what you're navigating.",
     problemBullets: [
       "Advice from operators who've run businesses, not just analysed them",
       "No product mandates. No quotas. No hidden incentives.",
@@ -301,11 +301,11 @@ const servicePageContent: Record<string, {
     helpCards: [
       { iconName: "LineChart", title: "Portfolio Review Grounded in Real Context", desc: "We review your holdings, allocation, and performance against what you're actually trying to achieve — not a generic benchmark. You leave every review knowing exactly where you stand and why." },
       { iconName: "ShieldCheck", title: "Risk Caught Before It Moves Against You", desc: "We identify concentration risk, liquidity gaps, and structural exposure early — before the market makes the decision for you. This is built into the mandate from the start, not flagged after the fact." },
-      { iconName: "Network", title: "Opportunities From a Network Most Can't Access", desc: "AFAQ Partners's leadership is embedded across GCC founder networks, institutional investment circles, and sovereign-level relationships. Relevant opportunities reach you before they reach the market." }
+      { iconName: "Network", title: "Opportunities From a Network Most Can't Access", desc: "AFAQ Partners' leadership is embedded across GCC founder networks, institutional investment circles, and sovereign-level relationships. Relevant opportunities reach you before they reach the market." }
     ],
     featureEyebrow: "ADVISE. ASSESS. ALIGN.",
     featureHeadline: "Counsel built around your convictions.",
-    featureBody: "AFAQ Partners's co-founders bring over 50 years of combined experience across institutional investment, venture building, and sovereign advisory. This isn't a firm that learned wealth management from a textbook — it was built by people who've sat in the rooms where capital decisions actually get made.",
+    featureBody: "AFAQ Partners' co-founders bring over 50 years of combined experience across institutional investment, venture building, and sovereign advisory. This isn't a firm that learned wealth management from a textbook — it was built by people who've sat in the rooms where capital decisions actually get made.",
     featureBullets: [
       "Independent advice with zero product distribution conflicts",
       "Leadership with active board seats across GCC investment portfolios",
@@ -329,7 +329,7 @@ const servicePageContent: Record<string, {
       ],
       column2: [
         "On-demand advisory access between scheduled sessions",
-        "Opportunity alerts drawn from AFAQ Partners's active network",
+        "Opportunity alerts drawn from AFAQ Partners' active network",
         "Full documentation of every recommendation and rationale given",
         "Annual mandate review against your original objectives"
       ]
@@ -359,7 +359,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "MAP. BUILD. PROTECT.",
     featureHeadline: "A plan built around your life, not a template.",
-    featureBody: "AFAQ Partners's financial planning practice is built by people who have deployed capital across real businesses and real markets. That operating background changes how we think about timelines, risk, and what a plan that actually holds up looks like.",
+    featureBody: "AFAQ Partners' financial planning practice is built by people who have deployed capital across real businesses and real markets. That operating background changes how we think about timelines, risk, and what a plan that actually holds up looks like.",
     featureBullets: [
       "Goal-based planning across retirement, education, succession, and liquidity events",
       "Full financial position intake covering assets, liabilities, income, and future obligations",
@@ -396,15 +396,17 @@ const servicePageContent: Record<string, {
     overlayLabel: "OUR EXPERTISE"
   },
   "private-equity": {
-    valuePropHeadline: "The highest-returning private equity deals",
+    heroHeadline: "Private equity and venture capital access built on operating history.",
+    heroSubheadline: "Growth and buyout opportunities alongside seed-to-pre-IPO venture deals — sourced through relationships, vetted by operators, structured around your exit.",
+    valuePropHeadline: "The highest-returning private deals",
     valuePropAccent: "close within networks, not on platforms.",
-    valuePropBody: "Access to established businesses raising growth or buyout capital. We focus on fundamentals. Cash flow. Positioning. Realistic exit timelines. Select clients get direct access to growth-stage opportunities, vetted by a team that has operated inside over 500 businesses.",
+    valuePropBody: "Access to established businesses raising growth or buyout capital and high-growth private companies from early stage through pre-IPO. We focus on fundamentals, team, market, cap table integrity, and realistic exit timelines. Select clients get direct access to opportunities vetted by a team that has operated inside over 500 businesses.",
     problemHighlight: "PRIVATE EQUITY ACCESS",
     problemHeadline: "The best private deals don't have an application process.",
-    problemBody: "Private equity returns are distributed by access, not merit. The deals that perform sit inside a narrow circuit of relationships. By the time an opportunity reaches a public platform, the founding terms are gone and the early tranches are filled.\n\nMost wealth managers give you what they can access. AFAQ Partners gives you what we're inside. Our network is built on 500+ projects and $1B+ in capital deployed across the Middle East, Europe, and Asia. We bring clients into those conversations before they become public.",
+    problemBody: "Private market returns are distributed by access, not merit. The deals that perform sit inside a narrow circuit of relationships. By the time an opportunity reaches a public platform, the founding terms are gone and the early tranches are filled.\n\nMost wealth managers give you what they can access. AFAQ Partners gives you what we're inside. Our network is built on 500+ projects and $1B+ in capital deployed across the Middle East, Europe, and Asia. We bring clients into growth equity, buyout, and venture conversations before they become public.",
     problemBullets: [
-      "Access to established businesses raising growth or buyout capital",
-      "Direct network relationships with deal principals",
+      "Access to growth equity, buyout, and venture opportunities",
+      "Direct network relationships with deal principals and founders",
       "Exit-focused vetting by experienced operators"
     ],
     problemImageText: "Why do the best deals always go to someone else?",
@@ -433,9 +435,9 @@ const servicePageContent: Record<string, {
     ],
     whatsIncluded: {
       column1: [
-        "Curated private equity deal flow",
-        "Growth and buyout stage access",
-        "Direct principal relationships",
+        "Curated private equity and venture capital deal flow",
+        "Growth, buyout, and pre-IPO stage access",
+        "Direct principal and founder relationships",
         "Geographic coverage: ME, Europe, and Asia"
       ],
       column2: [
@@ -449,7 +451,7 @@ const servicePageContent: Record<string, {
     ctaBody: "Private market access starts with understanding your capital position and what you're actually trying to achieve. Reach out and we'll give you a direct view of what's currently in our deal pipeline and whether it fits.",
     ctaButtonLabel: "CONTACT US",
     heroCtaLabel: "SPEAK TO AN EXPERT",
-    overlayLabel: "PRIVATE MARKET ACCESS / Private Equity",
+    overlayLabel: "PRIVATE MARKET ACCESS / Private Equity & Venture Capital",
     categoryLabel: "Private Market Access"
   },
   "venture-capital": {

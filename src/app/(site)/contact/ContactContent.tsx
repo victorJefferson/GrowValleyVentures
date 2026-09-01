@@ -168,13 +168,50 @@ export default function ContactContent({ offices = [], contactEmail = "reach@afa
                             <div className={styles.leftDivider} />
 
                             <div className={styles.leftContactGroup}>
-                                {(offices.length ? offices : [{
-                                    name: "Dubai Head Office",
-                                    addressLines: [
-                                        "Office 401 (401, 407, 408), Building A4, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE",
-                                        "PO Box 122896 · dxb@afaqgroup.ae",
-                                    ],
-                                }]).map((office, i) => (
+                                {(offices.length ? offices : [
+                                    {
+                                        label: "Abu Dhabi Head Quarter",
+                                        name: "Head Quarter — Abu Dhabi",
+                                        addressLines: [
+                                            "Afaq Al Khaleej Engineering Resources LLC",
+                                            "Office 2501 & 2504, 25th Floor, Shining Tower, Khalidiyah, Abu Dhabi, UAE",
+                                            "PO Box 45993 · info@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Dubai Office",
+                                        name: "Dubai Office",
+                                        addressLines: [
+                                            "Office 401 (401, 407, 408), Building A4, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE",
+                                            "PO Box 122896 · dxb@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Oman Office",
+                                        name: "Oman Office",
+                                        addressLines: [
+                                            "Al Jood Tower, 18th November Street, Office No 3, Muscat, Oman",
+                                            "aljood@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Qatar Office",
+                                        name: "Qatar Office",
+                                        addressLines: [
+                                            "Afaq Al Khaleej Engineering Resources WLL",
+                                            "Hotel Plaza Corner Building, Muntaza, Office No 106, Doha, Qatar",
+                                            "admin@afaqalkhaleej.com",
+                                        ],
+                                    },
+                                    {
+                                        label: "AFAQ India",
+                                        name: "AFAQ India",
+                                        addressLines: [
+                                            "Fortum Investrade LLP, Fortum Space, Marottichuvadu, Edappally, 3rd Floor, Office No 3, Ernakulam, Kerala, India",
+                                            "info@fortuminvestrade.com",
+                                        ],
+                                    },
+                                ]).map((office, i) => (
                                     <div key={i} style={{ marginBottom: i < offices.length - 1 ? "2rem" : 0 }}>
                                         <p className={styles.leftContactTitle}>{office.label || office.name}</p>
                                         <div className={styles.leftContactBody}>

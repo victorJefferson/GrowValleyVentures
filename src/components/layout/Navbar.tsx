@@ -42,14 +42,15 @@ export function Navbar() {
       ]
     },
     ...(features.insights ? [{ name: "Insights", href: "/insights" }] : []),
+    { name: "Contact", href: "/contact" },
     {
       name: "Join Us",
       href: "/join-us/jobs",
       children: [
-        { name: "Jobs", href: "/join-us/jobs", description: "Build the future of wealth management and venture building." },
+        { name: "Experts", href: "/join-us/experts", description: "A collective of specialists dedicated to excellence." },
         { name: "Partners", href: "/join-us/partners", description: "Strategic collaborations for shared success." },
         { name: "Investors", href: "/join-us/investors", description: "Direct access to high-conviction private opportunities." },
-        { name: "Experts", href: "/join-us/experts", description: "A collective of specialists dedicated to excellence." },
+        { name: "Jobs", href: "/join-us/jobs", description: "Build the future of wealth management and venture building." },
       ]
     },
   ];

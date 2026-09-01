@@ -10,12 +10,12 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Jobs | AFAQ Partners",
+    absolute: "Careers | AFAQ Partners",
   },
   description:
     "We don't hire for roles. We hire for impact. Join the AFAQ Partners team.",
   openGraph: {
-    title: "Jobs | AFAQ Partners",
+    title: "Careers | AFAQ Partners",
     description: "Explore career opportunities at AFAQ Partners.",
     url: "https://gv.ventures/join-us/jobs",
   },

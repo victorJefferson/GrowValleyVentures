@@ -58,7 +58,7 @@ export default function FamilyOfficePage() {
         <div className="container">
           <div className={styles.sectionHeaderSimple} style={{ textAlign: 'center' }}>
             <h2 className="section-title">
-              Three areas. One point of accountability.
+              Six areas. One point of accountability.
             </h2>
           </div>
 
@@ -78,11 +78,32 @@ export default function FamilyOfficePage() {
               iconName="BarChart3"
             />
             <ServiceCard
+              key="philanthropy"
+              title="Philanthropy"
+              description="Structured giving aligned to your values and legacy. We help families design philanthropic frameworks that are intentional, measurable, and integrated with the wider wealth structure."
+              slug="philanthropy"
+              iconName="Heart"
+            />
+            <ServiceCard
               key="ma-ipo"
               title="M&A & IPO Advisory"
               description="For families with operating assets considering a transaction. We provide advisory support through acquisitions, business sales, and public listings, sitting alongside your legal and banking advisors with the operating perspective they do not have."
               slug="ma-and-ipo-advisory"
               iconName="Briefcase"
+            />
+            <ServiceCard
+              key="social-impact"
+              title="Social Impact Investing"
+              description="Capital deployed with both return and impact objectives. We help families identify, structure, and monitor investments where financial outcomes and social outcomes are intentionally aligned."
+              slug="social-impact-investing"
+              iconName="Globe"
+            />
+            <ServiceCard
+              key="collectibles"
+              title="Collectibles & Art"
+              description="For families holding passion assets alongside financial portfolios. We provide coordination, valuation oversight, and integration of collectibles and art within the broader family office reporting framework."
+              slug="collectibles-and-art"
+              iconName="Palette"
             />
           </div>
         </div>

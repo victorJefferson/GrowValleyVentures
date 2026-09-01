@@ -136,14 +136,8 @@ export const dataSection = {
   _id: "dataSection-main",
   _type: "dataSection",
   headline: "That's the operating history we bring to every conversation.",
-  description:
-    "AFAQ Partners is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
-  stats: [
-    { prefix: "$", number: 5, suffix: "B+", label: "Transactions" },
-    { prefix: "$", number: 2, suffix: "B+", label: "Capital" },
-    { prefix: "$", number: 350, suffix: "M", label: "Assets Under Management" },
-    { number: 500, suffix: "+", label: "Projects Delivered" },
-  ],
+  description: "",
+  stats: [],
 };
 
 export const footerStats = {
@@ -444,7 +438,7 @@ export const officeLocations = [
     _id: "office-abu-dhabi",
     _type: "officeLocation",
     name: "Head Quarter — Abu Dhabi",
-    label: "Dubai Head Office",
+    label: "Abu Dhabi Head Quarter",
     order: 1,
     addressLines: [
       "Afaq Al Khaleej Engineering Resources LLC",
@@ -456,6 +450,7 @@ export const officeLocations = [
     _id: "office-dubai",
     _type: "officeLocation",
     name: "Dubai Office",
+    label: "Dubai Office",
     order: 2,
     addressLines: [
       "Office 401 (401, 407, 408), Building A4, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE",
