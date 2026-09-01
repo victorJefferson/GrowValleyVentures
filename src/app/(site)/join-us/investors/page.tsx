@@ -105,7 +105,7 @@ export default async function InvestorsPage() {
                 <p>
                   AFAQ Partners isn&apos;t structured for volume. We take on investors where we can do the work properly and add something real. Capacity is limited and the mandate is focused. If you want to understand what that looks like in practice, reach out.
                 </p>
-                <Link href="mailto:investors@gv.ventures">
+                <Link href="mailto:reach@afaqpartners.com">
                   <Button variant="primary" size="lg">
                     Talk to an Advisor
                   </Button>

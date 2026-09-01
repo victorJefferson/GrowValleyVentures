@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
                         <p>We maintain appropriate technical and organisational measures to ensure a level of security appropriate to the risk of data processing.</p>
 
                         <h2>5. Contact</h2>
-                        <p>For questions regarding our privacy practices, please contact our compliance department at compliance@gv.ventures.</p>
+                        <p>For questions regarding our privacy practices, please contact our compliance department at reach@afaqpartners.com.</p>
                     </div>
                 </div>
             </section>

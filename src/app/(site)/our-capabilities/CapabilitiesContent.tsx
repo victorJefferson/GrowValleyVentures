@@ -10,7 +10,7 @@ import styles from "./Capabilities.module.scss";
 
 export default function CapabilitiesContent({ heroData }: { heroData?: any }) {
   const defaultHero = {
-    eyebrow: "GROWVALLEY",
+    eyebrow: "AFAQ PARTNERS",
     headline: "Our Capabilities",
     subheadline: "Four disciplines. One strategy. Total accountability.",
     image: "/images/capabilities_hero.png",

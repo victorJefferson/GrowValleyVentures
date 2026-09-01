@@ -105,7 +105,7 @@ export default async function ExpertsPage() {
                 <p>
                   We don&apos;t bring experts in on a fixed cycle. When a client situation calls for something specific, we go to the people we already know. If you want to be one of those people when the moment comes, tell us about your work. The right message gets a response.
                 </p>
-                <Link href="mailto:experts@gv.ventures">
+                <Link href="mailto:reach@afaqpartners.com">
                   <Button variant="primary" size="lg">
                     Tell Us About Your Work
                   </Button>

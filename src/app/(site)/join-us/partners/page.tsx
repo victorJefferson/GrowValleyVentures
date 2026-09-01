@@ -105,7 +105,7 @@ export default async function PartnersPage() {
                 <p>
                   We don&apos;t take on partners on a fixed schedule. When the right firm gets in touch, we make time. If you think there&apos;s a fit, tell us who you are, what you do, and who you work with. We&apos;ll take it from there. No pitch decks required.
                 </p>
-                <Link href="mailto:partners@gv.ventures">
+                <Link href="mailto:reach@afaqpartners.com">
                   <Button variant="primary" size="lg">
                     Get in Touch
                   </Button>

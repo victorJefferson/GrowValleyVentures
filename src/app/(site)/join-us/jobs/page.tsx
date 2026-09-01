@@ -106,7 +106,7 @@ export default async function JobsPage() {
                   we find a way to bring them in. If you think AFAQ Partners is where
                   you should be, tell us why. The right message gets a response.
                 </p>
-                <Link href="mailto:careers@gv.ventures">
+                <Link href="mailto:reach@afaqpartners.com">
                   <Button variant="primary" size="lg">
                     Send Us Your CV
                   </Button>
