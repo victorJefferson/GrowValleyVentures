@@ -37,10 +37,10 @@ export function Footer() {
         <div className={styles.brandCol}>
           <Link href="/" className={styles.logoLink}>
             <img
-              src="/brand/afaq-wordmark.svg"
+              src="/brand/afaq-wordmark.png"
               alt="AFAQ Partners"
               width="160"
-              height="28"
+              height="56"
               className={styles.logoImage}
             />
           </Link>

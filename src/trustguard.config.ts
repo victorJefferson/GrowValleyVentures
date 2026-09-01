@@ -4,7 +4,7 @@ export const trustGuardConfig: TrustGuardConfig = {
   active: true, // Toggle the entire system
   branding: {
     name: "AFAQ Partners",
-    logo: "/brand/afaq-wordmark.svg",
+    logo: "/brand/afaq-wordmark.png",
     colors: {
       primary: "#1c1a4a",
       text: "#111827",
