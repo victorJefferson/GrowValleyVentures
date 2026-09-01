@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Hero } from "@/components/ui/Hero";
-import { DataSection } from "@/components/ui/DataSection";
 import { ArrowRight, Layers, ShieldCheck, Target, Network } from "lucide-react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
@@ -19,7 +18,6 @@ import { features } from "@/config/features";
 interface HomeContentProps {
   heroData: any;
   insights: any[];
-  dataSectionData: any;
   pageSections?: any[];
   footerStatsData?: any;
 }
@@ -29,7 +27,6 @@ const CARD_ICONS = [ShieldCheck, Layers, Target, Network];
 export default function HomeContent({
   heroData,
   insights,
-  dataSectionData,
   pageSections = [],
   footerStatsData,
 }: HomeContentProps) {
@@ -49,18 +46,6 @@ export default function HomeContent({
       { value: "$2B+", label: "Capital" },
       { value: "$350M", label: "Assets Under Management" },
       { value: "500+", label: "Projects Delivered" },
-    ],
-  };
-
-  const defaultDataSection = {
-    headline: "That's the operating history we bring to every conversation.",
-    description:
-      "AFAQ Partners is a fully integrated wealth management powerhouse. We globally serve our wealth management and institutional client base.",
-    stats: [
-      { prefix: "$", number: 5, suffix: "B+", label: "Transactions" },
-      { prefix: "$", number: 2, suffix: "B+", label: "Capital" },
-      { prefix: "$", number: 350, suffix: "M", label: "Assets Under Management" },
-      { number: 500, suffix: "+", label: "Projects Delivered" },
     ],
   };
 
@@ -84,7 +69,6 @@ export default function HomeContent({
       ];
 
   const displayHero = heroData || defaultHero;
-  const displayDataSection = dataSectionData || defaultDataSection;
   const displayFooterStats = footerStatsData || defaultFooterStats;
 
   const getHeroImage = () => {
@@ -123,22 +107,8 @@ export default function HomeContent({
         ctaHref={displayHero.ctaHref}
         hasCTA={displayHero.hasCTA}
         image={getHeroImage()}
+        heroStats={displayHero.heroStats}
       />
-
-      {displayHero.heroStats?.length > 0 && (
-        <section className={styles.heroStats}>
-          <div className="container">
-            <div className={styles.heroStatsGrid}>
-              {displayHero.heroStats.map((stat: { value: string; label: string }, i: number) => (
-                <div key={i} className={styles.heroStatItem}>
-                  <div className={styles.heroStatValue}>{stat.value}</div>
-                  <div className={styles.heroStatLabel}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       <section className="section-padding">
         <div className={`container ${styles.noPaddingMobile}`}>
@@ -181,7 +151,7 @@ export default function HomeContent({
       <section className={styles.miniCta}>
         <div className={styles.miniCtaInner}>
           <div className={styles.miniCtaText}>
-            <h3>Partner with the best</h3>
+            <h3>Partner with the Best</h3>
           </div>
           <Link href="/contact">
             <Button variant="secondary" size="lg">
@@ -200,11 +170,6 @@ export default function HomeContent({
         />
       )}
 
-      <DataSection
-        headline={displayDataSection.headline}
-        description={displayDataSection.description}
-        stats={displayDataSection.stats}
-      />
       <section className={styles.ctaBanner}>
         <div className="container">
           <h2 className={styles.speakToAnExpertBannerHeading}>

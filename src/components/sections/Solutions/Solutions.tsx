@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./Solutions.module.scss";
@@ -24,7 +23,7 @@ const solutions = [
     id: "private-access-to-opportunities",
     title: "Private Access to Opportunities",
     subtitle:
-      "Through AFAQ Partners's deals desk, select clients access private market opportunities that never reach the public. We don't just pass these deals along, we've operated, built, and invested in businesses ourselves. We source the deals, vet them through people who've actually built businesses, and focus on your exit.",
+      "Through the AFAQ Partners deals desk, select clients access private market opportunities that never reach the public. We don't just pass these deals along, we've operated, built, and invested in businesses ourselves. We source the deals, vet them through people who've actually built businesses, and focus on your exit.",
     href: "/our-capabilities/private-access-to-opportunities",
   },
   {
@@ -37,83 +36,32 @@ const solutions = [
 ];
 
 export const Solutions = () => {
-  const [activeSolution, setActiveSolution] = useState(0);
-
   return (
     <section className={styles.solutionsWrapper}>
       <div className={styles.solutionsPanel}>
         <div className="container">
           <header className={styles.sectionHeader}>
             <h2 className={styles.sectionHeadline}>
-              We don't sell products. We don't take commissions. We build strategies.
+              We don&apos;t sell products. We don&apos;t take commissions. We build strategies.
             </h2>
             <p className={styles.sectionBody}>
-              Our process is direct, we start with your capital, your risk profile, and where you actually want to end up. Then we build backwards from there. Just a clear mandate, consistent execution, and a team that's been on both sides of the table.
+              Our process is direct, we start with your capital, your risk profile, and where you actually want to end up. Then we build backwards from there. Just a clear mandate, consistent execution, and a team that&apos;s been on both sides of the table.
             </p>
           </header>
 
-          <div className={styles.solutionsContainer}>
-            <div className={styles.solutionsNav}>
-              <div className={styles.solutionsList}>
-                {solutions.map((s, idx) => (
-                  <button
-                    key={s.id}
-                    className={`${styles.solutionsTrigger} ${activeSolution === idx ? styles.active : ""
-                      }`}
-                    onClick={() => {
-                      setActiveSolution(idx);
-                      const element = document.getElementById(`mobile-${s.id}`);
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
-                  >
-                    {s.title}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.solutionsContent}>
-              {/* Desktop: One Card at a time */}
-              <div className={styles.desktopOnly}>
-                <div className={styles.solutionsCard} key={activeSolution}>
-                  <div className={styles.cardHeader}>
-                    <h2 className={styles.cardTitleH2}>
-                      {solutions[activeSolution].title}
-                    </h2>
-                    <p className={styles.subtitle}>
-                      {solutions[activeSolution].subtitle}
-                    </p>
-                  </div>
-                  <Link
-                    href={solutions[activeSolution].href}
-                    className={styles.learnMore}
-                  >
-                    Learn more <ArrowRight size={16} />
-                  </Link>
+          <div className={styles.cardsGrid}>
+            {solutions.map((s, idx) => (
+              <article key={s.id} className={styles.solutionsCard}>
+                <span className={styles.cardIndex}>0{idx + 1}</span>
+                <div className={styles.cardHeader}>
+                  <h3 className={styles.cardTitleH2}>{s.title}</h3>
+                  <p className={styles.subtitle}>{s.subtitle}</p>
                 </div>
-              </div>
-
-              {/* Mobile: All cards in a list */}
-              <div className={styles.mobileOnly}>
-                {solutions.map((s) => (
-                  <div
-                    id={`mobile-${s.id}`}
-                    key={s.id}
-                    className={styles.solutionsCard}
-                  >
-                    <div className={styles.cardHeader}>
-                      <h2 className={styles.cardTitleH2}>{s.title}</h2>
-                      <p className={styles.subtitle}>{s.subtitle}</p>
-                    </div>
-                    <Link href={s.href} className={styles.learnMore}>
-                      Learn more <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <Link href={s.href} className={styles.learnMore}>
+                  Learn more <ArrowRight size={16} />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </div>

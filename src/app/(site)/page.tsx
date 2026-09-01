@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { client } from "@/lib/sanity";
-import { heroQuery, insightsQuery, dataSectionQuery, pageSectionsByPageQuery, footerStatsQuery } from "@/lib/queries";
+import { heroQuery, insightsQuery, pageSectionsByPageQuery, footerStatsQuery } from "@/lib/queries";
 import HomeContent from "./HomeContent";
 
 export const metadata: Metadata = {
@@ -27,16 +27,13 @@ export default async function Home() {
     let heroData = null;
     let insights = [];
 
-    let dataSectionData = null;
-
     let pageSections: any[] = [];
     let footerStatsData = null;
 
     try {
-        [heroData, insights, dataSectionData, pageSections, footerStatsData] = await Promise.all([
+        [heroData, insights, pageSections, footerStatsData] = await Promise.all([
             client.fetch(heroQuery, { pageSlug: "home" }),
             client.fetch(insightsQuery),
-            client.fetch(dataSectionQuery),
             client.fetch(pageSectionsByPageQuery, { pageSlug: "home" }),
             client.fetch(footerStatsQuery),
         ]);
@@ -48,7 +45,6 @@ export default async function Home() {
         <HomeContent
             heroData={heroData}
             insights={insights}
-            dataSectionData={dataSectionData}
             pageSections={pageSections}
             footerStatsData={footerStatsData}
         />
