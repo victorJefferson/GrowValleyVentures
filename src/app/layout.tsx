@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Institutional-grade investment platform for family offices and qualified investors.",
     images: [
       {
-        url: "/images/growValleyVentures.png",
+        url: "/images/afaq-og.png",
         width: 1200,
         height: 630,
         alt: "AFAQ Partners Investment Platform",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AFAQ Partners",
     description: "AFAQ Partners structures and governs capital readiness with institutional discipline.",
-    images: ["/images/growValleyVentures.png"],
+    images: ["/images/afaq-og.png"],
   },
   robots: {
     index: true,

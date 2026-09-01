@@ -63,10 +63,10 @@ export function Navbar() {
             <div className={styles.logo}>
               <Link href="/">
                 <img
-                  src="/gv-logo-green.png"
-                  alt="AFAQ Partners Logo"
+                  src="/brand/afaq-wordmark.svg"
+                  alt="AFAQ Partners"
                   width="160"
-                  height="60"
+                  height="28"
                   className={styles.logoImage}
                 />
               </Link>

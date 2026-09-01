@@ -10,7 +10,7 @@ export function MaintenanceMode() {
       <div className={styles.content}>
         <div className={styles.logo}>
           <img
-            src="/gv-logo-white.png"
+            src="/brand/afaq-wordmark-light.svg"
             alt={siteConfig.name}
           />
         </div>

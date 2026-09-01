@@ -7,7 +7,7 @@ Track A implementation (`cursor/afaq-partners-cms-2208`). Review and sign off po
 | Assumption | Value |
 |------------|-------|
 | Brand name | **AFAQ Partners** (full rebrand from GrowValley) |
-| Logo | Interim: existing green logo asset until AFAQ logo supplied |
+| Logo | Client-supplied AFAQ brand assets (`public/brand/`): wordmark for navbar/footer, icon for favicon/app icons, brand color `#1c1a4a` |
 | Legal entity (Terms) | AFAQ Partners LLC, Dubai |
 | Primary email | `reach@afaqpartners.com` |
 
@@ -59,7 +59,6 @@ Track A implementation (`cursor/afaq-partners-cms-2208`). Review and sign off po
 
 ## Open items — client input still needed
 
-- [ ] AFAQ logo and favicon files
 - [ ] Calendly URL for Get Started page embed
 - [ ] Press release PDFs and archive content
 - [ ] WhatsApp number for media/contact

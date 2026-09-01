@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: "https://gv.ventures",
         images: [
             {
-                url: "/images/growValleyVentures.png",
+                url: "/images/afaq-og.png",
                 width: 1200,
                 height: 630,
                 alt: "AFAQ Partners",
