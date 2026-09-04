@@ -60,7 +60,7 @@ export function Navbar() {
     <Disclosure as="header" className={styles.header}>
       {({ open, close }) => (
         <>
-          <div className={styles.navContainer}>
+          <div className={`container ${styles.navContainer}`}>
             <div className={styles.logo}>
               <Link href="/">
                 <img

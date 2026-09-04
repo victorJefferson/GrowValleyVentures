@@ -241,16 +241,20 @@ $hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    padding: 0 6vw 2rem;
+    /* Match navbar / global .container horizontal rail */
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.25rem 2rem;
 
-    @media (max-width: 767px) {
-        padding: 0 1.5rem 1.5rem;
-        justify-content: flex-end;
-        gap: 1.5rem;
+    @media (min-width: 768px) {
+        padding: 0 2rem 2rem;
     }
 
-    @media (min-width: 1600px) {
-        padding: 0 calc((100vw - 1400px) / 2) 2rem;
+    @media (max-width: 767px) {
+        padding: 0 1.25rem 1.5rem;
+        justify-content: flex-end;
+        gap: 1.5rem;
     }
 }
 

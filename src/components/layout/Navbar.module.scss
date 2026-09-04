@@ -15,19 +15,6 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    /* Match Hero .heroInner page margins so logo / CTA align with content */
-    padding: 0 6vw;
-
-    @media (max-width: 767px) {
-        padding: 0 1.5rem;
-    }
-
-    @media (min-width: 1600px) {
-        padding: 0 calc((100vw - 1400px) / 2);
-    }
 }
 
 .logo a {
