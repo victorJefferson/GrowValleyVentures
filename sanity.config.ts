@@ -3,11 +3,11 @@ import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './src/sanity/schemas';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'placeholder';
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'stage';
 
 export default defineConfig({
   name: 'default',
-  title: 'GrowValley Studio',
+  title: 'AFAQ Partners Studio',
 
   projectId,
   dataset,
@@ -17,7 +17,6 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
     templates: (prev) => [
-      // Filter out the generic 'hero' template so only our specific presets show up
       ...prev.filter((template) => template.id !== 'hero'),
       {
         id: 'hero-home',
@@ -26,7 +25,7 @@ export default defineConfig({
         value: {
           pageSlug: 'home',
           hasCTA: true,
-          eyebrow: 'GROWVALLEY',
+          eyebrow: 'AFAQ PARTNERS',
           headline: "Wealth managed by people who've actually built it.",
           subheadline: 'Operated. Invested. Built. Now managing your capital the same way.',
           ctaText: 'Talk to an Advisor',
@@ -39,9 +38,8 @@ export default defineConfig({
         schemaType: 'hero',
         value: {
           pageSlug: 'about',
-          eyebrow: 'ABOUT GROWVALLEY',
-          headline: 'Who is GrowValley',
-          subheadline: 'Built on independence. Measured by outcomes.',
+          eyebrow: 'ABOUT US',
+          headline: "Wealth is more than banking.",
         },
       },
       {
@@ -50,9 +48,8 @@ export default defineConfig({
         schemaType: 'hero',
         value: {
           pageSlug: 'expertise',
-          eyebrow: 'GROWVALLEY',
-          headline: 'Our Expertise',
-          subheadline: 'Four disciplines. One strategy. Total accountability',
+          eyebrow: 'OUR EXPERTISE',
+          headline: 'Expertise that actually matters.',
         },
       },
       {
@@ -61,9 +58,8 @@ export default defineConfig({
         schemaType: 'hero',
         value: {
           pageSlug: 'team',
-          eyebrow: 'GROWVALLEY',
-          headline: 'Our Team',
-          subheadline: 'Wealth Management, delivered by people who know it.',
+          eyebrow: 'OUR TEAM',
+          headline: 'The people behind every decision.',
         },
       },
       {
@@ -73,8 +69,7 @@ export default defineConfig({
         value: {
           pageSlug: 'careers',
           eyebrow: 'CAREERS',
-          headline: 'Join GrowValley.',
-          subheadline: 'We are always looking for wealth management professionals who bring rigour, discretion, and a client-first approach to their work.',
+          headline: "We don't hire for roles. We hire for impact.",
         },
       },
     ],

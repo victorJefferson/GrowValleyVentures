@@ -474,3 +474,45 @@
   opacity: 0.45;
   padding: 2rem 0;
 }
+
+.newsletterSection {
+  padding: 4rem 0 5rem;
+}
+
+.newsletterPanel {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  background: var(--color-surface-tertiary);
+
+  h2 {
+    margin: 0 0 1rem;
+    color: var(--color-primary-navy);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  p {
+    margin: 0 0 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+}
+
+.newsletterLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

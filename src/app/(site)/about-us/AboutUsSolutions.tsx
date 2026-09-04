@@ -62,7 +62,7 @@ export function AboutUsSolutions({
       <div className="container">
         <div className={styles.solutionsSplit}>
           <div className={styles.solutionsInfo}>
-            <span className={styles.eyebrow}>Our solutions</span>
+            <span className={styles.eyebrow}>OUR EXPERTISE</span>
             <h2 className={styles.heading}>{currentCategory.title}</h2>
             <p className={styles.body}>
               {currentCategory.description || "Integrated advisory and alignment."}
@@ -81,6 +81,7 @@ export function AboutUsSolutions({
                     }`}
                     onClick={() => setActiveTab(idx)}
                   >
+                    <span className={styles.tabIndex}>0{idx + 1}</span>
                     {shortTitle}
                   </button>
                 )
@@ -101,7 +102,7 @@ export function AboutUsSolutions({
           <div className={styles.solutionsImageWrapper}>
             <img
               src="/images/modern_boardroom.png"
-              alt="GrowValley Solutions"
+              alt="AFAQ Partners Solutions"
             />
           </div>
         </div>

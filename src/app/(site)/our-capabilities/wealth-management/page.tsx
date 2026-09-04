@@ -9,7 +9,7 @@ import { ShieldCheck, BarChart3, Target } from "lucide-react";
 import styles from "../Capabilities.module.scss";
 
 export const metadata: Metadata = {
-  title: "Wealth Management | GrowValley",
+  title: "Wealth Management | AFAQ Partners",
   description: "Built around you. Not around what's easiest to sell. Custom wealth strategies that put your outcomes first.",
 };
 
@@ -89,7 +89,7 @@ export default function WealthManagementPage() {
               Most wealth firms study markets. We&apos;ve operated inside them, building, scaling, and closing real companies. When we advise on your capital, that experience is in the room.
             </blockquote>
             <cite style={{ display: 'block', marginTop: '2.5rem', fontSize: '1.1rem', fontWeight: 600, color: 'var(--color-accent-blue)', textTransform: 'uppercase', letterSpacing: '0.1em', fontStyle: 'normal' }}>
-              GrowValley Ventures
+              AFAQ Partners
             </cite>
           </div>
         </div>

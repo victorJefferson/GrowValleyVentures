@@ -592,3 +592,82 @@
 .sectionHeader {
     margin-bottom: 3rem;
 }
+
+.offeringsRow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+}
+
+.offeringsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    li {
+        font-weight: 600;
+        color: var(--color-primary-navy);
+        line-height: 1.4;
+    }
+}
+
+.accessMetricsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+.accessMetric {
+    padding: 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--border-radius-card);
+    font-weight: 600;
+    color: var(--color-primary-navy);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.quoteSection {
+    background: var(--color-surface-secondary);
+}
+
+.quoteBlock {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.35;
+    font-weight: 500;
+    color: var(--color-primary-navy);
+    letter-spacing: -0.02em;
+}
+
+.tabIndex {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    opacity: 0.65;
+    margin-bottom: 0.25rem;
+}

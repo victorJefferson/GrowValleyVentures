@@ -22,15 +22,26 @@ const locations = [
 ];
 
 const areasOfInterest = [
-    "Direct Portfolio Investment",
-    "Structured Co-Investment",
-    "Institutional Capital Partnerships",
-    "Investment Structuring",
-    "Capital Governance",
-    "General Enquiry"
+    "Wealth Management",
+    "Family Office Services",
+    "Private Access to Opportunities",
+    "Succession Planning Services",
+    "General Enquiry",
 ];
 
-export default function ContactContent() {
+export interface OfficeLocation {
+    name: string;
+    label?: string;
+    addressLines?: string[];
+    email?: string;
+}
+
+interface ContactContentProps {
+    offices?: OfficeLocation[];
+    contactEmail?: string;
+}
+
+export default function ContactContent({ offices = [], contactEmail = "reach@afaqpartners.com" }: ContactContentProps) {
     const [formData, setFormData] = useState<FormData>({
         fullName: "",
         emailAddress: "",
@@ -157,15 +168,61 @@ export default function ContactContent() {
                             <div className={styles.leftDivider} />
 
                             <div className={styles.leftContactGroup}>
-                                <p className={styles.leftContactTitle}>Dubai Head Office</p>
-                                <div className={styles.leftContactBody}>
-                                    <p>GrowValley Group Offices</p>
-                                    <p>Dubai, United Arab Emirates</p>
-                                    <p style={{ marginTop: '1rem' }}>Phone: <a href="tel:+971501696971">+971 50 169 6971</a></p>
-                                    <p>Email: <a href="mailto:reach@gv.ventures">reach@gv.ventures</a></p>
-                                    <p>WhatsApp: <a href="https://wa.me/971501696971" target="_blank" rel="noopener noreferrer">+971 50 169 6971</a></p>
-                                    <p style={{ marginTop: '1rem' }}>Working hours: Sunday to Thursday, 9:00 AM to 6:00 PM GST</p>
-                                </div>
+                                {(offices.length ? offices : [
+                                    {
+                                        label: "Abu Dhabi Head Quarter",
+                                        name: "Head Quarter — Abu Dhabi",
+                                        addressLines: [
+                                            "Afaq Al Khaleej Engineering Resources LLC",
+                                            "Office 2501 & 2504, 25th Floor, Shining Tower, Khalidiyah, Abu Dhabi, UAE",
+                                            "PO Box 45993 · info@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Dubai Office",
+                                        name: "Dubai Office",
+                                        addressLines: [
+                                            "Office 401 (401, 407, 408), Building A4, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE",
+                                            "PO Box 122896 · dxb@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Oman Office",
+                                        name: "Oman Office",
+                                        addressLines: [
+                                            "Al Jood Tower, 18th November Street, Office No 3, Muscat, Oman",
+                                            "aljood@afaqgroup.ae",
+                                        ],
+                                    },
+                                    {
+                                        label: "Qatar Office",
+                                        name: "Qatar Office",
+                                        addressLines: [
+                                            "Afaq Al Khaleej Engineering Resources WLL",
+                                            "Hotel Plaza Corner Building, Muntaza, Office No 106, Doha, Qatar",
+                                            "admin@afaqalkhaleej.com",
+                                        ],
+                                    },
+                                    {
+                                        label: "AFAQ India",
+                                        name: "AFAQ India",
+                                        addressLines: [
+                                            "Fortum Investrade LLP, Fortum Space, Marottichuvadu, Edappally, 3rd Floor, Office No 3, Ernakulam, Kerala, India",
+                                            "info@fortuminvestrade.com",
+                                        ],
+                                    },
+                                ]).map((office, i) => (
+                                    <div key={i} style={{ marginBottom: i < offices.length - 1 ? "2rem" : 0 }}>
+                                        <p className={styles.leftContactTitle}>{office.label || office.name}</p>
+                                        <div className={styles.leftContactBody}>
+                                            {office.addressLines?.map((line, j) => (
+                                                <p key={j}>{line}</p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                                <p style={{ marginTop: "1rem" }}>Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+                                <p style={{ marginTop: "1rem" }}>Working hours: Sunday to Thursday, 9:00 AM to 6:00 PM GST</p>
                             </div>
                         </aside>
 
@@ -321,13 +378,13 @@ export default function ContactContent() {
                                         onChange={handleChange}
                                     />
                                     <label htmlFor="marketingConsent" className={styles.checkboxLabel}>
-                                        Yes, I agree to receive GrowValley communications. I can unsubscribe or update my choices at any time.
+                                        Yes, I agree to receive AFAQ Partners communications. I can unsubscribe or update my choices at any time.
                                     </label>
                                 </div>
 
                                 {/* Legal text */}
                                 <p className={styles.legalText}>
-                                    By clicking submit, I agree that GrowValley may contact me regarding my request and related services featured on this page, and that my personal information will be stored and processed in accordance with GrowValley&apos;s{" "}
+                                    By clicking submit, I agree that AFAQ Partners may contact me regarding my request and related services featured on this page, and that my personal information will be stored and processed in accordance with AFAQ Partners&apos;s{" "}
                                     <Link href="/privacy-policy">Privacy Notice</Link>.
                                 </p>
 
@@ -390,7 +447,7 @@ export default function ContactContent() {
                             <p><strong>Enquiry Type:</strong> {formData.enquiryType}</p>
                         </div>
                         <p className={styles.successNote}>
-                            Thank you for reaching out. A member of the GrowValley team will be in contact within one to two working days.
+                            Thank you for reaching out. A member of the AFAQ Partners team will be in contact within one to two working days.
                         </p>
                         <button id="success-close" className={styles.successClose} onClick={closeSuccess}>
                             Close

@@ -52,15 +52,21 @@ interface InsightsContentProps {
     allInsights: Insight[];
 }
 
+const CATEGORY_TABS = [
+  'All',
+  'Articles',
+  'Market Outlook',
+  'Management Views',
+  'Press Releases',
+  'Knowledge Hub',
+  'Webinars & Events',
+];
+
 export default function InsightsContent({ featured, editorsPicks, latest, allInsights }: InsightsContentProps) {
   const [activeTab, setActiveTab] = useState('All');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Derive unique tabs from existing tags
-  const tabs = useMemo(() => {
-    const tags = [...new Set(allInsights.map(i => i.tag).filter(Boolean))];
-    return ['All', ...tags.sort()];
-  }, [allInsights]);
+  const tabs = CATEGORY_TABS;
 
   // Filter articles for the grid
   const filteredInsights = useMemo(() => {
@@ -84,9 +90,9 @@ export default function InsightsContent({ featured, editorsPicks, latest, allIns
       <section className={styles.pageHeader}>
         <div className="container">
           <div className={styles.headerGrid}>
-            <h1 className={styles.pageTitle}>Latest from GrowValley</h1>
+            <h1 className={styles.pageTitle}>We write what we actually think. Not what sounds good in a newsletter.</h1>
             <p className={styles.pageDesc}>
-              Perspectives on capital readiness, investment strategy, and advisory practice.
+              Most wealth management content is designed to reassure, not inform. The thinking we publish here comes from people who are actively managing capital, working with operators, and watching markets without the pressure of a product to sell.
             </p>
           </div>
         </div>
@@ -219,6 +225,21 @@ export default function InsightsContent({ featured, editorsPicks, latest, allIns
             </div>
           )}
 
+        </div>
+      </section>
+
+      <section className={styles.newsletterSection}>
+        <div className="container">
+          <div className={styles.newsletterPanel}>
+            <h2>Stay in the loop</h2>
+            <p>
+              Get perspectives from the AFAQ Partners team when we publish something worth reading.
+              No noise. No product pitches.
+            </p>
+            <Link href="/contact" className={styles.newsletterLink}>
+              Contact us to subscribe
+            </Link>
+          </div>
         </div>
       </section>
 

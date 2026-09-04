@@ -3,12 +3,12 @@ import CookiePolicyContent from './CookiePolicyContent';
 
 export const metadata: Metadata = {
     title: {
-        absolute: "Cookie Policy | GrowValley"
+        absolute: "Cookie Policy | AFAQ Partners"
     },
-    description: "GrowValley uses cookies to improve your experience and provide institutional transparency. Read our detailed disclosure regarding digital privacy.",
+    description: "AFAQ Partners uses cookies to improve your experience and provide institutional transparency. Read our detailed disclosure regarding digital privacy.",
     openGraph: {
-        title: "Cookie Policy | GrowValley",
-        description: "GrowValley uses cookies to improve your experience and provide institutional transparency.",
+        title: "Cookie Policy | AFAQ Partners",
+        description: "AFAQ Partners uses cookies to improve your experience and provide institutional transparency.",
         url: "https://gv.ventures/cookie-policy",
     },
 };

@@ -1,8 +1,13 @@
 export const siteConfig = {
-  name: "GrowValley",
-  description: "Institutional-grade investment platform for family offices and qualified investors.",
-  url: "https://gv.ventures",
-  maintenanceMode: process.env.NEXT_PUBLIC_PRODUCTION_ONLINE !== "true", // Maintenance is ON if Production is NOT online
+  name: "AFAQ Partners",
+  url: "https://afaqpartners.com",
+  /**
+   * Maintenance gate for production only.
+   * Preview deployments and local/dev always show the live site so branch QA works.
+   * Production stays behind NEXT_PUBLIC_PRODUCTION_ONLINE=true until launch.
+   */
+  maintenanceMode:
+    process.env.VERCEL_ENV !== "preview" &&
+    process.env.NODE_ENV === "production" &&
+    process.env.NEXT_PUBLIC_PRODUCTION_ONLINE !== "true",
 };
-
-export type SiteConfig = typeof siteConfig;

@@ -9,8 +9,8 @@ import styles from "../Capabilities.module.scss";
 import { CapabilitiesLeader } from '@/components/ui/CapabilitiesLeader';
 
 export const metadata: Metadata = {
-  title: "Private Market Access | GrowValley",
-  description: "Through the GrowValley network, select clients access private market opportunities that never circulate publicly.",
+  title: "Private Market Access | AFAQ Partners",
+  description: "Through the AFAQ Partners network, select clients access private market opportunities that never circulate publicly.",
 };
 
 export default function PrivateAccessPage() {
@@ -20,7 +20,7 @@ export default function PrivateAccessPage() {
         isShort
         eyebrow="Expertise — Private Market Access"
         headline={<>The best deals don&apos;t advertise.<br />We find them anyway.</>}
-        subheadline="Through the GrowValley network, select clients access private market opportunities that never circulate publicly. We don't just pass deals along. We've been inside them."
+        subheadline="Through the AFAQ Partners network, select clients access private market opportunities that never circulate publicly. We don't just pass deals along. We've been inside them."
         image="/images/private_access_hero.png"
         hasCTA={false}
       />
@@ -57,7 +57,7 @@ export default function PrivateAccessPage() {
         <div className="container">
           <div className={styles.sectionHeaderSimple} style={{ textAlign: 'center' }}>
             <h2 className="section-title">
-              Three areas. One standard.<br />
+              Four areas. One standard.<br />
               The exit has to make sense.
             </h2>
           </div>
@@ -65,8 +65,8 @@ export default function PrivateAccessPage() {
           <div className={styles.serviceGrid}>
             <ServiceCard
               key="private-equity"
-              title="Private Equity"
-              description="Access to established businesses raising growth or buyout capital. We focus on fundamentals. Cash flow. Positioning. Realistic exit timelines."
+              title="Private Equity & Venture Capital"
+              description="Access to established businesses raising growth or buyout capital and high-growth private companies from early stage through pre-IPO. We focus on fundamentals, team, market, and realistic exit timelines."
               slug="private-equity"
               iconName="Briefcase"
             />
@@ -84,7 +84,23 @@ export default function PrivateAccessPage() {
               slug="real-estate-access"
               iconName="Building2"
             />
+            <div className={styles.serviceCardStatic}>
+              <div className={styles.serviceCardStaticIcon}>
+                <Briefcase size={28} strokeWidth={1.5} />
+              </div>
+              <h3>Corporate Capital Raises</h3>
+              <p>
+                Structured access to corporate capital raises sourced through operator relationships.
+                Opportunities are evaluated for governance, documentation, and exit logic before introduction.
+              </p>
+            </div>
           </div>
+
+          <p className={styles.legalDisclaimer}>
+            Private market opportunities are available only to qualified investors meeting applicable eligibility criteria.
+            Nothing on this page constitutes an offer, solicitation, or recommendation to buy or sell any security.
+            Investments involve risk, including possible loss of principal. Past performance is not indicative of future results.
+          </p>
         </div>
       </section>
 

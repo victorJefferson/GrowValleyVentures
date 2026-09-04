@@ -19,7 +19,7 @@ export async function generateMetadata(
 
     if (!insight) {
         return {
-            title: 'Insight Not Found | GrowValley Ventures',
+            title: 'Insight Not Found | AFAQ Partners',
         }
     }
 

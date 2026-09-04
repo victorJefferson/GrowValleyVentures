@@ -10,13 +10,13 @@ import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Experts | GrowValley",
+    absolute: "Experts | AFAQ Partners",
   },
   description:
-    "Join the GrowValley network of industry specialists and experts.",
+    "Join the AFAQ Partners network of industry specialists and experts.",
   openGraph: {
-    title: "Experts | GrowValley",
-    description: "Join the GrowValley network of industry specialists and experts.",
+    title: "Experts | AFAQ Partners",
+    description: "Join the AFAQ Partners network of industry specialists and experts.",
     url: "https://gv.ventures/join-us/experts",
   },
 };
@@ -32,7 +32,7 @@ export default async function ExpertsPage() {
   const defaultHero = {
     eyebrow: "EXPERTS",
     headline: "A Network of Specialists. A Collective of Excellence.",
-    subheadline: "GrowValley's strength lies in our ability to assemble the right minds for the right problems. We are constantly looking for industry veterans, technical specialists, and visionary thinkers to join our network.",
+    subheadline: "AFAQ Partners's strength lies in our ability to assemble the right minds for the right problems. We are constantly looking for industry veterans, technical specialists, and visionary thinkers to join our network.",
     image: "/images/careers_hero.png",
   };
 
@@ -45,7 +45,7 @@ export default async function ExpertsPage() {
         isShort
         eyebrow="EXPERTS"
         headline="We don't build an expert network for appearances. We build it for use."
-        subheadline="GrowValley's advisory network sits at the centre of what we do for clients. When we bring in an expert, it's because there's a gap only that person can fill."
+        subheadline="AFAQ Partners's advisory network sits at the centre of what we do for clients. When we bring in an expert, it's because there's a gap only that person can fill."
         image={heroImage}
         hasCTA={false}
       />
@@ -57,7 +57,7 @@ export default async function ExpertsPage() {
             <div className={styles.pullQuoteAccent} />
             <div className={styles.body} style={{ textAlign: 'center', maxWidth: '900px' }}>
               <p className={styles.pullQuoteText} style={{ marginBottom: '2rem' }}>
-                GrowValley&apos;s advisory network sits at the centre of what we do for clients. When we bring in an expert, it&apos;s because there&apos;s a gap only that person can fill: a market they know better than anyone, a transaction type they&apos;ve navigated from the inside, a jurisdiction they&apos;ve spent decades working across.
+                AFAQ Partners&apos;s advisory network sits at the centre of what we do for clients. When we bring in an expert, it&apos;s because there&apos;s a gap only that person can fill: a market they know better than anyone, a transaction type they&apos;ve navigated from the inside, a jurisdiction they&apos;ve spent decades working across.
               </p>
               <p className={styles.pullQuoteText} style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)' }}>
                 Client situations don&apos;t wait for the right credential to show up. We build the bench before we need it.
@@ -105,7 +105,7 @@ export default async function ExpertsPage() {
                 <p>
                   We don&apos;t bring experts in on a fixed cycle. When a client situation calls for something specific, we go to the people we already know. If you want to be one of those people when the moment comes, tell us about your work. The right message gets a response.
                 </p>
-                <Link href="mailto:experts@gv.ventures">
+                <Link href="mailto:reach@afaqpartners.com">
                   <Button variant="primary" size="lg">
                     Tell Us About Your Work
                   </Button>

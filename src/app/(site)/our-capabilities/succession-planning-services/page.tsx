@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
@@ -18,7 +16,7 @@ export default function SuccessionPlanningPage() {
         eyebrow="Services"
         headline="Wealth & Succession Planning"
         subheadline="Succession planning is not a document. It's a system that defines how your wealth is held, how it transfers, and what happens when decisions need to be made without you."
-        image="/images/succession_planning_hero.png"
+        image="/images/corporate_architecture.png"
         hasCTA={false}
       />
 
@@ -84,6 +82,15 @@ export default function SuccessionPlanningPage() {
               slug="family-governance"
               iconName="Users"
             />
+          </div>
+
+          <div className={styles.additionalServices}>
+            <h3 className={styles.additionalServicesTitle}>Also covered within our succession framework</h3>
+            <ul className={styles.additionalServicesList}>
+              <li><strong>Wills</strong> — drafting coordination and alignment with wider wealth structures.</li>
+              <li><strong>Trusts</strong> — establishment and administration across relevant jurisdictions.</li>
+              <li><strong>Cross-Border Succession</strong> — structures that hold across multiple legal systems.</li>
+            </ul>
           </div>
         </div>
       </section>

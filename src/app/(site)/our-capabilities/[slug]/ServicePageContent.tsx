@@ -76,7 +76,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "MAP. DESIGN. IMPLEMENT.",
     featureHeadline: "Transfer architecture built around your reality, not a template.",
-    featureBody: "GrowValley has operated across complex, multi-jurisdictional structures and deployed capital through more than 500 projects. That operating history means we understand how transfer structures perform under real conditions, not just how they read on paper.",
+    featureBody: "AFAQ Partners has operated across complex, multi-jurisdictional structures and deployed capital through more than 500 projects. That operating history means we understand how transfer structures perform under real conditions, not just how they read on paper.",
     featureBullets: [
       "Full asset mapping across entities, jurisdictions, and ownership layers",
       "Transfer framework covering liquid, illiquid, and business interests",
@@ -88,7 +88,7 @@ const servicePageContent: Record<string, {
     stats: [
       { num: "500+", desc: "Projects where capital structure and asset protection were real decisions" },
       { num: "$1B+", desc: "Capital deployed across structures we have helped design" },
-      { num: "8+", desc: "Jurisdictions where GrowValley clients hold active structured positions" },
+      { num: "8+", desc: "Jurisdictions where AFAQ Partners clients hold active structured positions" },
       { num: "Zero", desc: "Product commissions or conflicts of interest, on any engagement, ever" }
     ],
     whatsIncluded: {
@@ -135,7 +135,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "FARAID. WASIYYAH. WAQF.",
     featureHeadline: "Succession designed for clients who hold both faith and complexity.",
-    featureBody: "GrowValley works with Muslim families and family offices across the GCC and MENA region. Shariah-compliant succession is not a single document or a box to check. It is a framework that must hold across assets, jurisdictions, and generations.",
+    featureBody: "AFAQ Partners works with Muslim families and family offices across the GCC and MENA region. Shariah-compliant succession is not a single document or a box to check. It is a framework that must hold across assets, jurisdictions, and generations.",
     featureBullets: [
       "Faraid-compliant distribution logic across all asset classes and jurisdictions",
       "Wasiyyah structuring for discretionary bequests within permitted limits",
@@ -194,7 +194,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "RIGHTS. STRUCTURE. PROTOCOL.",
     featureHeadline: "Governance designed to hold across generations.",
-    featureBody: "GrowValley has worked with business owners and families navigating the gap between personal wealth and shared family assets. Governance failures are rarely the result of bad intentions. They are the result of no agreed framework.",
+    featureBody: "AFAQ Partners has worked with business owners and families navigating the gap between personal wealth and shared family assets. Governance failures are rarely the result of bad intentions. They are the result of no agreed framework.",
     featureBullets: [
       "Decision rights mapping across family members, trustees, and structures",
       "Family council design: meeting structure, agenda, and voting",
@@ -287,10 +287,10 @@ const servicePageContent: Record<string, {
   "advisory-mandate": {
     valuePropHeadline: "Your wealth. Your call.",
     valuePropAccent: "Our expertise behind every move.",
-    valuePropBody: "GrowValley's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC.",
+    valuePropBody: "AFAQ Partners' advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC.",
     problemHighlight: "Who's actually advising you?",
     problemHeadline: "Most advisors have never built what you're protecting.",
-    problemBody: "The problem isn't access to financial advice — it's the quality of the thinking behind it. Generic recommendations, product-driven incentives, and advisors who've never operated a business at any real scale add up to counsel that sounds professional but costs you in ways that don't show up on a statement.\n\nGrowValley's advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC. When we sit alongside you, we're not reading from a playbook — we're drawing from a career of doing exactly what you're navigating.",
+    problemBody: "The problem isn't access to financial advice — it's the quality of the thinking behind it. Generic recommendations, product-driven incentives, and advisors who've never operated a business at any real scale add up to counsel that sounds professional but costs you in ways that don't show up on a statement.\n\nAFAQ Partners' advisory mandate is built differently. Our leadership has managed billion-dollar portfolios, advised sovereign institutions, and built ventures from the ground up across the GCC. When we sit alongside you, we're not reading from a playbook — we're drawing from a career of doing exactly what you're navigating.",
     problemBullets: [
       "Advice from operators who've run businesses, not just analysed them",
       "No product mandates. No quotas. No hidden incentives.",
@@ -301,11 +301,11 @@ const servicePageContent: Record<string, {
     helpCards: [
       { iconName: "LineChart", title: "Portfolio Review Grounded in Real Context", desc: "We review your holdings, allocation, and performance against what you're actually trying to achieve — not a generic benchmark. You leave every review knowing exactly where you stand and why." },
       { iconName: "ShieldCheck", title: "Risk Caught Before It Moves Against You", desc: "We identify concentration risk, liquidity gaps, and structural exposure early — before the market makes the decision for you. This is built into the mandate from the start, not flagged after the fact." },
-      { iconName: "Network", title: "Opportunities From a Network Most Can't Access", desc: "GrowValley's leadership is embedded across GCC founder networks, institutional investment circles, and sovereign-level relationships. Relevant opportunities reach you before they reach the market." }
+      { iconName: "Network", title: "Opportunities From a Network Most Can't Access", desc: "AFAQ Partners' leadership is embedded across GCC founder networks, institutional investment circles, and sovereign-level relationships. Relevant opportunities reach you before they reach the market." }
     ],
     featureEyebrow: "ADVISE. ASSESS. ALIGN.",
     featureHeadline: "Counsel built around your convictions.",
-    featureBody: "GrowValley's co-founders bring over 50 years of combined experience across institutional investment, venture building, and sovereign advisory. This isn't a firm that learned wealth management from a textbook — it was built by people who've sat in the rooms where capital decisions actually get made.",
+    featureBody: "AFAQ Partners' co-founders bring over 50 years of combined experience across institutional investment, venture building, and sovereign advisory. This isn't a firm that learned wealth management from a textbook — it was built by people who've sat in the rooms where capital decisions actually get made.",
     featureBullets: [
       "Independent advice with zero product distribution conflicts",
       "Leadership with active board seats across GCC investment portfolios",
@@ -329,13 +329,13 @@ const servicePageContent: Record<string, {
       ],
       column2: [
         "On-demand advisory access between scheduled sessions",
-        "Opportunity alerts drawn from GrowValley's active network",
+        "Opportunity alerts drawn from AFAQ Partners' active network",
         "Full documentation of every recommendation and rationale given",
         "Annual mandate review against your original objectives"
       ]
     },
     ctaHeadline: "Ready to start a conversation?",
-    ctaBody: "An advisory mandate starts with one conversation — your current position, where you want to go, and whether GrowValley is the right fit. No pitch decks. No obligations. Just a direct discussion with someone who's been in the room before.",
+    ctaBody: "An advisory mandate starts with one conversation — your current position, where you want to go, and whether AFAQ Partners is the right fit. No pitch decks. No obligations. Just a direct discussion with someone who's been in the room before.",
     ctaButtonLabel: "TALK TO AN ADVISOR"
   },
   "financial-planning": {
@@ -359,7 +359,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "MAP. BUILD. PROTECT.",
     featureHeadline: "A plan built around your life, not a template.",
-    featureBody: "GrowValley's financial planning practice is built by people who have deployed capital across real businesses and real markets. That operating background changes how we think about timelines, risk, and what a plan that actually holds up looks like.",
+    featureBody: "AFAQ Partners' financial planning practice is built by people who have deployed capital across real businesses and real markets. That operating background changes how we think about timelines, risk, and what a plan that actually holds up looks like.",
     featureBullets: [
       "Goal-based planning across retirement, education, succession, and liquidity events",
       "Full financial position intake covering assets, liabilities, income, and future obligations",
@@ -370,7 +370,7 @@ const servicePageContent: Record<string, {
     ],
     stats: [
       { num: "$150M+", desc: "Assets under management across client portfolios" },
-      { num: "$3B+", desc: "In revenue generated through the GrowValley network" },
+      { num: "$3B+", desc: "In revenue generated through the AFAQ Partners network" },
       { num: "500+", desc: "Projects deployed across real businesses and capital structures" }
     ],
     whatsIncluded: {
@@ -396,15 +396,17 @@ const servicePageContent: Record<string, {
     overlayLabel: "OUR EXPERTISE"
   },
   "private-equity": {
-    valuePropHeadline: "The highest-returning private equity deals",
+    heroHeadline: "Private equity and venture capital access built on operating history.",
+    heroSubheadline: "Growth and buyout opportunities alongside seed-to-pre-IPO venture deals — sourced through relationships, vetted by operators, structured around your exit.",
+    valuePropHeadline: "The highest-returning private deals",
     valuePropAccent: "close within networks, not on platforms.",
-    valuePropBody: "Access to established businesses raising growth or buyout capital. We focus on fundamentals. Cash flow. Positioning. Realistic exit timelines. Select clients get direct access to growth-stage opportunities, vetted by a team that has operated inside over 500 businesses.",
+    valuePropBody: "Access to established businesses raising growth or buyout capital and high-growth private companies from early stage through pre-IPO. We focus on fundamentals, team, market, cap table integrity, and realistic exit timelines. Select clients get direct access to opportunities vetted by a team that has operated inside over 500 businesses.",
     problemHighlight: "PRIVATE EQUITY ACCESS",
     problemHeadline: "The best private deals don't have an application process.",
-    problemBody: "Private equity returns are distributed by access, not merit. The deals that perform sit inside a narrow circuit of relationships. By the time an opportunity reaches a public platform, the founding terms are gone and the early tranches are filled.\n\nMost wealth managers give you what they can access. GrowValley gives you what we're inside. Our network is built on 500+ projects and $1B+ in capital deployed across the Middle East, Europe, and Asia. We bring clients into those conversations before they become public.",
+    problemBody: "Private market returns are distributed by access, not merit. The deals that perform sit inside a narrow circuit of relationships. By the time an opportunity reaches a public platform, the founding terms are gone and the early tranches are filled.\n\nMost wealth managers give you what they can access. AFAQ Partners gives you what we're inside. Our network is built on 500+ projects and $1B+ in capital deployed across the Middle East, Europe, and Asia. We bring clients into growth equity, buyout, and venture conversations before they become public.",
     problemBullets: [
-      "Access to established businesses raising growth or buyout capital",
-      "Direct network relationships with deal principals",
+      "Access to growth equity, buyout, and venture opportunities",
+      "Direct network relationships with deal principals and founders",
       "Exit-focused vetting by experienced operators"
     ],
     problemImageText: "Why do the best deals always go to someone else?",
@@ -416,7 +418,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "SOURCE. VET. STRUCTURE.",
     featureHeadline: "Deal access built on operating history, not just relationships.",
-    featureBody: "GrowValley is the wealth arm of a group that has deployed over $1B in capital and generated $3B+ in revenue across 500+ businesses. That operating track record is what makes our deal vetting different. We know what to look for and what to walk away from.",
+    featureBody: "AFAQ Partners is the wealth arm of a group that has deployed over $1B in capital and generated $3B+ in revenue across 500+ businesses. That operating track record is what makes our deal vetting different. We know what to look for and what to walk away from.",
     featureBullets: [
       "Direct deal flow from private equity networks across the Middle East, Europe, and Asia",
       "Access to growth equity and buyout opportunities that don't circulate publicly",
@@ -433,9 +435,9 @@ const servicePageContent: Record<string, {
     ],
     whatsIncluded: {
       column1: [
-        "Curated private equity deal flow",
-        "Growth and buyout stage access",
-        "Direct principal relationships",
+        "Curated private equity and venture capital deal flow",
+        "Growth, buyout, and pre-IPO stage access",
+        "Direct principal and founder relationships",
         "Geographic coverage: ME, Europe, and Asia"
       ],
       column2: [
@@ -449,7 +451,7 @@ const servicePageContent: Record<string, {
     ctaBody: "Private market access starts with understanding your capital position and what you're actually trying to achieve. Reach out and we'll give you a direct view of what's currently in our deal pipeline and whether it fits.",
     ctaButtonLabel: "CONTACT US",
     heroCtaLabel: "SPEAK TO AN EXPERT",
-    overlayLabel: "PRIVATE MARKET ACCESS / Private Equity",
+    overlayLabel: "PRIVATE MARKET ACCESS / Private Equity & Venture Capital",
     categoryLabel: "Private Market Access"
   },
   "venture-capital": {
@@ -457,10 +459,10 @@ const servicePageContent: Record<string, {
     heroSubheadline: "We source private company opportunities early, because we've been operating inside the same markets long enough to know where the real ones surface.",
     valuePropHeadline: "We evaluate deals the way operators do,",
     valuePropAccent: "not analysts.",
-    valuePropBody: "Most wealth firms pass VC opportunities to clients based on fund reputation and third-party write-ups. We work differently.\n\nGrowValley Group has spent years building, funding, and scaling businesses across industries. Over 500 projects. $3B+ in revenue generated. $1B+ in capital deployed into real operating situations. That history changes what we see in a deal. It also changes what we walk away from.",
+    valuePropBody: "Most wealth firms pass VC opportunities to clients based on fund reputation and third-party write-ups. We work differently.\n\nAFAQ Group has spent years building, funding, and scaling businesses across industries. Over 500 projects. $3B+ in revenue generated. $1B+ in capital deployed into real operating situations. That history changes what we see in a deal. It also changes what we walk away from.",
     problemHighlight: "SEED TO PRE-IPO",
     problemHeadline: "Seed to pre-IPO. Private by design.",
-    problemBody: "Through the GrowValley deals desk, select clients access high-growth private companies at stages where the return is still available. Early growth rounds in technology, fintech, healthtech, and B2B software. Late-stage and pre-IPO situations where the path to liquidity is clear and the terms are structured to make sense on the exit, not just on paper at entry.\n\nThese deals come through relationships built inside the same ecosystems we've operated within. They don't circulate publicly. That's the point.",
+    problemBody: "Through the AFAQ Partners deals desk, select clients access high-growth private companies at stages where the return is still available. Early growth rounds in technology, fintech, healthtech, and B2B software. Late-stage and pre-IPO situations where the path to liquidity is clear and the terms are structured to make sense on the exit, not just on paper at entry.\n\nThese deals come through relationships built inside the same ecosystems we've operated within. They don't circulate publicly. That's the point.",
     problemBullets: [
       "Access to high-growth private companies at stages where return is still available",
       "Direct deal flow from relationships built inside operating ecosystems",
@@ -517,7 +519,7 @@ const servicePageContent: Record<string, {
     valuePropBody: "We source property deals that don't circulate publicly, structure them around what you walk away with, and give you access to markets we know from the inside. No listings. No queues. No second-hand opportunities.",
     problemHighlight: "WHERE ARE THE REAL DEALS?",
     problemHeadline: "By the time it's listed, the best entry is already gone.",
-    problemBody: "Quality real estate moves through relationships, not platforms. The assets worth holding are sourced, structured, and allocated before they appear in any brochure. If your access starts at the listing stage, you are choosing from what others passed on.\n\nGrowValley has spent years building direct relationships with real estate specialists, developers, and operators across the Middle East, Western Europe, and Asia. We use that network to find assets before they circulate widely and structure each deal around the numbers that matter on the way out.",
+    problemBody: "Quality real estate moves through relationships, not platforms. The assets worth holding are sourced, structured, and allocated before they appear in any brochure. If your access starts at the listing stage, you are choosing from what others passed on.\n\nAFAQ Partners has spent years building direct relationships with real estate specialists, developers, and operators across the Middle East, Western Europe, and Asia. We use that network to find assets before they circulate widely and structure each deal around the numbers that matter on the way out.",
     problemBullets: [
       "Access to off-market assets in markets we understand directly",
       "Deal structures built around your exit, not just your entry",
@@ -532,7 +534,7 @@ const servicePageContent: Record<string, {
     ],
     featureEyebrow: "SOURCE. STRUCTURE. DELIVER.",
     featureHeadline: "Operator knowledge applied to every deal.",
-    featureBody: "GrowValley has operated, funded, and built businesses across three regions. That history shapes how we evaluate real estate: not as instruments on a spreadsheet, but as assets that need to make sense on the ground, at the entry price, and at the exit.",
+    featureBody: "AFAQ Partners has operated, funded, and built businesses across three regions. That history shapes how we evaluate real estate: not as instruments on a spreadsheet, but as assets that need to make sense on the ground, at the entry price, and at the exit.",
     featureBullets: [
       "Off-market sourcing across the Middle East, Western Europe, and Asia",
       "Specialist partner network with verified, market-specific track records",
@@ -543,7 +545,7 @@ const servicePageContent: Record<string, {
     ],
     stats: [
       { num: "$150M+", desc: "Assets under active management across client portfolios" },
-      { num: "$3B+", desc: "In revenue generated through capital deployed by GrowValley Group" },
+      { num: "$3B+", desc: "In revenue generated through capital deployed by AFAQ Group" },
       { num: "$1B+", desc: "In capital funded across 500+ real projects and ventures" },
       { num: "3", desc: "Regions covered: Middle East, Western Europe, and Asia" }
     ],
@@ -948,7 +950,7 @@ export default function ServicePageContent({ service }: { service: ServiceDetail
           <div className="container">
             <div className={styles.wiCard}>
               <div className={styles.wiContent}>
-                <h3>What&apos;s included with GrowValley&apos;s {service.title}</h3>
+                <h3>What&apos;s included with AFAQ Partners&apos;s {service.title}</h3>
                 <p className={styles.wiSubtext}>Everything required to manage your portfolio properly, from day one.</p>
                 <div className={styles.wiGrid}>
                   <ul>

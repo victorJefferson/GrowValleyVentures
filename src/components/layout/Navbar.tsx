@@ -26,7 +26,7 @@ export function Navbar() {
       name: "About Us",
       href: "/about-us",
       children: [
-        { name: "About GrowValley", href: "/about-us", description: "Built on independence. Measured by outcomes." },
+        { name: "About AFAQ Partners", href: "/about-us", description: "Built by operators. Run for outcomes." },
         { name: "Team", href: "/about-us/team", description: "A collective of specialists dedicated to excellence." },
         { name: "Leadership", href: "/about-us/leadership", description: "Guided by experience. Driven by innovation." },
       ]
@@ -42,14 +42,15 @@ export function Navbar() {
       ]
     },
     ...(features.insights ? [{ name: "Insights", href: "/insights" }] : []),
+    { name: "Contact", href: "/contact" },
     {
       name: "Join Us",
       href: "/join-us/jobs",
       children: [
-        { name: "Jobs", href: "/join-us/jobs", description: "Build the future of wealth management and venture building." },
+        { name: "Experts", href: "/join-us/experts", description: "A collective of specialists dedicated to excellence." },
         { name: "Partners", href: "/join-us/partners", description: "Strategic collaborations for shared success." },
         { name: "Investors", href: "/join-us/investors", description: "Direct access to high-conviction private opportunities." },
-        { name: "Experts", href: "/join-us/experts", description: "A collective of specialists dedicated to excellence." },
+        { name: "Jobs", href: "/join-us/jobs", description: "Build the future of wealth management and venture building." },
       ]
     },
   ];
@@ -63,10 +64,10 @@ export function Navbar() {
             <div className={styles.logo}>
               <Link href="/">
                 <img
-                  src="/gv-logo-green.png"
-                  alt="GrowValley Logo"
+                  src="/brand/afaq-wordmark.png"
+                  alt="AFAQ Partners"
                   width="160"
-                  height="60"
+                  height="56"
                   className={styles.logoImage}
                 />
               </Link>
@@ -178,7 +179,7 @@ export function Navbar() {
 
             <div className={styles.desktopCta}>
               <Link href="/contact">
-                <Button size="sm">Contact Us</Button>
+                <Button size="sm">Talk to an Advisor</Button>
               </Link>
             </div>
 

@@ -9,7 +9,7 @@ import { Building2, BarChart3, Heart, Briefcase, Globe, Palette } from "lucide-r
 import styles from "../Capabilities.module.scss";
 
 export const metadata: Metadata = {
-  title: "Family Office Services | GrowValley",
+  title: "Family Office Services | AFAQ Partners",
   description: "Taking responsibility for the full picture, across every structure, relationship, and decision that touches your family's wealth.",
 };
 
@@ -43,7 +43,7 @@ export default function FamilyOfficePage() {
                 That is a family office problem. And it requires a different kind of firm.
               </p>
               <p className={styles.introParagraph}>
-                GrowValley acts as the central coordination layer for families whose financial affairs have outgrown a single relationship. We manage the full picture: structures, reporting, advisors, transactions, and the situations that do not fit a standard mandate.
+                AFAQ Partners acts as the central coordination layer for families whose financial affairs have outgrown a single relationship. We manage the full picture: structures, reporting, advisors, transactions, and the situations that do not fit a standard mandate.
               </p>
               <p className={styles.introParagraph}>
                 We work directly where we have the expertise. We bring in the right specialist where they are better placed. And we make sure nothing slips through the gaps.
@@ -58,7 +58,7 @@ export default function FamilyOfficePage() {
         <div className="container">
           <div className={styles.sectionHeaderSimple} style={{ textAlign: 'center' }}>
             <h2 className="section-title">
-              Three areas. One point of accountability.
+              Six areas. One point of accountability.
             </h2>
           </div>
 
@@ -78,11 +78,32 @@ export default function FamilyOfficePage() {
               iconName="BarChart3"
             />
             <ServiceCard
+              key="philanthropy"
+              title="Philanthropy"
+              description="Structured giving aligned to your values and legacy. We help families design philanthropic frameworks that are intentional, measurable, and integrated with the wider wealth structure."
+              slug="philanthropy"
+              iconName="Heart"
+            />
+            <ServiceCard
               key="ma-ipo"
               title="M&A & IPO Advisory"
               description="For families with operating assets considering a transaction. We provide advisory support through acquisitions, business sales, and public listings, sitting alongside your legal and banking advisors with the operating perspective they do not have."
               slug="ma-and-ipo-advisory"
               iconName="Briefcase"
+            />
+            <ServiceCard
+              key="social-impact"
+              title="Social Impact Investing"
+              description="Capital deployed with both return and impact objectives. We help families identify, structure, and monitor investments where financial outcomes and social outcomes are intentionally aligned."
+              slug="social-impact-investing"
+              iconName="Globe"
+            />
+            <ServiceCard
+              key="collectibles"
+              title="Collectibles & Art"
+              description="For families holding passion assets alongside financial portfolios. We provide coordination, valuation oversight, and integration of collectibles and art within the broader family office reporting framework."
+              slug="collectibles-and-art"
+              iconName="Palette"
             />
           </div>
         </div>

@@ -3,10 +3,10 @@ import { TrustGuardConfig } from "trust-guard-js";
 export const trustGuardConfig: TrustGuardConfig = {
   active: true, // Toggle the entire system
   branding: {
-    name: "GrowValley",
-    logo: "/gv-logo-green.png", // Using neutral black logo to match green theme
+    name: "AFAQ Partners",
+    logo: "/brand/afaq-wordmark.png",
     colors: {
-      primary: "#163224", // Institutional Green
+      primary: "#1c1a4a",
       text: "#111827",
       background: "#FFFFFF",
     },

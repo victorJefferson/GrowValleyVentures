@@ -10,13 +10,13 @@ import { urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Our Team | GrowValley",
+    absolute: "Our Team | AFAQ Partners",
   },
   description:
-    "Meet the GrowValley investment and advisory team, committed to institutional capital discipline and long-term portfolio growth.",
+    "Meet the AFAQ Partners investment and advisory team, committed to institutional capital discipline and long-term portfolio growth.",
   openGraph: {
-    title: "Our Team | GrowValley",
-    description: "GrowValley investment and advisory team.",
+    title: "Our Team | AFAQ Partners",
+    description: "AFAQ Partners investment and advisory team.",
     url: "https://gv.ventures/team",
   },
 };
@@ -30,7 +30,7 @@ export default async function TeamPage() {
   }
 
   const defaultHero = {
-    eyebrow: "GrowValley",
+    eyebrow: "AFAQ Partners",
     headline: "Our Team",
     subheadline: "Wealth Management, delivered by people who know it.",
     image: "/images/team_hero.png",
@@ -43,7 +43,7 @@ export default async function TeamPage() {
     {
       name: "Executive Leadership",
       title: "Principal Partner",
-      bio: "Leading the GrowValley Group's strategic capital allocation and institutional partnerships.",
+      bio: "Leading the AFAQ Group's strategic capital allocation and institutional partnerships.",
     },
     {
       name: "Investment Director",
@@ -58,7 +58,7 @@ export default async function TeamPage() {
     {
       name: "Portfolio Manager",
       title: "Senior Associate",
-      bio: "Managing active positions across the GrowValley operating businesses and venture ecosystem.",
+      bio: "Managing active positions across the AFAQ Partners operating businesses and venture ecosystem.",
     },
     {
       name: "Legal & Governance",
@@ -68,7 +68,7 @@ export default async function TeamPage() {
     {
       name: "Operations",
       title: "Platform Manager",
-      bio: "Overseeing the technical and operational infrastructure of the GrowValley investment platform.",
+      bio: "Overseeing the technical and operational infrastructure of the AFAQ Partners investment platform.",
     },
   ];
 

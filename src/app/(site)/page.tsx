@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import { client } from "@/lib/sanity";
-import { heroQuery, insightsQuery, dataSectionQuery } from "@/lib/queries";
+import { heroQuery, insightsQuery } from "@/lib/queries";
 import HomeContent from "./HomeContent";
 
 export const metadata: Metadata = {
     title: {
-        absolute: "GrowValley",
+        absolute: "AFAQ Partners",
     },
     description: "A 360° approach to managing your wealth.",
     openGraph: {
-        title: "GrowValley",
-        description: "Your Wealth. Our Expertise. This Is GrowValley!",
+        title: "AFAQ Partners",
+        description: "Your Wealth. Our Expertise. This Is AFAQ Partners!",
         url: "https://gv.ventures",
         images: [
             {
-                url: "/images/growValleyVentures.png",
+                url: "/images/afaq-og.png",
                 width: 1200,
                 height: 630,
-                alt: "GrowValley",
+                alt: "AFAQ Partners",
             },
         ],
     },
@@ -27,13 +27,10 @@ export default async function Home() {
     let heroData = null;
     let insights = [];
 
-    let dataSectionData = null;
-
     try {
-        [heroData, insights, dataSectionData] = await Promise.all([
+        [heroData, insights] = await Promise.all([
             client.fetch(heroQuery, { pageSlug: "home" }),
             client.fetch(insightsQuery),
-            client.fetch(dataSectionQuery)
         ]);
     } catch (error) {
         console.error("Error fetching CMS data on Server:", error);
@@ -43,7 +40,6 @@ export default async function Home() {
         <HomeContent
             heroData={heroData}
             insights={insights}
-            dataSectionData={dataSectionData}
         />
     );
 }

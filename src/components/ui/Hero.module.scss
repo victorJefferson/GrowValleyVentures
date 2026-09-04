@@ -3,34 +3,170 @@
   =========================================
   • Stretches edge-to-edge (zero horizontal margin / padding on the shell)
   • Height = 100dvh minus the 80 px fixed navbar
-  • All type sizes are intentionally FIXED – no responsive overrides
   • The background image fills the entire section; a gradient overlay
     keeps text legible on the left half
+  • Home-with-stats (.fillViewport) pins content bands top / mid / bottom
 */
+
+$hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
 /* ── Shell ── */
 .heroSection {
-    /* Position directly below the fixed 80 px navbar */
     margin-top: 80px;
-
-    /* Fill the remaining viewport height exactly */
     height: calc(100dvh - 80px);
-    min-height: 500px; /* safety floor for very short viewports */
-
-    /* Edge-to-edge: no horizontal margin/padding on the section itself */
+    min-height: 500px;
     width: 100%;
-
-    /* Stack everything relative to this box */
     position: relative;
     overflow: hidden;
-
-    /* Dark base so text is readable even before the image loads */
     background-color: hsl(150, 40%, 5%);
 
+    &.withStats:not(.fillViewport) {
+        height: auto;
+        min-height: calc(100dvh - 80px);
+        overflow: visible;
+
+        .heroInner {
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+            justify-content: center;
+        }
+
+        .headline {
+            font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+            margin-bottom: 1.25rem;
+
+            @media (max-width: 767px) {
+                font-size: 2.25rem;
+            }
+        }
+
+        .subheadline {
+            font-size: clamp(1.05rem, 2vw, 1.5rem);
+            max-width: 640px;
+            margin-bottom: 1.75rem;
+
+            @media (max-width: 767px) {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    /* Home banner: claim the full viewport and distribute bands */
+    &.fillViewport {
+        height: calc(100dvh - 80px);
+        min-height: calc(100dvh - 80px);
+        overflow: hidden;
+
+        .heroInner {
+            height: 100%;
+            min-height: 0;
+            justify-content: stretch;
+            gap: 0;
+            padding-top: clamp(2.5rem, 6vh, 5rem);
+            padding-bottom: clamp(2rem, 5vh, 4rem);
+        }
+
+        .heroContentFill {
+            flex: 1;
+            min-height: 0;
+            max-width: min(100%, 1100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: clamp(1.5rem, 4vh, 2.75rem);
+        }
+
+        .heroBandTop {
+            flex: 0 0 auto;
+        }
+
+        .heroBandMid {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .heroBandBottom {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            letter-spacing: 0.16em;
+            margin-bottom: 1.5rem;
+        }
+
+        .headline {
+            font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+            max-width: 18ch;
+            margin-bottom: 0;
+            line-height: 1.08;
+
+            @media (max-width: 767px) {
+                font-size: clamp(2.15rem, 8vw, 2.75rem);
+                max-width: none;
+                font-weight: 600;
+            }
+        }
+
+        .heroStatsInline,
+        .heroStatsPanel {
+            max-width: min(100%, 1040px);
+        }
+
+        .heroStatsPanel {
+            padding: 1.35rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .heroStatValue {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+        }
+
+        .heroStatLabel {
+            font-size: clamp(0.72rem, 1.2vw, 0.85rem);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .subheadline {
+            font-size: clamp(1.15rem, 2vw, 1.65rem);
+            max-width: 36ch;
+            margin-bottom: 1.5rem;
+
+            @media (max-width: 767px) {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+        }
+
+        .ctaGroup {
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 767px) {
+            .heroInner {
+                justify-content: stretch;
+                padding-top: 2rem;
+                padding-bottom: 1.75rem;
+            }
+
+            .heroContentFill {
+                gap: 1.35rem;
+            }
+
+            .heroStatsPanel {
+                padding: 1rem 0;
+            }
+        }
+    }
+
     &.isShort {
-        height: 50vh; /* Increased from 40vh to give more breathing room */
-        min-height: 450px; /* Increased from 350px to prevent clipping */
-        
+        height: 50vh;
+        min-height: 450px;
+
         @media (max-width: 767px) {
             height: 60vh;
             min-height: 400px;
@@ -42,8 +178,8 @@
         }
 
         .headline {
-            font-size: 3.5rem; /* Slightly smaller than full hero (4.25rem) */
-            
+            font-size: 3.5rem;
+
             @media (max-width: 767px) {
                 font-size: 2.25rem;
             }
@@ -51,7 +187,7 @@
     }
 }
 
-/* ── Full-bleed background image ── */
+/* ── Full-bleed background image (unchanged treatment) ── */
 .heroBg {
     position: absolute;
     inset: 0;
@@ -60,8 +196,7 @@
     object-fit: cover;
     object-position: center;
     z-index: 0;
-    /* subtle scale-in on load */
-    animation: bgReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: bgReveal 1.2s $hero-ease both;
 }
 
 @keyframes bgReveal {
@@ -69,12 +204,11 @@
     to   { transform: scale(1);    opacity: 1;   }
 }
 
-/* ── Gradient overlay (left-heavy, matching reference) ── */
+/* ── Gradient overlay (unchanged) ── */
 .heroOverlay {
     position: absolute;
     inset: 0;
-    z-index: 10; /* High z-index to stay above background image */
-    /* Strong dark on the left for text, gentle fade to transparent on the right */
+    z-index: 10;
     background: linear-gradient(
         105deg,
         hsl(150, 40%, 4%) 0%,
@@ -85,7 +219,6 @@
     );
 
     @media (max-width: 767px) {
-        /* On mobile, use an extremely dark and visible overlay to guarantee text legibility */
         background-color: rgba(0, 0, 0, 0.7) !important;
         background-image: linear-gradient(
             to bottom,
@@ -102,69 +235,142 @@
 /* ── Content layer ── */
 .heroInner {
     position: relative;
-    z-index: 20; /* Higher than overlay */
+    z-index: 20;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Horizontal padding lives here, not on the section shell */
-    padding: 0 6vw;
+    gap: 2rem;
+    /* Match navbar / global .container horizontal rail */
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.25rem 2rem;
 
-    @media (max-width: 767px) {
-        padding: 0 1.5rem; /* Standard mobile padding */
+    @media (min-width: 768px) {
+        padding: 0 2rem 2rem;
     }
 
-    /* On very wide screens, align content with the max-width container */
-    @media (min-width: 1600px) {
-        padding: 0 calc((100vw - 1400px) / 2);
+    @media (max-width: 767px) {
+        padding: 0 1.25rem 1.5rem;
+        justify-content: flex-end;
+        gap: 1.5rem;
     }
 }
 
-/* ── Content width constraint (left half) ── */
 .heroContent {
     max-width: 1000px;
     display: flex;
     flex-direction: column;
-    gap: 0; /* controlled by individual child margins */
-    animation: contentReveal 0.9s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    gap: 0;
+    /* Children own entrance timing — no lump contentReveal */
 }
 
-@keyframes contentReveal {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0);    }
+.heroContentFill {
+    width: 100%;
+}
+
+.heroBandTop,
+.heroBandMid,
+.heroBandBottom {
+    width: 100%;
+}
+
+/* ── Motion utilities ── */
+@keyframes riseFade {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes wordRise {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes eyebrowSettle {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        letter-spacing: 0.18em;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.14em;
+    }
+}
+
+@keyframes ctaSettle {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes animateLine {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+}
+
+@keyframes statReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ── Eyebrow ── */
 .eyebrow {
     display: block;
-    font-size: 0.8rem;         /* Default Size */
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--color-accent);
     margin-bottom: 1.25rem;
+    animation: eyebrowSettle 0.85s var(--hero-delay, 0s) $hero-ease both;
 
     @media (max-width: 767px) {
-        font-size: 0.75rem;    /* Slightly smaller for mobile */
+        font-size: 0.75rem;
         margin-bottom: 1rem;
     }
 }
 
 /* ── Headline ── */
 .headline {
-    font-size: 4.25rem;        /* Default Desktop Size */
-    font-weight: 600;          /* Increased from 300 to be bolder */
+    font-size: 4.25rem;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--color-white);
     margin: 0 0 1.75rem 0;
     white-space: pre-line;
-    word-wrap: break-word;     /* Ensure long words wrap on narrow screens */
+    word-wrap: break-word;
 
     @media (max-width: 767px) {
-        font-size: 2.75rem;    /* Reduced size for mobile to prevent clipping */
+        font-size: 2.75rem;
         line-height: 1.15;
-        font-weight: 300;      /* Keep mobile lighter if preferred, or remove this to make mobile bold too */
+        font-weight: 300;
     }
 
     strong {
@@ -173,16 +379,27 @@
     }
 }
 
-/* ── Subheadline (with animated left accent bar) ── */
+.headlineWord {
+    display: inline-block;
+    animation: wordRise 0.75s var(--hero-delay, 0s) $hero-ease both;
+}
+
+.headlineBlock {
+    display: inline-block;
+    animation: riseFade 0.85s 0.12s $hero-ease both;
+}
+
+/* ── Subheadline ── */
 .subheadline {
-    font-size: 2.1rem;         /* Doubled from 1.05rem */
+    font-size: 2.1rem;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.82);
     margin: 0 0 2.25rem 0;
     padding-left: 2rem;
     position: relative;
-    max-width: 800px;          /* Increased from 500px to accommodate larger text */
+    max-width: 800px;
     white-space: pre-line;
+    animation: riseFade 0.85s var(--hero-delay, 0.35s) $hero-ease both;
 
     &::before {
         content: '';
@@ -193,29 +410,107 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.35);
         transform-origin: top;
-        animation: animateLine 1.5s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+        animation: animateLine 1.2s var(--hero-delay, 0.35s) cubic-bezier(0.4, 0, 0.2, 1) both;
     }
 
     @media (max-width: 767px) {
-        font-size: 0.95rem;    /* Kept original mobile size */
-        max-width: 100%;       /* Allow full width on mobile */
+        font-size: 0.95rem;
+        max-width: 100%;
         margin-bottom: 2rem;
         padding-left: 1rem;
-        
+
         &::before {
-            animation: none;   /* Disable animation on mobile if not desired */
             height: 100%;
             transform: scaleY(1);
         }
-        
-        /* Fallback for mobile if pseudo-element is tricky */
+
         border-left: 2px solid rgba(255, 255, 255, 0.35);
     }
 }
 
-@keyframes animateLine {
-    from { transform: scaleY(0); }
-    to   { transform: scaleY(1); }
+.body {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 1.5rem 0;
+    max-width: 720px;
+    animation: riseFade 0.85s var(--hero-delay, 0.45s) $hero-ease both;
+
+    @media (max-width: 767px) {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ── In-banner stats ── */
+.heroStatsInline {
+    width: 100%;
+    max-width: 920px;
+    margin: 0;
+}
+
+.heroStatsPanel {
+    width: 100%;
+    max-width: 920px;
+    padding: 0.25rem 0 0.5rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+
+    @media (max-width: 767px) {
+        padding: 0.15rem 0 0.35rem;
+    }
+}
+
+.heroStatsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1.5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.5rem 2rem;
+    }
+}
+
+.heroStatItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+    padding-right: 1rem;
+    animation: statReveal 0.75s var(--hero-delay, 0.45s) $hero-ease both;
+
+    @media (min-width: 768px) {
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
+
+        &:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+}
+
+.heroStatValue {
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.heroStatLabel {
+    font-size: clamp(0.68rem, 1.2vw, 0.8rem);
+    line-height: 1.35;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.72);
+    text-wrap: balance;
 }
 
 /* ── CTA group ── */
@@ -224,9 +519,10 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
+    animation: ctaSettle 0.8s var(--hero-delay, 0.55s) $hero-ease both;
 }
 
-/* ── Trusted-by strip (bottom of hero, matching reference) ── */
+/* ── Trusted-by strip ── */
 .trustedBar {
     position: absolute;
     bottom: 0;
@@ -259,4 +555,30 @@
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .heroBg,
+    .eyebrow,
+    .headlineWord,
+    .headlineBlock,
+    .subheadline,
+    .subheadline::before,
+    .body,
+    .heroStatItem,
+    .ctaGroup {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        letter-spacing: inherit;
+    }
+
+    .eyebrow {
+        letter-spacing: 0.14em;
+    }
+
+    .subheadline::before {
+        transform: scaleY(1);
+    }
 }
