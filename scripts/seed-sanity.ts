@@ -38,6 +38,14 @@ async function seed() {
 
   for (const doc of docs) {
     try {
+      // Preserve existing hero/site images when reseeding text — createOrReplace
+      // without an image field was wiping the green home hero on stage.
+      if (doc._type === "hero" || doc._type === "teamMember") {
+        const existing = await client.getDocument(doc._id).catch(() => null);
+        if (existing?.image && !(doc as { image?: unknown }).image) {
+          (doc as { image?: unknown }).image = existing.image;
+        }
+      }
       await client.createOrReplace(doc as Record<string, unknown>);
       console.log(`  ✓ ${doc._id}`);
       ok++;

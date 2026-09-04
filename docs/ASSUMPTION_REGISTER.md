@@ -44,7 +44,9 @@ Track A implementation (`cursor/afaq-partners-cms-2208`). Review and sign off po
 
 | Item | Choice |
 |------|--------|
-| Sanity dataset (preview) | **`stage`** |
+| Sanity dataset (preview) | **`stage`** — Vercel Preview env must set `NEXT_PUBLIC_SANITY_DATASET=stage`. If Preview points at `production`, home shows GROWVALLEY + no stats. |
+| Home hero image | Stage `hero-home` image restored from production green asset; UI prefers CMS image |
+| Home copy / stats | Hardcoded from Umar Sections 02–09 in `HomeContent.tsx` so CMS cannot blank stats |
 | Production dataset | Untouched until merge + explicit seed |
 | Workflow | `sanity dataset copy production stage` then `npm run seed:sanity` |
 | Insights / case studies | Feature flags **enabled** |

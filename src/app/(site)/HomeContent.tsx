@@ -26,8 +26,8 @@ const CARD_ICONS = [ShieldCheck, Layers, Target, Network];
 
 /**
  * Home page uses Umar's Section 02–09 copy as the hard source of truth.
- * CMS may still supply the hero image and Insights cards; it must not blank
- * out stats or replace home copy with stale GrowValley documents.
+ * CMS supplies the hero image (and Insights cards). Copy/stats stay
+ * hardcoded so a stale production/GrowValley hero cannot wipe the banner.
  */
 const HOME_HERO = {
   eyebrow: "AFAQ PARTNERS",
@@ -37,7 +37,8 @@ const HOME_HERO = {
   ctaText: "Talk to an Advisor",
   ctaHref: "/contact",
   hasCTA: true,
-  image: "/images/hero_model_v3.png",
+  /** Fallback only if CMS image is missing — same green hero as production CMS */
+  image: "/images/home_hero_cms.png",
   heroStats: [
     { value: "$5B+", label: "Transactions" },
     { value: "$2B+", label: "Capital" },
