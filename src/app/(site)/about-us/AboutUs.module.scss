@@ -593,52 +593,6 @@
     margin-bottom: 3rem;
 }
 
-.leadershipList {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.leadershipBioCard {
-    padding: 2rem 0;
-    border-bottom: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.1);
-
-    &:last-child {
-        border-bottom: none;
-    }
-}
-
-.leadershipBioHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    h3 {
-        margin-bottom: 0.25rem;
-    }
-}
-
-.role {
-    color: var(--color-text-muted);
-    font-size: 1rem;
-}
-
-.bioParagraph {
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin-bottom: 1rem;
-    max-width: 720px;
-}
-
 .offeringsRow {
     display: flex;
     flex-direction: column;
