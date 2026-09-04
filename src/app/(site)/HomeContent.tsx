@@ -14,6 +14,7 @@ import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith/WhoWeWorkWith
 import styles from "./page.module.scss";
 import { Button } from "@/components/ui/Button";
 import { features } from "@/config/features";
+import { FooterStats } from "./FooterStats";
 
 interface HomeContentProps {
   heroData: any;
@@ -65,16 +66,6 @@ const WHY_FLIP_CARDS = [
     body: "Wealth takes decades to build. Losing it to poor structuring takes one bad decision. We design structures that protect, preserve, and pass it on, across borders, across generations.",
   },
 ];
-
-const FOOTER_STATS = {
-  stats: [
-    { value: "$150M+", label: "Assets Under Management" },
-    { value: "$3B+", label: "in Revenue Generated" },
-    { value: "$1B+", label: "in Capital Funded" },
-  ],
-  supportingCopy:
-    "These aren't portfolio projections. They're the result of decisions made, capital deployed, and businesses actually built.",
-};
 
 export default function HomeContent({
   heroData,
@@ -200,27 +191,8 @@ export default function HomeContent({
         </div>
       </section>
 
-      {/* SECTION 09 — Footer stats (home-only bar; site Footer is Updated Footer) */}
-      <section className={styles.footerStatsSection}>
-        <div className="container">
-          <div className={styles.footerStatsGrid}>
-            {FOOTER_STATS.stats.map((s) => (
-              <div key={s.label}>
-                <strong>{s.value}</strong> {s.label}
-              </div>
-            ))}
-          </div>
-          <p className={styles.footerStatsCopy}>{FOOTER_STATS.supportingCopy}</p>
-          <p className={styles.footerStatsTagline}>
-            AFAQ Partners — Dubai. Built by operators. Run for outcomes.
-          </p>
-          <div className={styles.footerStatsLinks}>
-            <Link href="/contact">Contact</Link>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/disclaimer">Disclaimer</Link>
-          </div>
-        </div>
-      </section>
+      {/* SECTION 09 — Operating outcomes (home-only; site Footer has legal links) */}
+      <FooterStats />
     </main>
   );
 }
