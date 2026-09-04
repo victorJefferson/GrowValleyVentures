@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Hero } from "@/components/ui/Hero";
-import { ArrowRight, Layers, ShieldCheck, Target, Network } from "lucide-react";
+import { Layers, ShieldCheck, Target, Network } from "lucide-react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
 import {
@@ -24,62 +24,70 @@ interface HomeContentProps {
 
 const CARD_ICONS = [ShieldCheck, Layers, Target, Network];
 
+/**
+ * Home page uses Umar's Section 02–09 copy as the hard source of truth.
+ * CMS may still supply the hero image and Insights cards; it must not blank
+ * out stats or replace home copy with stale GrowValley documents.
+ */
+const HOME_HERO = {
+  eyebrow: "AFAQ PARTNERS",
+  headline: "Wealth managed by people who've actually built it.",
+  subheadline:
+    "Operated. Invested. Built. Now managing your capital the same way.",
+  ctaText: "Talk to an Advisor",
+  ctaHref: "/contact",
+  hasCTA: true,
+  image: "/images/hero_model_v3.png",
+  heroStats: [
+    { value: "$5B+", label: "Transactions" },
+    { value: "$2B+", label: "Capital" },
+    { value: "$350M", label: "Assets Under Management" },
+    { value: "500+", label: "Projects Delivered" },
+  ],
+};
+
+const WHY_FLIP_CARDS = [
+  {
+    label: "Wealth Management",
+    body: "Portfolio construction built around your long-term objectives, not market noise, not product cycles, not what's easiest to explain in a brochure.",
+  },
+  {
+    label: "Family Office Services",
+    body: "For families whose financial affairs have outgrown a single advisor. We coordinate the full picture, investments, structures, reporting, and relationships, so nothing slips through the gaps.",
+  },
+  {
+    label: "Private Access to Opportunities",
+    body: "Through the AFAQ Partners network, select clients access private equity, venture, and real estate deals that don't circulate publicly. We've been inside these deals. We know what to look for.",
+  },
+  {
+    label: "Succession Planning Services",
+    body: "Wealth takes decades to build. Losing it to poor structuring takes one bad decision. We design structures that protect, preserve, and pass it on, across borders, across generations.",
+  },
+];
+
+const FOOTER_STATS = {
+  stats: [
+    { value: "$150M+", label: "Assets Under Management" },
+    { value: "$3B+", label: "in Revenue Generated" },
+    { value: "$1B+", label: "in Capital Funded" },
+  ],
+  supportingCopy:
+    "These aren't portfolio projections. They're the result of decisions made, capital deployed, and businesses actually built.",
+};
+
 export default function HomeContent({
   heroData,
   insights,
-  pageSections = [],
-  footerStatsData,
 }: HomeContentProps) {
-  const whySection = pageSections.find((s) => s.sectionKey === "why-afaq");
-
-  const defaultHero = {
-    eyebrow: "AFAQ PARTNERS",
-    headline: "Wealth managed by people who've actually built it.",
-    subheadline:
-      "Operated. Invested. Built. Now managing your capital the same way.",
-    ctaText: "Talk to an Advisor",
-    ctaHref: "/contact",
-    hasCTA: true,
-    image: "/images/hero_model_v3.png",
-    heroStats: [
-      { value: "$5B+", label: "Transactions" },
-      { value: "$2B+", label: "Capital" },
-      { value: "$350M", label: "Assets Under Management" },
-      { value: "500+", label: "Projects Delivered" },
-    ],
-  };
-
-  const defaultFooterStats = {
-    stats: [
-      { value: "$150M+", label: "Assets Under Management" },
-      { value: "$3B+", label: "in Revenue Generated" },
-      { value: "$1B+", label: "in Capital Funded" },
-    ],
-    supportingCopy:
-      "These aren't portfolio projections. They're the result of decisions made, capital deployed, and businesses actually built.",
-  };
-
-  const flipCards = whySection?.items?.length
-    ? whySection.items
-    : [
-        { label: "Wealth Management Services", body: "Portfolio construction built around your long-term objectives, not market noise, not product cycles, not what's easiest to explain in a brochure." },
-        { label: "Family Office Services", body: "For families whose financial affairs have outgrown a single advisor. We coordinate the full picture, investments, structures, reporting, and relationships, so nothing slips through the gaps." },
-        { label: "Private Access to Opportunities", body: "Through the AFAQ Partners network, select clients access private equity, venture, and real estate deals that don't circulate publicly. We've been inside these deals. We know what to look for." },
-        { label: "Succession Planning Services", body: "Wealth takes decades to build. Losing it to poor structuring takes one bad decision. We design structures that protect, preserve, and pass it on, across borders, across generations." },
-      ];
-
-  const displayHero = heroData || defaultHero;
-  const displayFooterStats = footerStatsData || defaultFooterStats;
-
   const getHeroImage = () => {
     if (heroData?.image) {
       try {
         return urlFor(heroData.image).url();
-      } catch (e) {
-        return "/images/hero_model_v3.png";
+      } catch {
+        return HOME_HERO.image;
       }
     }
-    return "/images/hero_model_v3.png";
+    return HOME_HERO.image;
   };
 
   const dynamicInsights: InsightItem[] = insights.map((item: any) => ({
@@ -87,10 +95,10 @@ export default function HomeContent({
     title: item.title,
     date: item.publishedAt
       ? new Date(item.publishedAt).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      })
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })
       : "",
     tag: item.tag || "Insight",
     image: item.mainImage ? urlFor(item.mainImage).url() : "",
@@ -99,59 +107,60 @@ export default function HomeContent({
 
   return (
     <main>
+      {/* SECTION 02 — HERO BANNER */}
       <Hero
-        eyebrow={displayHero.eyebrow}
-        headline={displayHero.headline}
-        subheadline={displayHero.subheadline}
-        ctaText={displayHero.ctaText}
-        ctaHref={displayHero.ctaHref}
-        hasCTA={displayHero.hasCTA}
+        eyebrow={HOME_HERO.eyebrow}
+        headline={HOME_HERO.headline}
+        subheadline={HOME_HERO.subheadline}
+        ctaText={HOME_HERO.ctaText}
+        ctaHref={HOME_HERO.ctaHref}
+        hasCTA={HOME_HERO.hasCTA}
         image={getHeroImage()}
-        heroStats={displayHero.heroStats}
+        heroStats={HOME_HERO.heroStats}
+        statsPlacement="afterHeadline"
       />
 
+      {/* SECTION 03 — WHY AFAQ Partners? */}
       <section className="section-padding">
         <div className={`container ${styles.noPaddingMobile}`}>
           <div className={styles.whySection}>
-
             <div className={styles.whyCardGrid}>
-              {flipCards.map((card: { label?: string; body?: string; title?: string }, idx: number) => {
+              {WHY_FLIP_CARDS.map((card, idx) => {
                 const Icon = CARD_ICONS[idx] || ShieldCheck;
-                const label = card.label || card.title || "";
                 return (
-              <div key={idx} className={styles.whyCard}>
-                <div className={styles.whyCardInner}>
-                  <div className={styles.whyCardFront}>
-                    <div className={styles.whyCardIcon}>
-                      <Icon size={64} strokeWidth={1} />
+                  <div key={card.label} className={styles.whyCard}>
+                    <div className={styles.whyCardInner}>
+                      <div className={styles.whyCardFront}>
+                        <div className={styles.whyCardIcon}>
+                          <Icon size={64} strokeWidth={1} />
+                        </div>
+                        <div className={styles.whyCardLabel}>{card.label}</div>
+                      </div>
+                      <div className={styles.whyCardBack}>
+                        <p>{card.body}</p>
+                      </div>
                     </div>
-                    <div className={styles.whyCardLabel}>{label}</div>
                   </div>
-                  <div className={styles.whyCardBack}>
-                    <p>{card.body}</p>
-                  </div>
-                </div>
-              </div>
                 );
               })}
             </div>
 
-            <h2 className={styles.whyHeadingMain}>{whySection?.heading || "Why AFAQ Partners?"}</h2>
+            <h2 className={styles.whyHeadingMain}>Why AFAQ Partners?</h2>
             <p className={styles.whySubheadlineMain}>
-              {whySection?.subheading || "The wealth arm of a group that builds, funds, and operates businesses."}
+              The wealth arm of a group that builds, funds, and operates businesses.
             </p>
             <p className={styles.whyBodyMain}>
-              {whySection?.body || "We manage money alongside people who've deployed capital into over 500 real projects, with no product commissions and no hidden incentives. Every decision we make is answerable to one thing: your outcome."}
+              We manage money alongside people who&apos;ve deployed capital into over 500 real projects, with no product commissions and no hidden incentives. Every decision we make is answerable to one thing: your outcome.
             </p>
-
           </div>
         </div>
       </section>
 
+      {/* SECTION 04 — PARTNER WITH THE BEST */}
       <section className={styles.miniCta}>
         <div className={styles.miniCtaInner}>
           <div className={styles.miniCtaText}>
-            <h3>Partner with the Best</h3>
+            <h3>PARTNER WITH THE BEST</h3>
           </div>
           <Link href="/contact">
             <Button variant="secondary" size="lg">
@@ -160,8 +169,14 @@ export default function HomeContent({
           </Link>
         </div>
       </section>
+
+      {/* SECTION 05 — Solutions (4 dark expanded cards) */}
       <Solutions />
+
+      {/* SECTION 06 — Who we work with */}
       <WhoWeWorkWith />
+
+      {/* SECTION 07 — Latest from AFAQ Partners */}
       {features.insights && (
         <InsightsCarousel
           title="Latest from AFAQ Partners"
@@ -170,6 +185,7 @@ export default function HomeContent({
         />
       )}
 
+      {/* SECTION 08 — Bottom CTA */}
       <section className={styles.ctaBanner}>
         <div className="container">
           <h2 className={styles.speakToAnExpertBannerHeading}>
@@ -183,24 +199,27 @@ export default function HomeContent({
         </div>
       </section>
 
+      {/* SECTION 09 — Footer stats (home-only bar; site Footer is Updated Footer) */}
       <section className={styles.footerStatsSection}>
         <div className="container">
           <div className={styles.footerStatsGrid}>
-            {displayFooterStats.stats?.map((s: { value: string; label: string }, i: number) => (
-              <div key={i}>
+            {FOOTER_STATS.stats.map((s) => (
+              <div key={s.label}>
                 <strong>{s.value}</strong> {s.label}
               </div>
             ))}
           </div>
-          {displayFooterStats.supportingCopy && (
-            <p className={styles.footerStatsCopy}>{displayFooterStats.supportingCopy}</p>
-          )}
+          <p className={styles.footerStatsCopy}>{FOOTER_STATS.supportingCopy}</p>
           <p className={styles.footerStatsTagline}>
             AFAQ Partners — Dubai. Built by operators. Run for outcomes.
           </p>
+          <div className={styles.footerStatsLinks}>
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
+          </div>
         </div>
       </section>
-
     </main>
   );
 }

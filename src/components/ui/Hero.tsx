@@ -19,12 +19,13 @@ interface HeroProps {
     ctaText?: string;
     ctaHref?: string;
     hasCTA?: boolean;
-    /** Optional second CTA */
     secondaryCtaText?: string;
     secondaryCtaHref?: string;
     image?: any;
     isShort?: boolean;
     heroStats?: HeroStat[];
+    /** Home banner: put stats between headline and subheadline */
+    statsPlacement?: 'afterHeadline' | 'bottom';
 }
 
 export function Hero({
@@ -40,6 +41,7 @@ export function Hero({
     image,
     isShort = false,
     heroStats,
+    statsPlacement = 'bottom',
 }: HeroProps) {
     const heroImageSrc =
         typeof image === 'string'
@@ -48,9 +50,31 @@ export function Hero({
                 ? urlFor(image).url()
                 : '/images/home_hero.png';
 
+    const hasStats = Boolean(heroStats && heroStats.length > 0);
+    const statsAfterHeadline = hasStats && statsPlacement === 'afterHeadline';
+    const statsAtBottom = hasStats && statsPlacement !== 'afterHeadline';
+
+    const statsPanel = hasStats ? (
+        <div className={styles.heroStatsPanel} aria-label="Key metrics">
+            <div className={styles.heroStatsGrid}>
+                {heroStats!.map((stat, index) => (
+                    <div
+                        key={`${stat.label}-${index}`}
+                        className={styles.heroStatItem}
+                        style={{ animationDelay: `${0.15 + index * 0.1}s` }}
+                    >
+                        <span className={styles.heroStatValue}>{stat.value}</span>
+                        <span className={styles.heroStatLabel}>{stat.label}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    ) : null;
+
     return (
-        <section className={`${styles.heroSection} ${isShort ? styles.isShort : ''}`}>
-            {/* Full-bleed background image */}
+        <section
+            className={`${styles.heroSection} ${isShort ? styles.isShort : ''} ${hasStats ? styles.withStats : ''}`}
+        >
             <img
                 src={heroImageSrc}
                 alt=""
@@ -58,10 +82,8 @@ export function Hero({
                 className={styles.heroBg}
             />
 
-            {/* Dark gradient overlay */}
             <div className={styles.heroOverlay} aria-hidden="true" />
 
-            {/* Content */}
             <div className={styles.heroInner}>
                 <div className={styles.heroContent}>
                     {eyebrow && (
@@ -69,6 +91,12 @@ export function Hero({
                     )}
 
                     <h1 className={styles.headline}>{headline}</h1>
+
+                    {statsAfterHeadline && (
+                        <div className={styles.heroStatsInline}>
+                            {statsPanel}
+                        </div>
+                    )}
 
                     {subheadline && (
                         <p className={styles.subheadline}>{subheadline}</p>
@@ -96,22 +124,7 @@ export function Hero({
                     )}
                 </div>
 
-                {heroStats && heroStats.length > 0 && (
-                    <div className={styles.heroStatsPanel} aria-label="Key metrics">
-                        <div className={styles.heroStatsGrid}>
-                            {heroStats.map((stat, index) => (
-                                <div
-                                    key={`${stat.label}-${index}`}
-                                    className={styles.heroStatItem}
-                                    style={{ animationDelay: `${0.15 + index * 0.1}s` }}
-                                >
-                                    <span className={styles.heroStatValue}>{stat.value}</span>
-                                    <span className={styles.heroStatLabel}>{stat.label}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
+                {statsAtBottom && statsPanel}
             </div>
         </section>
     );

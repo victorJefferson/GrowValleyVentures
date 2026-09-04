@@ -27,6 +27,38 @@
     /* Dark base so text is readable even before the image loads */
     background-color: hsl(150, 40%, 5%);
 
+    &.withStats {
+        /* Home banner with in-hero stats needs room — avoid clipping */
+        height: auto;
+        min-height: calc(100dvh - 80px);
+        overflow: visible;
+
+        .heroInner {
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+            justify-content: center;
+        }
+
+        .headline {
+            font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+            margin-bottom: 1.25rem;
+
+            @media (max-width: 767px) {
+                font-size: 2.25rem;
+            }
+        }
+
+        .subheadline {
+            font-size: clamp(1.05rem, 2vw, 1.5rem);
+            max-width: 640px;
+            margin-bottom: 1.75rem;
+
+            @media (max-width: 767px) {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
     &.isShort {
         height: 50vh; /* Increased from 40vh to give more breathing room */
         min-height: 450px; /* Increased from 350px to prevent clipping */
@@ -235,17 +267,22 @@
 }
 
 /* ── In-banner stats grid ── */
+.heroStatsInline {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 0 1.75rem 0;
+}
+
 .heroStatsPanel {
     width: 100%;
     max-width: 920px;
-    margin-top: auto;
     padding: 1.25rem 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     background: linear-gradient(
         135deg,
-        rgba(28, 26, 74, 0.72) 0%,
-        rgba(12, 14, 32, 0.55) 100%
+        rgba(28, 26, 74, 0.78) 0%,
+        rgba(12, 14, 32, 0.62) 100%
     );
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);

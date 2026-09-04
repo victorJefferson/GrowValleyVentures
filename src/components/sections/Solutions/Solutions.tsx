@@ -23,7 +23,7 @@ const solutions = [
     id: "private-access-to-opportunities",
     title: "Private Access to Opportunities",
     subtitle:
-      "Through the AFAQ Partners deals desk, select clients access private market opportunities that never reach the public. We don't just pass these deals along, we've operated, built, and invested in businesses ourselves. We source the deals, vet them through people who've actually built businesses, and focus on your exit.",
+      "Through AFAQ Partners' deals desk, select clients access private market opportunities that never reach the public. We don't just pass these deals along, we've operated, built, and invested in businesses ourselves. We source the deals, vet them through people who've actually built businesses, and focus on your exit.",
     href: "/our-capabilities/private-access-to-opportunities",
   },
   {
