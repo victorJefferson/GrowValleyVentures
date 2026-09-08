@@ -39,8 +39,8 @@ export function Footer() {
             <img
               src="/brand/afaq-wordmark.png"
               alt="AFAQ Partners"
-              width="160"
-              height="56"
+              width="201"
+              height="50"
               className={styles.logoImage}
             />
           </Link>
