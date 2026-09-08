@@ -66,8 +66,8 @@ export function Navbar() {
                 <img
                   src="/brand/afaq-wordmark.png"
                   alt="AFAQ Partners"
-                  width="138"
-                  height="36"
+                  width="104"
+                  height="27"
                   className={styles.logoImage}
                 />
               </Link>
